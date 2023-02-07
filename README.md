@@ -3,7 +3,7 @@
 <img src="Fix Your Nums logo.png" width="150px" height="150px">
 </div>
 <h3> 🧮 Fix-Your-Nums is a multiple-in-one calculator with some mathematical and conversion features for multipurpose uses.</h3>
-<h3> 🌐 Visit: <a href="srijita-mandal.github.io/fix-your-nums/">Fix-your-nums</a> </h3>
+<!-- <h3> 🌐 Visit: <a href="srijita-mandal.github.io/fix-your-nums/">Fix-your-nums</a> </h3> -->
 <br>
 
 ## ▶️ Want to contribute?
