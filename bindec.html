@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Change Number System</title>
+</head>
+<body>
+    <form id="numCh">
+        <label for="numChange">Please enter the number you'd like to convert</label><br/><br/>
+        <input type="number" name="numChange" id="numChange">
+        <select name="numSys" id="numSys">
+            <option value="dec">Decimal to Binary</option>
+            <option value="bin">Binary to Decimal</option>
+        </select><br/>
+        <button type="button" onclick="changeNumber()">Submit</button><br/><br/><br/>
+        <span id="resultNumChange"></span>
+
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

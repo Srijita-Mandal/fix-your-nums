@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Equation</title>
+</head>
+<body>
+    <form class="form-horizontal" id="equation">
+        <label for="eqn"><b>Quadratic Equation with One Variable</b> <br><br> Enter the values of a, b & c in form of ax²+bx+c=0</label><br/><br/>
+        <label for="a">a:</label>
+        <input type="number" name="a" id="a">
+        <label for="b">b:</label>
+        <input type="number" name="b" id="b">
+        <label for="c">c:</label>
+        <input type="number" name="c" id="c"><br/><br/>
+
+        <button type="button" onclick="solutionEq()">Submit</button><br/><br/><br/>
+        <span id="resultEqn"></span>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

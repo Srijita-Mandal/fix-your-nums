@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>BMI calculator</title>
+</head>
+<body>
+    <form class="form-horizontal" id="bMI">
+        <label for="wei">Please enter your weight (in Kgs):</label>
+        <input type="number" name="wei" id="wei" placeholder="Weight"><br/><br/>
+        <label for="hei">Please enter your height (in Inches):</label>
+        <input type="number" name="hei" id="hei" placeholder="Height"><br/><br/>
+
+        <button type="button" onclick="calculateBMI()">Submit</button><br/><br/><br/>
+        <span id="resultBMI"></span><br/>
+        <span id="resultBMImsg"></span><br/><br/>
+        <span id="bmiImg"></span>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

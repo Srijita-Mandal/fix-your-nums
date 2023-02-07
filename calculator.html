@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>calculator</title>
+</head>
+<body>
+    <form id="calc" class="form-horizontal">
+        <label for="cal">Please enter the operation you'd like to do</label><br/>
+        <select name="cal" id="cal">
+            <option value="sum">Addition</option>
+            <option value="subs">Subtraction</option>
+            <option value="mult">Multiplication</option>
+            <option value="div">Division</option>
+            <option value="modu">Modulo Division</option>
+        </select><br/><br/>
+         
+        <input type="number" name="num1" id="num1" placeholder="First Number">
+        
+        <input type="number" name="num2" id="num2" placeholder="Second Number"><br/><br/>
+        <button type="button" onclick="calculator()">Submit</button><br/><br/><br/>
+        <span id="resultCalculator"></span>
+
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
