@@ -293,3 +293,64 @@ const solutionEq = () =>{
 
     }
 }
+
+const changeLen = () => {
+    const numberCh = document.getElementById('numChange').value;
+ 
+    const SysSelected = document.getElementById('numSys');
+    const valueNumCh = SysSelected.value;
+ 
+    const cmtoM = (cm) =>{
+        let num = cm/100;
+        return  num;
+    }
+    const cmtoMm = (cm) =>{
+        let num = cm*10;
+        return  num;
+    }
+    const mmtoM = (mm) =>{
+        let num = mm/1000;
+        return  num;
+    }
+    const mmtoCm = (mm) =>{
+        let num = mm/10;
+        return  num;
+    }
+    const mtoCm =(m)=>{
+        let num1= m*100;
+        return num1;
+    }
+    const mtoMm =(m)=>{
+        let num1= m*1000;
+        return num1;
+    }
+
+    let resultNumCh;
+    if(valueNumCh == 'cm-m'){
+        resultNumCh= cmtoM(parseInt(numberCh));
+        document.getElementById('resultNumChange').innerHTML = `Meter= ${resultNumCh} ` ;
+    } 
+    else if(valueNumCh == 'cm-mm'){
+        resultNumCh= cmtoMm(parseInt(numberCh));
+        document.getElementById('resultNumChange').innerHTML = `Milimeter= ${resultNumCh} ` ;
+    }
+    else if(valueNumCh == 'mm-m'){
+        resultNumCh= mmtoM(parseInt(numberCh));
+        document.getElementById('resultNumChange').innerHTML = `Meter= ${resultNumCh} ` ;
+    }
+    else if(valueNumCh == 'mm-cm'){
+        resultNumCh= mmtoCm(parseInt(numberCh));
+        document.getElementById('resultNumChange').innerHTML = `Centimeter= ${resultNumCh} ` ;
+    }
+    else if(valueNumCh == 'm-mm'){
+        resultNumCh= mtoMm(parseInt(numberCh));
+        document.getElementById('resultNumChange').innerHTML = `Milimeter= ${resultNumCh} ` ;
+    }
+    else{
+        resultNumCh= mtoCm(parseInt(numberCh));
+        document.getElementById('resultNumChange').innerHTML = `Centimeter= ${resultNumCh} ` ;
+    }
+}
+
+
+ 

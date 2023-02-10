@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Conversion</title>
+</head>
+<body>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Leangth Conversion System</title>
+</head>
+<body>
+    <form id="numCh">
+        <label for="numChange">Please enter the number you'd like to convert</label><br/><br/>
+        <input type="number" name="numChange" id="numChange">
+        <select name="numSys" id="numSys">
+            <option value="cm-m">Centimeter to Meter</option>
+            <option value="m-cm">Meter to Centimeter</option>
+            <option value="m-mm">Meter to Milimeter</option>
+            <option value="cm-mm">Centimeter to Milimeter</option>
+            <option value="mm-cm">Milimeter to Centimeter</option>
+            <option value="mm-m">Milimeter to Meter</option>
+        </select><br/>
+        <button type="button" onclick="changeLen()">Submit</button><br/><br/><br/>
+        <span id="resultNumChange"></span>
+
+    </form>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
