@@ -195,7 +195,7 @@ const calculateBMI = () =>{
         document.getElementById('resultBMImsg').innerHTML = `You are Extreme Obese` ;
     }
     const img = document.createElement('img');
-    img.src = 'converter/BMI-CHART.jpg';
+    img.src = 'BMI-CHART.jpg';
     document.getElementById('bmiImg').appendChild(img);
 
 }
