@@ -37,7 +37,7 @@
 4. Always take a ```pull``` from the upstream repository to your main branch to keep it at par with the main project (updated repository).
 5. Create a new ```branch``` and name it as according to the issue.
 6. Make your desired changes to the code.
-7. Open a ```pull request``` with a name of the issue and describe about your changes with reasons.
+7. Open a ```pull request``` with a name of the issue and describe about your changes with proper links or screenshots.
 <br><br>
 
 ## 🤝 Contact:
