@@ -281,7 +281,15 @@ const solutionEq = () =>{
 
     var disc = ((b*b) - (4*a*c));
     if(disc<0){
-        document.getElementById('resultEqn').innerHTML = `The equation has no real solution` ;
+        var discRoot = Math.sqrt(-disc);
+        var sol_real = ((-b)/(2*a));
+        var sol_img = ((discRoot)/(2*a));
+        var resSol_real = sol_real.toFixed(2);
+        var resSol_img = sol_img.toFixed(4);
+        var resSol1 = '(' + resSol_real + ' + i ' + resSol_img + ')';
+        var resSol2 = '(' + resSol_real + ' - i ' + resSol_img + ')';
+        document.getElementById('resultEqn').innerHTML = `Solutions are ${resSol1} & ${resSol2}` ;
+
     } else{
         var discRoot = Math.sqrt(disc);
         var sol1 = ((-b+discRoot)/(2*a));
