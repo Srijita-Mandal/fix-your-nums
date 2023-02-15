@@ -1,266 +1,257 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 * {
-  font-family: "Ubuntu", sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 
-body {
-  width: 100vw;
-  height: 100vh;
-  background-color: #ffeeb7;
-  display: grid;
-  place-items: center;
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffeeb7;
+    display: grid;
+    place-items: center;
 }
 
-form {
-  background-color: #ffb4a3;
-  padding: 80px;
-  width: 50%;
-  margin: 100px auto;
-  text-align: center;
-  place-items: center;
-  box-shadow: 0 10px 6px -6px #777;
+form{
+    background-color: #ffb4a3;
+    padding: 80px;
+    width: 50%;
+    margin: 100px auto;
+    text-align: center;
+    place-items: center;
+    box-shadow: 0 10px 6px -6px #777;
 }
 
-label {
-  font-size: 25px;
-  font-weight: 500;
+label{
+    font-size: 25px;
+    font-weight: 500;
 }
 
-#temp {
-  border: none;
-  padding: 10px;
-  height: 25px;
-  width: 150px;
-  font-size: 20px;
-  border-radius: 3px;
-  margin-top: 20px;
+#temp{
+    border: none;
+    padding: 10px;
+    height: 25px;
+    width: 150px;
+    font-size: 20px;
+    border-radius: 3px;
+    margin-top: 20px;
 }
 
-#temp_diff {
-  height: 25px;
-  margin-left: 5px;
-  padding: 5px;
-  border: none;
-  border-radius: 3px;
-  margin-top: 20px;
-  font-size: 15px;
+#temp_diff{
+    height: 25px;
+    margin-left: 5px;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    margin-top: 20px;
+    font-size: 15px;
 }
 
 [type="button"] {
-  height: 35px;
-  margin: 20px;
-  margin-bottom: -10px;
-  width: 100px;
-  font-size: 15px;
-  border: none;
-  border-radius: 3px;
-  background-color: black;
-  color: white;
+    height: 35px;
+    margin: 20px;
+    margin-bottom: -10px;
+    width: 100px;
+    font-size: 15px;
+    border: none;
+    border-radius: 3px;
+    background-color: black;
+    color: white;
 }
 
 #resultContainer {
-  font-size: 30px;
+    font-size: 30px;
 }
 
-#num1 {
-  border: none;
-  padding: 10px;
-  height: 25px;
-  width: 200px;
-  font-size: 18px;
-  border-radius: 3px;
-  margin-top: 5px;
+#num1{
+    border: none;
+    padding: 10px;
+    height: 25px;
+    width: 200px;
+    font-size: 18px;
+    border-radius: 3px;
+    margin-top: 5px;
+} 
+
+#num2{
+    border: none;
+    padding: 10px;
+    height: 25px;
+    width: 200px;
+    font-size: 18px;
+    border-radius: 3px;
+    margin-top: 5px;
 }
 
-#num2 {
-  border: none;
-  padding: 10px;
-  height: 25px;
-  width: 200px;
-  font-size: 18px;
-  border-radius: 3px;
-  margin-top: 5px;
+#cal{
+    height: 25px;
+    padding: 3px;
+    border: none;
+    border-radius: 3px;
+    margin-top: 20px;
+    font-size: 15px;
 }
 
-#cal {
-  height: 25px;
-  padding: 3px;
-  border: none;
-  border-radius: 3px;
-  margin-top: 20px;
-  font-size: 15px;
+#resultCalculator{
+    font-size: 30px;
 }
 
-#resultCalculator {
-  font-size: 30px;
+#numChange{
+    border: none;
+    padding: 10px;
+    height: 25px;
+    width: 150px;
+    font-size: 20px;
+    border-radius: 3px;
+    margin-top: 20px;
 }
 
-#numChange {
-  border: none;
-  padding: 10px;
-  height: 25px;
-  width: 150px;
-  font-size: 20px;
-  border-radius: 3px;
-  margin-top: 20px;
+#numSys{
+    height: 25px;
+    margin-left: 5px;
+    padding: 3px;
+    border: none;
+    border-radius: 3px;
+    margin-top: 20px;
+    font-size: 15px;
 }
 
-#numSys {
-  height: 25px;
-  margin-left: 5px;
-  padding: 3px;
-  border: none;
-  border-radius: 3px;
-  margin-top: 20px;
-  font-size: 15px;
+#resultNumChange{
+    font-size: 30px;
 }
 
-#resultNumChange {
-  font-size: 30px;
+#base{
+    border: none;
+    padding: 10px;
+    height: 20px;
+    width: 150px;
+    font-size: 18px;
+    border-radius: 3px;
+    margin-left: 5px;
 }
 
-#base {
-  border: none;
-  padding: 10px;
-  height: 20px;
-  width: 150px;
-  font-size: 18px;
-  border-radius: 3px;
-  margin-left: 5px;
+#index{
+    border: none;
+    padding: 10px;
+    height: 20px;
+    width: 150px;
+    font-size: 18px;
+    border-radius: 3px;
+    margin-left: 5px;
 }
 
-#index {
-  border: none;
-  padding: 10px;
-  height: 20px;
-  width: 150px;
-  font-size: 18px;
-  border-radius: 3px;
-  margin-left: 5px;
+#resultPower{
+    font-size: 30px;
 }
 
-#resultPower {
-  font-size: 30px;
+#fact{
+    border: none;
+    padding: 10px;
+    height: 20px;
+    width: 120px;
+    font-size: 18px;
+    border-radius: 3px;
+    margin-top: 5px;
 }
 
-#fact {
-  border: none;
-  padding: 10px;
-  height: 20px;
-  width: 120px;
-  font-size: 18px;
-  border-radius: 3px;
-  margin-top: 5px;
+#resultFact{
+    font-size: 30px;
 }
 
-#resultFact {
-  font-size: 30px;
+#log{
+    border: none;
+    padding: 10px;
+    height: 20px;
+    width: 120px;
+    font-size: 18px;
+    border-radius: 3px;
+    margin-top: 5px;
 }
 
-#log {
-  border: none;
-  padding: 10px;
-  height: 20px;
-  width: 120px;
-  font-size: 18px;
-  border-radius: 3px;
-  margin-top: 5px;
+#resultLog{
+    font-size: 30px;
 }
 
-#resultLog {
-  font-size: 30px;
+#resultBMI{
+    font-size: 30px;
 }
 
-#resultBMI {
-  font-size: 30px;
+#resultBMImsg{
+    font-size: 20px;
+    color: #071b88;
 }
 
-#resultBMImsg {
-  font-size: 20px;
-  color: #071b88;
+#wei{
+    border: none;
+    padding: 10px;
+    height: 20px;
+    width: 150px;
+    font-size: 18px;
+    border-radius: 3px;
+    margin-left: 5px;
 }
 
-#wei {
-  border: none;
-  padding: 10px;
-  height: 20px;
-  width: 150px;
-  font-size: 18px;
-  border-radius: 3px;
-  margin-left: 5px;
+#hei{
+    border: none;
+    padding: 10px;
+    height: 20px;
+    width: 150px;
+    font-size: 18px;
+    border-radius: 3px;
+    margin-left: 5px;
 }
 
-#hei {
-  border: none;
-  padding: 10px;
-  height: 20px;
-  width: 150px;
-  font-size: 18px;
-  border-radius: 3px;
-  margin-left: 5px;
+#bmiImg{
+    height: 500px;
+    width: 800px;
+    align-self: center;
 }
 
-#bmiImg {
-  display: flex;
-  justify-content: center;
+#DOB{
+    padding: 5px;
+    height: 20px;
+    width: 150px;
+    font-size: 15px;
 }
 
-table,
-td {
-  border: 1px solid black;
-  background-color: #ffd6cd;
+#resultAge{
+    font-size: 30px;
 }
 
-thead {
-  background-color: black;
-  color: #fff;
+#a{
+    border: none;
+    padding: 10px;
+    height: 20px;
+    width: 100px;
+    font-size: 18px;
+    border-radius: 3px;
+    margin-left: 5px;
+    margin-right: 10px;
 }
 
-#DOB {
-  padding: 5px;
-  height: 20px;
-  width: 150px;
-  font-size: 15px;
+#b{
+    border: none;
+    padding: 10px;
+    height: 20px;
+    width: 100px;
+    font-size: 18px;
+    border-radius: 3px;
+    margin-left: 5px;
+    margin-right: 10px;
 }
 
-#resultAge {
-  font-size: 30px;
+#c{
+    border: none;
+    padding: 10px;
+    height: 20px;
+    width: 100px;
+    font-size: 18px;
+    border-radius: 3px;
+    margin-left: 5px;
+    margin-right: 10px;
 }
 
-#a {
-  border: none;
-  padding: 10px;
-  height: 20px;
-  width: 100px;
-  font-size: 18px;
-  border-radius: 3px;
-  margin-left: 5px;
-  margin-right: 10px;
+#resultEqn{
+    font-size: 30px;
 }
 
-#b {
-  border: none;
-  padding: 10px;
-  height: 20px;
-  width: 100px;
-  font-size: 18px;
-  border-radius: 3px;
-  margin-left: 5px;
-  margin-right: 10px;
-}
-
-#c {
-  border: none;
-  padding: 10px;
-  height: 20px;
-  width: 100px;
-  font-size: 18px;
-  border-radius: 3px;
-  margin-left: 5px;
-  margin-right: 10px;
-}
-
-#resultEqn {
-  font-size: 30px;
-}
