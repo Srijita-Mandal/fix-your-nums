@@ -341,3 +341,168 @@ const solutionEq = () => {
     ).innerHTML = `Solutions are ${resSol1} & ${resSol2}`;
   }
 };
+
+
+function ageCalculator() {  
+    var userinput = document.getElementById("DOB").value;  
+    var dob = new Date(userinput);  
+       
+    if(userinput==null || userinput==''){  
+      document.getElementById("message").innerHTML = "**Choose a date please!";    
+      return false;   
+    }   
+    else {  
+    var dobYear = dob.getYear();  
+    var dobMonth = dob.getMonth();  
+    var dobDate = dob.getDate();  
+        
+    var now = new Date();   
+    var currentYear = now.getYear();  
+    var currentMonth = now.getMonth();  
+    var currentDate = now.getDate();  
+       
+    var age = {};  
+    var ageString = "";  
+     
+    yearAge = currentYear - dobYear;  
+     
+    if (currentMonth >= dobMonth)   
+      var monthAge = currentMonth - dobMonth;  
+    else {  
+      yearAge--;  
+      var monthAge = 12 + currentMonth - dobMonth;  
+    }  
+   
+    if (currentDate >= dobDate)    
+      var dateAge = currentDate - dobDate;  
+    else {  
+      monthAge--;  
+      var dateAge = 31 + currentDate - dobDate;  
+  
+      if (monthAge < 0) {  
+        monthAge = 11;  
+        yearAge--;  
+      }  
+    }  
+     
+    age = {  
+    years: yearAge,  
+    months: monthAge,  
+    days: dateAge  
+    };  
+        
+        
+    if ( (age.years > 0) && (age.months > 0) && (age.days > 0) )  
+       ageString = age.years + " years, " + age.months + " months, and " + age.days + " days old.";  
+    else if ( (age.years == 0) && (age.months == 0) && (age.days > 0) )  
+       ageString = "Only " + age.days + " days old!";    
+    else if ( (age.years > 0) && (age.months == 0) && (age.days == 0) )  
+       ageString = age.years +  " years old.<br> Happy Birthday!!";  
+    else if ( (age.years > 0) && (age.months > 0) && (age.days == 0) )  
+       ageString = age.years + " years and " + age.months + " months old.";  
+    else if ( (age.years == 0) && (age.months > 0) && (age.days > 0) )  
+       ageString = age.months + " months and " + age.days + " days old.";  
+    else if ( (age.years > 0) && (age.months == 0) && (age.days > 0) )  
+       ageString = age.years + " years, and" + age.days + " days old.";  
+    else if ( (age.years == 0) && (age.months > 0) && (age.days == 0) )  
+       ageString = age.months + " months old.";   
+    else ageString = "Welcome to Earth! <br> It's first day on Earth!";   
+   
+    return document.getElementById("resultAge").innerHTML = ageString;   
+               
+  }  
+}  
+
+
+
+const solutionEq = () =>{
+    const a = parseInt(document.getElementById('a').value);
+    const b = parseInt(document.getElementById('b').value);
+    const c = parseInt(document.getElementById('c').value);
+
+    var disc = ((b*b) - (4*a*c));
+    if(disc<0){
+        var discRoot = Math.sqrt(-disc);
+        var sol_real = ((-b)/(2*a));
+        var sol_img = ((discRoot)/(2*a));
+        var resSol_real = sol_real.toFixed(2);
+        var resSol_img = sol_img.toFixed(4);
+        var resSol1 = '(' + resSol_real + ' + i ' + resSol_img + ')';
+        var resSol2 = '(' + resSol_real + ' - i ' + resSol_img + ')';
+        document.getElementById('resultEqn').innerHTML = `Solutions are ${resSol1} & ${resSol2}` ;
+
+    } else{
+        var discRoot = Math.sqrt(disc);
+        var sol1 = ((-b+discRoot)/(2*a));
+        var sol2 = ((-b-discRoot)/(2*a));
+        var resSol1 = sol1.toFixed(2);
+        var resSol2 = sol2.toFixed(2);
+
+        document.getElementById('resultEqn').innerHTML = `Solutions are ${resSol1} & ${resSol2}` ;
+
+    }
+}
+
+// currencyConverter : Subrat Kumar
+const dropList = document.querySelectorAll("form select"),
+fromCurrency = document.querySelector(".from select"),
+toCurrency = document.querySelector(".to select"),
+getButton = document.querySelector("form button");
+
+for (let i = 0; i < dropList.length; i++) {
+    for(let currency_code in country_list){
+        let selected = i == 0 ? currency_code == "USD" ? "selected" : "" : currency_code == "INR" ? "selected" : "";
+        let optionTag = `<option value="${currency_code}" ${selected}>${currency_code}</option>`;
+        dropList[i].insertAdjacentHTML("beforeend", optionTag);
+    }
+    dropList[i].addEventListener("change", e =>{
+        loadFlag(e.target); 
+    });
+}
+
+function loadFlag(element){
+    for(let code in country_list){
+        if(code == element.value){ 
+            let imgTag = element.parentElement.querySelector("img"); 
+            imgTag.src = `https://flagcdn.com/48x36/${country_list[code].toLowerCase()}.png`;
+        }
+    }
+}
+
+window.addEventListener("load", ()=>{
+    getExchangeRate();
+});
+
+getButton.addEventListener("click", e =>{
+    e.preventDefault();
+    getExchangeRate();
+});
+
+const exchangeIcon = document.querySelector("form .icon");
+exchangeIcon.addEventListener("click", ()=>{
+    let tempCode=fromCurrency.value;
+    fromCurrency.value = toCurrency.value; 
+    toCurrency.value = tempCode; 
+    loadFlag(fromCurrency); 
+    loadFlag(toCurrency); 
+    getExchangeRate(); 
+})
+
+function getExchangeRate(){
+    const amount = document.querySelector("form input");
+    const exchangeRateTxt = document.querySelector("form .exchange-rate");
+    let amountVal = amount.value;
+    if(amountVal == "" || amountVal == "0"){
+        amount.value = "1";
+        amountVal = 1;
+    }
+    exchangeRateTxt.innerText = "Converting...";
+    let url = `https://v6.exchangerate-api.com/v6/10ebdb74b1b1eb396d1694c7/latest/${fromCurrency.value}`;
+    fetch(url).then(response => response.json()).then(result =>{
+        let exchangeRate = result.conversion_rates[toCurrency.value]; 
+        let totalExRate = (amountVal * exchangeRate).toFixed(2); 
+        exchangeRateTxt.innerText = `${amountVal} ${fromCurrency.value} = ${totalExRate} ${toCurrency.value}`;
+    }).catch(() =>{ 
+        exchangeRateTxt.innerText = "Something went wrong";
+    });
+}
