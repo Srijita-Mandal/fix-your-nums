@@ -54,13 +54,14 @@
   <a href="https://www.linkedin.com/in/srijita-mandal-430021203/" target="_blank">![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)</a>
 <br><br>
 <br>
-<h2 align="center"><b>Contributors 🫂</b></h2>
+<h2 align="center"><b>Contributors 📊 </b></h2>
 
 <p align="center">
 <a href="https://github.com/Srijita-Mandal/fix-your-nums/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Srijita-Mandal/fix-your-nums" />
 </a>
-
+</p>
 
 <br>
+
 ## 💙 Happy Contributions !! 💙
