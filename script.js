@@ -132,24 +132,27 @@ const calculatePower = () =>{
 
 
 const calculateFact = () =>{
-    const fact = parseInt(document.getElementById('fact').value);
+  const fact = parseInt(document.getElementById("fact").value);
 
-    const factorial = (n) =>{
-            let fac =1;
-            for(var i=n;i>0;i--){
-                fac = fac*i;
-        }
-        return fac;
+  // Improved factorial
+  const factorial = (n) => {
+    let fac = BigInt(1);
+    for (var i = n; i > 0; i--) {
+      fac = fac * BigInt(i);
     }
-    let resultFact;
-    if(fact<0){
-        document.getElementById('resultFact').innerHTML = `Error!` ;
-    } else if(fact == 0){
-        document.getElementById('resultFact').innerHTML = `Factorial= 1` ;
-    } else{
-        resultFact = factorial(parseInt(fact));
-        document.getElementById('resultFact').innerHTML = `Factorial= ${resultFact}` ;
-    }
+    return fac;
+  };
+  let resultFact;
+  if (fact < 0) {
+    document.getElementById("resultFact").innerHTML = `Error!`;
+  } else if (fact == 0) {
+    document.getElementById("resultFact").innerHTML = `Factorial= 1`;
+  } else {
+    resultFact = factorial(parseInt(fact));
+    document.getElementById(
+      "resultFact"
+    ).innerHTML = `Factorial= ${resultFact}`;
+  }
 }
 
 
