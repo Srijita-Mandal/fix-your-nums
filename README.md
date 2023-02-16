@@ -7,6 +7,13 @@
 <h3> 🌟 This project is a part of <a href="https://jwoc.tech/">JGEC Winter of Code 2023</a></h3>
 <br>
 
+[![GitHub stars](https://img.shields.io/github/stars/Srijita-Mandal/fix-your-nums.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/Srijita-Mandal/fix-your-nums/stargazers/)
+  
+ [![GitHub forks](https://img.shields.io/github/forks/Srijita-Mandal/fix-your-nums.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/Srijita-Mandal/fix-your-nums/network/)
+  
+[![GitHub issues-open](https://badgen.net/github/open-issues/Srijita-Mandal/fix-your-nums)](https://github.com/Srijita-Mandal/fix-your-nums/issues?q=is%3Aopen)
+
+
 ## 💻 Technologies used:
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -46,5 +53,15 @@
 <a href="mailto:srijitamandal6798@gmail.com" target="_blank">![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)</a>
   <a href="https://www.linkedin.com/in/srijita-mandal-430021203/" target="_blank">![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)</a>
 <br><br>
+<br>
+<h2 align="center"><b>Contributors 📊 </b></h2>
+
+<p align="center">
+<a href="https://github.com/Srijita-Mandal/fix-your-nums/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Srijita-Mandal/fix-your-nums" />
+</a>
+</p>
+
+<br>
 
 ## 💙 Happy Contributions !! 💙
