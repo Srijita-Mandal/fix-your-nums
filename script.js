@@ -293,3 +293,80 @@ const solutionEq = () =>{
 
     }
 }
+
+// reset for agecalc
+function fun1(){
+document.querySelector("#ageSet").addEventListener('click',function(){
+    document.querySelector('#DOB').value="";
+    document.getElementById("resultAge").innerHTML="";
+});
+}
+
+// reset for bindec 
+function fun2(){
+document.querySelector("#bindecSet").addEventListener('click',function(){
+    document.querySelector('#numChange').value="";
+    document.getElementById('resultNumChange').innerHTML="";
+});
+}
+
+// reset for bmi calculator
+function fun3(){
+document.querySelector("#bmiSet").addEventListener('click',function(){
+    document.querySelector('#wei').value="";
+    document.querySelector('#hei').value="";
+    document.getElementById('resultBMImsg').innerHTML= "";
+});
+}
+
+// reset for simple calculator
+function fun4(){
+document.querySelector("#calc1").addEventListener('click',function(){
+    document.querySelector('#num1').value="";
+    document.querySelector('#num2').value="";
+    document.getElementById('resultCalculator').innerHTML= "";
+});
+}
+
+// reset for equation calculator
+function fun5(){
+document.querySelector("#equationSet").addEventListener('click',function(){
+    document.querySelector('#a').value="";
+    document.querySelector('#b').value="";
+    document.querySelector('#c').value="";
+    document.getElementById('resultEqn').innerHTML = "";
+});
+}
+
+// reset for factorial calculator
+function fun6(){
+document.querySelector("#factSet").addEventListener('click',function(){
+    document.querySelector('#fact').value="";
+    document.getElementById('resultFact').innerHTML= "";
+});
+}
+
+// reset for logarithm calculator
+function fun7(){
+document.querySelector("#logSet").addEventListener('click',function(){
+    document.querySelector('#log').value="";
+    document.getElementById('resultLog').innerHTML= "";
+});
+}
+
+// reset for power calculator
+function fun8(){
+document.querySelector("#powSet").addEventListener('click',function(){
+    document.querySelector('#base').value="";
+    document.querySelector('#index').value="";
+    document.getElementById('resultPower').innerHTML= "";
+});
+}
+
+// reset for temprature calculator
+function fun9(){
+document.querySelector("#tempSet").addEventListener('click',function(){
+    document.querySelector('#temp').value="";
+    document.getElementById('resultContainer').innerHTML= "";
+});
+}
