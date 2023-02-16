@@ -447,3 +447,19 @@ function getExchangeRate(){
     });
 }
 
+function calculateHcf() {
+    const num1 = parseInt(document.getElementById('num1').value);
+    const num2 = parseInt(document.getElementById('num2').value);
+    let h
+    const hcf = (x1,x2) =>{
+        for(let i=0; i<=x1 && i<=x2;i++)
+        {
+            if(x1%i==0 && x2%i==0)
+            h=i
+        }
+        return (h);
+    }
+    let resultHCF = hcf(num1,num2);
+    document.getElementById('resultHCF').innerHTML = `HCF= ${resultHCF}` ;
+
+}

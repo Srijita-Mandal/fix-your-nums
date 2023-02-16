@@ -254,3 +254,27 @@ label {
 #resultEqn {
   font-size: 30px;
 }
+
+#num1 {
+  border: none;
+  padding: 10px;
+  height: 20px;
+  width: 150px;
+  font-size: 18px;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+#num2 {
+  border: none;
+  padding: 10px;
+  height: 20px;
+  width: 150px;
+  font-size: 18px;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+#resultHCF {
+  font-size: 30px;
+}
