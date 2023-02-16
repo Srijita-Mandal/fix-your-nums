@@ -37,14 +37,14 @@ label {
   margin-top: 20px;
 }
 
-#temp_diff {
-  height: 25px;
-  margin-left: 5px;
-  padding: 5px;
-  border: none;
-  border-radius: 3px;
-  margin-top: 20px;
-  font-size: 15px;
+#temp_diff{
+    height: 25px;
+    margin-left: 5px;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    margin-top: 20px;
+    font-size: 15px;
 }
 
 [type="button"] {
