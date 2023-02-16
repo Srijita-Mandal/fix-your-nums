@@ -532,3 +532,70 @@ function calculateHcf() {
 
 }
 
+function resultantConversion() {
+  const input = document.getElementById("input").value;
+
+  if (document.getElementById('conversion').value === "roman-to-int") {
+    const result = romanToInt(input);
+    document.getElementById("output").innerHTML = `Result: ${result}`;
+  } else {
+    const result = intToRoman(input);
+    document.getElementById("output").innerHTML = `Result: ${result}`;
+  }
+}
+
+function romanToInt(roman) {
+  const romanMap = {
+    "I": 1,
+    "V": 5,
+    "X": 10,
+    "L": 50,
+    "C": 100,
+    "D": 500,
+    "M": 1000,
+  };
+
+  let result = 0;
+
+  for (let i = 0; i < roman.length; i++) {
+    const current = romanMap[roman[i]];
+    const next = romanMap[roman[i + 1]];
+
+    if (next && current < next) {
+      result += next - current;
+      i++;
+    } else {
+      result += current;
+    }
+  }
+
+  return result;
+}
+
+function intToRoman(num) {
+  const romanMap = {
+    1: "I",
+    4: "IV",
+    5: "V",
+    9: "IX",
+    10: "X",
+    40: "XL",
+    50: "L",
+    90: "XC",
+    100: "C",
+    400: "CD",
+    500: "D",
+    900: "CM",
+    1000: "M",
+  };
+
+  let result = "";
+
+  for (const [value, symbol] of Object.entries(romanMap).reverse()) {
+    const count = Math.floor(num / value);
+    num %= value;
+    result += symbol.repeat(count);
+  }
+
+  return result;
+}

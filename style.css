@@ -292,3 +292,27 @@ thead {
 #resultLCM {
   font-size: 30px;
 }
+
+#input {
+  border: none;
+  padding: 10px;
+  height: 25px;
+  width: 150px;
+  font-size: 20px;
+  border-radius: 3px;
+  margin-top: 20px;
+}
+
+#output {
+  font-size: 30px;
+}
+
+#conversion {
+  height: 25px;
+  margin-left: 5px;
+  padding: 3px;
+  border: none;
+  border-radius: 3px;
+  margin-top: 20px;
+  font-size: 15px;
+}
