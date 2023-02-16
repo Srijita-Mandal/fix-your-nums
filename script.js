@@ -267,8 +267,10 @@ function ageCalculator() {
     else if ( (age.years > 0) && (age.months == 0) && (age.days > 0) )  
        ageString = age.years + " years, and" + age.days + " days old.";  
     else if ( (age.years == 0) && (age.months > 0) && (age.days == 0) )  
-       ageString = age.months + " months old.";   
-    else ageString = "Please, Enter an valid date </br>You have entered date which is yet to happned";   
+       ageString = age.months + " months old."; 
+    else if (age.years == 0 && age.months == 0 && age.days == 0) 
+        ageString = "Welcome! It's your first day on earth!!";
+    else ageString = "Please, Enter an valid date";   
    
     return document.getElementById("resultAge").innerHTML = ageString;   
                
