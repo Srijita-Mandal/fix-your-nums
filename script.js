@@ -460,6 +460,8 @@ function calculateHcf() {
         return (h);
     }
     let resultHCF = hcf(num1,num2);
+    let lcm = (num1*num2)/resultHCF
     document.getElementById('resultHCF').innerHTML = `HCF= ${resultHCF}` ;
+    document.getElementById('resultLCM').innerHTML = `LCM= ${lcm}` ;
 
 }
