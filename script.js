@@ -510,3 +510,25 @@ function getExchangeRate() {
       exchangeRateTxt.innerText = "Something went wrong";
     });
 }
+
+
+
+function calculateHcf() {
+    const num1 = parseInt(document.getElementById('num1').value);
+    const num2 = parseInt(document.getElementById('num2').value);
+    let h
+    const hcf = (x1,x2) =>{
+        for(let i=0; i<=x1 && i<=x2;i++)
+        {
+            if(x1%i==0 && x2%i==0)
+            h=i
+        }
+        return (h);
+    }
+    let resultHCF = hcf(num1,num2);
+    let lcm = (num1*num2)/resultHCF
+    document.getElementById('resultHCF').innerHTML = `HCF= ${resultHCF}` ;
+    document.getElementById('resultLCM').innerHTML = `LCM= ${lcm}` ;
+
+}
+
