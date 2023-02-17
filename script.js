@@ -535,6 +535,13 @@ function resultantConversion() {
 }
 
 function romanToInt(roman) {
+ let result = 0;
+  
+  if(isNaN(roman) == false)
+  {
+    result = "Please provide correct input";
+    return result;
+  }
   const romanMap = {
     "I": 1,
     "V": 5,
@@ -543,9 +550,14 @@ function romanToInt(roman) {
     "C": 100,
     "D": 500,
     "M": 1000,
+    "i": 1,
+    "v": 5,
+    "x": 10,
+    "l": 50,
+    "c": 100,
+    "d": 500,
+    "m": 1000,
   };
-
-  let result = 0;
 
   for (let i = 0; i < roman.length; i++) {
     const current = romanMap[roman[i]];
@@ -563,6 +575,12 @@ function romanToInt(roman) {
 }
 
 function intToRoman(num) {
+  let result = "";
+  if(isNaN(num))
+  {
+    result = "Please provide correct input";
+    return result;
+  }
   const romanMap = {
     1: "I",
     4: "IV",
@@ -578,9 +596,7 @@ function intToRoman(num) {
     900: "CM",
     1000: "M",
   };
-
-  let result = "";
-
+  
   for (const [value, symbol] of Object.entries(romanMap).reverse()) {
     const count = Math.floor(num / value);
     num %= value;
