@@ -60,6 +60,13 @@
 	</style>
 	<script type="text/javascript">
 
+        function resetBit(){
+			document.querySelector("#bitSet").addEventListener('click',function(){
+            document.querySelector("#first").value = "";
+			document.querySelector("#second").value = "";
+			document.querySelector("#result").value = "";
+		});
+		}
 		function Binary (number) {
     		let num = number;
     		let binary = (num % 2).toString();
@@ -119,8 +126,8 @@
 			<button id='button' onclick="and()">And</button>
 			<button id='button' onclick="or()">OR</button>
 			<button id='button' onclick="xor()">XOR</button>
-			<p id='p'>Result :<input id='result' disabled=""></p>		
-				
+			<p id='p'>Result :<input id='result' disabled=""></p>
+			<button id="bitSet" style="margin-top: 5px; padding-top: 3px; padding-bottom: 3px;" onclick="resetBit()">reset</button>	
 		</div>
 	</div>
 	</body>

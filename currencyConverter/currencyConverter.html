@@ -16,7 +16,7 @@
       <form action="#">
         <div class="amount">
           <p>Enter Amount</p>
-          <input type="text" value="1">
+          <input type="text" id="value" value="1">
         </div>
         <div class="drop-list">
           <div class="from">
@@ -37,9 +37,19 @@
         </div>
         <div class="exchange-rate">Converting...</div>
         <button>Convert</button>
+        <button style="margin-top: 3px;" id="button2" onclick="currSet()">Reset</button>
       </form>
     </div>
 
+    <script>
+      function currSet(){
+        document.querySelector("#button2").addEventListener('click',function(){
+        document.querySelector("#value").value="1";
+        document.querySelector('.exchange-rate').innerHTML="1 USD = 82.75 INR";
+      });
+      }
+      
+    </script>
     <script src="country-list.js"></script>
     <script src="../script.js"></script>
 
