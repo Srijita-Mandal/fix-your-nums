@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algebraic Derivative Calculator</title>
+    <link rel="stylesheet" href="theme.css">
+    <link rel="icon" href="Image/Favicon.png">
+</head>
+<body>
+    <img src="Image/moon.png" id="icon">
+    <form class="form-horizontal" id="age">
+        <label class="heading"> Algebraic Derivative Calculator</label><br/><br/>
+        <p>An algebraic term is of form: <b>ax<sup>b</sup></b>, where a and b are real numbers.</p>
+        <p>This calculator will calculate its derivative with respect to x.</p>
+        <label class="coefficient" for="coefficient">Enter the coefficient - value of a:</label><br/><br/>
+        <input type="number" name="coefficient" id="coefficient" step="any"><br/><br/><br/>
+        <label for="exponent">Enter the power of x - value of b:</label><br/><br/>
+        <input type="number" name="exponent" id="exponent" step="any">
+        <span id = "message" style="color:rgb(255, 0, 0)"> </span> <br><br>
+        <button type="button" onclick="calcAlgebraicDeriv()">Submit</button><br/><br/><br/>
+        <span id="resultAge"></span>
+    </form>
+    <script src="script.js"></script>
+    <script src="theme.js"></script>
+
+</body>
+</html>
