@@ -799,3 +799,20 @@ function intToRoman(num) {
 
   return result;
 }
+
+function calcAlgebraicDeriv(){
+  const coefficient = parseInt(document.getElementById("coefficient").value);
+  const exponent = parseInt(document.getElementById("exponent").value);
+  var finalCoefficient = coefficient*exponent;
+  document.getElementById("inputExpression").innerHTML = `<p>Your entered expression: <b>${coefficient}x<sup>${exponent}</sup></b></p>`
+  if(exponent == 0 || coefficient == 0){
+    document.getElementById("resultDeriv").innerHTML = `<p>Derivative calculated: <b>0</b></p>`;
+  }
+  else if(exponent == 1){
+    document.getElementById("resultDeriv").innerHTML = `<p>Derivative calculated: <b>${finalCoefficient}</b></p>`;
+  }
+  else{
+    var finalExponent = exponent - 1;
+    document.getElementById("resultDeriv").innerHTML = `<p>Derivative calculated: <b>${finalCoefficient}x<sup>${finalExponent}</sup></b></p>`;
+  }
+}
