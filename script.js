@@ -801,8 +801,8 @@ function intToRoman(num) {
 }
 
 function calcAlgebraicDeriv(){
-  const coefficient = parseInt(document.getElementById("coefficient").value);
-  const exponent = parseInt(document.getElementById("exponent").value);
+  const coefficient = parseFloat(document.getElementById("coefficient").value);
+  const exponent = parseFloat(document.getElementById("exponent").value);
   var finalCoefficient = coefficient*exponent;
   document.getElementById("inputExpression").innerHTML = `<p>Your entered expression: <b>${coefficient}x<sup>${exponent}</sup></b></p>`
   if(exponent == 0 || coefficient == 0){
