@@ -24,6 +24,9 @@
 	width: 30px;
 	cursor: pointer;
 	margin: 10px;
+    position: absolute;
+    right: -5px;
+    top: -5px;
 }
 body{
     background-color: var(--color--body);
