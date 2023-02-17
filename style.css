@@ -316,3 +316,11 @@ thead {
   margin-top: 20px;
   font-size: 15px;
 }
+
+.infoDeriv{
+  font-size: medium;
+}
+
+.coefficient, .exponent{
+  font-size: medium;
+}
