@@ -62,10 +62,10 @@ body{
     font-family: 'Times New Roman', Times, serif;
 }
     </style>
-    
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body bgcolor="#ffeeb7">
-    
+    <img src="Image/moon.png" id="icon">
     <div class="container">
         <p>Length Converter</p>
         <p class="top-txt">Enter value in any of the fields to convert between Length measurements:</p>
@@ -90,9 +90,21 @@ body{
         <div class="inputContainer">
             <label for="miles">Miles</label><input type="number" name="" id="miles" oninput="convertToOthers('mile',this.value)">
         </div>
+        <div class="button">
+            <button style="height: 30px; width: 100px; font-size: large; margin-top: 10px; background-color: black; color: aliceblue;">reset</button>
+        </div>
     </div>        
    <script >
 
+            document.querySelector("button").addEventListener('click',function(){
+                document.getElementById("feet").value="";
+                document.getElementById("meter").value="";
+                document.getElementById("inches").value="";
+                document.getElementById("cm").value="";
+                document.getElementById("yards").value="";
+                document.getElementById("km").value="";
+                document.getElementById("miles").value="";
+            });
 let feet    =document.getElementById("feet");
             let meter   =document.getElementById("meter");
             let inch    =document.getElementById("inches");
@@ -175,5 +187,6 @@ let feet    =document.getElementById("feet");
             }
        
    </script>
+   <script src="theme.js"></script>
 </body>
 </html>

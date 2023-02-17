@@ -8,10 +8,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="theme.css">
     <title>Change Number System</title>
     <link rel="icon" href="Image/Favicon.png">
 </head>
 <body>
+    <img src="Image/moon.png" id="icon">
     <form id="numCh">
         <label for="numChange">Please enter the number you'd like to convert</label><br/><br/>
         <input type="number" name="numChange" id="numChange">
@@ -19,11 +21,13 @@
             <option value="dec">Decimal to Binary</option>
             <option value="bin">Binary to Decimal</option>
         </select><br/>
+        <button type="button" id="bindecSet" onclick="fun2()">reset</button>
         <button type="button" onclick="changeNumber()">Submit</button><br/><br/><br/>
         <span id="resultNumChange"></span>
 
     </form>
 
     <script src="script.js"></script>
+    <script src="theme.js"></script>
 </body>
 </html>

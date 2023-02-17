@@ -10,8 +10,10 @@
     <title>Roman Numeral Converter</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Image/Favicon.png">
+    <link rel="stylesheet" href="theme.css">
   </head>
   <body>
+    <img src="Image/moon.png" id="icon">
     <form id="converter">
         <label for="input">Enter your input value</label><br/><br/>
         <input type="text" id="input" name="input">
@@ -19,9 +21,11 @@
             <option value="roman-to-int">Convert Roman numeral to integer</option>
             <option value="int-to-roman">Convert integer to Roman numeral</option>
         </select><br>
+        <button id="button1" onclick="romanSet()" style="height: 35px; width: 89px; font-size: medium; background-color: black; color: aliceblue; border-radius: 5%;">Reset</button>
         <input type="button" value="Convert" class = "result" onclick="resultantConversion()"><br/><br/><br/>
         <div id="output"></div>
     </form>
     <script src="script.js"></script>
+    <script src="theme.js"></script>
   </body>
 </html>

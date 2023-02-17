@@ -8,16 +8,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="theme.css">
     <link rel="icon" href="Image/Favicon.png">
     <title>hcf</title>
 </head>
 <body>
+    <img src="Image/moon.png" id="icon">
     <form class="form-horizontal" id="hcf">
         <label for="num1">Please enter the first number:</label>
         <input type="number" name="num1" id="num1" placeholder="First number"><br/><br/>
         <label for="num2">Please enter the Second number</label>
         <input type="number" name="num2" id="num2" placeholder="Second number"><br/><br/>
 
+        <button id="button1" onclick="hcfSet()" style="height: 35px; width: 89px; font-size: medium; background-color: black; color: aliceblue; border-radius: 5%;">Reset</button>
         <button type="button" onclick="calculateHcf()">Submit</button><br/><br/><br/>
         <span id="resultHCF"></span>
         <br/><br/>
@@ -26,5 +29,6 @@
     </form>
 
     <script src="script.js"></script>
+    <script src="theme.js"></script>
 </body>
 </html>

@@ -8,17 +8,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="theme.css">
     <link rel="icon" href="Image/Favicon.png">
     <title>Factorial</title>
 </head>
 <body>
+    <img src="Image/moon.png" id="icon">
     <form class="form-horizontal" id="factorial">
         <label for="fact">Please enter the number to get factorial</label><br/><br/>
         <input type="number" name="fact" id="fact"><br/><br/>
+        <button type="button"  id="factSet" onclick="fun6()">reset</button>
         <button type="button" onclick="calculateFact()">Submit</button><br/><br/><br/>
         <span id="resultFact"></span>
     </form>
 
     <script src="script.js"></script>
+    <script src="theme.js"></script>
 </body>
 </html>

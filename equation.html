@@ -8,10 +8,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="theme.css">
     <link rel="icon" href="Image/Favicon.png">
     <title>Equation</title>
 </head>
 <body>
+    <img src="Image/moon.png" id="icon">
     <form class="form-horizontal" id="equation">
         <label for="eqn"><b>Quadratic Equation with One Variable</b> <br><br> Enter the values of a, b & c in form of ax²+bx+c=0</label><br/><br/>
         <label for="a">a:</label>
@@ -21,10 +23,12 @@
         <label for="c">c:</label>
         <input type="number" name="c" id="c"><br/><br/>
 
+        <button type="button" id="equationSet" onclick="fun5()">reset</button>
         <button type="button" onclick="solutionEq()">Submit</button><br/><br/><br/>
         <span id="resultEqn"></span>
     </form>
 
     <script src="script.js"></script>
+    <script src="theme.js"></script>
 </body>
 </html>

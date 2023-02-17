@@ -11,10 +11,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="theme.css">
     <link rel="icon" href="Image/Favicon.png">
     <title>BMI calculator</title>
   </head>
   <body>
+    <img src="Image/moon.png" id="icon">
     <form class="form-horizontal" id="bMI">
       <label for="wei">Please enter your weight (in Kgs):</label>
       <input
@@ -31,6 +33,7 @@
         placeholder="Height"
       /><br /><br />
 
+      <button type="button" id="bmiSet" onclick="fun3()">reset</button>
       <button type="button" onclick="calculateBMI()">Submit</button
       ><br /><br /><br />
       <span id="resultBMI"></span><br />
@@ -39,5 +42,6 @@
     </form>
 
     <script src="script.js"></script>
+    <script src="theme.js"></script>
   </body>
 </html>
