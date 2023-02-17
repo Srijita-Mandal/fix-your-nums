@@ -314,96 +314,86 @@ function ageCalculator() {
       ageString = age.years + " years, and" + age.days + " days old.";
     else if (age.years == 0 && age.months > 0 && age.days == 0)
       ageString = age.months + " months old.";
-    else
-      ageString =
-        "Please, Enter an valid date </br>You have entered date which is yet to happned";
+    else if (age.years == 0 && age.months == 0 && age.days == 0) 
+        ageString = "Welcome! It's your first day on earth!!";
+    else ageString = "Please, Enter an valid date";  
 
     return (document.getElementById("resultAge").innerHTML = ageString);
   }
 }
 
-function DaysCalculator() {
-  var userinput = document.getElementById("starting-Date").value;
-  var startingdate = new Date(userinput);
-
-  var userinput1 = document.getElementById("ending-Date").value;
-  var endingdate = new Date(userinput1);
-
-  if (
-    userinput == null ||
-    userinput1 == "" ||
-    userinput1 == null ||
-    userinput1 == ""
-  ) {
-    document.getElementById("message").innerHTML =
-      "</br> **Choose both the starting date and ending date please!";
-    return false;
-  } else {
-    var startingYear = startingdate.getYear();
-    var startingMonth = startingdate.getMonth();
-    var startingDate = startingdate.getDate();
-
-    var endingYear = endingdate.getYear();
-    var endingMonth = endingdate.getMonth();
-    var endingDate = endingdate.getDate();
-
-    var age = {};
-    var ageString = "";
-
-    yearDuration = endingYear - startingYear;
-
-    if (endingMonth >= startingMonth)
-      var monthDuration = endingMonth - startingMonth;
-    else {
-      yearDuration--;
-      var monthDuration = 12 + endingMonth - startingMonth;
-    }
-
-    if (endingDate >= startingDate)
-      var dateDuration = endingDate - startingDate;
-    else {
-      monthDuration--;
-      var dateDuration = 31 + endingDate - startingDate;
-
-      if (monthDuration < 0) {
-        monthDuration = 11;
-        yearDuration--;
-      }
-    }
-
-    age = {
-      years: yearDuration,
-      months: monthDuration,
-      days: dateDuration,
-    };
-
-    if (age.years > 0 && age.months > 0 && age.days > 0)
-      ageString =
-        age.years +
-        " years, " +
-        age.months +
-        " months, and " +
-        age.days +
-        " days. ";
-    else if (age.years == 0 && age.months == 0 && age.days > 0)
-      ageString = "Only " + age.days + " days.";
-    else if (age.years > 0 && age.months == 0 && age.days == 0)
-      ageString = age.years + " years!";
-    else if (age.years > 0 && age.months > 0 && age.days == 0)
-      ageString = age.years + " years and " + age.months + " months.";
-    else if (age.years == 0 && age.months > 0 && age.days > 0)
-      ageString = age.months + " months and " + age.days + " days .";
-    else if (age.years > 0 && age.months == 0 && age.days > 0)
-      ageString = age.years + " years, and" + age.days + " days.";
-    else if (age.years == 0 && age.months > 0 && age.days == 0)
-      ageString = age.months + " months old.";
-    else
-      ageString =
-        "Please, Enter an valid date </br>You have entered Ending date which is less than the Starting Date";
-
-    return (document.getElementById("resultAge").innerHTML = ageString);
-  }
-}
+function DaysCalculator() {  
+    var userinput = document.getElementById("starting-Date").value;  
+    var startingdate = new Date(userinput); 
+    
+    var userinput1 = document.getElementById("ending-Date").value;  
+    var endingdate = new Date(userinput1);  
+       
+    if(userinput==null || userinput1==''||userinput1==null || userinput1==''){  
+      document.getElementById("message").innerHTML = "</br> **Choose both the starting date and ending date please!";    
+      return false;   
+    }   
+    else {  
+    var startingYear = startingdate.getYear();  
+    var startingMonth = startingdate.getMonth();  
+    var startingDate = startingdate.getDate();  
+        
+       
+    var endingYear = endingdate.getYear();  
+    var endingMonth = endingdate.getMonth();  
+    var endingDate = endingdate.getDate();  
+       
+    var age = {};  
+    var ageString = "";  
+     
+    yearDuration = endingYear - startingYear;  
+     
+    if (endingMonth >= startingMonth)   
+      var monthDuration =  endingMonth - startingMonth;  
+    else {  
+      yearDuration--;  
+      var monthDuration = 12 + endingMonth - startingMonth;  
+    }  
+   
+    if (endingDate >= startingDate)    
+      var dateDuration = endingDate - startingDate;  
+    else {  
+      monthDuration--;  
+      var dateDuration= 31 + endingDate - startingDate;  
+  
+      if (monthDuration < 0) {  
+        monthDuration = 11;  
+        yearDuration--;  
+      }  
+    }  
+     
+    age = {  
+    years: yearDuration,  
+    months: monthDuration,  
+    days: dateDuration  
+    };  
+        
+        
+    if ( (age.years > 0) && (age.months > 0) && (age.days > 0) )  
+       ageString = age.years + " years, " + age.months + " months, and " + age.days + " days. ";  
+    else if ( (age.years == 0) && (age.months == 0) && (age.days > 0) )  
+       ageString = "Only " + age.days + " days.";    
+    else if ( (age.years > 0) && (age.months == 0) && (age.days == 0) )  
+       ageString = age.years +  " years!";  
+    else if ( (age.years > 0) && (age.months > 0) && (age.days == 0) )  
+       ageString = age.years + " years and " + age.months + " months.";  
+    else if ( (age.years == 0) && (age.months > 0) && (age.days > 0) )  
+       ageString = age.months + " months and " + age.days + " days .";  
+    else if ( (age.years > 0) && (age.months == 0) && (age.days > 0) )  
+       ageString = age.years + " years, and" + age.days + " days.";  
+    else if ( (age.years == 0) && (age.months > 0) && (age.days == 0) )  
+       ageString = age.months + " months old.";   
+    else ageString = "Please, Enter an valid date </br>You have entered Ending date which is less than the Starting Date";   
+   
+    return document.getElementById("resultAge").innerHTML = ageString;   
+               
+  }  
+}  
 
 // const solutionEq = () => {
 //   const a = parseInt(document.getElementById("a").value);
@@ -718,4 +708,78 @@ function hcfSet(){
      document.getElementById('resultHCF').innerHTML="";
      document.getElementById('resultLCM').innerHTML="";
   });
+}
+
+//reset roman
+function romanSet(){
+  document.getElementById("input").value="";
+  document.getElementById("output").innerHTML="";
+}
+
+function resultantConversion() {
+  const input = document.getElementById("input").value;
+
+  if (document.getElementById('conversion').value === "roman-to-int") {
+    const result = romanToInt(input);
+    document.getElementById("output").innerHTML = `Result: ${result}`;
+  } else {
+    const result = intToRoman(input);
+    document.getElementById("output").innerHTML = `Result: ${result}`;
+  }
+}
+
+function romanToInt(roman) {
+  const romanMap = {
+    "I": 1,
+    "V": 5,
+    "X": 10,
+    "L": 50,
+    "C": 100,
+    "D": 500,
+    "M": 1000,
+  };
+
+  let result = 0;
+
+  for (let i = 0; i < roman.length; i++) {
+    const current = romanMap[roman[i]];
+    const next = romanMap[roman[i + 1]];
+
+    if (next && current < next) {
+      result += next - current;
+      i++;
+    } else {
+      result += current;
+    }
+  }
+
+  return result;
+}
+
+function intToRoman(num) {
+  const romanMap = {
+    1: "I",
+    4: "IV",
+    5: "V",
+    9: "IX",
+    10: "X",
+    40: "XL",
+    50: "L",
+    90: "XC",
+    100: "C",
+    400: "CD",
+    500: "D",
+    900: "CM",
+    1000: "M",
+  };
+
+  let result = "";
+
+  for (const [value, symbol] of Object.entries(romanMap).reverse()) {
+    const count = Math.floor(num / value);
+    num %= value;
+    result += symbol.repeat(count);
+  }
+
+  return result;
 }
