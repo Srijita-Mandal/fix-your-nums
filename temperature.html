@@ -16,8 +16,12 @@
         <label for="temp">Please enter the temperature you'd like to convert</label><br/><br/>
         <input type="number" name="temp" id="temp">
         <select name="temp_diff" id="temp_diff">
-            <option value="cel">°Celsius</option>
-            <option value="fah">°Fahrenheit</option>
+            <option value="cel_fah">Celsius to Fahrenheit</option>
+            <option value="fah_cel">Fahrenheit to Celsius</option>
+            <option value="cel_kel">Celsius to Kelvin</option>
+            <option value="kel_cel">Kelvin to Celsius</option>
+            <option value="fah_kel">Fahrenheit to Kelvin</option>
+            <option value="kel_fah">Kelvin to Fahrenheit</option>
         </select><br/>
         <button type="button" onclick="calculateTemp()">Submit</button><br/><br/><br/>
         <span id="resultContainer"></span>
