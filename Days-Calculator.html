@@ -90,6 +90,17 @@ label{
             <span id="resultAge"></span>
         </form>
         <script src="script.js"></script>
+        <script type="text/javascript">
+            document.getElementById("age").addEventListener("submit",(e)=>{
+                e.preventDefault()
+                DaysCalculator()
+            })
+            document.body.addEventListener("keyup",(e)=>{
+                    if(e.keyCode==13){
+                        DaysCalculator()
+                    }
+                })
+        </script>
         <script src="theme.js"></script>
     </body>
     </html>

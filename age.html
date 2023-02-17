@@ -77,6 +77,17 @@ label{
     </form>
 
     <script src="script.js"></script>
+    <script>
+        document.getElementById("age").addEventListener("submit",(e)=>{
+            e.preventDefault()
+            ageCalculator()
+        })
+        document.body.addEventListener("keyup",(e)=>{
+                if(e.keyCode==13){
+                    ageCalculator()
+                }
+            })
+    </script>
     <script src="theme.js"></script>
 </body>
 </html>

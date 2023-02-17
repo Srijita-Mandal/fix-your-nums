@@ -34,6 +34,17 @@
     </form>
 
     <script src="script.js"></script>
+    <script type="text/javascript">
+        document.getElementById("calc").addEventListener("submit",(e)=>{
+            e.preventDefault()
+            calculator()
+        })
+        document.body.addEventListener("keyup",(e)=>{
+                if(e.keyCode==13){
+                    calculator()
+                }
+            })
+    </script>
     <script src="theme.js"></script>
 </body>
 </html>
