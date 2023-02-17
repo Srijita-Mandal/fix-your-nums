@@ -700,3 +700,22 @@ document.querySelector("#tempSet").addEventListener('click',function(){
     document.getElementById('resultContainer').innerHTML= "";
 });
 }
+
+//reset for days calculator
+function daySet(){
+  document.querySelector("#button1").addEventListener('click',function(){
+     document.querySelector("#starting-Date").value="";
+     document.querySelector("#ending-Date").value="";
+     document.getElementById("resultAge").innerHTML="";
+  });
+}
+
+//reset for hcf calculator
+function hcfSet(){
+  document.querySelector("#button1").addEventListener('click',function(){
+     document.querySelector('#num1').value="";
+     document.querySelector('#num2').value="";
+     document.getElementById('resultHCF').innerHTML="";
+     document.getElementById('resultLCM').innerHTML="";
+  });
+}
