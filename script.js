@@ -816,3 +816,15 @@ function calcAlgebraicDeriv(){
     document.getElementById("resultDeriv").innerHTML = `<p>Derivative calculated: <b>${finalCoefficient}x<sup>${finalExponent}</sup></b></p>`;
   }
 }
+
+function validateForm() {
+  var coefficient = document.getElementById("coefficient").value;
+  var exponent = document.getElementById("exponent").value;
+  if (coefficient == "" || exponent == "") {
+    alert("Both Coefficient and Exponent must be filled out.");
+    return false;
+  }
+  else{
+    calcAlgebraicDeriv();
+  }
+}
