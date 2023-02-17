@@ -19,5 +19,16 @@
     </form>
 
     <script src="script.js"></script>
+    <script type="text/javascript">
+        document.getElementById("logarithm").addEventListener("submit",(e)=>{
+            e.preventDefault()
+            calculatelog()
+        })
+        document.body.addEventListener("keyup",(e)=>{
+                if(e.keyCode==13){
+                    calculateLog()
+                }
+            })
+    </script>
 </body>
 </html>
