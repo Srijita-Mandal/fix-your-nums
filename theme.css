@@ -1,0 +1,124 @@
+:root{
+    --color--header: #ffeeb7;
+    --color--body: #ffeeb7;
+    --color--pannel: #ffb4a3;
+    --color--pannel_hover: #ff947c;
+    --color--h2: rgb(102, 102, 199);
+    --color--form: #ffb4a3;
+    --color--label: black;
+    --color--cont_p : rgb(20, 94, 82);
+    --color--hover:  #414141;
+}
+.dark-mode{
+    --color--header: white;
+    --color--body: gray;
+    --color--pannel: rgb(51, 46, 46);
+    --color--pannel_hover: #000000;
+    --color--h2: white;
+    --color--form: rgb(71,71,71);
+    --color--label: white;
+    --color--cont_p : white;
+    --color--hover:  #ffffff;
+}
+#icon{
+	width: 30px;
+	cursor: pointer;
+	margin: 10px;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+}
+body{
+    background-color: var(--color--body);
+    display: grid;
+}
+
+.header{
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #202020;
+    color: var(--color--header);
+    height: 180px;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    margin-top: -10px;
+}
+
+h1{
+    font-family: 'Satisfy', cursive;
+    font-weight: lighter;
+    font-size: 70px;
+    margin-top: 50px;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.panel-body{
+    background-color: var(--color--pannel);
+    border-radius: 10px;
+}
+
+.panel-body:hover{
+    background-color:var(--color--pannel_hover) ;
+    /* border-radius: 30px; */
+    box-shadow:0 1.2rem 3rem 0.5rem var(--color--hover) ;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.panel{
+    border-radius: 10px;
+}
+
+.panel:hover{
+    border-radius: 30px;
+}
+
+h2{
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    font-size: 35px;
+    color: var(--color--h2);
+}
+
+#footer{
+    background-color: #202020;
+    color: #ffeeb7;
+    padding: 10px;
+    padding-left: 20px;
+}
+form {
+    background-color: var(--color--form);
+    padding: 80px;
+    width: 50%;
+    margin: 100px auto;
+    text-align: center;
+    place-items: center;
+    box-shadow: 0 10px 6px -6px #777;
+}
+label{
+    color: var(--color--label);
+}
+.container{
+    box-shadow: 0 0 4px 1px rgb(179, 169, 169);
+    width: 675px;
+    height: 375px;
+    border-radius: 10px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;  
+    flex-direction: column;  
+    background-color: var(--color--pannel);
+}
+.container p{
+    color: var(--color--cont_p);
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
