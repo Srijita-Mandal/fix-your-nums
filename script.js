@@ -314,126 +314,116 @@ function ageCalculator() {
       ageString = age.years + " years, and" + age.days + " days old.";
     else if (age.years == 0 && age.months > 0 && age.days == 0)
       ageString = age.months + " months old.";
-    else
-      ageString =
-        "Please, Enter an valid date </br>You have entered date which is yet to happned";
+    else if (age.years == 0 && age.months == 0 && age.days == 0) 
+        ageString = "Welcome! It's your first day on earth!!";
+    else ageString = "Please, Enter an valid date";  
 
     return (document.getElementById("resultAge").innerHTML = ageString);
   }
 }
 
-function DaysCalculator() {
-  var userinput = document.getElementById("starting-Date").value;
-  var startingdate = new Date(userinput);
+function DaysCalculator() {  
+    var userinput = document.getElementById("starting-Date").value;  
+    var startingdate = new Date(userinput); 
+    
+    var userinput1 = document.getElementById("ending-Date").value;  
+    var endingdate = new Date(userinput1);  
+       
+    if(userinput==null || userinput1==''||userinput1==null || userinput1==''){  
+      document.getElementById("message").innerHTML = "</br> **Choose both the starting date and ending date please!";    
+      return false;   
+    }   
+    else {  
+    var startingYear = startingdate.getYear();  
+    var startingMonth = startingdate.getMonth();  
+    var startingDate = startingdate.getDate();  
+        
+       
+    var endingYear = endingdate.getYear();  
+    var endingMonth = endingdate.getMonth();  
+    var endingDate = endingdate.getDate();  
+       
+    var age = {};  
+    var ageString = "";  
+     
+    yearDuration = endingYear - startingYear;  
+     
+    if (endingMonth >= startingMonth)   
+      var monthDuration =  endingMonth - startingMonth;  
+    else {  
+      yearDuration--;  
+      var monthDuration = 12 + endingMonth - startingMonth;  
+    }  
+   
+    if (endingDate >= startingDate)    
+      var dateDuration = endingDate - startingDate;  
+    else {  
+      monthDuration--;  
+      var dateDuration= 31 + endingDate - startingDate;  
+  
+      if (monthDuration < 0) {  
+        monthDuration = 11;  
+        yearDuration--;  
+      }  
+    }  
+     
+    age = {  
+    years: yearDuration,  
+    months: monthDuration,  
+    days: dateDuration  
+    };  
+        
+        
+    if ( (age.years > 0) && (age.months > 0) && (age.days > 0) )  
+       ageString = age.years + " years, " + age.months + " months, and " + age.days + " days. ";  
+    else if ( (age.years == 0) && (age.months == 0) && (age.days > 0) )  
+       ageString = "Only " + age.days + " days.";    
+    else if ( (age.years > 0) && (age.months == 0) && (age.days == 0) )  
+       ageString = age.years +  " years!";  
+    else if ( (age.years > 0) && (age.months > 0) && (age.days == 0) )  
+       ageString = age.years + " years and " + age.months + " months.";  
+    else if ( (age.years == 0) && (age.months > 0) && (age.days > 0) )  
+       ageString = age.months + " months and " + age.days + " days .";  
+    else if ( (age.years > 0) && (age.months == 0) && (age.days > 0) )  
+       ageString = age.years + " years, and" + age.days + " days.";  
+    else if ( (age.years == 0) && (age.months > 0) && (age.days == 0) )  
+       ageString = age.months + " months old.";   
+    else ageString = "Please, Enter an valid date </br>You have entered Ending date which is less than the Starting Date";   
+   
+    return document.getElementById("resultAge").innerHTML = ageString;   
+               
+  }  
+}  
 
-  var userinput1 = document.getElementById("ending-Date").value;
-  var endingdate = new Date(userinput1);
+// const solutionEq = () => {
+//   const a = parseInt(document.getElementById("a").value);
+//   const b = parseInt(document.getElementById("b").value);
+//   const c = parseInt(document.getElementById("c").value);
 
-  if (
-    userinput == null ||
-    userinput1 == "" ||
-    userinput1 == null ||
-    userinput1 == ""
-  ) {
-    document.getElementById("message").innerHTML =
-      "</br> **Choose both the starting date and ending date please!";
-    return false;
-  } else {
-    var startingYear = startingdate.getYear();
-    var startingMonth = startingdate.getMonth();
-    var startingDate = startingdate.getDate();
+//   var disc = b * b - 4 * a * c;
+//   if (disc < 0) {
+//     var discRoot = Math.sqrt(-disc);
+//     var sol_real = -b / (2 * a);
+//     var sol_img = discRoot / (2 * a);
+//     var resSol_real = sol_real.toFixed(2);
+//     var resSol_img = sol_img.toFixed(4);
+//     var resSol1 = "(" + resSol_real + " + i " + resSol_img + ")";
+//     var resSol2 = "(" + resSol_real + " - i " + resSol_img + ")";
+//     document.getElementById(
+//       "resultEqn"
+//     ).innerHTML = `Solutions are ${resSol1} & ${resSol2}`;
+//   } else {
+//     var discRoot = Math.sqrt(disc);
+//     var sol1 = (-b + discRoot) / (2 * a);
+//     var sol2 = (-b - discRoot) / (2 * a);
+//     var resSol1 = sol1.toFixed(2);
+//     var resSol2 = sol2.toFixed(2);
 
-    var endingYear = endingdate.getYear();
-    var endingMonth = endingdate.getMonth();
-    var endingDate = endingdate.getDate();
-
-    var age = {};
-    var ageString = "";
-
-    yearDuration = endingYear - startingYear;
-
-    if (endingMonth >= startingMonth)
-      var monthDuration = endingMonth - startingMonth;
-    else {
-      yearDuration--;
-      var monthDuration = 12 + endingMonth - startingMonth;
-    }
-
-    if (endingDate >= startingDate)
-      var dateDuration = endingDate - startingDate;
-    else {
-      monthDuration--;
-      var dateDuration = 31 + endingDate - startingDate;
-
-      if (monthDuration < 0) {
-        monthDuration = 11;
-        yearDuration--;
-      }
-    }
-
-    age = {
-      years: yearDuration,
-      months: monthDuration,
-      days: dateDuration,
-    };
-
-    if (age.years > 0 && age.months > 0 && age.days > 0)
-      ageString =
-        age.years +
-        " years, " +
-        age.months +
-        " months, and " +
-        age.days +
-        " days. ";
-    else if (age.years == 0 && age.months == 0 && age.days > 0)
-      ageString = "Only " + age.days + " days.";
-    else if (age.years > 0 && age.months == 0 && age.days == 0)
-      ageString = age.years + " years!";
-    else if (age.years > 0 && age.months > 0 && age.days == 0)
-      ageString = age.years + " years and " + age.months + " months.";
-    else if (age.years == 0 && age.months > 0 && age.days > 0)
-      ageString = age.months + " months and " + age.days + " days .";
-    else if (age.years > 0 && age.months == 0 && age.days > 0)
-      ageString = age.years + " years, and" + age.days + " days.";
-    else if (age.years == 0 && age.months > 0 && age.days == 0)
-      ageString = age.months + " months old.";
-    else
-      ageString =
-        "Please, Enter an valid date </br>You have entered Ending date which is less than the Starting Date";
-
-    return (document.getElementById("resultAge").innerHTML = ageString);
-  }
-}
-
-const solutionEq = () => {
-  const a = parseInt(document.getElementById("a").value);
-  const b = parseInt(document.getElementById("b").value);
-  const c = parseInt(document.getElementById("c").value);
-
-  var disc = b * b - 4 * a * c;
-  if (disc < 0) {
-    var discRoot = Math.sqrt(-disc);
-    var sol_real = -b / (2 * a);
-    var sol_img = discRoot / (2 * a);
-    var resSol_real = sol_real.toFixed(2);
-    var resSol_img = sol_img.toFixed(4);
-    var resSol1 = "(" + resSol_real + " + i " + resSol_img + ")";
-    var resSol2 = "(" + resSol_real + " - i " + resSol_img + ")";
-    document.getElementById(
-      "resultEqn"
-    ).innerHTML = `Solutions are ${resSol1} & ${resSol2}`;
-  } else {
-    var discRoot = Math.sqrt(disc);
-    var sol1 = (-b + discRoot) / (2 * a);
-    var sol2 = (-b - discRoot) / (2 * a);
-    var resSol1 = sol1.toFixed(2);
-    var resSol2 = sol2.toFixed(2);
-
-    document.getElementById(
-      "resultEqn"
-    ).innerHTML = `Solutions are ${resSol1} & ${resSol2}`;
-  }
-};
+//     document.getElementById(
+//       "resultEqn"
+//     ).innerHTML = `Solutions are ${resSol1} & ${resSol2}`;
+//   }
+// };
 
 // currencyConverter : Subrat Kumar
 const dropList = document.querySelectorAll("form select"),
@@ -532,3 +522,280 @@ function calculateHcf() {
 
 }
 
+function ageCalculator() {  
+    var userinput = document.getElementById("DOB").value;  
+    var dob = new Date(userinput);  
+       
+    if(userinput==null || userinput==''){  
+      document.getElementById("message").innerHTML = "**Choose a date please!";    
+      return false;   
+    }   
+    else {  
+    var dobYear = dob.getYear();  
+    var dobMonth = dob.getMonth();  
+    var dobDate = dob.getDate();  
+        
+    var now = new Date();   
+    var currentYear = now.getYear();  
+    var currentMonth = now.getMonth();  
+    var currentDate = now.getDate();  
+       
+    var age = {};  
+    var ageString = "";  
+     
+    yearAge = currentYear - dobYear;  
+     
+    if (currentMonth >= dobMonth)   
+      var monthAge = currentMonth - dobMonth;  
+    else {  
+      yearAge--;  
+      var monthAge = 12 + currentMonth - dobMonth;  
+    }  
+   
+    if (currentDate >= dobDate)    
+      var dateAge = currentDate - dobDate;  
+    else {  
+      monthAge--;  
+      var dateAge = 31 + currentDate - dobDate;  
+  
+      if (monthAge < 0) {  
+        monthAge = 11;  
+        yearAge--;  
+      }  
+    }  
+     
+    age = {  
+    years: yearAge,  
+    months: monthAge,  
+    days: dateAge  
+    };  
+        
+        
+    if ( (age.years > 0) && (age.months > 0) && (age.days > 0) )  
+       ageString = age.years + " years, " + age.months + " months, and " + age.days + " days old.";  
+    else if ( (age.years == 0) && (age.months == 0) && (age.days > 0) )  
+       ageString = "Only " + age.days + " days old!";    
+    else if ( (age.years > 0) && (age.months == 0) && (age.days == 0) )  
+       ageString = age.years +  " years old.<br> Happy Birthday!!";  
+    else if ( (age.years > 0) && (age.months > 0) && (age.days == 0) )  
+       ageString = age.years + " years and " + age.months + " months old.";  
+    else if ( (age.years == 0) && (age.months > 0) && (age.days > 0) )  
+       ageString = age.months + " months and " + age.days + " days old.";  
+    else if ( (age.years > 0) && (age.months == 0) && (age.days > 0) )  
+       ageString = age.years + " years, and" + age.days + " days old.";  
+    else if ( (age.years == 0) && (age.months > 0) && (age.days == 0) )  
+       ageString = age.months + " months old.";   
+    else ageString = "Welcome to Earth! <br> It's first day on Earth!";   
+   
+    return document.getElementById("resultAge").innerHTML = ageString;   
+               
+  }  
+}  
+
+
+
+const solutionEq = () =>{
+    const a = parseInt(document.getElementById('a').value);
+    const b = parseInt(document.getElementById('b').value);
+    const c = parseInt(document.getElementById('c').value);
+
+    var disc = ((b*b) - (4*a*c));
+    if(disc<0){
+        document.getElementById('resultEqn').innerHTML = `The equation has no real solution` ;
+    } else{
+        var discRoot = Math.sqrt(disc);
+        var sol1 = ((-b+discRoot)/(2*a));
+        var sol2 = ((-b-discRoot)/(2*a));
+        var resSol1 = sol1.toFixed(2);
+        var resSol2 = sol2.toFixed(2);
+
+        document.getElementById('resultEqn').innerHTML = `Solutions are ${resSol1} & ${resSol2}` ;
+
+    }
+}
+
+// reset for agecalc
+function fun1(){
+document.querySelector("#ageSet").addEventListener('click',function(){
+    document.querySelector('#DOB').value="";
+    document.getElementById("resultAge").innerHTML="";
+});
+}
+
+// reset for bindec 
+function fun2(){
+document.querySelector("#bindecSet").addEventListener('click',function(){
+    document.querySelector('#numChange').value="";
+    document.getElementById('resultNumChange').innerHTML="";
+});
+}
+
+// reset for bmi calculator
+function fun3(){
+document.querySelector("#bmiSet").addEventListener('click',function(){
+    document.querySelector('#wei').value="";
+    document.querySelector('#hei').value="";
+    document.getElementById('resultBMImsg').innerHTML= "";
+});
+}
+
+// reset for simple calculator
+function fun4(){
+document.querySelector("#calc1").addEventListener('click',function(){
+    document.querySelector('#num1').value="";
+    document.querySelector('#num2').value="";
+    document.getElementById('resultCalculator').innerHTML= "";
+});
+}
+
+// reset for equation calculator
+function fun5(){
+document.querySelector("#equationSet").addEventListener('click',function(){
+    document.querySelector('#a').value="";
+    document.querySelector('#b').value="";
+    document.querySelector('#c').value="";
+    document.getElementById('resultEqn').innerHTML = "";
+});
+}
+
+// reset for factorial calculator
+function fun6(){
+document.querySelector("#factSet").addEventListener('click',function(){
+    document.querySelector('#fact').value="";
+    document.getElementById('resultFact').innerHTML= "";
+});
+}
+
+// reset for logarithm calculator
+function fun7(){
+document.querySelector("#logSet").addEventListener('click',function(){
+    document.querySelector('#log').value="";
+    document.getElementById('resultLog').innerHTML= "";
+});
+}
+
+// reset for power calculator
+function fun8(){
+document.querySelector("#powSet").addEventListener('click',function(){
+    document.querySelector('#base').value="";
+    document.querySelector('#index').value="";
+    document.getElementById('resultPower').innerHTML= "";
+});
+}
+
+// reset for temprature calculator
+function fun9(){
+document.querySelector("#tempSet").addEventListener('click',function(){
+    document.querySelector('#temp').value="";
+    document.getElementById('resultContainer').innerHTML= "";
+});
+}
+
+//reset for days calculator
+function daySet(){
+  document.querySelector("#button1").addEventListener('click',function(){
+     document.querySelector("#starting-Date").value="";
+     document.querySelector("#ending-Date").value="";
+     document.getElementById("resultAge").innerHTML="";
+  });
+}
+
+//reset for hcf calculator
+function hcfSet(){
+  document.querySelector("#button1").addEventListener('click',function(){
+     document.querySelector('#num1').value="";
+     document.querySelector('#num2').value="";
+     document.getElementById('resultHCF').innerHTML="";
+     document.getElementById('resultLCM').innerHTML="";
+  });
+}
+
+//reset roman
+function romanSet(){
+  document.getElementById("input").value="";
+  document.getElementById("output").innerHTML="";
+}
+
+function resultantConversion() {
+  const input = document.getElementById("input").value;
+
+  if (document.getElementById('conversion').value === "roman-to-int") {
+    const result = romanToInt(input);
+    document.getElementById("output").innerHTML = `Result: ${result}`;
+  } else {
+    const result = intToRoman(input);
+    document.getElementById("output").innerHTML = `Result: ${result}`;
+  }
+}
+
+function romanToInt(roman) {
+ let result = 0;
+  
+  if(isNaN(roman) == false)
+  {
+    result = "Please provide correct input";
+    return result;
+  }
+  const romanMap = {
+    "I": 1,
+    "V": 5,
+    "X": 10,
+    "L": 50,
+    "C": 100,
+    "D": 500,
+    "M": 1000,
+    "i": 1,
+    "v": 5,
+    "x": 10,
+    "l": 50,
+    "c": 100,
+    "d": 500,
+    "m": 1000,
+  };
+
+  for (let i = 0; i < roman.length; i++) {
+    const current = romanMap[roman[i]];
+    const next = romanMap[roman[i + 1]];
+
+    if (next && current < next) {
+      result += next - current;
+      i++;
+    } else {
+      result += current;
+    }
+  }
+
+  return result;
+}
+
+function intToRoman(num) {
+  let result = "";
+  if(isNaN(num))
+  {
+    result = "Please provide correct input";
+    return result;
+  }
+  const romanMap = {
+    1: "I",
+    4: "IV",
+    5: "V",
+    9: "IX",
+    10: "X",
+    40: "XL",
+    50: "L",
+    90: "XC",
+    100: "C",
+    400: "CD",
+    500: "D",
+    900: "CM",
+    1000: "M",
+  };
+  
+  for (const [value, symbol] of Object.entries(romanMap).reverse()) {
+    const count = Math.floor(num / value);
+    num %= value;
+    result += symbol.repeat(count);
+  }
+
+  return result;
+}

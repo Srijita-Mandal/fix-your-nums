@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Days Calculator</title>
-</head>
-</head>
+    <link rel="icon" href="Image/Favicon.png">
+
 <style class="text/css">
 
 body{
@@ -74,7 +74,10 @@ label{
 }
 
 </style>
+<link rel="stylesheet" href="theme.css">
+    </head>
     <body>
+        <img src="Image/moon.png" id="icon">
         <form class="form-horizontal" id="age">
             <label class="heading"> Duration Calculator</label><br/><br/>
             <label class="starting-date" for="starting-Date">Enter the Starting-Date</label><br/><br/>
@@ -82,6 +85,7 @@ label{
             <label for="ending-Date">Enter the Ending-Date</label><br/><br/>
             <input type="date" name="ending-Date" id="ending-Date">
             <span id = "message" style="color:rgb(255, 0, 0)"> </span> <br><br>
+            <button id="button1" onclick="daySet()">Reset</button>
             <button type="button" onclick="DaysCalculator()">Submit</button><br/><br/><br/>
             <span id="resultAge"></span>
         </form>
@@ -97,10 +101,7 @@ label{
                     }
                 })
         </script>
+        <script src="theme.js"></script>
     </body>
     </html>
-</head>
-<body>
-    
-</body>
 </html>
