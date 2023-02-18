@@ -1,11 +1,12 @@
 /* currencyConverter stylesheet */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:wght@300;400&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: Ubuntu;
 }
 body {
   display: flex;
@@ -20,10 +21,11 @@ body {
   background: #675afe;
 }
 .wrapper {
-  width: 400px;
-  padding: 30px;
+  width: 370px;
+  padding: 33px;
   background: #ffb4a3;
   box-shadow: 0 10px 6px -6px #777;
+  margin: 50px;
 }
 .wrapper header {
   font-size: 28px;
@@ -93,8 +95,9 @@ form .drop-list {
   margin-top: 30px;
   font-size: 22px;
 }
-form #click #written #exchange-rate {
+form .exchange-rate {
   font-size: 17px;
+  margin: 20px 0 30px;
 }
 form button {
   height: 52px;
@@ -106,6 +109,13 @@ form button {
 }
 form button:hover {
   background: #232323;
+}
+.calculator-name-header {
+  margin-top: -40%;
+  padding: 10px;
+  border-radius: 0px 15px 0px 15px;
+  box-shadow: 0px 0px 16px 1px;
+  font-size: 29px;
 }
 
 #written {
@@ -131,7 +141,7 @@ form button:hover {
 #click {
   margin: 25px 0px;
   position: relative;
-  /* background-color: red; */
+  background-color: red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -142,7 +152,7 @@ form button:hover {
   background: transparent;
   border: none;
   position: relative;
-  width: 70%;
+  width: 60%;
   cursor: pointer;
 }
 
@@ -150,4 +160,3 @@ form button:hover {
   border: none;
   outline: none;
 }
-
