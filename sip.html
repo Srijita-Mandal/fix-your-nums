@@ -27,7 +27,48 @@
     let expectedRate = document.getElementById("expectedRate").value;
     let periodicRate = expectedRate / 12 / 100;
     let totalNumberOfPayments = investmentPeriod * 12;
+    let futureValue = amountInvested * ((Math.pow((1 + periodicRate), totalNumberOfPayments) - <!DOCTYPE html>
+<html>
+  <head>
+    <title>SIP Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body class="SIP"> 
+    <div class="calculator-name-header">
+      <!-- Updated by @Shantanu-Meta   -->
+      <span>SIP calculator</span>
+    </div>
+    <div class="calc">
+        <h1>SIP Calculator</h1>
+        <p>Amount Invested:</p>
+        <input type="number" id="amountInvested">
+        <p>Investment Time Frame (in years):</p>
+        <input type="number" id="investmentPeriod">
+        <p>Expected Rate of Return (per annum):</p>
+        <input type="number" id="expectedRate">
+        <button onclick="calculateFutureValue()">Calculate</button>
+        <p>Future Value: <span><input type="text" readonly id="futureValue" value="3123"><i class="fas fa-clipboard" id="switch"></i></span></p>
+    </div>
+<script class="SIP">
+  function calculateFutureValue() {
+    let amountInvested = document.getElementById("amountInvested").value;
+    let investmentPeriod = document.getElementById("investmentPeriod").value;
+    let expectedRate = document.getElementById("expectedRate").value;
+    let periodicRate = expectedRate / 12 / 100;
+    let totalNumberOfPayments = investmentPeriod * 12;
     let futureValue = amountInvested * ((Math.pow((1 + periodicRate), totalNumberOfPayments) - 1) / periodicRate) * (1 + periodicRate);
+
+    document.getElementById("futureValue").value = futureValue.toFixed(2);
+  }
+  document.getElementById("switch").addEventListener("click",()=>{
+  let copyText=document.getElementById("futureValue");
+  copyText.select();
+  navigator.clipboard.writeText(copyText.value);
+})
+</script>
+  </body>
+</html>1) / periodicRate) * (1 + periodicRate);
 
     document.getElementById("futureValue").innerHTML = futureValue.toFixed(2);
   }
