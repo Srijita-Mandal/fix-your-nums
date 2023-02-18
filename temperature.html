@@ -8,10 +8,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="icon" href="Image/Favicon.png">
     <title>Temperature Converter</title>
 </head>
 <body>
-
+    <img src="Image/moon.png" id="icon">
     <form id="tempCalc">
         <label for="temp">Please enter the temperature you'd like to convert</label><br/><br/>
         <input type="number" name="temp" id="temp">
@@ -23,6 +25,7 @@
             <option value="fah_kel">Fahrenheit to Kelvin</option>
             <option value="kel_fah">Kelvin to Fahrenheit</option>
         </select><br/>
+        <button type="button" id="tempSet" onclick="fun9()">reset</button>
         <button type="button" onclick="calculateTemp()">Submit</button><br/><br/><br/>
         <span id="resultContainer"></span>
 
@@ -30,5 +33,17 @@
     
 
     <script src="script.js"></script>
+    <script type="text/javascript">
+        document.getElementById("tempCalc").addEventListener("submit",(e)=>{
+            e.preventDefault()
+            calculateTemp()
+        })
+        document.body.addEventListener("keyup",(e)=>{
+                if(e.keyCode==13){
+                    calculateTemp()
+                }
+            })
+    </script>
+    <script src="theme.js"></script>
 </body>
 </html>
