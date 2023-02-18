@@ -154,6 +154,9 @@ const calculateFact = () => {
     for (var i = n; i > 0; i--) {
       fac = fac * BigInt(i);
     }
+    if(fact>=52){
+      fac=Number.parseFloat(fac).toExponential(5);
+    }
     return fac;
   };
   let resultFact;
