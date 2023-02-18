@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="theme.css">
     <link rel="icon" href="Image/Favicon.png">
     <title>hcf</title>
@@ -26,9 +27,21 @@
 
         <button id="button1" onclick="hcfSet()" style="height: 35px; width: 89px; font-size: medium; background-color: black; color: aliceblue; border-radius: 5%;">Reset</button>
         <button type="button" onclick="calculateHcf()">Submit</button><br/><br/><br/>
-        <span id="resultHCF"></span>
+        <div id="click">
+            <span id="written">
+                <span id="resultHCF"></span>
+                <input type="text" readonly id="copiedHCF">
+            </span>
+            <i class="fas fa-clipboard" id="switchHCF"></i>
+        </div>
         <br/><br/>
-        <span id="resultLCM"></span>
+        <div id="click">
+            <span id="written">
+                <span id="resultLCM"></span>
+                <input type="text" readonly id="copiedLCM">
+            </span>
+            <i class="fas fa-clipboard" id="switchLCM"></i>
+        </div>
 
     </form>
 
