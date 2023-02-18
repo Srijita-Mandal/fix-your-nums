@@ -28,11 +28,20 @@
     right: -5px;
     top: -5px;
 }
+.result{
+    color: var(--color--label);
+}
 body{
+   
     background-color: var(--color--body);
     display: grid;
 }
-
+.main{
+    background-color: var(--color--form);
+}
+.father{
+    background-color: var(--color--body);
+}
 .header{
     padding-left: 15px;
     padding-right: 15px;
