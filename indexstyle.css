@@ -4,7 +4,19 @@
 * {
     font-family: 'Ubuntu', sans-serif;
 }
-
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(86, 86, 94); 
+  }
+  
 body{
     background-color: #ffeeb7;
     display: grid;
@@ -29,6 +41,10 @@ h1{
     margin-top: 50px;
 }
 
+a:hover{
+    text-decoration: none;
+}
+
 .panel-body{
     background-color: #ffb4a3;
     border-radius: 10px;
@@ -36,8 +52,11 @@ h1{
 
 .panel-body:hover{
     background-color: #ff947c;
-    border-radius: 30px;
+    /* border-radius: 30px; */
     box-shadow: 0 1.2rem 3rem 0.5rem #414141;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
 }
 
 .panel{

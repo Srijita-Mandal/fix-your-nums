@@ -69,7 +69,6 @@ const calculateTemp = () => {
   }
 }
 
-
 const calculator = () => {
   const operation = document.getElementById("cal");
   const valOpe = operation.value;
@@ -284,7 +283,6 @@ const calculateBMI = () => {
           </table>
     `;
 };
-
 
 function ageCalculator() {
   var userinput = document.getElementById("DOB").value;
@@ -561,218 +559,216 @@ function calculateHcf() {
 }
 
 
-// reset for agecalc
 function fun1(){
-  document.querySelector("#ageSet").addEventListener('click',function(){
-      document.querySelector('#DOB').value="";
-      document.getElementById("resultAge").innerHTML="";
+document.querySelector("#ageSet").addEventListener('click',function(){
+    document.querySelector('#DOB').value="";
+    document.getElementById("resultAge").innerHTML="";
+});
+}
+
+// reset for bindec 
+function fun2(){
+document.querySelector("#bindecSet").addEventListener('click',function(){
+    document.querySelector('#numChange').value="";
+    document.getElementById('resultNumChange').innerHTML="";
+});
+}
+
+// reset for bmi calculator
+function fun3(){
+document.querySelector("#bmiSet").addEventListener('click',function(){
+    document.querySelector('#wei').value="";
+    document.querySelector('#hei').value="";
+    document.getElementById('resultBMImsg').innerHTML= "";
+});
+}
+
+// reset for simple calculator
+function fun4(){
+document.querySelector("#calc1").addEventListener('click',function(){
+    document.querySelector('#num1').value="";
+    document.querySelector('#num2').value="";
+    document.getElementById('resultCalculator').innerHTML= "";
+});
+}
+
+// reset for equation calculator
+function fun5(){
+document.querySelector("#equationSet").addEventListener('click',function(){
+    document.querySelector('#a').value="";
+    document.querySelector('#b').value="";
+    document.querySelector('#c').value="";
+    document.getElementById('resultEqn').innerHTML = "";
+});
+}
+
+// reset for factorial calculator
+function fun6(){
+document.querySelector("#factSet").addEventListener('click',function(){
+    document.querySelector('#fact').value="";
+    document.getElementById('resultFact').innerHTML= "";
+});
+}
+
+// reset for logarithm calculator
+function fun7(){
+document.querySelector("#logSet").addEventListener('click',function(){
+    document.querySelector('#log').value="";
+    document.getElementById('resultLog').innerHTML= "";
+});
+}
+
+// reset for power calculator
+function fun8(){
+document.querySelector("#powSet").addEventListener('click',function(){
+    document.querySelector('#base').value="";
+    document.querySelector('#index').value="";
+    document.getElementById('resultPower').innerHTML= "";
+});
+}
+
+// reset for temprature calculator
+function fun9(){
+document.querySelector("#tempSet").addEventListener('click',function(){
+    document.querySelector('#temp').value="";
+    document.getElementById('resultContainer').innerHTML= "";
+});
+}
+
+//reset for days calculator
+function daySet(){
+  document.querySelector("#button1").addEventListener('click',function(){
+     document.querySelector("#starting-Date").value="";
+     document.querySelector("#ending-Date").value="";
+     document.getElementById("resultAge").innerHTML="";
   });
-  }
-  
-  // reset for bindec 
-  function fun2(){
-  document.querySelector("#bindecSet").addEventListener('click',function(){
-      document.querySelector('#numChange').value="";
-      document.getElementById('resultNumChange').innerHTML="";
+}
+
+//reset for hcf calculator
+function hcfSet(){
+  document.querySelector("#button1").addEventListener('click',function(){
+     document.querySelector('#num1').value="";
+     document.querySelector('#num2').value="";
+     document.getElementById('resultHCF').innerHTML="";
+     document.getElementById('resultLCM').innerHTML="";
   });
+}
+
+//reset roman
+function romanSet(){
+  document.getElementById("input").value="";
+  document.getElementById("output").innerHTML="";
+}
+
+function resultantConversion() {
+  const input = document.getElementById("input").value;
+
+  if (document.getElementById('conversion').value === "roman-to-int") {
+    const result = romanToInt(input);
+    document.getElementById("output").innerHTML = `Result: ${result}`;
+  } else {
+    const result = intToRoman(input);
+    document.getElementById("output").innerHTML = `Result: ${result}`;
   }
+}
+
+function romanToInt(roman) {
+ let result = 0;
   
-  // reset for bmi calculator
-  function fun3(){
-  document.querySelector("#bmiSet").addEventListener('click',function(){
-      document.querySelector('#wei').value="";
-      document.querySelector('#hei').value="";
-      document.getElementById('resultBMImsg').innerHTML= "";
-  });
+  if(isNaN(roman) == false)
+  {
+    result = "Please provide correct input";
+    return result;
   }
-  
-  // reset for simple calculator
-  function fun4(){
-  document.querySelector("#calc1").addEventListener('click',function(){
-      document.querySelector('#num1').value="";
-      document.querySelector('#num2').value="";
-      document.getElementById('resultCalculator').innerHTML= "";
-  });
-  }
-  
-  // reset for equation calculator
-  function fun5(){
-  document.querySelector("#equationSet").addEventListener('click',function(){
-      document.querySelector('#a').value="";
-      document.querySelector('#b').value="";
-      document.querySelector('#c').value="";
-      document.getElementById('resultEqn').innerHTML = "";
-  });
-  }
-  
-  // reset for factorial calculator
-  function fun6(){
-  document.querySelector("#factSet").addEventListener('click',function(){
-      document.querySelector('#fact').value="";
-      document.getElementById('resultFact').innerHTML= "";
-  });
-  }
-  
-  // reset for logarithm calculator
-  function fun7(){
-  document.querySelector("#logSet").addEventListener('click',function(){
-      document.querySelector('#log').value="";
-      document.getElementById('resultLog').innerHTML= "";
-  });
-  }
-  
-  // reset for power calculator
-  function fun8(){
-  document.querySelector("#powSet").addEventListener('click',function(){
-      document.querySelector('#base').value="";
-      document.querySelector('#index').value="";
-      document.getElementById('resultPower').innerHTML= "";
-  });
-  }
-  
-  // reset for temprature calculator
-  function fun9(){
-  document.querySelector("#tempSet").addEventListener('click',function(){
-      document.querySelector('#temp').value="";
-      document.getElementById('resultContainer').innerHTML= "";
-  });
-  }
-  
-  //reset for days calculator
-  function daySet(){
-    document.querySelector("#button1").addEventListener('click',function(){
-       document.querySelector("#starting-Date").value="";
-       document.querySelector("#ending-Date").value="";
-       document.getElementById("resultAge").innerHTML="";
-    });
-  }
-  
-  //reset for hcf calculator
-  function hcfSet(){
-    document.querySelector("#button1").addEventListener('click',function(){
-       document.querySelector('#num1').value="";
-       document.querySelector('#num2').value="";
-       document.getElementById('resultHCF').innerHTML="";
-       document.getElementById('resultLCM').innerHTML="";
-    });
-  }
-  
-  //reset roman
-  function romanSet(){
-    document.getElementById("input").value="";
-    document.getElementById("output").innerHTML="";
-  }
-  
-  function resultantConversion() {
-    const input = document.getElementById("input").value;
-  
-    if (document.getElementById('conversion').value === "roman-to-int") {
-      const result = romanToInt(input);
-      document.getElementById("output").innerHTML = `Result: ${result}`;
+  const romanMap = {
+    "I": 1,
+    "V": 5,
+    "X": 10,
+    "L": 50,
+    "C": 100,
+    "D": 500,
+    "M": 1000,
+    "i": 1,
+    "v": 5,
+    "x": 10,
+    "l": 50,
+    "c": 100,
+    "d": 500,
+    "m": 1000,
+  };
+
+  for (let i = 0; i < roman.length; i++) {
+    const current = romanMap[roman[i]];
+    const next = romanMap[roman[i + 1]];
+
+    if (next && current < next) {
+      result += next - current;
+      i++;
     } else {
-      const result = intToRoman(input);
-      document.getElementById("output").innerHTML = `Result: ${result}`;
-    }
-  }
-  
-  function romanToInt(roman) {
-   let result = 0;
-    
-    if(isNaN(roman) == false)
-    {
-      result = "Please provide correct input";
-      return result;
-    }
-    const romanMap = {
-      "I": 1,
-      "V": 5,
-      "X": 10,
-      "L": 50,
-      "C": 100,
-      "D": 500,
-      "M": 1000,
-      "i": 1,
-      "v": 5,
-      "x": 10,
-      "l": 50,
-      "c": 100,
-      "d": 500,
-      "m": 1000,
-    };
-  
-    for (let i = 0; i < roman.length; i++) {
-      const current = romanMap[roman[i]];
-      const next = romanMap[roman[i + 1]];
-  
-      if (next && current < next) {
-        result += next - current;
-        i++;
-      } else {
-        result += current;
-      }
-    }
-  
-    return result;
-  }
-  
-  function intToRoman(num) {
-    let result = "";
-    if(isNaN(num))
-    {
-      result = "Please provide correct input";
-      return result;
-    }
-    const romanMap = {
-      1: "I",
-      4: "IV",
-      5: "V",
-      9: "IX",
-      10: "X",
-      40: "XL",
-      50: "L",
-      90: "XC",
-      100: "C",
-      400: "CD",
-      500: "D",
-      900: "CM",
-      1000: "M",
-    };
-    
-    for (const [value, symbol] of Object.entries(romanMap).reverse()) {
-      const count = Math.floor(num / value);
-      num %= value;
-      result += symbol.repeat(count);
-    }
-  
-    return result;
-  }
-  
-  function calcAlgebraicDeriv(){
-    const coefficient = parseFloat(document.getElementById("coefficient").value);
-    const exponent = parseFloat(document.getElementById("exponent").value);
-    var finalCoefficient = coefficient*exponent;
-    document.getElementById("inputExpression").innerHTML = `<p>Your entered expression: <b>${coefficient}x<sup>${exponent}</sup></b></p>`
-    if(exponent == 0 || coefficient == 0){
-      document.getElementById("resultDeriv").innerHTML = `<p>Derivative calculated: <b>0</b></p>`;
-    }
-    else if(exponent == 1){
-      document.getElementById("resultDeriv").innerHTML = `<p>Derivative calculated: <b>${finalCoefficient}</b></p>`;
-    }
-    else{
-      var finalExponent = exponent - 1;
-      document.getElementById("resultDeriv").innerHTML = `<p>Derivative calculated: <b>${finalCoefficient}x<sup>${finalExponent}</sup></b></p>`;
-    }
-  }
-  
-  function validateForm() {
-    var coefficient = document.getElementById("coefficient").value;
-    var exponent = document.getElementById("exponent").value;
-    if (coefficient == "" || exponent == "") {
-      alert("Both Coefficient and Exponent must be filled out.");
-      return false;
-    }
-    else{
-      calcAlgebraicDeriv();
+      result += current;
     }
   }
 
+  return result;
+}
+
+function intToRoman(num) {
+  let result = "";
+  if(isNaN(num))
+  {
+    result = "Please provide correct input";
+    return result;
+  }
+  const romanMap = {
+    1: "I",
+    4: "IV",
+    5: "V",
+    9: "IX",
+    10: "X",
+    40: "XL",
+    50: "L",
+    90: "XC",
+    100: "C",
+    400: "CD",
+    500: "D",
+    900: "CM",
+    1000: "M",
+  };
+  
+  for (const [value, symbol] of Object.entries(romanMap).reverse()) {
+    const count = Math.floor(num / value);
+    num %= value;
+    result += symbol.repeat(count);
+  }
+
+  return result;
+}
+
+function calcAlgebraicDeriv(){
+  const coefficient = parseFloat(document.getElementById("coefficient").value);
+  const exponent = parseFloat(document.getElementById("exponent").value);
+  var finalCoefficient = coefficient*exponent;
+  document.getElementById("inputExpression").innerHTML = `<p>Your entered expression: <b>${coefficient}x<sup>${exponent}</sup></b></p>`
+  if(exponent == 0 || coefficient == 0){
+    document.getElementById("resultDeriv").innerHTML = `<p>Derivative calculated: <b>0</b></p>`;
+  }
+  else if(exponent == 1){
+    document.getElementById("resultDeriv").innerHTML = `<p>Derivative calculated: <b>${finalCoefficient}</b></p>`;
+  }
+  else{
+    var finalExponent = exponent - 1;
+    document.getElementById("resultDeriv").innerHTML = `<p>Derivative calculated: <b>${finalCoefficient}x<sup>${finalExponent}</sup></b></p>`;
+  }
+}
+
+function validateForm() {
+  var coefficient = document.getElementById("coefficient").value;
+  var exponent = document.getElementById("exponent").value;
+  if (coefficient == "" || exponent == "") {
+    alert("Both Coefficient and Exponent must be filled out.");
+    return false;
+  }
+  else{
+    calcAlgebraicDeriv();
+  }
+}

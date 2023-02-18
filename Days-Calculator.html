@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days Calculator</title>
+    <link rel="icon" href="Image/Favicon.png">
+
+<style class="text/css">
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #ffeeb7;
+    display: grid;
+    place-items: center;
+
+}
+
+#resultAge{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    justify-content: center;
+    text-align: center;
+}
+
+#starting-date{
+    
+    height: 20px;
+    width: 150px;
+    font-size: 7px;
+}
+#ending-date{
+    
+    height: 20px;
+    width: 150px;
+    font-size: 7px;
+}
+button{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: black;
+    font-size: 14px;
+    color:white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+span{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: small;
+}
+
+form{
+    background-color: #ffb4a3;
+    padding: 60px;
+    width: 54%;
+    height: 45%;
+    margin: 100px auto;
+    text-align: center;
+    place-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 6px -6px #777;
+}
+
+label{
+    font-size: 20px;
+    font-weight: 500;
+    padding: 20px;
+}
+.heading{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+</style>
+<link rel="stylesheet" href="theme.css">
+    </head>
+    <body>
+        <img src="Image/moon.png" id="icon">
+        <form class="form-horizontal" id="age">
+            <label class="heading"> Duration Calculator</label><br/><br/>
+            <label class="starting-date" for="starting-Date">Enter the Starting-Date</label><br/><br/>
+            <input type="date" name="Starting-Date" id="starting-Date"><br/><br/><br/>
+            <label for="ending-Date">Enter the Ending-Date</label><br/><br/>
+            <input type="date" name="ending-Date" id="ending-Date">
+            <span id = "message" style="color:rgb(255, 0, 0)"> </span> <br><br>
+            <button id="button1" onclick="daySet()">Reset</button>
+            <button type="button" onclick="DaysCalculator()">Submit</button><br/><br/><br/>
+            <span id="resultAge"></span>
+        </form>
+        <script src="script.js"></script>
+        <script type="text/javascript">
+            document.getElementById("age").addEventListener("submit",(e)=>{
+                e.preventDefault()
+                DaysCalculator()
+            })
+            document.body.addEventListener("keyup",(e)=>{
+                    if(e.keyCode==13){
+                        DaysCalculator()
+                    }
+                })
+        </script>
+        <script src="theme.js"></script>
+    </body>
+    </html>
+</html>
