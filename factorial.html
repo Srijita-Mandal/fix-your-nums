@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="icon" href="Image/Favicon.png">
     <title>Factorial</title>
 </head>
@@ -23,7 +24,13 @@
         <input type="number" name="fact" id="fact"><br/><br/>
         <button type="button"  id="factSet" onclick="fun6()">reset</button>
         <button type="button" onclick="calculateFact()">Submit</button><br/><br/><br/>
-        <span id="resultFact"></span>
+        <div id="click">
+            <span id="written">
+                <span id="resultFact"></span>
+                <input type="text" readonly id="copied">
+            </span>
+            <i class="fas fa-clipboard" id="switch"></i>
+        </div>
     </form>
 
     <script src="script.js"></script>
