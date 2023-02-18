@@ -1,3 +1,11 @@
+var loader = document.querySelector(".loader")
+
+window.addEventListener("load", vanish);
+
+function vanish() {
+  loader.classList.add("disppear");
+}
+
 const calculateTemp = () => {
   const numberTemp = document.getElementById("temp").value;
   //console.log(typeof(parseInt(numberTemp)));
@@ -832,3 +840,5 @@ function validateForm() {
     calcAlgebraicDeriv();
   }
 }
+
+
