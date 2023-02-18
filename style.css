@@ -320,4 +320,12 @@ thead {
 .calc{
   background-color: #ffb4a3;
   padding: 20px;
+ }
+ 
+.infoDeriv{
+  font-size: medium;
+}
+
+.coefficient, .exponent{
+  font-size: medium;
 }
