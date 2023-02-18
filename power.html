@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="theme.css">
     <link rel="icon" href="Image/Favicon.png">
@@ -26,7 +27,13 @@
 
         <button type="button" id="powSet" onclick="fun8()">reset</button>
         <button type="button" onclick="calculatePower()">Submit</button><br/><br/><br/>
-        <span id="resultPower"></span>
+        <div id="click">
+            <span id="written">
+                <span id="resultPower"></span>
+                <input type="text" readonly id="copied">
+            </span>
+            <i class="fas fa-clipboard" id="switch"></i>
+        </div>
     </form>
 
     <script src="script.js"></script>

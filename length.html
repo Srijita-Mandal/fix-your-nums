@@ -15,6 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <title>Length Converter</title>
     <style type="text/css">
         *{
@@ -78,6 +79,47 @@ body{
                 font-size: 30px;
                 margin: 25px 30%;
       }
+
+      #written {
+  border: 2px solid black;
+  position: relative;
+  padding: 5px;
+  text-align: left;
+  }
+
+.fa-clipboard {
+  position: relative;
+  background-color: #000;
+  height: 30px;
+  width: 40px;
+  font-size: 20px;
+  padding-top: 3px;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+}
+
+#click {
+  position: relative;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#copied {
+  font-size: 25px;
+  background: transparent;
+  border: none;
+  position: relative;
+  /* width: 50%; */
+  cursor: pointer;
+}
+
+#copied:focus {
+  border: none;
+  outline: none;
+}
     </style>
     <link rel="stylesheet" href="theme.css">
 </head>
@@ -91,25 +133,25 @@ body{
         
         <p class="top-txt">Enter value in any of the fields to convert between Length measurements:</p>
         <div class="inputContainer">
-            <label for="feet">Feet</label><input type="number" name="" id="feet"  oninput="convertToOthers('feet',this.value)">
+            <label for="feet">Feet</label><span><input type="number" name="" id="feet"  oninput="convertToOthers('feet',this.value)"><i class="fas fa-clipboard" id="switchfeet"></i></span>
         </div>
         <div class="inputContainer">
-            <label for="meter">Meters</label><input type="number" name="" id="meter" oninput="convertToOthers('meter',this.value)">
+            <label for="meter">Meters</label><span><input type="number" name="" id="meter" oninput="convertToOthers('meter',this.value)"><i class="fas fa-clipboard" id="switchmeter"></i></span>
         </div>
         <div class="inputContainer">
-            <label for="inches">Inches</label><input type="number" name="" id="inches" oninput="convertToOthers('inch',this.value)">
+            <label for="inches">Inches</label><span><input type="number" name="" id="inches" oninput="convertToOthers('inch',this.value)"><i class="fas fa-clipboard" id="switchinches"></i></span>
         </div>
         <div class="inputContainer">
-            <label for="cm">Centimeters</label><input type="number" name="" id="cm" oninput="convertToOthers('cm',this.value)">
+            <label for="cm">Centimeters</label><span><input type="number" name="" id="cm" oninput="convertToOthers('cm',this.value)"><i class="fas fa-clipboard" id="switchcm"></i></span>
         </div>
         <div class="inputContainer">
-            <label for="yards">Yards</label><input type="number" name="" id="yards" oninput="convertToOthers('yard',this.value)">
+            <label for="yards">Yards</label><span><input type="number" name="" id="yards" oninput="convertToOthers('yard',this.value)"><i class="fas fa-clipboard" id="switchyard"></i></span>
         </div>
         <div class="inputContainer">
-            <label for="km">Kilometers</label><input type="number" name="" id="km" oninput="convertToOthers('km',this.value)">
+            <label for="km">Kilometers</label><span><input type="number" name="" id="km" oninput="convertToOthers('km',this.value)"><i class="fas fa-clipboard" id="switchkm"></i></span>
         </div>
         <div class="inputContainer">
-            <label for="miles">Miles</label><input type="number" name="" id="miles" oninput="convertToOthers('mile',this.value)">
+            <label for="miles">Miles</label><span><input type="number" name="" id="miles" oninput="convertToOthers('mile',this.value)"><i class="fas fa-clipboard" id="switchmile"></i></span>
         </div>
         <div class="button">
             <button style="height: 30px; width: 100px; font-size: large; margin-top: 10px; background-color: black; color: aliceblue;">reset</button>
@@ -126,7 +168,7 @@ body{
                 document.getElementById("km").value="";
                 document.getElementById("miles").value="";
             });
-let feet    =document.getElementById("feet");
+            let feet    =document.getElementById("feet");
             let meter   =document.getElementById("meter");
             let inch    =document.getElementById("inches");
             let cm      =document.getElementById("cm");
@@ -205,6 +247,34 @@ let feet    =document.getElementById("feet");
                     case "km"   : kmToOther (parseFloat(value)); break;
                     case "mile" : milesToOther(parseFloat(value)); break;
                 }
+            }
+
+            document.getElementById("switchfeet").addEventListener("click",()=>{
+                copyonClick("feet");
+            })
+            document.getElementById("switchmeter").addEventListener("click",()=>{
+                copyonClick("meter");
+            })
+            document.getElementById("switchinches").addEventListener("click",()=>{
+                copyonClick("inches");
+            })
+            document.getElementById("switchcm").addEventListener("click",()=>{
+                copyonClick("cm");
+            })
+            document.getElementById("switchyard").addEventListener("click",()=>{
+                copyonClick("yards");
+            })
+            document.getElementById("switchkm").addEventListener("click",()=>{
+                copyonClick("km");
+            })
+            document.getElementById("switchmile").addEventListener("click",()=>{
+                copyonClick("miles");
+            })
+
+            function copyonClick(element){
+                let copyText=document.getElementById(element);
+                copyText.select();
+                navigator.clipboard.writeText(copyText.value);
             }
        
    </script>
