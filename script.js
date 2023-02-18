@@ -1,3 +1,9 @@
+document.getElementById("switch").addEventListener("click",()=>{
+  let copyText=document.getElementById("copied");
+  copyText.select();
+  navigator.clipboard.writeText(copyText.value);
+})
+
 const calculateTemp = () => {
   const numberTemp = document.getElementById("temp").value;
   //console.log(typeof(parseInt(numberTemp)));
@@ -24,12 +30,14 @@ const calculateTemp = () => {
     resultTemp = celToFah(parseInt(numberTemp));
     document.getElementById(
       "resultContainer"
-    ).innerHTML = `= ${resultTemp} °Fahrenheit`;
+    ).innerHTML = ` °Fahrenheit`;
+    document.getElementById("copied").value= `${resultTemp}`;
   } else {
     resultTemp = fahToCel(parseInt(numberTemp));
     document.getElementById(
       "resultContainer"
-    ).innerHTML = `= ${resultTemp} °Celsius`;
+    ).innerHTML = ` °Celsius`;
+    document.getElementById("copied").value= `${resultTemp}`;
   }
 };
 
@@ -39,22 +47,20 @@ const calculator = () => {
 
   const number1 = parseInt(document.getElementById("num1").value);
   const number2 = parseInt(document.getElementById("num2").value);
+  let ans=document.getElementById("copied");
 
   switch (valOpe) {
     case "sum":
-      document.getElementById("resultCalculator").innerHTML = `= ${
-        number1 + number2
-      }`;
+      document.getElementById("resultCalculator").innerHTML = `=`;
+      ans.value=`${number1 + number2}`;
       break;
     case "subs":
-      document.getElementById("resultCalculator").innerHTML = `= ${
-        number1 - number2
-      }`;
+      document.getElementById("resultCalculator").innerHTML = `=`;
+      ans.value=`${number1 - number2}`;
       break;
     case "mult":
-      document.getElementById("resultCalculator").innerHTML = `= ${
-        number1 * number2
-      }`;
+      document.getElementById("resultCalculator").innerHTML = `=`;
+      ans.value=`${number1 * number2}`;
       break;
     case "div":
       if (number2 == 0) {
@@ -64,16 +70,16 @@ const calculator = () => {
         let diviFinal = division.toFixed(2);
         document.getElementById(
           "resultCalculator"
-        ).innerHTML = `= ${diviFinal}`;
+        ).innerHTML = `=`;
+        ans.value=`${diviFinal}`;
       }
       break;
     case "modu":
       if (number2 == 0) {
         document.getElementById("resultCalculator").innerHTML = `Error!`;
       } else {
-        document.getElementById("resultCalculator").innerHTML = `= ${
-          number1 % number2
-        }`;
+        document.getElementById("resultCalculator").innerHTML = `=`;
+        ans.value=`${number1 % number2}`;
       }
       break;
     default:
@@ -122,13 +128,15 @@ const changeNumber = () => {
   if (valueNumCh == "dec") {
     resultNumCh = decToBin(parseInt(numberCh));
     document.getElementById(
-      "resultNumChange"
-    ).innerHTML = `Binary= ${resultNumCh} `;
+      "output"
+    ).innerHTML = `Binary=`;
+    document.getElementById("copied").value=` ${resultNumCh} `;
   } else {
     resultNumCh = binToDec(parseInt(numberCh));
     document.getElementById(
-      "resultNumChange"
-    ).innerHTML = `Decimal= ${resultNumCh} `;
+      "output"
+    ).innerHTML = `Decimal=`;
+    document.getElementById("copied").value=` ${resultNumCh} `;
   }
 };
 
@@ -142,7 +150,8 @@ const calculatePower = () => {
   let resultPow = power(base, index);
   document.getElementById(
     "resultPower"
-  ).innerHTML = `${base}^${index}=${resultPow}`;
+  ).innerHTML = `${base}^${index}=`;
+  document.getElementById("copied").value=`${resultPow}`;
 };
 
 const calculateFact = () => {
@@ -165,7 +174,8 @@ const calculateFact = () => {
     resultFact = factorial(parseInt(fact));
     document.getElementById(
       "resultFact"
-    ).innerHTML = `Factorial= ${resultFact}`;
+    ).innerHTML = `Factorial=`;
+    document.getElementById("copied").value=` ${resultFact}`;
   }
 };
 
@@ -179,13 +189,14 @@ const calculateLog = () => {
   if (log < 0) {
     document.getElementById("resultLog").innerHTML = `Error!`;
   } else if (log == 0) {
-    document.getElementById("resultLog").innerHTML = `-∞`;
+    document.getElementById("copied").value = `-∞`;
   } else {
     rasultLog = logarithm(parseInt(log));
     resultLogFinal = rasultLog.toFixed(2);
     document.getElementById(
       "resultLog"
-    ).innerHTML = `Logarithm= ${resultLogFinal}`;
+    ).innerHTML = `Logarithm =`;
+    document.getElementById("copied").value = ` ${resultLogFinal}`;
   }
 };
 
@@ -199,7 +210,8 @@ const calculateBMI = () => {
   };
   let resultB = bmi(wei, hei);
   let resultBfinal = resultB.toFixed(2);
-  document.getElementById("resultBMI").innerHTML = `Your BMI= ${resultBfinal}`;
+  document.getElementById("resultBMI").innerHTML = `Your BMI=`;
+  Document.getElementById("copied").value=` ${resultBfinal}`;
   if (resultBfinal < 18.5) {
     document.getElementById("resultBMImsg").innerHTML = `You are Underweight`;
   } else if (resultBfinal >= 18.5 && resultBfinal <= 24.99) {
@@ -318,7 +330,7 @@ function ageCalculator() {
         ageString = "Welcome! It's your first day on earth!!";
     else ageString = "Please, Enter an valid date";  
 
-    return (document.getElementById("resultAge").innerHTML = ageString);
+    return (document.getElementById("copied").value = ageString);
   }
 }
 
@@ -390,7 +402,7 @@ function DaysCalculator() {
        ageString = age.months + " months old.";   
     else ageString = "Please, Enter an valid date </br>You have entered Ending date which is less than the Starting Date";   
    
-    return document.getElementById("resultAge").innerHTML = ageString;   
+    return document.getElementById("copied").value = ageString;   
                
   }  
 }  
@@ -411,7 +423,8 @@ const solutionEqu=()=>{
     var resSol2 = "(" + resSol_real + " - i " + resSol_img + ")";
     document.getElementById(
       "resultEqn"
-    ).innerHTML = `Solutions are ${resSol1} & ${resSol2}`;
+    ).innerHTML = `Solutions are`;
+    document.getElementById("copied").value=` ${resSol1} & ${resSol2}`;
   } else {
     var discRoot = Math.sqrt(disc);
     var sol1 = (-b + discRoot) / (2 * a);
@@ -421,7 +434,8 @@ const solutionEqu=()=>{
 
     document.getElementById(
       "resultEqn"
-    ).innerHTML = `Solutions are ${resSol1} & ${resSol2}`;
+    ).innerHTML = `Solutions are`;
+    document.getElementById("copied").value=` ${resSol1} & ${resSol2}`;
   }
 };
 
@@ -494,7 +508,8 @@ function getExchangeRate() {
     .then((result) => {
       let exchangeRate = result.conversion_rates[toCurrency.value];
       let totalExRate = (amountVal * exchangeRate).toFixed(2);
-      exchangeRateTxt.innerText = `${amountVal} ${fromCurrency.value} = ${totalExRate} ${toCurrency.value}`;
+      exchangeRateTxt.innerText = `${amountVal} ${fromCurrency.value} =`;
+      document.getElementById("copied").value=` ${totalExRate} ${toCurrency.value}`
     })
     .catch(() => {
       exchangeRateTxt.innerText = "Something went wrong";
@@ -517,8 +532,22 @@ function calculateHcf() {
     }
     let resultHCF = hcf(num1,num2);
     let lcm = (num1*num2)/resultHCF
-    document.getElementById('resultHCF').innerHTML = `HCF= ${resultHCF}` ;
-    document.getElementById('resultLCM').innerHTML = `LCM= ${lcm}` ;
+    document.getElementById('resultHCF').innerHTML = `HCF= ` ;
+    document.getElementById("copiedHCF").value=`${resultHCF}`;
+    document.getElementById('resultLCM').innerHTML = `LCM=` ;
+    document.getElementById("copiedLCM").value=`${lcm}`;
+
+    document.getElementById("switchHCF").addEventListener("click",()=>{
+      let copyText=document.getElementById("copiedHCF");
+      copyText.select();
+      navigator.clipboard.writeText(copyText.value);
+    })
+
+    document.getElementById("switchLCM").addEventListener("click",()=>{
+      let copyText=document.getElementById("copiedLCM");
+      copyText.select();
+      navigator.clipboard.writeText(copyText.value);
+    })
 
 }
 
@@ -725,10 +754,12 @@ function resultantConversion() {
 
   if (document.getElementById('conversion').value === "roman-to-int") {
     const result = romanToInt(input);
-    document.getElementById("output").innerHTML = `Result: ${result}`;
+    document.getElementById("output").innerHTML = `Result:`;
+    document.getElementById("copied").value=` ${result}`;
   } else {
     const result = intToRoman(input);
-    document.getElementById("output").innerHTML = `Result: ${result}`;
+    document.getElementById("output").innerHTML = `Result:`;
+    document.getElementById("copied").value=` ${result}`;
   }
 }
 
@@ -800,7 +831,6 @@ function intToRoman(num) {
     num %= value;
     result += symbol.repeat(count);
   }
-
   return result;
 }
 
