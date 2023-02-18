@@ -395,35 +395,35 @@ function DaysCalculator() {
   }  
 }  
 
-// const solutionEq = () => {
-//   const a = parseInt(document.getElementById("a").value);
-//   const b = parseInt(document.getElementById("b").value);
-//   const c = parseInt(document.getElementById("c").value);
+const solutionEqu=()=>{
+  const a = parseInt(document.getElementById("a").value);
+  const b = parseInt(document.getElementById("b").value);
+  const c = parseInt(document.getElementById("c").value);
 
-//   var disc = b * b - 4 * a * c;
-//   if (disc < 0) {
-//     var discRoot = Math.sqrt(-disc);
-//     var sol_real = -b / (2 * a);
-//     var sol_img = discRoot / (2 * a);
-//     var resSol_real = sol_real.toFixed(2);
-//     var resSol_img = sol_img.toFixed(4);
-//     var resSol1 = "(" + resSol_real + " + i " + resSol_img + ")";
-//     var resSol2 = "(" + resSol_real + " - i " + resSol_img + ")";
-//     document.getElementById(
-//       "resultEqn"
-//     ).innerHTML = `Solutions are ${resSol1} & ${resSol2}`;
-//   } else {
-//     var discRoot = Math.sqrt(disc);
-//     var sol1 = (-b + discRoot) / (2 * a);
-//     var sol2 = (-b - discRoot) / (2 * a);
-//     var resSol1 = sol1.toFixed(2);
-//     var resSol2 = sol2.toFixed(2);
+  var disc = b * b - 4 * a * c;
+  if (disc < 0) {
+    var discRoot = Math.sqrt(-disc);
+    var sol_real = -b / (2 * a);
+    var sol_img = discRoot / (2 * a);
+    var resSol_real = sol_real.toFixed(2);
+    var resSol_img = sol_img.toFixed(4);
+    var resSol1 = "(" + resSol_real + " + i " + resSol_img + ")";
+    var resSol2 = "(" + resSol_real + " - i " + resSol_img + ")";
+    document.getElementById(
+      "resultEqn"
+    ).innerHTML = `Solutions are ${resSol1} & ${resSol2}`;
+  } else {
+    var discRoot = Math.sqrt(disc);
+    var sol1 = (-b + discRoot) / (2 * a);
+    var sol2 = (-b - discRoot) / (2 * a);
+    var resSol1 = sol1.toFixed(2);
+    var resSol2 = sol2.toFixed(2);
 
-//     document.getElementById(
-//       "resultEqn"
-//     ).innerHTML = `Solutions are ${resSol1} & ${resSol2}`;
-//   }
-// };
+    document.getElementById(
+      "resultEqn"
+    ).innerHTML = `Solutions are ${resSol1} & ${resSol2}`;
+  }
+};
 
 // currencyConverter : Subrat Kumar
 const dropList = document.querySelectorAll("form select"),

@@ -317,6 +317,11 @@ thead {
   font-size: 15px;
 }
 
+.calc{
+  background-color: #ffb4a3;
+  padding: 20px;
+ }
+ 
 .infoDeriv{
   font-size: medium;
 }

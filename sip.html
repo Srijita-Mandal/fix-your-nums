@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="style.css">
+<html>
+  <head>
+    <title>SIP Calculator</title>
+  </head>
+  <body class="SIP">
+    <div class="calc">
+        <h1>SIP Calculator</h1>
+        <p>Amount Invested:</p>
+        <input type="number" id="amountInvested">
+        <p>Investment Time Frame (in years):</p>
+        <input type="number" id="investmentPeriod">
+        <p>Expected Rate of Return (per annum):</p>
+        <input type="number" id="expectedRate">
+        <button onclick="calculateFutureValue()">Calculate</button>
+        <p>Future Value: <span id="futureValue"></span></p>
+    </div>
+<script class="SIP">
+  function calculateFutureValue() {
+    let amountInvested = document.getElementById("amountInvested").value;
+    let investmentPeriod = document.getElementById("investmentPeriod").value;
+    let expectedRate = document.getElementById("expectedRate").value;
+    let periodicRate = expectedRate / 12 / 100;
+    let totalNumberOfPayments = investmentPeriod * 12;
+    let futureValue = amountInvested * ((Math.pow((1 + periodicRate), totalNumberOfPayments) - 1) / periodicRate) * (1 + periodicRate);
+
+    document.getElementById("futureValue").innerHTML = futureValue.toFixed(2);
+  }
+</script>
+  </body>
+</html>

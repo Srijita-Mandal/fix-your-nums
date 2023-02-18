@@ -24,11 +24,22 @@
         <input type="number" name="c" id="c"><br/><br/>
 
         <button type="button" id="equationSet" onclick="fun5()">reset</button>
-        <button type="button" onclick="solutionEq()">Submit</button><br/><br/><br/>
+        <button type="button" onclick="solutionEqu()">Submit</button><br/><br/><br/>
         <span id="resultEqn"></span>
     </form>
 
     <script src="script.js"></script>
+    <script type="text/javascript">
+        document.getElementById("equation").addEventListener("submit",(e)=>{
+            e.preventDefault()
+            solutionEqu()
+        })
+        document.body.addEventListener("keyup",(e)=>{
+                if(e.keyCode==13){
+                    solutionEqu()
+                }
+            })
+    </script>
     <script src="theme.js"></script>
 </body>
 </html>

@@ -23,6 +23,17 @@
     </form>
 
     <script src="script.js"></script>
+    <script type="text/javascript">
+        document.getElementById("factorial").addEventListener("submit",(e)=>{
+            e.preventDefault()
+            calculateFact()
+        })
+        document.addEventListener("keyup",(e)=>{
+                if(e.key=='Enter'){
+                    calculateFact()
+                }
+            })
+    </script>
     <script src="theme.js"></script>
 </body>
 </html>
