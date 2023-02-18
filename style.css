@@ -10,6 +10,7 @@ body {
   background-color: #ffeeb7;
   display: grid;
   place-items: center;
+  overflow: hidden;
 }
 
 form {
