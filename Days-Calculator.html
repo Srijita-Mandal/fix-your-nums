@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
     <title>Days Calculator</title>
     <link rel="icon" href="Image/Favicon.png">
 
@@ -15,12 +21,13 @@ body{
     background-color: #ffeeb7;
     display: grid;
     place-items: center;
+    font-family: Ubuntu;
 
 }
 
 #resultAge{
     font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
+    /* font-family: 'Times New Roman', Times, serif; */
     justify-content: center;
     text-align: center;
 }
@@ -46,11 +53,6 @@ button{
     padding-right: 10px;
 }
 
-span{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: small;
-}
-
 form{
     background-color: #ffb4a3;
     padding: 60px;
@@ -71,6 +73,14 @@ label{
 .heading{
     font-size: 24px;
     font-weight: bold;
+} 
+.calculator-name-header{
+    margin-top: 50px;
+    padding: 10px;
+    border-radius: 0px 15px 0px 15px;
+    box-shadow: 0px 0px 16px 1px;
+    font-size: 30px;
+
 }
 
 </style>
@@ -78,6 +88,10 @@ label{
     </head>
     <body>
         <img src="Image/moon.png" id="icon">
+        <div class="calculator-name-header">
+            <!-- Updated by @Shantanu-Meta   -->
+            <span>Days calculator</span>
+          </div>
         <form class="form-horizontal" id="age">
             <label class="heading"> Duration Calculator</label><br/><br/>
             <label class="starting-date" for="starting-Date">Enter the Starting-Date</label><br/><br/>

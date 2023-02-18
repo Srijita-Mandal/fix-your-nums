@@ -4,7 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="Image/Favicon.png">
+    <link rel="icon" href="Image/Favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
     <title>Length Converter</title>
     <style type="text/css">
         *{
@@ -12,15 +22,14 @@
     padding:0;
     box-sizing: border-box;
 }
-* {
-    font-family: 'Ubuntu', sans-serif;
-}
+
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .top-txt{
     margin-bottom: 15px;
@@ -41,7 +50,7 @@ body{
     margin: 10px;
     font-size: 20px;
     font-weight: bolder;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   
 }
 .inputContainer{
     margin:5px;
@@ -59,15 +68,27 @@ body{
     padding:4px;
     font-size: large;
     border-radius: 2px;
-    font-family: 'Times New Roman', Times, serif;
-}
+   
+} 
+.calculator-name-header{
+                text-align: center;
+                padding: 10px;
+                border-radius: 0px 15px 0px 15px;
+                box-shadow: 0px 0px 16px 1px;
+                font-size: 30px;
+                margin: 25px 30%;
+      }
     </style>
     <link rel="stylesheet" href="theme.css">
 </head>
 <body bgcolor="#ffeeb7">
     <img src="Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <!-- Updated by @Shantanu-Meta   -->
+        <span>Length calculator</span>
+      </div>
     <div class="container">
-        <p>Length Converter</p>
+        
         <p class="top-txt">Enter value in any of the fields to convert between Length measurements:</p>
         <div class="inputContainer">
             <label for="feet">Feet</label><input type="number" name="" id="feet"  oninput="convertToOthers('feet',this.value)">
