@@ -522,99 +522,103 @@ function calculateHcf() {
 
 }
 
-function ageCalculator() {  
-    var userinput = document.getElementById("DOB").value;  
-    var dob = new Date(userinput);  
+// function ageCalculator() {  
+//     var userinput = document.getElementById("DOB").value;  
+//     var dob = new Date(userinput);  
        
-    if(userinput==null || userinput==''){  
-      document.getElementById("message").innerHTML = "**Choose a date please!";    
-      return false;   
-    }   
-    else {  
-    var dobYear = dob.getYear();  
-    var dobMonth = dob.getMonth();  
-    var dobDate = dob.getDate();  
+//     if(userinput==null || userinput==''){  
+//       document.getElementById("message").innerHTML = "**Choose a date please!";    
+//       return false;   
+//     }   
+//     else {  
+//     var dobYear = dob.getYear();  
+//     var dobMonth = dob.getMonth();  
+//     var dobDate = dob.getDate();  
         
-    var now = new Date();   
-    var currentYear = now.getYear();  
-    var currentMonth = now.getMonth();  
-    var currentDate = now.getDate();  
+//     var now = new Date();   
+//     var currentYear = now.getYear();  
+//     var currentMonth = now.getMonth();  
+//     var currentDate = now.getDate();  
        
-    var age = {};  
-    var ageString = "";  
+//     var age = {};  
+//     var ageString = "";  
      
-    yearAge = currentYear - dobYear;  
+//     yearAge = currentYear - dobYear;  
      
-    if (currentMonth >= dobMonth)   
-      var monthAge = currentMonth - dobMonth;  
-    else {  
-      yearAge--;  
-      var monthAge = 12 + currentMonth - dobMonth;  
-    }  
+//     if (currentMonth >= dobMonth)   
+//       var monthAge = currentMonth - dobMonth;  
+//     else {  
+//       yearAge--;  
+//       var monthAge = 12 + currentMonth - dobMonth;  
+//     }  
    
-    if (currentDate >= dobDate)    
-      var dateAge = currentDate - dobDate;  
-    else {  
-      monthAge--;  
-      var dateAge = 31 + currentDate - dobDate;  
+//     if (currentDate >= dobDate)    
+//       var dateAge = currentDate - dobDate;  
+//     else {  
+//       monthAge--;  
+//       var dateAge = 31 + currentDate - dobDate;  
   
-      if (monthAge < 0) {  
-        monthAge = 11;  
-        yearAge--;  
-      }  
-    }  
+//       if (monthAge < 0) {  
+//         monthAge = 11;  
+//         yearAge--;  
+//       }  
+//     }  
      
-    age = {  
-    years: yearAge,  
-    months: monthAge,  
-    days: dateAge  
-    };  
+//     age = {  
+//     years: yearAge,  
+//     months: monthAge,  
+//     days: dateAge  
+//     };  
         
         
-    if ( (age.years > 0) && (age.months > 0) && (age.days > 0) )  
-       ageString = age.years + " years, " + age.months + " months, and " + age.days + " days old.";  
-    else if ( (age.years == 0) && (age.months == 0) && (age.days > 0) )  
-       ageString = "Only " + age.days + " days old!";    
-    else if ( (age.years > 0) && (age.months == 0) && (age.days == 0) )  
-       ageString = age.years +  " years old.<br> Happy Birthday!!";  
-    else if ( (age.years > 0) && (age.months > 0) && (age.days == 0) )  
-       ageString = age.years + " years and " + age.months + " months old.";  
-    else if ( (age.years == 0) && (age.months > 0) && (age.days > 0) )  
-       ageString = age.months + " months and " + age.days + " days old.";  
-    else if ( (age.years > 0) && (age.months == 0) && (age.days > 0) )  
-       ageString = age.years + " years, and" + age.days + " days old.";  
-    else if ( (age.years == 0) && (age.months > 0) && (age.days == 0) )  
-       ageString = age.months + " months old.";   
-    else ageString = "Welcome to Earth! <br> It's first day on Earth!";   
+//     if ( (age.years > 0) && (age.months > 0) && (age.days > 0) )  
+//        ageString = age.years + " years, " + age.months + " months, and " + age.days + " days old.";  
+//     else if ( (age.years == 0) && (age.months == 0) && (age.days > 0) )  
+//        ageString = "Only " + age.days + " days old!";    
+//     else if ( (age.years > 0) && (age.months == 0) && (age.days == 0) )  
+//        ageString = age.years +  " years old.<br> Happy Birthday!!";  
+//     else if ( (age.years > 0) && (age.months > 0) && (age.days == 0) )  
+//        ageString = age.years + " years and " + age.months + " months old.";  
+//     else if ( (age.years == 0) && (age.months > 0) && (age.days > 0) )  
+//        ageString = age.months + " months and " + age.days + " days old.";  
+//     else if ( (age.years > 0) && (age.months == 0) && (age.days > 0) )  
+//        ageString = age.years + " years, and" + age.days + " days old.";  
+//     else if ( (age.years == 0) && (age.months > 0) && (age.days == 0) )  
+//        ageString = age.months + " months old.";   
+//     else ageString = "Welcome to Earth! <br> It's first day on Earth!";   
    
-    return document.getElementById("resultAge").innerHTML = ageString;   
+//     return document.getElementById("resultAge").innerHTML = ageString;   
                
-  }  
-}  
+//   }  
+// }  
 
 
 
-const solutionEq = () =>{
-    const a = parseInt(document.getElementById('a').value);
-    const b = parseInt(document.getElementById('b').value);
-    const c = parseInt(document.getElementById('c').value);
+// const solutionEq = () =>{
+//     const a = parseInt(document.getElementById('a').value);
+//     const b = parseInt(document.getElementById('b').value);
+//     const c = parseInt(document.getElementById('c').value);
 
-    var disc = ((b*b) - (4*a*c));
-    if(disc<0){
-        document.getElementById('resultEqn').innerHTML = `The equation has no real solution` ;
-    } else{
-        var discRoot = Math.sqrt(disc);
-        var sol1 = ((-b+discRoot)/(2*a));
-        var sol2 = ((-b-discRoot)/(2*a));
-        var resSol1 = sol1.toFixed(2);
-        var resSol2 = sol2.toFixed(2);
+//     var disc = ((b*b) - (4*a*c));
+//     if(disc<0){
+//         document.getElementById('resultEqn').innerHTML = `The equation has no real solution` ;
+//     } else{
+//         var discRoot = Math.sqrt(disc);
+//         var sol1 = ((-b+discRoot)/(2*a));
+//         var sol2 = ((-b-discRoot)/(2*a));
+//         var resSol1 = sol1.toFixed(2);
+//         var resSol2 = sol2.toFixed(2);
 
-        document.getElementById('resultEqn').innerHTML = `Solutions are ${resSol1} & ${resSol2}` ;
+//         document.getElementById('resultEqn').innerHTML = `Solutions are ${resSol1} & ${resSol2}` ;
 
-    }
-}
+//     }
+// }
+
+
 
 // reset for agecalc
+
+
 function fun1(){
 document.querySelector("#ageSet").addEventListener('click',function(){
     document.querySelector('#DOB').value="";
