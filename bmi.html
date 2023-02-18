@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link
       href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
       rel="stylesheet"
@@ -40,7 +41,13 @@
       <button type="button" id="bmiSet" onclick="fun3()">reset</button>
       <button type="button" onclick="calculateBMI()">Submit</button
       ><br /><br /><br />
-      <span id="resultBMI"></span><br />
+      <div id="click">
+        <span id="written">
+          <span id="resultMBI"></span>
+          <input type="text" readonly id="copied">
+        </span>
+        <i class="fas fa-clipboard" id="switch"></i>
+      </div><br />
       <span id="resultBMImsg"></span><br /><br />
       <div id="bmiImg"></div>
     </form>
