@@ -12,12 +12,10 @@
 			margin: 0;
 			box-sizing: border-box;
 		}
-		* {
-    font-family: 'Ubuntu', sans-serif;
-}
+
 		body{
 			background: #ffeeb7;
-			font-family: 'Open Sans', sans-serif;
+			font-family: "Ubuntu", sans-serif;
 		}
 		#container{
 			display: flex;
@@ -50,13 +48,22 @@
 			width: 100%;
 			margin-top: 10px;
 			font-weight: 500;
-			font-family: 'Open Sans', sans-serif;
+			/* font-family: 'Open Sans', sans-serif; */
 		}
 		input{
 			height: 30px;
 			margin-top: 10px;
 			cursor: pointer;
-		}
+		}  
+		.calculator-name-header {
+        margin: 25px 40%;
+        margin-top: 50px;
+        padding: 10px;
+        border-radius: 0px 15px 0px 15px;
+        box-shadow: 0px 0px 16px 1px;
+        font-size: 30px;
+        text-align: center;
+      }
 	</style>
 	<script type="text/javascript">
 
@@ -117,7 +124,10 @@
 	</head>
 	<body>
 	<div id='container'>
-		<h1>Bitwise Calculator</h1>
+		<div class="calculator-name-header">
+			<!-- Updated by @Shantanu-Meta   -->
+			<span>Bitwise calculator</span>
+		  </div>
 		<div id="card-container">
 			<p id='p'>Enter 1st number :(decimal number)<input id='first' type="number"></p>
 			
