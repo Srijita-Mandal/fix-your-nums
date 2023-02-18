@@ -8,7 +8,6 @@
   <link rel="icon" href="Image/Favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   <link
     href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
     rel="stylesheet"
@@ -95,48 +94,6 @@
     margin-bottom: 50px
   }
 
-  #written {
-  border: 2px solid black;
-  position: relative;
-  padding: 5px;
-  text-align: left;
-  }
-
-.fa-clipboard {
-  position: relative;
-  background-color: #000;
-  height: 27px;
-  width: 40px;
-  font-size: 20px;
-  padding-top: 5px;
-  color: #fff;
-  cursor: pointer;
-  text-align: center;
-  line-height: 16px;
-}
-
-#click {
-  position: relative;
-  /* background-color: red; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#copied{
-  font-size: 25px;
-  background: transparent;
-  border: none;
-  position: relative;
-  /* width: 50%; */
-  cursor: pointer;
-}
-
-#copied:focus{
-  border: none;
-  outline: none;
-}
-
   </style>
   
   <title>Caesar Cipher</title>
@@ -167,7 +124,7 @@
           <br />
           <br />
           Finish:
-          <input type="text" id="finish" placeholder="Click here to get Ciphertext" /><i class="fas fa-clipboard" id="switch"></i>
+          <input type="text" id="finish" placeholder="Click here to get Ciphertext" />
           <!-- After clicking in this box we will get the required output -->
           <br />
           <br />
@@ -222,11 +179,5 @@
       });
 
     });
-
-    document.getElementById("switch").addEventListener("click",()=>{
-      let copyText=document.getElementById("finish");
-      copyText.select();
-      navigator.clipboard.writeText(copyText.value);
-    })
 </script>
 </html>
