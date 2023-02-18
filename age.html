@@ -1,93 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-    <link rel="icon" href="Image/Favicon.png">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="Image/Favicon.png" />
+
     <title>Age Calculator</title>
-</head>
-<style class="text/css">
+  </head>
+  <style class="text/css">
+    body {
+      width: 100vw;
+      height: 100vh;
+      background-color: #ffeeb7;
+      display: grid;
+      place-items: center;
+      font-family: "Ubuntu";
+    }
 
-body{
-    width: 100vw;
-    height: 100vh;
-    background-color: #ffeeb7;
-    display: grid;
-    place-items: center;
-}
+    #resultAge {
+      font-size: 20px;
+      /* font-family: "Ubuntu", Times, serif; */
+    }
 
-#resultAge{
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
-}
+    #DOB {
+      padding: 7px;
+      height: 20px;
+      width: 150px;
+      font-size: 15px;
+    }
+    button {
+      /* font-family: "Ubuntu", Times, serif; */
+      background-color: black;
+      font-size: 14px;
+      color: white;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
 
-#DOB{
-    padding: 7px;
-    height: 20px;
-    width: 150px;
-    font-size: 15px;
-}
-button{
-    font-family: 'Times New Roman', Times, serif;
-    background-color: black;
-    font-size: 14px;
-    color:white;
-    padding-left: 10px;
-    padding-right: 10px;
-}
+    form {
+      background-color: #ffb4a3;
+      padding: 80px;
+      width: 54%;
+      height: 35%;
+      margin: 100px auto;
+      text-align: center;
+      place-items: center;
+      box-shadow: 0 10px 6px -6px #777;
+    }
 
-span{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: small;
-}
-
-form{
-    background-color: #ffb4a3;
-    padding: 80px;
-    width: 54%;
-    height: 35%;
-    margin: 100px auto;
-    text-align: center;
-    place-items: center;
-    box-shadow: 0 10px 6px -6px #777;
-}
-
-label{
-    font-size: 25px;
-    font-weight: 500;
-}
-
-</style>
-<link rel="stylesheet" href="theme.css">
-<body>
-    <img src="Image/moon.png" id="icon">
+    label {
+      font-size: 25px;
+      font-weight: 500;
+    }
+    .calculator-name-header {
+      /* font-family: "Ubuntu"; */
+      margin-top: 30px;
+      padding: 2px 10px 10px 10px;
+      border-radius: 0px 15px 0px 15px;
+      box-shadow: 0px 0px 16px 1px;
+      font-size: 30px;
+    }
+  </style>
+  <link rel="stylesheet" href="theme.css" />
+  <body>
+    <img src="Image/moon.png" id="icon" />
+    <div class="calculator-name-header">
+      <!-- Updated by @Shantanu-Meta   -->
+      <span>Age calculator</span>
+    </div>
     <form class="form-horizontal" id="age">
-        <label for="DOB">Please enter your Date of Birth</label><br/><br/>
-        <input type="date" name="BOD" id="DOB">
-        <span id = "message" style="color:red"> </span> <br><br>
-        <button type="button" id="ageSet" onclick="fun1()">reset</button>
-        <span id = "message" style="color:rgb(255, 0, 0)"> </span> <br><br>
-        <button type="button" onclick="ageCalculator()">Submit</button><br/><br/><br/>
-        <span id="resultAge"></span>
+      <label for="DOB">Please enter your Date of Birth</label><br /><br />
+      <input type="date" name="BOD" id="DOB" />
+      <span id="message" style="color: red;"> </span> <br /><br />
+      <button type="button" id="ageSet" onclick="fun1()">reset</button>
+      <span id="message" style="color: rgb(255, 0, 0);"> </span> <br /><br />
+      <button type="button" onclick="ageCalculator()">Submit</button
+      ><br /><br /><br />
+      <span id="resultAge"></span>
     </form>
 
     <script src="script.js"></script>
-    <script>
-        document.getElementById("age").addEventListener("submit",(e)=>{
-            e.preventDefault()
-            ageCalculator()
-        })
-        document.body.addEventListener("keyup",(e)=>{
-                if(e.keyCode==13){
-                    ageCalculator()
-                }
-            })
-    </script>
     <script src="theme.js"></script>
-</body>
+  </body>
 </html>

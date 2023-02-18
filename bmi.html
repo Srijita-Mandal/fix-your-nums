@@ -11,12 +11,16 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" href="theme.css">
-    <link rel="icon" href="Image/Favicon.png">
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="icon" href="Image/Favicon.png" />
     <title>BMI calculator</title>
   </head>
   <body>
-    <img src="Image/moon.png" id="icon">
+    <img src="Image/moon.png" id="icon" />
+    <div class="calculator-name-header">
+      <!-- Updated by @Shantanu-Meta   -->
+      <span>BMI calculator</span>
+    </div>
     <form class="form-horizontal" id="bMI">
       <label for="wei">Please enter your weight (in Kgs):</label>
       <input
@@ -42,17 +46,6 @@
     </form>
 
     <script src="script.js"></script>
-    <script type="text/javascript">
-      document.getElementById("bMI").addEventListener("submit",(e)=>{
-            e.preventDefault()
-            calculateBMI()
-        })
-      document.body.addEventListener("keyup",(e)=>{
-              if(e.keyCode==13){
-                  calculateBMI()
-              }
-          })
-  </script>
     <script src="theme.js"></script>
   </body>
 </html>

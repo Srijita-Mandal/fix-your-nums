@@ -558,7 +558,6 @@ function calculateHcf() {
 
 }
 
-
 function fun1(){
 document.querySelector("#ageSet").addEventListener('click',function(){
     document.querySelector('#DOB').value="";

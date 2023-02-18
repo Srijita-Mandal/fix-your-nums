@@ -1,12 +1,14 @@
 /* currencyConverter stylesheet */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:wght@300;400&display=swap");
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: Ubuntu;
 }
-body{
+body {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,51 +16,52 @@ body{
   padding: 0 10px;
   background: #ffeeb7;
 }
-::selection{
+::selection {
   color: #fff;
-  background: #675AFE;
+  background: #675afe;
 }
-.wrapper{
+.wrapper {
   width: 370px;
-  padding: 30px;
+  padding: 33px;
   background: #ffb4a3;
   box-shadow: 0 10px 6px -6px #777;
+  margin: 50px;
 }
-.wrapper header{
+.wrapper header {
   font-size: 28px;
   font-weight: 500;
   text-align: center;
 }
-.wrapper form{
+.wrapper form {
   margin: 40px 0 20px 0;
 }
-form :where(input, select, button){
+form :where(input, select, button) {
   width: 100%;
   outline: none;
   border-radius: 5px;
   border: none;
 }
-form p{
+form p {
   font-size: 18px;
   margin-bottom: 5px;
 }
-form input{
+form input {
   height: 50px;
   font-size: 17px;
   padding: 0 15px;
   border: 1px solid #999;
 }
-form input:focus{
+form input:focus {
   padding: 0 14px;
   border: 2px solid #ff947c;
 }
-form .drop-list{
+form .drop-list {
   display: flex;
   margin-top: 20px;
   align-items: center;
   justify-content: space-between;
 }
-.drop-list .select-box{
+.drop-list .select-box {
   display: flex;
   width: 115px;
   height: 45px;
@@ -67,36 +70,36 @@ form .drop-list{
   justify-content: center;
   border: 1px solid #999;
 }
-.select-box img{
+.select-box img {
   max-width: 21px;
 }
-.select-box select{
+.select-box select {
   width: auto;
   font-size: 16px;
   background: none;
   margin: 0 -5px 0 5px;
 }
-.select-box select::-webkit-scrollbar{
+.select-box select::-webkit-scrollbar {
   width: 8px;
 }
-.select-box select::-webkit-scrollbar-track{
+.select-box select::-webkit-scrollbar-track {
   background: #fff;
 }
-.select-box select::-webkit-scrollbar-thumb{
+.select-box select::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 8px;
   border-right: 2px solid #ffffff;
 }
-.drop-list .icon{
+.drop-list .icon {
   cursor: pointer;
   margin-top: 30px;
   font-size: 22px;
 }
-form .exchange-rate{
+form .exchange-rate {
   font-size: 17px;
   margin: 20px 0 30px;
 }
-form button{
+form button {
   height: 52px;
   color: #fff;
   font-size: 17px;
@@ -104,6 +107,13 @@ form button{
   background: #000;
   transition: 0.3s ease;
 }
-form button:hover{
+form button:hover {
   background: #232323;
+}
+.calculator-name-header {
+  margin-top: -40%;
+  padding: 10px;
+  border-radius: 0px 15px 0px 15px;
+  box-shadow: 0px 0px 16px 1px;
+  font-size: 29px;
 }
