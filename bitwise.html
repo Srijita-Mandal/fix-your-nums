@@ -7,7 +7,6 @@
     <link rel="icon" href="Image/Favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link
       href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
       rel="stylesheet"
@@ -52,16 +51,9 @@
       #p {
         display: flex;
         flex-direction: column;
-        /* background-color: red; */
         width: 100%;
         margin-top: 10px;
         font-weight: 500;
-      }
-
-      #p span{
-        display: flex;
-        justify-content: center;
-        align-items: center;
       }
       input {
         height: 30px;
@@ -77,51 +69,6 @@
         font-size: 30px;
         text-align: center;
       }
-      #written {
-  border: 2px solid black;
-  position: relative;
-  padding: 5px;
-  text-align: left;
-  }
-
-.fa-clipboard {
-  position: relative;
-  background-color: #000;
-  height: 30px;
-  width: 40px;
-  top:5px;
-  padding-top: 3px;
-  font-size: 20px;
-  color: #fff;
-  cursor: pointer;
-  text-align: center;
-}
-
-#result{
-  width: 100%;
-}
-
-#click {
-  position: relative;
-  /* background-color: red; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#copied{
-  font-size: 25px;
-  background: transparent;
-  border: none;
-  position: relative;
-  /* width: 50%; */
-  cursor: pointer;
-}
-
-#copied:focus{
-  border: none;
-  outline: none;
-}
     </style>
     <script type="text/javascript">
       function resetBit() {
@@ -179,12 +126,6 @@
         document.getElementById("secondbinary").value = second;
         document.getElementById("binaryresult").value = result;
       }
-
-      function copied(){
-        let copyText=document.getElementById("result");
-        copyText.select();
-        navigator.clipboard.writeText(copyText.value);
-      }
     </script>
   </head>
   <body>
@@ -205,7 +146,7 @@
         <button id="button" onclick="and()">And</button>
         <button id="button" onclick="or()">OR</button>
         <button id="button" onclick="xor()">XOR</button>
-        <p id="p">Result :<span><input id="result" disabled=""/><i class="fas fa-clipboard" id="switch" onclick="copied()"></i></span></p>
+        <p id="p">Result :<input id="result" disabled="" /></p>
         <button
           id="bitSet"
           style="margin-top: 5px; padding-top: 3px; padding-bottom: 3px;"

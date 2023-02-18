@@ -10,7 +10,6 @@
       href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <title>Days Calculator</title>
     <link rel="icon" href="Image/Favicon.png">
 
@@ -84,47 +83,6 @@ label{
 
 }
 
-#written {
-  border: 2px solid black;
-  position: relative;
-  padding: 5px;
-  text-align: left;
-  }
-
-.fa-clipboard {
-  position: relative;
-  background-color: #000;
-  height: 46px;
-  width: 40px;
-  font-size: 25px;
-  color: #fff;
-  cursor: pointer;
-  text-align: center;
-  line-height: 40px;
-}
-
-#click {
-  position: relative;
-  /* background-color: red; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#copied{
-  font-size: 25px;
-  background: transparent;
-  border: none;
-  position: relative;
-  /* width: 50%; */
-  cursor: pointer;
-}
-
-#copied:focus{
-  border: none;
-  outline: none;
-}
-
 </style>
 <link rel="stylesheet" href="theme.css">
     </head>
@@ -143,13 +101,7 @@ label{
             <span id = "message" style="color:rgb(255, 0, 0)"> </span> <br><br>
             <button id="button1" onclick="daySet()">Reset</button>
             <button type="button" onclick="DaysCalculator()">Submit</button><br/><br/><br/>
-            <div id="click">
-                <span id="written">
-                  <span id="resultAge"></span>
-                  <input type="text" readonly id="copied">
-                </span>
-                <i class="fas fa-clipboard" id="switch"></i>
-              </div>
+            <span id="resultAge"></span>
         </form>
         <script src="script.js"></script>
         <script type="text/javascript">
