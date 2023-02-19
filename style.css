@@ -325,3 +325,21 @@ thead {
   box-shadow: 0px 0px 16px 1px;
   font-size: 30px;
 }
+
+#home{
+  /* background-color: black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: #121916;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.2;
+    z-index: 999;
+}
