@@ -20,6 +20,13 @@
     --color--cont_p : white;
     --color--hover:  #ffffff;
 }
+.calculator-name-header {
+    background-color: var(--color--form);
+    color: var(--color--label);
+}
+#card-container{
+    background-color: var(--color--form);
+}
 #icon{
 	width: 30px;
 	cursor: pointer;

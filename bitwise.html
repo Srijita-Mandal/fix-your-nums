@@ -7,10 +7,13 @@
     <link rel="icon" href="Image/Favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="theme.css" />
     <title>Bitwise Calculator</title>
     <style type="text/css">
       * {
@@ -20,7 +23,7 @@
       }
 
       body {
-        background: #ffeeb7;
+        
         font-family: "Ubuntu", sans-serif;
       }
       #container {
@@ -38,12 +41,12 @@
         border-radius: 5px;
         border: 1px solid lightgray;
         margin-top: 12px;
-        background-color: #ffb4a3;
+        
       }
       #button {
         margin-top: 12px;
         font-size: 15px;
-        background-color: #ffeeb7;
+        
         height: 30px;
         width: 100%;
         cursor: pointer;
@@ -129,9 +132,11 @@
     </script>
   </head>
   <body>
+    <img src="Image/moon.png" id="icon" />
     <div class="calculator-name-header">
       <!-- Updated by @Shantanu-Meta   -->
       <span>Bitwise calculator</span>
+     
     </div>
     <div id="container">
       <div id="card-container">
@@ -156,5 +161,7 @@
         </button>
       </div>
     </div>
+    <script src="theme.js"></script>
+    <a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
   </body>
 </html>

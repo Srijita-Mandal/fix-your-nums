@@ -3,6 +3,7 @@ body {
 }
 
 #logo{
+    padding: 0px 40px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -77,5 +78,11 @@ body {
 @keyframes animate {
     to{
         stroke-dashoffset: 0px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #logo {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
     }
 }

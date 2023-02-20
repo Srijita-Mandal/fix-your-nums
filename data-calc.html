@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Data Converter</title>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="icon" href="Image/Favicon.png">
+</head>
+<body>
+	<form>
+		<h2>Data Converter</h2>
+		<label for="input">Input:</label>
+		<input type="number" id="input" name="input"><br>
+		<label for="from">From:</label>
+		<select id="from" name="from">
+			<option value="B">B</option>
+			<option value="KB">KB</option>
+			<option value="MB">MB</option>
+			<option value="GB">GB</option>
+			<option value="TB">TB</option>
+		</select><br>
+		<label for="to">To:</label>
+		<select id="to" name="to">
+			<option value="B">B</option>
+			<option value="KB">KB</option>
+			<option value="MB">MB</option>
+			<option value="GB">GB</option>
+			<option value="TB">TB</option>
+		</select><br>
+		<input type="submit" value="Convert">
+	</form>
+	<a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+
+	<script type="text/javascript">
+		document.querySelector('form').addEventListener('submit', function(e) {
+			e.preventDefault();
+			let input = parseFloat(document.querySelector('#input').value);
+			let from = document.querySelector('#from').value;
+			let to = document.querySelector('#to').value;
+			let result;
+
+			if (from == to) {
+				result = input;
+			} else if (from == 'B') {
+				if (to == 'KB') {
+					result = input / 1024;
+				} else if (to == 'MB') {
+					result = input / Math.pow(1024, 2);
+				} else if (to == 'GB') {
+					result = input / Math.pow(1024, 3);
+				} else if (to == 'TB') {
+					result = input / Math.pow(1024, 4);
+				}
+			} else if (from == 'KB') {
+				if (to == 'B') {
+					result = input * 1024;
+				} else if (to == 'MB') {
+					result = input / 1024;
+				} else if (to == 'GB') {
+					result = input / Math.pow(1024, 2);
+				} else if (to == 'TB') {
+					result = input / Math.pow(1024, 3);
+				}
+
+    		} else if (from == 'MB') {
+    			if (to == 'B') {
+    				result = input * Math.pow(1024, 2);
+    			} else if (to == 'KB') {
+    				result = input * 1024;
+    			} else if (to == 'GB') {
+    				result = input / 1024;
+    			} else if (to == 'TB') {
+    				result = input / Math.pow(1024, 2);
+    			}
+    		} else if (from == 'GB') {
+    			if (to == 'B') {
+    				result = input * Math.pow(1024, 3);
+    			} else if (to == 'KB') {
+    				result = input * Math.pow(1024, 2);
+    			} else if (to == 'MB') {
+    				result = input * 1024;
+    			} else if (to == 'TB') {
+    				result = input / 1024;
+    			}
+    		} else if (from == 'TB') {
+    			if (to == 'B') {
+    				result = input * Math.pow(1024, 4);
+    			} else if (to == 'KB') {
+    				result = input * Math.pow(1024, 3);
+    			} else if (to == 'MB') {
+    				result = input * Math.pow(1024, 2);
+    			} else if (to == 'GB') {
+    				result = input * 1024;
+    			}
+    		}
+		document.querySelector('h2').textContent = result + ' ' + to;
+	});
+</script>
+</body>
+</html>
