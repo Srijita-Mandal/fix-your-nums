@@ -14,7 +14,6 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="theme.css">
     <link rel="icon" href="Image/Favicon.png">
-
 </head>
 
 <body>
@@ -22,12 +21,6 @@
     <div class="calculator-name-header">
         <span>Trigonometric Calculator</span>
     </div>
-   <!-- <form id="calc" class="form-horizontal">
-        
-        <button type="button" onclick="fun4()" id="calc1">reset</button>
-        <button type="button" onclick="calculator()">Submit</button><br><br><br>
-        <span id="resultCalculator"></span>
-    </form> -->
     <form id="calc" class="form-horizontal">
         <label for="trig-calc">Please check the operations you'd like to do</label><br><br>
         <span class="checkbox-span">
@@ -56,22 +49,21 @@
         </span>
         <br>
         <span class="checkbox-span">
-            <button type="button" onclick="checkAll">Check All</button>            
+            <button type="button" onclick="checkAll()">Check All</button>            
         </span>
         <br><br>
         <select name="angle-type" id="angle-type">
-            <option value="degree">Degree</option>
-            <option value="radian">Radian</option>
+            <option value="degree" id="degree">Degree</option>
+            <option value="radian" id="radian">Radian</option>
         </select>
         <input type="number" name="angle" id="angle-value" placeholder="Angle Value"><br><br>
         <button type="button" onclick="fun4()" id="calc1">reset</button>
-        <button type="button" onclick="trigCalculator()">Submit</button><br>
-        <span id="resultCalculator"></span>
-
+        <button type="button" onclick="trigCalculator()">Submit</button>
+        <span id="resultContainer"></span>
     </form>
     <a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
     <script src="theme.js"></script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
