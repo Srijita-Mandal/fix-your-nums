@@ -674,6 +674,17 @@ function romanSet() {
   document.getElementById("output").innerHTML = "";
 }
 
+//reset trigcalc
+function resetTrig(){
+  document.getElementById('angle-value').value= '';
+  document.getElementById('cos').checked = false
+  document.getElementById('tan').checked = false;
+  document.getElementById('cosec').checked = false;
+  document.getElementById('sec').checked = false;
+  document.getElementById('cot').checked = false;
+
+}
+
 function resultantConversion() {
   const input = document.getElementById("input").value;
 
@@ -785,6 +796,22 @@ function validateForm() {
   }
 }
 
+function vallidateTrig(){
+  var angleValue = document.getElementById("angle-value").value;
+  var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  var checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
+  if(angleValue == ""){
+    alert("Enter the value of angle.")
+    return false;
+  }
+  else if(checkedOne==0){
+    alert("Select at least one operation.")
+    return false;
+  }
+  else
+    trigCalculator()
+}
+
 function checkAll() {
   document.getElementById('sin').checked = true;
   document.getElementById('cos').checked = true;
@@ -868,3 +895,7 @@ function trigCalculator() {
 
 
 }
+
+
+
+
