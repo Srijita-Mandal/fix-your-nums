@@ -1,3 +1,20 @@
+// Code for ScrollToTop Button
+const scrollToTopHandler = () => {
+  let btn = document.getElementById("scrollToButton");
+  if (window.scrollY > 500) {
+    btn.className = "scrollToTopButton";
+  } else {
+    btn.className = "HideElement scrollToTopButton";
+  }
+}
+window.addEventListener("scroll", scrollToTopHandler);
+document.getElementById("scrollToButton").addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+})
+
 const calculateTemp = () => {
   const numberTemp = document.getElementById('temp').value;
   //console.log(typeof(parseInt(numberTemp)));
@@ -519,7 +536,7 @@ function getExchangeRate() {
   const exchangeRateTxt = document.querySelector("form .exchange-rate");
   let amountVal = amount.value;
   if (amountVal == "" || amountVal == "0") {
-    amount.value = "1";
+    amount.value = "";
     amountVal = 1;
   }
   exchangeRateTxt.innerText = "Converting...";
