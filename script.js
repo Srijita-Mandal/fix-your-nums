@@ -1,19 +1,19 @@
 // Code for ScrollToTop Button
-const scrollToTopHandler = () => {
-  let btn = document.getElementById("scrollToButton");
-  if (window.scrollY > 500) {
-    btn.className = "scrollToTopButton";
-  } else {
-    btn.className = "HideElement scrollToTopButton";
-  }
-}
-window.addEventListener("scroll", scrollToTopHandler);
-document.getElementById("scrollToButton").addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-})
+// const scrollToTopHandler = () => {
+//   let btn = document.getElementById("scrollToButton");
+//   if (window.scrollY > 500) {
+//     btn.className = "scrollToTopButton";
+//   } else {
+//     btn.className = "HideElement scrollToTopButton";
+//   }
+// }
+// window.addEventListener("scroll", scrollToTopHandler);
+// document.getElementById("scrollToButton").addEventListener("click", () => {
+//   window.scrollTo({
+//     top: 0,
+//     behavior: "smooth"
+//   });
+// })
 
 const calculateTemp = () => {
   const numberTemp = document.getElementById('temp').value;
@@ -87,16 +87,23 @@ const calculateTemp = () => {
 }
 
 const calculator = () => {
+  // console.log("clicked");
   const operation = document.getElementById("cal");
   const valOpe = operation.value;
 
+  // console.log(valOpe);
+
   const number1 = parseInt(document.getElementById("num1").value);
   const number2 = parseInt(document.getElementById("num2").value);
+
+  // console.log(number1);
+  // console.log(number2);
 
   switch (valOpe) {
     case "sum":
       document.getElementById("resultCalculator").innerHTML = `= ${number1 + number2
         }`;
+        // console.log(number1+number2);
       break;
     case "subs":
       document.getElementById("resultCalculator").innerHTML = `= ${number1 - number2
