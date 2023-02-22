@@ -1,19 +1,19 @@
 // Code for ScrollToTop Button
-const scrollToTopHandler = () => {
-  let btn = document.getElementById("scrollToButton");
-  if (window.scrollY > 500) {
-    btn.className = "scrollToTopButton";
-  } else {
-    btn.className = "HideElement scrollToTopButton";
-  }
-}
-window.addEventListener("scroll", scrollToTopHandler);
-document.getElementById("scrollToButton").addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-})
+// const scrollToTopHandler = () => {
+//   let btn = document.getElementById("scrollToButton");
+//   if (window.scrollY > 500) {
+//     btn.className = "scrollToTopButton";
+//   } else {
+//     btn.className = "HideElement scrollToTopButton";
+//   }
+// }
+// window.addEventListener("scroll", scrollToTopHandler);
+// document.getElementById("scrollToButton").addEventListener("click", () => {
+//   window.scrollTo({
+//     top: 0,
+//     behavior: "smooth"
+//   });
+// })
 
 const calculateTemp = () => {
   const numberTemp = document.getElementById('temp').value;
@@ -130,6 +130,70 @@ const calculator = () => {
   }
 };
 
+const data_convertor = () => {
+  let input = parseFloat(document.querySelector('#inputdata').value);
+  let from = document.querySelector('#from').value;
+  let to = document.querySelector('#to').value;
+  let result;
+
+  if (from == to) {
+    result = input;
+  } else if (from == 'B') {
+    if (to == 'KB') {
+      result = input / 1024;
+    } else if (to == 'MB') {
+      result = input / Math.pow(1024, 2);
+    } else if (to == 'GB') {
+      result = input / Math.pow(1024, 3);
+    } else if (to == 'TB') {
+      result = input / Math.pow(1024, 4);
+    }
+  } else if (from == 'KB') {
+    if (to == 'B') {
+      result = input * 1024;
+    } else if (to == 'MB') {
+      result = input / 1024;
+    } else if (to == 'GB') {
+      result = input / Math.pow(1024, 2);
+    } else if (to == 'TB') {
+      result = input / Math.pow(1024, 3);
+    }
+
+  } else if (from == 'MB') {
+    if (to == 'B') {
+      result = input * Math.pow(1024, 2);
+    } else if (to == 'KB') {
+      result = input * 1024;
+    } else if (to == 'GB') {
+      result = input / 1024;
+    } else if (to == 'TB') {
+      result = input / Math.pow(1024, 2);
+    }
+  } else if (from == 'GB') {
+    if (to == 'B') {
+      result = input * Math.pow(1024, 3);
+    } else if (to == 'KB') {
+      result = input * Math.pow(1024, 2);
+    } else if (to == 'MB') {
+      result = input * 1024;
+    } else if (to == 'TB') {
+      result = input / 1024;
+    }
+  } else if (from == 'TB') {
+    if (to == 'B') {
+      result = input * Math.pow(1024, 4);
+    } else if (to == 'KB') {
+      result = input * Math.pow(1024, 3);
+    } else if (to == 'MB') {
+      result = input * Math.pow(1024, 2);
+    } else if (to == 'GB') {
+      result = input * 1024;
+    }
+  }
+  document.getElementById("resultDataCalculator").innerHTML = `= ${result+' '+to
+  }`;
+  // document.querySelector('h2').textContent = result + ' ' + to;
+}
 const changeNumber = () => {
   const numberCh = document.getElementById("numChange").value;
 
@@ -646,6 +710,14 @@ function fun9() {
   document.querySelector("#tempSet").addEventListener('click', function () {
     document.querySelector('#temp').value = "";
     document.getElementById('resultContainer').innerHTML = "";
+  });
+}
+
+//reset for data convertor
+function fun10() {
+  document.querySelector("#calc10").addEventListener('click', function () {
+    document.querySelector('#inputdata').value = "";
+    document.getElementById('resultDataContainer').innerHTML = "";
   });
 }
 
