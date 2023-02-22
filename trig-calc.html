@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trigonometric Calculator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="icon" href="Image/Favicon.png">
+</head>
+
+<body>
+    <img src="Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <span>Trigonometric Calculator</span>
+    </div>
+    <form id="calc" class="form-horizontal">
+        <label for="trig-calc">Please check the operations you'd like to do</label><br><br>
+        <span class="checkbox-span">
+            <input type="checkbox" id="sin" name="sin" checked>
+            <label for="sin">sin</label>
+        </span>
+        <span class="checkbox-span">
+        <input type="checkbox" id="cos" name="cos">
+            <label for="cos">cos</label>
+        <spanv>
+        <span class="checkbox-span">
+            <input type="checkbox" id="tan" name="tan">
+            <label for="tan">tan</label>
+        </span>
+        <span class="checkbox-span">
+            <input type="checkbox" id="cosec" name="cosec">
+            <label for="cosec">cosec</label>
+        </span>
+        <span class="checkbox-span">
+            <input type="checkbox" id="sec" name="sec">
+            <label for="sec">sec</label>
+        </span>
+        <span class="checkbox-span">
+            <input type="checkbox" id="cot" name="cot">
+            <label for="cot">cot</label>
+        </span>
+        <br>
+        <span class="checkbox-span">
+            <button type="button" onclick="checkAll()">Check All</button>            
+        </span>
+        <br><br>
+        <select name="angle-type" id="angle-type">
+            <option value="degree" id="degree">Degree</option>
+            <option value="radian" id="radian">Radian</option>
+        </select>
+        <input type="number" name="angle" id="angle-value" placeholder="Angle Value"><br><br>
+        <button type="button" onclick="resetTrig()" id="calc1">reset</button>
+        <button type="button" onclick="vallidateTrig()">Submit</button>
+        <span id="resultContainer"></span>
+    </form>
+    <a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <script src="theme.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
