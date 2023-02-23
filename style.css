@@ -26,7 +26,7 @@ form {
 }
 
 label {
-  font-size: 25px;
+  font-size: 26px;
   font-weight: 500;
 }
 
@@ -96,6 +96,10 @@ label {
 }
 
 #resultCalculator {
+  font-size: 30px;
+}
+
+#resultDataCalculator {
   font-size: 30px;
 }
 
@@ -303,7 +307,17 @@ thead {
   width: 150px;
   font-size: 20px;
   border-radius: 3px;
-  margin-top: 20px;
+  margin-top: 10px;
+}
+
+#inputdata {
+  border: none;
+  padding: 10px;
+  height: 12px;
+  width: 140px;
+  font-size: 20px;
+  border-radius: 3px;
+  margin-top: 10px;
 }
 
 #output {

@@ -15,10 +15,13 @@
     <link rel="icon" href="Image/Favicon.png">
 </head>
 <body>
-	<form>
-		<h2>Data Converter</h2>
-		<label for="input">Input:</label>
-		<input type="number" id="input" name="input"><br>
+	<img src="Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <span>Data Converter</span>
+      </div>
+	  <form id="datacalc" class="form-horizontal">
+		<label for="input" >Input:</label>
+		<input type="number" id="inputdata" name="input"><br>
 		<label for="from">From:</label>
 		<select id="from" name="from">
 			<option value="B">B</option>
@@ -35,74 +38,25 @@
 			<option value="GB">GB</option>
 			<option value="TB">TB</option>
 		</select><br>
-		<input type="submit" value="Convert">
+		<!-- <input type="submit" value="Convert"> -->
+		<button type="button" onclick="fun10()" id="calc10">reset</button>
+        <button type="button" onclick="data_convertor()">Convert</button><br/><br/><br/>
+        <span id="resultDataCalculator"></span>
 	</form>
 	<a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
-
+	<script src="script.js"></script>
 	<script type="text/javascript">
-		document.querySelector('form').addEventListener('submit', function(e) {
+		document.getElementById("datacalc").addEventListener("submit",(e)=>{
 			e.preventDefault();
-			let input = parseFloat(document.querySelector('#input').value);
-			let from = document.querySelector('#from').value;
-			let to = document.querySelector('#to').value;
-			let result;
-
-			if (from == to) {
-				result = input;
-			} else if (from == 'B') {
-				if (to == 'KB') {
-					result = input / 1024;
-				} else if (to == 'MB') {
-					result = input / Math.pow(1024, 2);
-				} else if (to == 'GB') {
-					result = input / Math.pow(1024, 3);
-				} else if (to == 'TB') {
-					result = input / Math.pow(1024, 4);
-				}
-			} else if (from == 'KB') {
-				if (to == 'B') {
-					result = input * 1024;
-				} else if (to == 'MB') {
-					result = input / 1024;
-				} else if (to == 'GB') {
-					result = input / Math.pow(1024, 2);
-				} else if (to == 'TB') {
-					result = input / Math.pow(1024, 3);
-				}
-
-    		} else if (from == 'MB') {
-    			if (to == 'B') {
-    				result = input * Math.pow(1024, 2);
-    			} else if (to == 'KB') {
-    				result = input * 1024;
-    			} else if (to == 'GB') {
-    				result = input / 1024;
-    			} else if (to == 'TB') {
-    				result = input / Math.pow(1024, 2);
-    			}
-    		} else if (from == 'GB') {
-    			if (to == 'B') {
-    				result = input * Math.pow(1024, 3);
-    			} else if (to == 'KB') {
-    				result = input * Math.pow(1024, 2);
-    			} else if (to == 'MB') {
-    				result = input * 1024;
-    			} else if (to == 'TB') {
-    				result = input / 1024;
-    			}
-    		} else if (from == 'TB') {
-    			if (to == 'B') {
-    				result = input * Math.pow(1024, 4);
-    			} else if (to == 'KB') {
-    				result = input * Math.pow(1024, 3);
-    			} else if (to == 'MB') {
-    				result = input * Math.pow(1024, 2);
-    			} else if (to == 'GB') {
-    				result = input * 1024;
-    			}
-    		}
-		document.querySelector('h2').textContent = result + ' ' + to;
+			data_convertor();
+		document.addEventListener("keyup",(e)=>{
+            if(e.key=='Enter'){
+                calculateFact()
+            }
+        })
 	});
+
 </script>
+<script src="theme.js"></script>
 </body>
 </html>
