@@ -103,7 +103,7 @@ const calculator = () => {
     case "sum":
       document.getElementById("resultCalculator").innerHTML = `= ${number1 + number2
         }`;
-        // console.log(number1+number2);
+      // console.log(number1+number2);
       break;
     case "subs":
       document.getElementById("resultCalculator").innerHTML = `= ${number1 - number2
@@ -197,8 +197,8 @@ const data_convertor = () => {
       result = input * 1024;
     }
   }
-  document.getElementById("resultDataCalculator").innerHTML = `= ${result+' '+to
-  }`;
+  document.getElementById("resultDataCalculator").innerHTML = `= ${result + ' ' + to
+    }`;
   // document.querySelector('h2').textContent = result + ' ' + to;
 }
 const changeNumber = () => {
@@ -239,12 +239,63 @@ const changeNumber = () => {
   };
 
   let resultNumCh;
-  if (valueNumCh == "dec") {
+  if (valueNumCh == "dec-bin") {
     resultNumCh = decToBin(parseInt(numberCh));
     document.getElementById(
       "resultNumChange"
     ).innerHTML = `Binary= ${resultNumCh} `;
-  } else {
+  } else if (valueNumCh == "bin-oct") {
+    resultNumCh = parseInt(numberCh, 2).toString(8);
+    document.getElementById(
+      "resultNumChange"
+    ).innerHTML = `Octal= ${resultNumCh} `;
+  } else if (valueNumCh == "bin-hex") {
+    resultNumCh = parseInt(numberCh, 2).toString(16);
+    document.getElementById(
+      "resultNumChange"
+    ).innerHTML = `Hexadecimal = ${resultNumCh} `;
+  } else if (valueNumCh == "dec-oct") {
+    resultNumCh = parseInt(numberCh, 10).toString(8);
+    document.getElementById(
+      "resultNumChange"
+    ).innerHTML = `Octal = ${resultNumCh} `;
+  } else if (valueNumCh == "dec-hex") {
+    resultNumCh = parseInt(numberCh, 10).toString(16);
+    document.getElementById(
+      "resultNumChange"
+    ).innerHTML = `Hexadecimal = ${resultNumCh} `;
+  } else if (valueNumCh == "oct-bin") {
+    resultNumCh = parseInt(numberCh, 8).toString(2);
+    document.getElementById(
+      "resultNumChange"
+    ).innerHTML = `Binary = ${resultNumCh} `;
+  } else if (valueNumCh == "oct-dec") {
+    resultNumCh = parseInt(numberCh, 8).toString(10);
+    document.getElementById(
+      "resultNumChange"
+    ).innerHTML = `Decimal = ${resultNumCh} `;
+  } else if (valueNumCh == "oct-hex") {
+    resultNumCh = parseInt(numberCh, 8).toString(16);
+    document.getElementById(
+      "resultNumChange"
+    ).innerHTML = `Hexadecimal = ${resultNumCh} `;
+  } else if (valueNumCh == "hex-bin") {
+    resultNumCh = parseInt(numberCh, 16).toString(2);
+    document.getElementById(
+      "resultNumChange"
+    ).innerHTML = `Binary = ${resultNumCh} `;
+  } else if (valueNumCh == "hex-dec") {
+    resultNumCh = parseInt(numberCh, 16).toString(10);
+    document.getElementById(
+      "resultNumChange"
+    ).innerHTML = `Decimal = ${resultNumCh} `;
+  } else if (valueNumCh == "hex-oct") {
+    resultNumCh = parseInt(numberCh, 16).toString(8);
+    document.getElementById(
+      "resultNumChange"
+    ).innerHTML = `Octal = ${resultNumCh} `;
+  }
+  else {
     resultNumCh = binToDec(parseInt(numberCh));
     document.getElementById(
       "resultNumChange"
@@ -754,8 +805,8 @@ function romanSet() {
 }
 
 //reset trigcalc
-function resetTrig(){
-  document.getElementById('angle-value').value= '';
+function resetTrig() {
+  document.getElementById('angle-value').value = '';
   document.getElementById('cos').checked = false
   document.getElementById('tan').checked = false;
   document.getElementById('cosec').checked = false;
@@ -875,15 +926,15 @@ function validateForm() {
   }
 }
 
-function vallidateTrig(){
+function vallidateTrig() {
   var angleValue = document.getElementById("angle-value").value;
   var checkboxes = document.querySelectorAll('input[type="checkbox"]');
   var checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
-  if(angleValue == ""){
+  if (angleValue == "") {
     alert("Enter the value of angle.")
     return false;
   }
-  else if(checkedOne==0){
+  else if (checkedOne == 0) {
     alert("Select at least one operation.")
     return false;
   }
@@ -932,20 +983,20 @@ function trigCalculator() {
     var tan = Math.tan(angleRadian)
     if (angleDegree % 180 == 0 || angleDegree == 0)
       tan = 0;
-    else if(angleDegree%90 == 0)
-      tan = 1/0;
+    else if (angleDegree % 90 == 0)
+      tan = 1 / 0;
     var elem = document.getElementById('resultContainer')
     var clone2 = elem.cloneNode(true);
     clone2.innerHTML = `<br><br>tan(${document.getElementById('angle-value').value})= ${tan.toPrecision(2)}`;
-    if(document.getElementById('cos').checked)
+    if (document.getElementById('cos').checked)
       clone.after(clone2);
-    else 
+    else
       elem.after(clone2);
   }
   if (document.getElementById('cosec').checked) {
     var cosec = 1 / Math.sin(angleRadian)
     if (angleDegree % 180 == 0 || angleDegree == 0)
-      cosec = 1/0;
+      cosec = 1 / 0;
     var elem = document.getElementById('resultContainer')
     var clone3 = elem.cloneNode(true);
     clone3.innerHTML = `<br><br>cosec(${document.getElementById('angle-value').value})= ${cosec.toPrecision(2)}`;
@@ -954,8 +1005,8 @@ function trigCalculator() {
   if (document.getElementById('cot').checked) {
     var cot = 1 / Math.tan(angleRadian)
     if (angleDegree % 180 == 0 || angleDegree == 0)
-      cot = 1/0;
-    else if(angleDegree%90 == 0)
+      cot = 1 / 0;
+    else if (angleDegree % 90 == 0)
       cot = 0;
     var elem = document.getElementById('resultContainer')
     var clone4 = elem.cloneNode(true);
@@ -965,7 +1016,7 @@ function trigCalculator() {
   if (document.getElementById('sec').checked) {
     var sec = 1 / Math.cos(angleRadian)
     if (angleDegree % 90 == 0 && angleDegree % 180 != 0)
-      sec = 1/0;
+      sec = 1 / 0;
     var elem = document.getElementById('resultContainer')
     var clone5 = elem.cloneNode(true);
     clone5.innerHTML = `<br><br>&ensp;sec(${document.getElementById('angle-value').value})= ${sec.toPrecision(2)}`;

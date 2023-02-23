@@ -27,13 +27,24 @@
       <label for="numChange"
         >Please enter the number you'd like to convert</label
       ><br /><br />
-      <input type="number" name="numChange" id="numChange" />
+      <input type="text" name="numChange" id="numChange" />
       <select name="numSys" id="numSys">
-        <option value="dec">Decimal to Binary</option>
-        <option value="bin">Binary to Decimal</option> </select
+        <option value="bin-dec">Binary to Decimal</option> 
+        <option value="bin-oct">Binary to Octal</option> 
+        <option value="bin-hex">Binary to Hexadecimal</option> 
+        <option value="dec-bin">Decimal to Binary</option>
+        <option value="dec-oct">Decimal to Octal</option> 
+        <option value="dec-hex">Decimal to Hexadecimal</option> 
+        <option value="oct-bin">Octal to Binary</option> 
+        <option value="oct-dec">Octal to Decimal</option> 
+        <option value="oct-hex">Octal to Hexadecimal</option> 
+        <option value="hex-bin">Hexadecimal to Binary</option> 
+        <option value="hex-dec">Hexadecimal to Decimal</option> 
+        <option value="hex-oct">Hexadecimal to Octal</option>  
+        </select
       ><br />
       <button type="button" id="bindecSet" onclick="fun2()">reset</button>
-      <button type="button" onclick="changeNumber()">Submit</button
+      <button type="button" onclick="changeNumber(),Func()">Submit</button
       ><br /><br /><br />
       <span id="resultNumChange"></span>
     </form>
