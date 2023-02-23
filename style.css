@@ -12,7 +12,7 @@ body {
   place-items: center;
   /* overflow: hidden; */
   overflow-x: hidden;
-  overflow-y: hidden;
+/*   overflow-y: hidden; */
 }
 
 form {
