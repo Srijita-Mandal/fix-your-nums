@@ -12,6 +12,7 @@ body {
   place-items: center;
   /* overflow: hidden; */
   overflow-x: hidden;
+  /* overflow-y: hidden; */
 }
 
 form {
@@ -285,7 +286,7 @@ thead {
   margin-left: 5px;
 }
 
-#num2 {
+#num2, #angle-value {
   border: none;
   padding: 10px;
   height: 20px;
@@ -371,4 +372,17 @@ thead {
     width: 2.5rem;
     font-size: 1.2;
     z-index: 999;
+}
+
+#angle-type {
+  height: 40px;
+  padding: 3px;
+  border: none;
+  border-radius: 3px;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.checkbox-span{
+  padding: 20px;
 }
