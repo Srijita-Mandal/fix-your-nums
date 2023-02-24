@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="result.css">
     <title>Days Calculator</title>
     <link rel="icon" href="Image/Favicon.png">
 
@@ -59,7 +60,7 @@ form{
     background-color: #ffb4a3;
     padding: 60px;
     width: 54%;
-    height: 45%;
+    height: 50%;
     margin: 100px auto;
     text-align: center;
     place-items: center;
@@ -103,7 +104,10 @@ label{
             <span id = "message" style="color:rgb(255, 0, 0)"> </span> <br><br>
             <button id="button1" onclick="daySet()">Reset</button>
             <button type="button" onclick="DaysCalculator()">Submit</button><br/><br/><br/>
-            <span id="resultAge"></span>
+            <div class="outterbox">
+                <div class="box"><span id="resultAge"></span></div>
+            </div>
+            <!-- <span id="resultAge"></span> -->
         </form>
         <a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
         <script src="script.js"></script>

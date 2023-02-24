@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="result.css">
     <link rel="stylesheet" href="theme.css">
     <link rel="icon" href="Image/Favicon.png">
 </head>
@@ -59,7 +60,11 @@
         <input type="number" name="angle" id="angle-value" placeholder="Angle Value"><br><br>
         <button type="button" onclick="resetTrig()" id="calc1">reset</button>
         <button type="button" onclick="vallidateTrig()">Submit</button>
-        <span id="resultContainer"></span>
+        <br><br><br>
+        <div class="outterbox">
+            <div class="box"><span id="resultContainer"></span></div>
+        </div>
+        <!-- <span id="resultContainer"></span> -->
     </form>
     <a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
     <script src="theme.js"></script>

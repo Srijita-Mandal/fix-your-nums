@@ -101,16 +101,16 @@ const calculator = () => {
 
   switch (valOpe) {
     case "sum":
-      document.getElementById("resultCalculator").innerHTML = `= ${number1 + number2
+      document.getElementById("resultCalculator").innerHTML = `${number1 + number2
         }`;
       // console.log(number1+number2);
       break;
     case "subs":
-      document.getElementById("resultCalculator").innerHTML = `= ${number1 - number2
+      document.getElementById("resultCalculator").innerHTML = `${number1 - number2
         }`;
       break;
     case "mult":
-      document.getElementById("resultCalculator").innerHTML = `= ${number1 * number2
+      document.getElementById("resultCalculator").innerHTML = `${number1 * number2
         }`;
       break;
     case "div":
@@ -121,14 +121,14 @@ const calculator = () => {
         let diviFinal = division.toFixed(2);
         document.getElementById(
           "resultCalculator"
-        ).innerHTML = `= ${diviFinal}`;
+        ).innerHTML = `${diviFinal}`;
       }
       break;
     case "modu":
       if (number2 == 0) {
         document.getElementById("resultCalculator").innerHTML = `Error!`;
       } else {
-        document.getElementById("resultCalculator").innerHTML = `= ${number1 % number2
+        document.getElementById("resultCalculator").innerHTML = `${number1 % number2
           }`;
       }
       break;
@@ -198,7 +198,7 @@ const data_convertor = () => {
     }
   }
   
-  document.getElementById("resultDataCalculator").innerHTML = `= ${result + ' ' + to}`;
+  document.getElementById("resultDataCalculator").innerHTML = `${result + ' ' + to}`;
   // document.querySelector('h2').textContent = result + ' ' + to;
 }
 
@@ -244,7 +244,7 @@ const weigh_convertor = () => {
       result = input * 0.000453592;
     }
   }
-  document.getElementById("resultWeighCalculator").innerHTML = `= ${result + ' ' + to}`;
+  document.getElementById("resultWeighCalculator").innerHTML = `${result + ' ' + to}`;
   // document.querySelector('h2').textContent = result + ' ' + to;
 }
 const changeNumber = () => {
@@ -1022,7 +1022,7 @@ function trigCalculator() {
     var sin = Math.sin(angleRadian)
     if (angleDegree % 180 == 0 || angleDegree == 0)
       sin = 0;
-    document.getElementById('resultContainer').innerHTML = `<br><br>sin(${document.getElementById('angle-value').value})= ${sin.toPrecision(2)}`;
+    document.getElementById('resultContainer').innerHTML = `sin(${document.getElementById('angle-value').value})= ${sin.toPrecision(2)}`;
   }
   if (document.getElementById('cos').checked) {
     var cos = Math.cos(angleRadian)
@@ -1030,7 +1030,7 @@ function trigCalculator() {
       cos = 0;
     var elem = document.getElementById('resultContainer')
     var clone = elem.cloneNode(true);
-    clone.innerHTML = `<br><br>cos(${document.getElementById('angle-value').value})= ${cos.toPrecision(2)}`;
+    clone.innerHTML = `cos(${document.getElementById('angle-value').value})= ${cos.toPrecision(2)}`;
     elem.after(clone);
   }
   if (document.getElementById('tan').checked) {
@@ -1041,7 +1041,7 @@ function trigCalculator() {
       tan = 1 / 0;
     var elem = document.getElementById('resultContainer')
     var clone2 = elem.cloneNode(true);
-    clone2.innerHTML = `<br><br>tan(${document.getElementById('angle-value').value})= ${tan.toPrecision(2)}`;
+    clone2.innerHTML = `tan(${document.getElementById('angle-value').value})= ${tan.toPrecision(2)}`;
     if (document.getElementById('cos').checked)
       clone.after(clone2);
     else
@@ -1053,7 +1053,7 @@ function trigCalculator() {
       cosec = 1 / 0;
     var elem = document.getElementById('resultContainer')
     var clone3 = elem.cloneNode(true);
-    clone3.innerHTML = `<br><br>cosec(${document.getElementById('angle-value').value})= ${cosec.toPrecision(2)}`;
+    clone3.innerHTML = `cosec(${document.getElementById('angle-value').value})= ${cosec.toPrecision(2)}`;
     clone2.after(clone3);
   }
   if (document.getElementById('cot').checked) {
@@ -1064,7 +1064,7 @@ function trigCalculator() {
       cot = 0;
     var elem = document.getElementById('resultContainer')
     var clone4 = elem.cloneNode(true);
-    clone4.innerHTML = `<br><br>cot(${document.getElementById('angle-value').value})= ${cot.toPrecision(2)}`;
+    clone4.innerHTML = `cot(${document.getElementById('angle-value').value})= ${cot.toPrecision(2)}`;
     clone3.after(clone4);
   }
   if (document.getElementById('sec').checked) {
@@ -1073,7 +1073,7 @@ function trigCalculator() {
       sec = 1 / 0;
     var elem = document.getElementById('resultContainer')
     var clone5 = elem.cloneNode(true);
-    clone5.innerHTML = `<br><br>&ensp;sec(${document.getElementById('angle-value').value})= ${sec.toPrecision(2)}`;
+    clone5.innerHTML = `&ensp;sec(${document.getElementById('angle-value').value})= ${sec.toPrecision(2)}`;
     clone4.after(clone5);
   }
 

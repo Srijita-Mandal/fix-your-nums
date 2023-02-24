@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="result.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
       rel="stylesheet"
@@ -26,11 +27,12 @@
               font-family: 'Ubuntu', sans-serif;
           }
           .main {
+            height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-top: 80px;
+            margin-top: 30px;
           }
           .inp {
             margin: 25px;
@@ -82,8 +84,8 @@
               margin-bottom: 10px
             }
           .result {
-            margin: 5px;
-            padding: 5px;
+            /* margin: 5px; */
+            /* padding: 5px; */
             font-size: larger;
           }
           .father {
@@ -104,7 +106,7 @@
 <body>
   <img src="Image/moon.png" id="icon">
     <div class="father">
-        <div class="main">
+      <div class="main">
           <div class="calculator-name-header"><h2>Binomial Coefficient Calculator</h2> </div>
           
             <img src="https://www.pythonpool.com/wp-content/uploads/2021/08/20210806_123250_0000.png" class ="img" alt="image">
@@ -119,9 +121,12 @@
 
             </div>
             <h3 class="root">Answer is:</h3>
-            <div class="result">
-                <p class="result" id="result"></p>
-            </div>
+            <div class="outterbox">
+              <div class="box"><span class="result" id="result"></span></div>
+          </div>
+            <!-- <div class="result">
+                <span class="result" id="result"></span>
+            </div> -->
            
         </div>
     </div>

@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="result.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
       rel="stylesheet"
@@ -57,6 +58,9 @@
         width: 100%;
         margin-top: 10px;
         font-weight: 500;
+      }
+      #p #result{
+        background-color: rgb(250, 248, 248);
       }
       input {
         height: 30px;
@@ -151,7 +155,7 @@
         <button id="button" onclick="and()">And</button>
         <button id="button" onclick="or()">OR</button>
         <button id="button" onclick="xor()">XOR</button>
-        <p id="p">Result :<input id="result" disabled="" /></p>
+        <p id="p">Result : <input id="result" disabled="" /></p>
         <button
           id="bitSet"
           style="margin-top: 5px; padding-top: 3px; padding-bottom: 3px;"

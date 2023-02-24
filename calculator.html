@@ -10,9 +10,11 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="result.css">
     <link rel="stylesheet" href="theme.css">
     <link rel="icon" href="Image/Favicon.png">
     <title>calculator</title>
+
 </head>
 <body>
     <img src="Image/moon.png" id="icon">
@@ -34,8 +36,11 @@
         
         <input type="number" name="num2" id="num2" placeholder="Second Number"><br/><br/>
         <button type="button" onclick="fun4()" id="calc1">reset</button>
-        <button type="button" onclick="calculator()">Submit</button><br/><br/><br/>
-        <span id="resultCalculator"></span>
+        <button type="button" onclick="calculator()">Submit</button><br><br><br>
+
+        <div class="outterbox">
+            <div class="box"><span id="resultCalculator"></span></div>
+        </div>
 
     </form>
     <a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
