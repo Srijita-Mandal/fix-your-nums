@@ -10,6 +10,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="result.css">
     <link rel="stylesheet" href="theme.css">
     <link rel="icon" href="Image/Favicon.png">
     <title>Logarithm</title>
@@ -25,7 +26,10 @@
         <input type="number" name="log" id="log"><br/><br/>
         <button type="button" id="logSet" onclick="fun7()">reset</button>
         <button type="button" onclick="calculateLog()">Submit</button><br/><br/><br/>
-        <span id="resultLog"></span>
+        <div class="outterbox">
+            <div class="box"><span id="resultLog"></span></div>
+        </div>
+        <!-- <span id="resultLog"></span> -->
     </form>
     <a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
 

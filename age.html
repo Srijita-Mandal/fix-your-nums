@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="result.css">
     <link rel="icon" href="Image/Favicon.png" />
 
     <title>Age Calculator</title>
@@ -69,6 +70,12 @@
       box-shadow: 0px 0px 16px 1px;
       font-size: 30px;
     }
+    .btns{
+      display: flex;
+      /* flex-direction: column; */
+      justify-content: center;
+      margin: 3rem;
+    }
   </style>
   <link rel="stylesheet" href="theme.css" />
   <body>
@@ -80,12 +87,16 @@
     <form class="form-horizontal" id="age">
       <label for="DOB">Please enter your Date of Birth</label><br /><br />
       <input type="date" name="BOD" id="DOB" />
-      <span id="message" style="color: red;"> </span> <br /><br />
-      <button type="button" id="ageSet" onclick="fun1()">reset</button>
-      <span id="message" style="color: rgb(255, 0, 0);"> </span> <br /><br />
-      <button type="button" onclick="ageCalculator()">Submit</button
-      ><br /><br /><br />
-      <span id="resultAge"></span>
+      <div class="btns">
+        <span id="message" style="color: red;"> </span> <br /><br />
+        <button type="button" id="ageSet" onclick="fun1()">reset</button>
+        <span id="message" style="color: rgb(255, 0, 0);"> </span> <br /><br />
+        <button type="button" onclick="ageCalculator()">Submit</button><br /><br /><br />
+      </div>
+      <div class="outterbox">
+        <div class="box"><span id="resultAge"></span></div>
+    </div>
+      <!-- <span id="resultAge"></span> -->
     </form>
     <a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
 
