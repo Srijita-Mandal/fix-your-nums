@@ -20,6 +20,14 @@
     --color--cont_p : white;
     --color--hover:  #ffffff;
 }
+.calcsip{
+    background-color: var(--color--form);
+    width: 500px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;  
+    flex-direction: column;  
+}
 .calculator-name-header {
     background-color: var(--color--form);
     color: var(--color--label);

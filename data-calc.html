@@ -39,7 +39,7 @@
 			<option value="TB">TB</option>
 		</select><br>
 		<!-- <input type="submit" value="Convert"> -->
-		<button type="button" onclick="fun10()" id="calc10">reset</button>
+		<button type="button" onclick="fun10()" id="calc10">Reset</button>
         <button type="button" onclick="data_convertor()">Convert</button><br/><br/><br/>
         <span id="resultDataCalculator"></span>
 	</form>
@@ -51,7 +51,7 @@
 			data_convertor();
 		document.addEventListener("keyup",(e)=>{
             if(e.key=='Enter'){
-                calculateFact()
+                data_convertor()
             }
         })
 	});
