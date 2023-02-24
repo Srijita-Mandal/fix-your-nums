@@ -7,8 +7,14 @@
     <title>Algebraic Derivative Calculator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="result.css">
     <link rel="stylesheet" href="theme.css">
     <link rel="icon" href="Image/Favicon.png">
+    <style>
+        #resultDeriv{
+            padding: 0 1rem;
+        }
+    </style>
 </head>
 <body>
     <img src="Image/moon.png" id="icon">
@@ -26,7 +32,10 @@
         <input type="number" name="exponent" id="exponent" step="any" value="1"><br>
         <button type="button" onclick="validateForm()">Submit</button><br/><br/><br/>
         <span id="inputExpression"></span>
-        <span id="resultDeriv"></span>
+        <div class="outterbox">
+            <div class="box"><span id="resultDeriv"></span></div>
+        </div>
+        
     </form>
     <a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
     <script src="script.js"></script>
