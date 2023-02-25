@@ -869,6 +869,16 @@ function resetTrig() {
 
 }
 
+//reset pnc
+function pncSet() {
+  document.querySelector("#button1").addEventListener('click', function () {
+      document.querySelector('#num1').value = "";
+      document.querySelector('#num2').value = "";
+      document.getElementById('resultP').innerHTML = "";
+      document.getElementById('resultC').innerHTML = "";
+  });
+}
+
 function resultantConversion() {
   const input = document.getElementById("input").value;
 
@@ -1078,6 +1088,47 @@ function trigCalculator() {
   }
 
 
+}
+
+
+const PnC_calculator = () => {
+  const firstNum = parseInt(document.getElementById('num1').value);
+  const secondNum = parseInt(document.getElementById('num2').value);
+  function factorial(n) {
+      let answer = 1;
+      if (n == 0 || n == 1) {
+          return answer;
+      }
+      else if (n > 1) {
+          for (var i = n; i >= 1; i--) {
+              answer = answer * i;
+          }
+          return answer;
+      }
+  }
+
+  function permuation(num1, num2) {
+      let a = factorial(num1);
+      let b = factorial(num1 - num2);
+      let result = a / b;
+
+      return result;
+  }
+  function combination(num1, num2) {
+      let a = factorial(num1);
+      let b = factorial(num1 - num2);
+      let c = factorial(num2);
+      let result = a / (b * c);
+
+      return result;
+  }
+
+  console.log(permuation(firstNum, secondNum));
+  let P_result = permuation(firstNum, secondNum);
+  let C_result = combination(firstNum, secondNum);
+
+  document.getElementById('resultP').innerHTML = `P - ${P_result}`;
+  document.getElementById('resultC').innerHTML = `C - ${C_result}`;
 }
 
 
