@@ -33,17 +33,22 @@
     <header>
       <nav class="navbar">
         <a href="./index.html"><div class="logo">Fix Your Nums</div></a>
-        <ul>
-          <a href="#hero">
-            <li>Home</li>
-          </a>
-          <a href="#calculators">
-            <li>Calculators</li>
-          </a>
-          <a href="#about">
-            <li>About</li>
-          </a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#hero" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#calculators" class="nav-link">Calculators</a>
+      </li>
+      <li class="nav-item">
+        <a href="#about" class="nav-link">About</a>
+    </li>
         </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+      </div>
       </nav>
     </header>
     <!-- HERO SECTION -->
@@ -392,4 +397,22 @@
     <script src="script.js"></script>
     <script src="go_to_top.js"></script>
   </body>
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", mobileMenu);
+    function mobileMenu() {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    }
+    const navLink = document.querySelectorAll(".nav-link");
+
+    navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+    function closeMenu() {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    }
+  </script>
 </html>
