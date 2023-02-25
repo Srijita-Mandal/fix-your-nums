@@ -22,10 +22,14 @@
     /> --> 
     <link rel="icon" href="./Image/Favicon.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="indexstyle.css" />
+    <link rel="stylesheet" href="go_to_top.css">
     <title>Fix your nums</title>
   </head>
   <body>
     <!-- HEADER CONTAINS THE STICKY NAVBAR -->
+    <button class="gotop">
+        <img src="Image/upButton.png" alt="arrow up">
+    </button>
     <header>
       <nav class="navbar">
         <a href="./index.html"><div class="logo">Fix Your Nums</div></a>
@@ -290,6 +294,14 @@
           <a href="weight-calc.html">Try Now!</a>
         </div>
       </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Num-to-word</h2>
+          <p>Enter any  numbers and then get it convert into word quickly.</p>
+          <a href="num-to-word.html">Try Now!</a>
+        </div>
+      </div>
 
       <div class="box">
         <span></span>
@@ -297,6 +309,15 @@
           <h2>Trigonometric Calculator</h2>
           <p>Calculate trigonometric function values for a given angle.</p>
           <a href="trig-calc.html">Try Now!</a>
+        </div>
+      </div>
+
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Permutation and Combination Calculator</h2>
+          <p>Calculate Permutation and Combination for given numbers.</p>
+          <a href="pnc.html">Try Now!</a>
         </div>
       </div>
       
@@ -374,6 +395,7 @@
     ></script>
 
     <script src="script.js"></script>
+    <script src="go_to_top.js"></script>
   </body>
   <script>
     const hamburger = document.querySelector(".hamburger");

@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <title>Currency Converter</title>
     <link rel="stylesheet" href="ccstyle.css">
+    <link rel="stylesheet" href="../result.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="icon" href="Favicon.png">
@@ -13,6 +15,7 @@
     
   </head>
   <body>
+    <img src="../Image/moon.png" id="icon" />
     <div class="wrapper form">
       <div class="calculator-name-header">
         <!-- Updated by @Shantanu-Meta   -->
@@ -21,7 +24,7 @@
       <form action="#">
         <div class="amount">
           <p>Enter Amount</p>
-          <input type="text" id="value" value="1">
+          <input type="text" id="value" value="">
         </div>
         <div class="drop-list">
           <div class="from">
@@ -40,7 +43,12 @@
             </div>
           </div>
         </div>
-        <div class="exchange-rate">Converting...</div>
+        <br>
+        <div class="outterbox">
+          <div class="box"><span class="exchange-rate">Converting...</span></div>
+      </div>
+      <br>
+        <!-- <div class="exchange-rate">Converting...</div> -->
         <button>Convert</button>
         <button style="margin-top: 3px;" id="button2" onclick="currSet()">Reset</button>
       </form>
@@ -58,6 +66,7 @@
     </script>
     <script src="country-list.js"></script>
     <script src="../script.js"></script>
+    <script src="cctheme.js"></script>
 
   </body>
 </html>
