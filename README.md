@@ -45,6 +45,8 @@
 5. Create a new ```branch``` and name it as according to the issue.
 6. Make your desired changes to the code.
 7. Open a ```pull request``` with a name of the issue and describe about your changes with proper links or screenshots.
+
+Still confused ? Refer to [Contributing Guidelines](CONTRIBUTING.md)
 <br><br>
 
 ## 🤝 Contact:
