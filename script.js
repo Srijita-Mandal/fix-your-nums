@@ -1019,7 +1019,7 @@ function trigCalculator() {
     }
     document.getElementById('resultTrigContainer').innerHTML =
       `<br><br>cos(${document.getElementById('angle-value').value})= ${cos.toPrecision(2)}`;
-
+  }
   if (document.getElementById('tan').checked) {
     var tan = Math.tan(angleRadian);
     if (angleDegree % 180 == 0 || angleDegree == 0) {
