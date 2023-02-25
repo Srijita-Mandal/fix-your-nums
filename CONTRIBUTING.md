@@ -4,43 +4,72 @@ First of all thanks for your time to contribute :smiley: :partying_face:
 
 This documentation contains a set of guidelines to help you during the contribution process.
 
+<br>
 
-### 🔖Steps to Contribute
+# ▶️ Steps for contributing :
+## Fork this repository
+<img align="right" width="300" src="./assets/fork.png" alt="copy URL to clipboard" />
+<br>
+Fork this repository by clicking on the fork button on the top of this page.
+This will create a copy of this repository in your account.
+<br><br><br>
 
-Following are the steps to guide you:
+## Clone This Repository
+<img align="right" width="200" src="./assets/clone.png" alt="copy URL to clipboard" />
 
-**1.** Fork [this](https://github.com/Srijita-Mandal/fix-your-nums) repository.
+Now clone the forked repository to your machine. 
+Go to your GitHub account, open the forked repository, click on the code button and then click the copy to clipboard icon.
+<br>
 
-**2.** Clone the forked repository.
-
-```bash
-git clone https://github.com/Srijita-Mandal/fix-your-nums.git
+Open a terminal and run the following git command:
 ```
+git clone https://github.com/<Your-Github-username>/fix-your-nums.git
+```
+<br>
 
-**3.** Navigate to the project directory.
+## Create a branch
 
-```bash
+Change to the repository directory on your computer (if you are not already there):
+
+```
 cd fix-your-nums
 ```
 
+Now create a branch using the `git checkout` command:
 
-**5.** Make changes in source code.
+```
+git checkout -b <branch-name>
+```
 
-**6.** Stage your changes and commit
+For example:
 
-```bash
+```
+git checkout -b add-new-calc
+```
+
+## Make necessary changes and commit those changes
+If you go to the project directory and execute the command `git status`, you'll see there are changes.
+
+Add those changes to the branch you just created using the git add command:
+
+```
 git add .
-git commit -m "<your_commit_message>"
 ```
+Now commit those changes using the git commit command:
 
-**7.** Push your local commits to the remote repo.
-
-```bash
-git push 
 ```
+git commit -m "Your commit message"
+```
+## Push changes to GitHub
+Push the changes to the forked repository using:
+```
+git push origin <Your-branch-name>
+```
+Navigate to the original repository and make a pull request.
 
-**8.** Create a [PR](https://github.com/Srijita-Mandal/fix-your-nums) .
+#### In case of merge conflict fetch and merge from the remote repository .
 
+<br><br>
 ### 🔑Guidelines
 
 Here are some set of guidelines to follow while contributing to `fix-your-nums` :
