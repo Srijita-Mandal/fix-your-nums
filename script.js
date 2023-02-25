@@ -702,7 +702,7 @@ function getExchangeRate() {
   const exchangeRateTxt = document.querySelector("form .exchange-rate");
   let amountVal = amount.value;
   if (amountVal == "" || amountVal == "0") {
-    amount.value = "1";
+    amount.value = "";
     amountVal = 1;
   }
   exchangeRateTxt.innerText = "Converting...";
