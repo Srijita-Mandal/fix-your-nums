@@ -75,6 +75,9 @@ h1{
     font-size: 70px;
     margin-top: 50px;
 }
+h3{
+    color: var(--color--h2);
+}
 
 a:hover{
     text-decoration: none;
