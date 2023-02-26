@@ -1,25 +1,55 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Number to Word </title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='numtoword.css'>
-    <script src='numtoword.js'></script>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Number to Word </title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="result.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="icon" href="Image/Favicon.png">
+  <title>Number To Words Converter</title>
 </head>
+
 <body>
-    <div class="wrapper">
-        <div class="converter">
-          <header>Number To Words Converter</header>
-        
-          <input id="number" type="text" class="inputBox" placeholder="Type any number..." required>
-          <button class="convertBtn glow-on-hover" onclick="result1()">Convert</button>
-        </div>
-        <div class="output">
-          <p>Result: <span id="result"></span></p>
-        </div>
-      </div>
+  <img src="Image/moon.png" id="icon">
+  <div class="calculator-name-header">
+    <span>Number To Words Converter</span>
+  </div>
  
+  <form class="form-horizontal" id="numToWord">
+
+    <label for="num">Type any number...</label><br/><br/>
+    <input type="number" name="num" id="num"><br/><br/>
+
+    <button type="button" id="numToWordReset" onclick="fun8()">reset</button>
+    <button type="button" onclick="result1()">Convert</button><br /><br /><br />
+    <div class="outterbox">
+      <div class="box"><span id="resultWord"></span></div>
+    </div>
+  </form>
+  <a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+
+  <script src="script.js"></script>
+  <script type="text/javascript">
+    document.getElementById("numToWord").addEventListener("submit", (e) => {
+      e.preventDefault();
+      result1();
+    })
+    document.body.addEventListener("keyup", (e) => {
+      if (e.keyCode == 13) {
+        result1();
+      }
+    })
+  </script>
+  <script src='theme.js'></script>
 </body>
+
 </html>
