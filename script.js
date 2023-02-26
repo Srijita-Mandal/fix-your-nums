@@ -1108,4 +1108,13 @@ const PnC_calculator = () => {
   document.getElementById('resultC').innerHTML = `C - ${C_result}`;
 }
 
+function retirementCalculator()
+{
+  let amountInvested = parseFloat(document.getElementById("amountInvested").value);
+    let investmentPeriod = parseFloat(document.getElementById("investmentPeriod").value);
+    let expectedRate = parseFloat(document.getElementById("expectedRate").value);
+    console.log(amountInvested,investmentPeriod,expectedRate)
+    let futureValue = Math.pow((amountInvested * (1 + expectedRate)),investmentPeriod);
 
+    document.getElementById("futureValue").innerHTML = futureValue;
+}
