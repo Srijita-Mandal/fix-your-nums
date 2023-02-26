@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="Image/Favicon.png">
+   <link rel="stylesheet" href="sleepdark.css">
+   <link rel="stylesheet" type="text/css" href="result.css">
+    <title>Sleep Calculator</title>
+    <style>
+        #home{
+  /* background-color: black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: #121916;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.2;
+    z-index: 999;
+}
+    body {
+  font-family: Arial, Helvetica, sans-serif;
+ 
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+.container {
+  width: 520px;
+  height: auto;
+  margin: 80px auto;
+  
+  border-radius: 25px;
+}
+
+.block {
+  width: 135px;
+  padding: 5px 10px;
+  margin-left: 20px;
+  float: left;
+}
+
+h6 {
+  font-size: 24px !important;
+  text-align: center;
+  display: block;
+ border-radius: 25px;
+  font-weight: normal;
+  margin-top: 0px;
+
+}
+.title {
+  font-size: 20px;
+  text-align: left;
+  font-family: sans-serif;
+  font-weight: normal;
+  line-height: 0.5;
+  letter-spacing: 0.5px;
+  word-spacing: 2.7px;
+  
+}
+input[type="text"] {
+  width: 140px;
+  margin: auto;
+  outline: none;
+  min-height: 50px;
+  border: 2px solid;
+  padding: 12px;
+  background-color: #f7f7f7;
+  border-radius: 2px;
+  
+  font-size: 17px;
+}
+input[type="text"]:focus {
+  background-color: #ffffff;
+ 
+  outline: none;
+}
+
+[type="button"]:hover {
+ 
+  cursor: pointer;
+}
+#sleepTime {
+  display: block;
+  margin: 10px;
+  margin-top: 25px;
+  padding: 10px;
+  padding-bottom: 10px;
+  overflow: hidden;
+  font-family: verdana;
+  font-size: 23px;
+  font-weight: normal;
+  line-height: 1.5;
+  word-spacing: 2.7px;
+  
+}
+#otherSleepTime{
+  display: block;
+  margin: 5px;
+  margin-top: 6px;
+  padding: 5px;
+  padding-bottom: 20px;
+  overflow: hidden;
+  font-family: verdana;
+  font-size: 23px;
+  font-weight: normal;
+  line-height: 1.5;
+  word-spacing: 2.7px;
+ 
+}
+
+#sleep{
+  margin: 10px;
+  padding: 5px;
+}
+#meridian{
+  /* margin: 10px; */
+  padding: 12px;
+  border: 2px solid ;
+  font-size: 17px;
+}
+.calculator-name-header{
+                text-align: center;
+                padding: 10px;
+                border-radius: 0px 15px 0px 15px;
+                box-shadow: 0px 0px 16px 1px;
+                font-size: 30px;
+                margin: 25px 30%;
+               
+      }
+    </style>
+  </head>
+  <body>
+    <img src="Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <span>Sleep calculator</span>
+      </div>
+    <div class="container">
+      <form>
+        
+          
+            <h6>What time do you want to wake up?</h6>
+         
+
+          <div class="block">
+            <input type="text" placeholder="hours" name="hours" id="hour" />
+          </div>
+          <div class="block">
+            <input type="text" placeholder="minutes" name="minutes" id="minute" />
+          </div>
+          <div class="block">
+            <select name="meridian" id="meridian">
+              <option value="am">AM</option>
+              <option value="pm">PM</option>
+            </select>
+          </div>
+     
+       
+        <div class="base">
+            <div class="enter">
+        <button type="button" onclick="fun4()" id="calc1">Reset</button>
+        <button type="button" onclick="time()" id="calc2">Submit</button><br>
+        </div>
+        </div>
+         
+        <div class="outterbox">
+            <div id="sleepTime"></div>
+        </div>
+        <div class="outterbox">
+            <div id="otherSleepTime"></div>
+        </div>
+        <div class="outterbox">
+             <div id="sleep"></div>
+        </div>
+      </form>
+    </div>
+    <a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <script>
+
+function time() {
+  var wakeHours = Number(document.getElementById("hour").value);
+  var wakeMinutes = Number(document.getElementById("minute").value);
+  var wakeMeridian = document.getElementById("meridian").value;
+  var totalWakeMinutes = wakeHours * 60 + wakeMinutes;
+
+  const sleep = [
+    (totalWakeMinutes - 90 * 6-15) / 60,
+    (totalWakeMinutes - 90 * 5-15) / 60,
+    (totalWakeMinutes - 90 * 4-15) / 60,
+
+    (totalWakeMinutes - 90 * 3-15) / 60,
+    (totalWakeMinutes - 90 * 2-15) / 60,
+    (totalWakeMinutes - 90 * 1-15) / 60,
+  ];
+  const newSleep = sleep.map((hour) => {
+    if (hour < 1) {
+      if (wakeMeridian === "am") {
+        return Math.floor(hour+12)+":"+ (((hour + 12)-Math.floor(hour + 12))*60 === 0 ? '00' : ((hour + 12)-Math.floor(hour + 12))*60) + "pm";
+      } else if (wakeMeridian === "pm") {
+        return Math.floor(hour+12)+":"+ (((hour + 12)-Math.floor(hour + 12))*60 === 0 ? '00' : ((hour + 12)-Math.floor(hour + 12))*60) + "am";
+      }
+    } else {
+      if (wakeMeridian === "am") {
+        return Math.floor(hour)+":"+ (((hour)-Math.floor(hour))*60 === 0 ? '00' : ((hour)-Math.floor(hour))*60) + "am";
+      } else if (wakeMeridian === "pm") {
+        return Math.floor(hour)+":"+ (((hour)-Math.floor(hour))*60 === 0 ? '00' : ((hour)-Math.floor(hour))*60) + "pm";
+      }
+    }
+  });
+
+  
+
+  document.getElementById('sleepTime').innerHTML="Suggested Bed Time --> "+newSleep[0]+" or "+newSleep[1];
+  document.getElementById('otherSleepTime').innerHTML=newSleep[2]+","+newSleep[3]+","+newSleep[4]+","+  newSleep[5] + " are the timings in which you can also sleep.";
+  document.getElementById('sleep').innerHTML="If you wake up at one of these times, you’ll rise in between 90-minute sleep cycles. A good night’s sleep consists of 5-6 complete sleep cycles.";
+}
+    </script>
+    <script src="theme.js"></script>
+  </body>
+</html>
