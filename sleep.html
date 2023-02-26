@@ -175,8 +175,8 @@ input[type="text"]:focus {
        
         <div class="base">
             <div class="enter">
-        <button type="button" onclick="fun4()" id="calc1">Reset</button>
-        <button type="button" onclick="time()" id="calc2">Submit</button><br>
+        <button type="button" onclick="fun11()" id="calc1" name="calc1">Reset</button>
+        <button type="button" onclick="time()" id="calc2" name="calc2">Submit</button><br>
         </div>
         </div>
          
@@ -193,9 +193,7 @@ input[type="text"]:focus {
     </div>
     <a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
     <script>
-
-function time() {
-  var wakeHours = Number(document.getElementById("hour").value);
+ var wakeHours = Number(document.getElementById("hour").value);
   var wakeMinutes = Number(document.getElementById("minute").value);
   var wakeMeridian = document.getElementById("meridian").value;
   var totalWakeMinutes = wakeHours * 60 + wakeMinutes;
@@ -209,6 +207,12 @@ function time() {
     (totalWakeMinutes - 90 * 2-15) / 60,
     (totalWakeMinutes - 90 * 1-15) / 60,
   ];
+
+function time() {
+  document.querySelector("#calc2").addEventListener('click',function(){
+ 
+
+ 
   const newSleep = sleep.map((hour) => {
     if (hour < 1) {
       if (wakeMeridian === "am") {
@@ -224,13 +228,23 @@ function time() {
       }
     }
   });
-
+  
   
 
   document.getElementById('sleepTime').innerHTML="Suggested Bed Time --> "+newSleep[0]+" or "+newSleep[1];
   document.getElementById('otherSleepTime').innerHTML=newSleep[2]+","+newSleep[3]+","+newSleep[4]+","+  newSleep[5] + " are the timings in which you can also sleep.";
   document.getElementById('sleep').innerHTML="If you wake up at one of these times, you’ll rise in between 90-minute sleep cycles. A good night’s sleep consists of 5-6 complete sleep cycles.";
+});
 }
+function fun11(){
+                document.querySelector("#calc1").addEventListener('click',function(){
+                    document.querySelector('#hour').value="";
+                    document.querySelector('#minute').value="";
+                    document.getElementById('sleep').innerHTML= "";
+                    document.getElementById('sleepTime').innerHTML= "";
+                    document.getElementById('otherSleepTime').innerHTML= "";
+             });
+          }
     </script>
     <script src="theme.js"></script>
   </body>
