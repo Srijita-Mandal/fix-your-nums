@@ -360,6 +360,21 @@ const calculatePower = () => {
   ).innerHTML = `${base}^${index}=${resultPow}`;
 };
 
+const calculateNthRoot= () => {
+  const value = parseInt(document.getElementById("base").value);
+  const n = parseInt(document.getElementById("index").value);
+
+  const nthRoot = (x, n) => {
+    if(x < 0 && n%2 != 1) return NaN; // Not well defined
+    return (x < 0 ? -1 : 1) * Math.pow(Math.abs(x), 1/n);
+  }
+
+  let resultNthRoot = nthRoot(value, n);
+  document.getElementById(
+    "resultNthRoot"
+  ).innerHTML = `${n}&#8730;${value}=${resultNthRoot}`;
+};
+
 const calculateFact = () => {
   const fact = parseInt(document.getElementById("fact").value);
 
