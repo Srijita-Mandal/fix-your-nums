@@ -20,14 +20,13 @@
     --color--cont_p : white;
     --color--hover:  #ffffff;
 }
-p{
+p, select{
     color: var(--color--label);
 }
 .calcsip{
     background-color: var(--color--form);
     width: 500px;
     display: flex;
-    /* justify-content: center; */
     align-items: center;  
     flex-direction: column;  
 }
@@ -38,14 +37,7 @@ p{
 #card-container{
     background-color: var(--color--form);
 }
-#icon{
-	width: 30px;
-	cursor: pointer;
-	margin: 10px;
-    position: absolute;
-    right: -5px;
-    top: -5px;
-}
+
 .result{
     color: var(--color--label);
 }
@@ -93,62 +85,20 @@ a:hover{
 
 .panel-body:hover{
     background-color:var(--color--pannel_hover) ;
-    /* border-radius: 30px; */
-    box-shadow:0 1.2rem 3rem 0.5rem var(--color--hover) ;
-    transition-property: all;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-in-out;
 }
 
-.panel{
-    border-radius: 10px;
-}
-
-.panel:hover{
-    border-radius: 30px;
-}
 
 h2{
-    text-align: center;
-    padding-top: 70px;
-    padding-bottom: 70px;
-    font-size: 35px;
     color: var(--color--h2);
 }
 
-#footer{
-    background-color: #202020;
-    color: #ffeeb7;
-    padding: 10px;
-    padding-left: 20px;
-}
 form {
     background-color: var(--color--form);
-    padding: 80px;
-    width: 50%;
-    margin: 100px auto;
-    text-align: center;
-    place-items: center;
-    box-shadow: 0 10px 6px -6px #777;
 }
 label{
     color: var(--color--label);
 }
-.container{
-    box-shadow: 0 0 4px 1px rgb(179, 169, 169);
-    width: 675px;
-    height: 375px;
-    border-radius: 10px;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;  
-    flex-direction: column;  
-    background-color: var(--color--pannel);
-}
+
 .container p{
     color: var(--color--cont_p);
-    margin: 10px;
-    font-size: 20px;
-    font-weight: bolder;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
+} 
