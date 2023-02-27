@@ -41,7 +41,19 @@
     
     <a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
 <script src="theme.js"></script>
-<script src="script.js"></script>
+<script>
+  function retirementCalculator()
+{
+  let amountInvested = parseFloat(document.getElementById("amountInvested").value);
+    let investmentPeriod = parseFloat(document.getElementById("investmentPeriod").value);
+    let expectedRate = parseFloat(document.getElementById("expectedRate").value);
+    console.log(amountInvested,investmentPeriod,expectedRate)
+    let futureValue = Math.pow((amountInvested * (1 + expectedRate)),investmentPeriod);
+
+    document.getElementById("futureValue").innerHTML = futureValue;
+}
+
+</script>
   </body>
 
 </html>
