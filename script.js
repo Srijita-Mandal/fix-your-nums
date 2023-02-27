@@ -1155,15 +1155,3 @@ function convert(num) {
 
 }
 
-// Calculate the Sales Tax
-function salesTax() {
-  var subtotal = parseFloat(document.getElementById('subtotal').value);
-  var tax = parseFloat(document.getElementById('tax').value);
-  var salestax = subtotal + (subtotal * (tax / 100));
-  document.getElementById('result').innerHTML = `After tax the total is ₹${salestax}.`
-}
-// Reset the values for sales tax
-function resetSalesTax(){
-  document.getElementById('subtotal').value = "";
-  document.getElementById('tax').value = "";
-}
