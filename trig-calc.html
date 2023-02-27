@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="result.css">
     <link rel="stylesheet" href="theme.css">
     <link rel="icon" href="Image/Favicon.png">
 </head>
@@ -21,49 +22,51 @@
     <div class="calculator-name-header">
         <span>Trigonometric Calculator</span>
     </div>
-    <form id="calc" class="form-horizontal">
-        <label for="trig-calc">Please check the operations you'd like to do</label><br><br>
+    <form id="trigcalc" class="form-horizontal">
+        <label for="trig-calc">Please check the operation you'd like to do</label><br><br>
         <span class="checkbox-span">
-            <input type="checkbox" id="sin" name="sin" checked>
+            <input type="radio" id="sin" value="sin" name="trigoFunc">
             <label for="sin">sin</label>
         </span>
         <span class="checkbox-span">
-        <input type="checkbox" id="cos" name="cos">
+            <input type="radio" id="cos" value="cos" name="trigoFunc">
             <label for="cos">cos</label>
-        <spanv>
-        <span class="checkbox-span">
-            <input type="checkbox" id="tan" name="tan">
-            <label for="tan">tan</label>
-        </span>
-        <span class="checkbox-span">
-            <input type="checkbox" id="cosec" name="cosec">
-            <label for="cosec">cosec</label>
-        </span>
-        <span class="checkbox-span">
-            <input type="checkbox" id="sec" name="sec">
-            <label for="sec">sec</label>
-        </span>
-        <span class="checkbox-span">
-            <input type="checkbox" id="cot" name="cot">
-            <label for="cot">cot</label>
-        </span>
-        <br>
-        <span class="checkbox-span">
-            <button type="button" onclick="checkAll()">Check All</button>            
-        </span>
-        <br><br>
-        <select name="angle-type" id="angle-type">
-            <option value="degree" id="degree">Degree</option>
-            <option value="radian" id="radian">Radian</option>
-        </select>
-        <input type="number" name="angle" id="angle-value" placeholder="Angle Value"><br><br>
-        <button type="button" onclick="resetTrig()" id="calc1">reset</button>
-        <button type="button" onclick="vallidateTrig()">Submit</button>
-        <span id="resultContainer"></span>
+            <span>
+                <span class="checkbox-span">
+                    <input type="radio" id="tan" value="tan" name="trigoFunc">
+                    <label for="tan">tan</label>
+                </span>
+                <span class="checkbox-span">
+                    <input type="radio" id="cosec" value="cosec" name="trigoFunc">
+                    <label for="cosec">cosec</label>
+                </span>
+                <span class="checkbox-span">
+                    <input type="radio" id="sec" value="sec" name="trigoFunc">
+                    <label for="sec">sec</label>
+                </span>
+                <span class="checkbox-span">
+                    <input type="radio" id="cot" value="cot" name="trigoFunc">
+                    <label for="cot">cot</label>
+                </span>
+                <br>
+                <br><br>
+                <select name="angle-type" id="angle-type">
+                    <option value="degree" id="degree">Degree</option>
+                    <option value="radian" id="radian">Radian</option>
+                </select>
+                <input type="number" name="angle" id="angle-value" placeholder="Angle Value"><br><br>
+                <button type="button" onclick="resetTrig()" id="calc1">reset</button>
+                <button type="button" onclick="validateTrig()">Submit</button>
+                <span id="resultTrigContainer"></span>
     </form>
     <a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
-    <script src="theme.js"></script>
     <script src="script.js"></script>
+    <script src="theme.js"></script>
+    <script>
+        let sinBtnDefault = document.getElementById("sin");
+        sinBtnDefault.checked = true;
+     </script>
+  
 </body>
 
 </html>

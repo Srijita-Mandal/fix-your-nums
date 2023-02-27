@@ -10,6 +10,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="result.css">
     <link rel="stylesheet" href="theme.css">
     <link rel="icon" href="Image/Favicon.png">
     <title>Temperature Converter</title>
@@ -35,7 +36,10 @@
         </select><br/>
         <button type="button" id="tempSet" onclick="fun9()">reset</button>
         <button type="button" onclick="calculateTemp()">Submit</button><br/><br/><br/>
-        <span id="resultContainer"></span>
+        <div class="outterbox">
+            <div class="box"><span id="resultContainer"></span></div>
+        </div>
+        
 
     </form>
     <a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>

@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="result.css">
+    <link rel="stylesheet" type="text/css" href="theme.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
       rel="stylesheet"
@@ -26,72 +28,54 @@
               font-family: 'Ubuntu', sans-serif;
           }
           .main {
+            height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-top: 80px;
           }
           .inp {
-            margin: 25px;
+            margin: 20px;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
             border: none;
           }
-          #n{
+          #n, #k{
           border-radius: 8px;
             border: none;
             height: 40px;
-            padding: 5px;
+            padding: 10px;
             margin: 0px 17px;
           }
-          #k{
-              border-radius: 8px;
-          
-            border: none;
-            height: 40px;
-          
-
-          }
-          #n:hover,
-          #k:hover {
+          #n:hover, #k:hover {
             box-shadow: 0px 2px 4px #ffeeb7;
           }
           input::placeholder {
-            color: black;
+            color: rgb(141, 140, 140);
+          }
+          btn1{
+            display: flex;
+            justify-content: center;
           }
 
           .btn {
             padding: 10px;
+            margin-right: 15px;
             width: 100px;
             border-radius: 5px;
             background-color: black;
-            color: #ffeeb7;
+            color: #fefefc;
             border: none;
             margin-bottom: 20px;
           }
-          .calculator-name-header{
-              margin: 25px 35%;
-              padding: 10px;
-              border-radius: 0px 15px 0px 15px;
-              box-shadow: 0px 0px 16px 1px;
-              font-size: 30px;
-              text-align: center;
-              margin-bottom: 10px
-            }
           .result {
-            margin: 5px;
-            padding: 5px;
             font-size: larger;
           }
           .father {
             display: flex;
-            justify-content: center;
-            /* margin-top: 100px; */
-          
-          
+            justify-content: center;         
           }
           .img{
             width: 200px;
@@ -103,9 +87,9 @@
 
 <body>
   <img src="Image/moon.png" id="icon">
+  <div class="calculator-name-header"><span>Binomial Coefficient Calculator</span> </div>
     <div class="father">
-        <div class="main">
-          <div class="calculator-name-header"><h2>Binomial Coefficient Calculator</h2> </div>
+      <div class="main">
           
             <img src="https://www.pythonpool.com/wp-content/uploads/2021/08/20210806_123250_0000.png" class ="img" alt="image">
             <div class="inp">
@@ -113,15 +97,18 @@
                 <input type="number" autocomplete="off" name="k" id="k" placeholder="enter the value for k" />
 
             </div>
-            <div>
-                <button type="submit" id="submit" onclick="binomialCoeff()" class="btn">Calculate</button>
+            <div class="btn1">
                 <button type="submit" id="binomial" onclick="fun10()" class="btn">Reset</button>
+                <button type="submit" id="submit" onclick="binomialCoeff()" class="btn" style="margin-right: 0;">Calculate</button>
 
             </div>
-            <h3 class="root">Answer is:</h3>
-            <div class="result">
-                <p class="result" id="result"></p>
-            </div>
+            <h3 class="root">Answer is:</h3><br>
+            <div class="outterbox">
+              <div class="box"><span class="result" id="result"></span></div>
+          </div>
+            <!-- <div class="result">
+                <span class="result" id="result"></span>
+            </div> -->
            
         </div>
     </div>

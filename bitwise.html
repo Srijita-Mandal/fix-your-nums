@@ -9,17 +9,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="result.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="theme.css" />
     <title>Bitwise Calculator</title>
-    <style type="text/css">
+    <!-- <style type="text/css">
       * {
         padding: 0;
-        margin: 0;
-        box-sizing: border-box;
+        margin: 0; 
+        
       }
 
       body {
@@ -58,6 +59,9 @@
         margin-top: 10px;
         font-weight: 500;
       }
+      #p #result{
+        background-color: rgb(250, 248, 248);
+      }
       input {
         height: 30px;
         margin-top: 10px;
@@ -72,63 +76,104 @@
         font-size: 30px;
         text-align: center;
       }
-    </style>
+    </style> -->
     <script type="text/javascript">
       function resetBit() {
-        document
-          .querySelector("#bitSet")
-          .addEventListener("click", function () {
-            document.querySelector("#first").value = "";
-            document.querySelector("#second").value = "";
-            document.querySelector("#result").value = "";
-          });
+       
+            document.querySelector("#bitnum1").value = "";
+            document.querySelector("#bitnum2").value = "";
+            document.querySelector("#resultbitbox").style.display= "none";
+            document.querySelector("#bitnum2").style.display= "inline";
+            document.getElementById("bitcal").value="nothing"
+          
       }
-      function Binary(number) {
-        let num = number;
-        let binary = (num % 2).toString();
-        for (; num > 1; ) {
-          num = parseInt(num / 2);
-          binary = (num % 2) + binary;
-        }
-        return binary;
+
+ 
+      function dosomething(){
+        const operation = document.getElementById("bitcal");
+  const valOpe = operation.value;
+  switch (valOpe) {
+    case "and":
+    
+      // console.log(number1+number2);
+      
+    case "or":
+     
+      case "xor":
+      
+        case "nand":
+         
+    case "nor":
+    
+      
+      
+      case "xnor":
+      document.querySelector("#bitnum2").style.display= "inline";
+      document.querySelector("#bitnum2").placeholder= "Second Number";
+      break;
+      case "not": document.querySelector("#bitnum2").style.display= "none";
+      break;
+      case "sright":
+      document.querySelector("#bitnum2").style.display= "inline";
+      document.querySelector("#bitnum2").placeholder= "Bits to shift";
+      break;
+      case "sleft":
+      document.querySelector("#bitnum2").style.display= "inline";
+      document.querySelector("#bitnum2").placeholder= "Bits to shift";
+      break;
+    default:
+      return;
+  }
+
       }
-      function and() {
-        let a = Number(document.getElementById("first").value);
-        let b = Number(document.getElementById("second").value);
-        let c = a & b;
-        document.getElementById("result").value = c;
-        let result = Binary(c);
-        let first = Binary(a);
-        let second = Binary(b);
-        document.getElementById("firstbinary").value = first;
-        document.getElementById("secondbinary").value = second;
-        document.getElementById("binaryresult").value = result;
-      }
-      function or() {
-        let a = Number(document.getElementById("first").value);
-        let b = Number(document.getElementById("second").value);
-        let c = a | b;
-        document.getElementById("result").value = c;
-        let result = Binary(c);
-        let first = Binary(a);
-        let second = Binary(b);
-        document.getElementById("firstbinary").value = first;
-        document.getElementById("secondbinary").value = second;
-        document.getElementById("binaryresult").value = result;
-      }
-      function xor() {
-        let a = Number(document.getElementById("first").value);
-        let b = Number(document.getElementById("second").value);
-        let c = a ^ b;
-        document.getElementById("result").value = c;
-        Binary(c);
-        let result = Binary(c);
-        let first = Binary(a);
-        let second = Binary(b);
-        document.getElementById("firstbinary").value = first;
-        document.getElementById("secondbinary").value = second;
-        document.getElementById("binaryresult").value = result;
-      }
+      const bitCalculator = () => {
+  // console.log("clicked");
+  const operation = document.getElementById("bitcal");
+  const valOpe = operation.value;
+
+  // console.log(valOpe);
+
+  const number1 = parseInt(document.getElementById("bitnum1").value);
+  const number2 = parseInt(document.getElementById("bitnum2").value);
+
+  // console.log(number1);
+  // console.log(number2);
+  document.querySelector("#resultbitbox").style.display= "block";
+  switch (valOpe) {
+    case "and":
+      document.getElementById("resultbitCalculator").innerHTML = `${number1 & number2 }`;
+      // console.log(number1+number2);
+      break;
+    case "or":
+      document.getElementById("resultbitCalculator").innerHTML = `${number1 | number2 }`;
+      break;
+    case "not":
+      document.getElementById("resultbitCalculator").innerHTML = `${~number1  }`;
+      
+      break;
+    case "xor":
+    document.getElementById("resultbitCalculator").innerHTML = `${number1 ^ number2  }`;
+      break;
+    case "nand":
+    document.getElementById("resultbitCalculator").innerHTML = `${~(number1 & number2 )}`;
+      break;
+      case "nor":
+      document.getElementById("resultbitCalculator").innerHTML = `${~(number1 | number2)}`;
+      break;
+      case "xnor":
+      document.getElementById("resultbitCalculator").innerHTML = `${~(number1 ^ number2 )}`;
+      break;
+      case "sright":
+      document.getElementById("resultbitCalculator").innerHTML = `${(number1<<number2 )}`;
+      break;
+      case "sleft":
+      document.getElementById("resultbitCalculator").innerHTML = `${(number1>>number2 )}`;
+      break;
+    default:
+      return;
+  }
+};
+    
     </script>
   </head>
   <body>
@@ -138,7 +183,7 @@
       <span>Bitwise calculator</span>
      
     </div>
-    <div id="container">
+    <!-- <div id="container">
       <div id="card-container">
         <p id="p">
           Enter 1st number :(decimal number)<input id="first" type="number" />
@@ -148,10 +193,15 @@
           Enter 2nd number :(decimal number)<input id="second" type="number" />
         </p>
 
-        <button id="button" onclick="and()">And</button>
+        <button id="button" onclick="and()">AND</button>
         <button id="button" onclick="or()">OR</button>
+        <button id="button" onclick="not()">NOT</button>
+        <button id="button" onclick="nand()">NAND</button>
+        <button id="button" onclick="nor()">NOR</button>
         <button id="button" onclick="xor()">XOR</button>
-        <p id="p">Result :<input id="result" disabled="" /></p>
+        <button id="button" onclick="xnor()">XNOR</button>
+        
+        <p id="p">Result : <input id="result" disabled="" /></p>
         <button
           id="bitSet"
           style="margin-top: 5px; padding-top: 3px; padding-bottom: 3px;"
@@ -160,8 +210,47 @@
           reset
         </button>
       </div>
-    </div>
-    <script src="theme.js"></script>
+    </div> -->
+    <form id="bitcalc" class="form-horizontal">
+      <label for="bitcal">Please enter the operation you'd like to do</label><br/>
+      <select name="bitcal" id="bitcal" onchange="dosomething()">
+        <option disabled selected value="nothing">Choose any operation</option>
+          <option value="and">AND</option>
+          <option value="or">OR</option>
+          <option value="not">NOT</option>
+          <option value="xor">XOR</option>
+          <option value="nand">NAND</option>
+          <option value="nor">NOR</option>
+          <option value="xnor">XNOR</option>
+          <option value="sright">Shift Right</option>
+          <option value="sleft">Shift Left</option>
+      </select><br/><br/>
+       
+      <input type="number" name="num1" id="bitnum1" placeholder="First Number">
+      
+      <input type="number" name="num2" id="bitnum2" placeholder="Second Number">
+      <br/><br/>
+      <button type="button" onclick="resetBit()" id="bitcalc1">Reset</button>
+      <button type="button" onclick="bitCalculator()">Submit</button><br><br><br>
+
+      <div class="outterbox">
+          <div class="box" id="resultbitbox"style="display: none"><span id="resultbitCalculator" ></span></div>
+      </div>
+
+  </form>
+  <script src="script.js"></script>
+  <script type="text/javascript">
+    document.getElementById("bitcalc").addEventListener("submit",(e)=>{
+        e.preventDefault()
+        bitCalculator()
+    })
+    document.body.addEventListener("keyup",(e)=>{
+            if(e.keyCode==13){
+                bitCalculator()
+            }
+        })
+</script>
+  <script src="theme.js"></script>
     <a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
   </body>
 </html>

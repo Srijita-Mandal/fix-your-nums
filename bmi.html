@@ -13,6 +13,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="result.css">
     <link rel="stylesheet" href="theme.css" />
     <link rel="icon" href="Image/Favicon.png" />
     <title>BMI calculator</title>
@@ -42,7 +43,10 @@
       <button type="button" id="bmiSet" onclick="fun3()">reset</button>
       <button type="button" onclick="calculateBMI()">Submit</button
       ><br /><br /><br />
-      <span id="resultBMI"></span><br />
+      <div class="outterbox">
+        <div class="box"><span id="resultBMI"></span></div>
+    </div>
+      <br/>
       <span id="resultBMImsg"></span><br /><br />
       <div id="bmiImg"></div>
     </form>

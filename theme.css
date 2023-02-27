@@ -11,14 +11,20 @@
 }
 .dark-mode{
     --color--header: white;
-    --color--body: gray;
+    --color--body: #1d061a;
     --color--pannel: rgb(51, 46, 46);
     --color--pannel_hover: #000000;
     --color--h2: white;
-    --color--form: rgb(71,71,71);
+    --color--form: rgb(65, 64, 64);
     --color--label: white;
     --color--cont_p : white;
     --color--hover:  #ffffff;
+}
+#home{
+    border: 2px solid white;
+}
+p{
+    color: var(--color--label);
 }
 .calcsip{
     background-color: var(--color--form);
@@ -74,6 +80,9 @@ h1{
     font-weight: lighter;
     font-size: 70px;
     margin-top: 50px;
+}
+h3{
+    color: var(--color--h2);
 }
 
 a:hover{

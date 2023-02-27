@@ -10,6 +10,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="result.css">
     <link rel="stylesheet" href="theme.css">
     <link rel="icon" href="Image/Favicon.png">
     <title>Factorial</title>
@@ -25,7 +26,10 @@
         <input type="number" name="fact" id="fact"><br/><br/>
         <button type="button"  id="factSet" onclick="fun6()">reset</button>
         <button type="button" onclick="calculateFact()">Submit</button><br/><br/><br/>
-        <span id="resultFact"></span>
+        <div class="outterbox">
+            <div class="box"><span id="resultFact"></spanspan></div>
+        </div>
+        <!-- <span id="resultFact"></span> -->
     </form>
     <a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
 

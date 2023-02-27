@@ -1,0 +1,107 @@
+:root{
+    --color--header: #ffeeb7;
+    --color--body: #ffeeb7;
+    --color--pannel: #ffb4a3;
+    --color--pannel_hover: #ff947c;
+    --color--h2: rgb(102, 102, 199);
+    --color--form: #ffb4a3;
+    --color--label: black;
+    --color--cont_p : rgb(20, 94, 82);
+    --color--hover:  #414141;
+}
+.dark-mode{
+    --color--header: white;
+    --color--body: rgb(34, 33, 33);
+    --color--pannel: rgb(51, 46, 46);
+    --color--pannel_hover: #000000;
+    --color--h2: white;
+    --color--form: rgb(100, 99, 99);
+    --color--label: white;
+    --color--cont_p : white;
+    --color--hover:  #ffffff;
+}
+#home{
+    border: 2px solid white;
+}
+p, select{
+    color: var(--color--label);
+}
+.calcsip{
+    background-color: var(--color--form);
+    width: 500px;
+    display: flex;
+    align-items: center;  
+    flex-direction: column;  
+}
+.calculator-name-header {
+    background-color: var(--color--form);
+    color: var(--color--label);
+}
+#card-container{
+    background-color: var(--color--form);
+}
+
+.result{
+    color: var(--color--label);
+}
+body{
+   
+    background-color: var(--color--body);
+    display: grid;
+}
+.main{
+    background-color: var(--color--form);
+}
+.father{
+    background-color: var(--color--body);
+}
+.header{
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #202020;
+    color: var(--color--header);
+    height: 180px;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    margin-top: -10px;
+}
+
+h1{
+    font-family: 'Satisfy', cursive;
+    font-weight: lighter;
+    font-size: 70px;
+    margin-top: 50px;
+}
+h3{
+    color: var(--color--h2);
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.panel-body{
+    background-color: var(--color--pannel);
+    border-radius: 10px;
+}
+
+.panel-body:hover{
+    background-color:var(--color--pannel_hover) ;
+}
+
+
+h2{
+    color: var(--color--h2);
+}
+
+form {
+    background-color: var(--color--form);
+}
+label{
+    color: var(--color--label);
+}
+
+.container p{
+    color: var(--color--cont_p);
+} 

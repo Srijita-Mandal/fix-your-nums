@@ -10,6 +10,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="result.css">
     <link rel="stylesheet" href="theme.css">
     <link rel="icon" href="Image/Favicon.png">
     <title>Equation</title>
@@ -31,7 +32,10 @@
 
         <button type="button" id="equationSet" onclick="fun5()">reset</button>
         <button type="button" onclick="solutionEqu()">Submit</button><br/><br/><br/>
-        <span id="resultEqn"></span>
+        <div class="outterbox">
+            <div class="box"><span id="resultEqn"></span></div>
+        </div>
+        <!-- <span id="resultEqn"></span> -->
     </form>
     <a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
 
