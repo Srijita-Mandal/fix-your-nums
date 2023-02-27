@@ -11,7 +11,7 @@
 }
 .dark-mode{
     --color--header: white;
-    --color--body: rgb(34, 33, 33);
+    --color--body: #1d061a;
     --color--pannel: rgb(51, 46, 46);
     --color--pannel_hover: #000000;
     --color--h2: white;
@@ -19,6 +19,9 @@
     --color--label: white;
     --color--cont_p : white;
     --color--hover:  #ffffff;
+}
+#home{
+    border: 2px solid white;
 }
 p{
     color: var(--color--label);
