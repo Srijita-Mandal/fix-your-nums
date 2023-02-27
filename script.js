@@ -101,8 +101,7 @@ const calculator = () => {
 
   switch (valOpe) {
     case "sum":
-      document.getElementById("resultCalculator").innerHTML = `${number1 + number2
-        }`;
+      document.getElementById("resultCalculator").innerHTML = `${number1 + number2}`;
       // console.log(number1+number2);
       break;
     case "subs":
@@ -753,6 +752,8 @@ function calculateHcf() {
   document.getElementById('resultLCM').innerHTML = `LCM= ${lcm}`;
 
 }
+//reset for pnc
+
 
 function fun1() {
   document.querySelector("#ageSet").addEventListener('click', function () {
@@ -895,15 +896,6 @@ function resetTrig() {
 
 }
 
-//reset pnc
-function pncSet() {
-  document.querySelector("#button1").addEventListener('click', function () {
-    document.querySelector('#num1').value = "";
-    document.querySelector('#num2').value = "";
-    document.getElementById('resultP').innerHTML = "";
-    document.getElementById('resultC').innerHTML = "";
-  });
-}
 
 function resultantConversion() {
   const input = document.getElementById("input").value;
@@ -1154,4 +1146,5 @@ function convert(num) {
   return s;
 
 }
+
 
