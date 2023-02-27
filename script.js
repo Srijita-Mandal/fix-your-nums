@@ -1024,7 +1024,7 @@ function validateForm() {
     calcAlgebraicDeriv();
   }
 }
-<<<<<<< HEAD
+
 function validateForm1() {
   var coefficient = document.getElementById("coefficient").value;
   var exponent = document.getElementById("exponent").value;
@@ -1037,14 +1037,11 @@ function validateForm1() {
   }
 }
 
-function vallidateTrig() {
-  var angleValue = document.getElementById("angle-value").value;
-  var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-  var checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
-=======
+
+
 function validateTrig() {
   var angleValue = document.getElementById('angle-value').value;
->>>>>>> 9dddbe3dbc682b46ae1503528583f9a35751556f
+
   if (angleValue == "") {
     alert("Enter the value of angle.")
     return false;
