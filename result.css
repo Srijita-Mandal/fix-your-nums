@@ -2,6 +2,12 @@
     display: flex;
     justify-content: center;
 }
+.cubicRootsResult{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 .box{
     max-width: max-content;
