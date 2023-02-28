@@ -402,22 +402,58 @@ const calculateFact = () => {
 };
 
 const calculateLog = () => {
-  const log = parseInt(document.getElementById("log").value);
+  const checkbase=document.getElementById("base").value;
+  const checklog=document.getElementById("log").value;
+  var log = parseFloat(document.getElementById("log").value);
+  var base = parseFloat(document.getElementById("base").value);
+ 
+  document.getElementById("resultboxlog").style.display= "inline";
+ 
+  if(isNaN(checkbase)){
+    if(checkbase!="e"){
+    document.getElementById("resultLog").innerHTML = `Invalid Base`;
+    return;
+    }
+    else{
+      base=Math.E;
+    }
+  }
+  if(isNaN(checklog)){
+    if(checklog!="e"){
+    document.getElementById("resultLog").innerHTML = `Invalid Argument`;
+    return;
+    }
+    else{
+      log=Math.E;
+    }
+  }
+  
 
-  const logarithm = (x) => {
-    return Math.log(x);
+  
+  const logarithm = (x,b) => {
+    return (Math.log(x)/Math.log(b));
   };
   let rasultLog;
+ 
   if (log < 0) {
-    document.getElementById("resultLog").innerHTML = `Error!`;
-  } else if (log == 0) {
+    document.getElementById("resultLog").innerHTML = `Invalid Argument`;
+  }
+  else if(base<=0 || base==1){
+    document.getElementById("resultLog").innerHTML = `Invalid Base`;
+  } 
+  else if (log == 0 &&base<1) {
+    document.getElementById("resultLog").innerHTML = `∞`;
+  }
+  else if(log == 0 &&base>1){
     document.getElementById("resultLog").innerHTML = `-∞`;
-  } else {
-    rasultLog = logarithm(parseInt(log));
-    resultLogFinal = rasultLog.toFixed(2);
+  }
+  else {
+    rasultLog = logarithm(log,base);
+    resultLogFinal = rasultLog.toFixed(5);
+    
     document.getElementById(
       "resultLog"
-    ).innerHTML = `Logarithm= ${resultLogFinal}`;
+    ).innerHTML = `Log(base ${base})=${resultLogFinal}`
   }
 };
 
@@ -808,10 +844,11 @@ function fun6() {
 
 // reset for logarithm calculator
 function fun7() {
-  document.querySelector("#logSet").addEventListener('click', function () {
+  
     document.querySelector('#log').value = "";
     document.getElementById('resultLog').innerHTML = "";
-  });
+    document.querySelector('#base').value = "";
+    document.getElementById("resultboxlog").style.display= "none";
 }
 
 // reset for numtoword calculator
