@@ -995,7 +995,24 @@ function calcAlgebraicDeriv() {
     document.getElementById("resultDeriv").innerHTML = `<p>Derivative calculated: <b>${finalCoefficient}x<sup>${finalExponent}</sup></b></p>`;
   }
 }
-
+function calcAlgebraicIntegral() {
+  const coefficient = parseFloat(document.getElementById("coefficient").value);
+  const exponent = parseFloat(document.getElementById("exponent").value);
+  var finalCoefficient = ((coefficient*1.0) / ((exponent+1)*1.0));
+  document.getElementById("inputExpression").innerHTML = `<p>Your entered expression: <b>${coefficient}x<sup>${exponent}</sup></b></p>`
+  if ( coefficient == 0) {
+    document.getElementById("resultIntegral").innerHTML = `<p>Integral  calculated: <b>0</b></p>`;
+  }
+  else if(exponent==-1){
+    
+    document.getElementById("resultIntegral").innerHTML = `<p>Integral calculated: <b>${coefficient}ln(x)</b></p>`;
+  }
+  
+  else {
+    var finalExponent = exponent + 1;
+    document.getElementById("resultIntegral").innerHTML = `<p>Integral calculated: <b>${finalCoefficient}x<sup>${finalExponent}</sup></b></p>`;
+  }
+}
 function validateForm() {
   var coefficient = document.getElementById("coefficient").value;
   var exponent = document.getElementById("exponent").value;
@@ -1007,8 +1024,24 @@ function validateForm() {
     calcAlgebraicDeriv();
   }
 }
+
+function validateForm1() {
+  var coefficient = document.getElementById("coefficient").value;
+  var exponent = document.getElementById("exponent").value;
+  if (coefficient == "" || exponent == "") {
+    alert("Both Coefficient and Exponent must be filled out.");
+    return false;
+  }
+  else {
+    calcAlgebraicIntegral();
+  }
+}
+
+
+
 function validateTrig() {
   var angleValue = document.getElementById('angle-value').value;
+
   if (angleValue == "") {
     alert("Enter the value of angle.")
     return false;
