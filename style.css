@@ -400,3 +400,28 @@ thead {
 .checkbox-span{
   padding: 20px;
 }
+
+.input-box{
+  display: flex;
+  justify-content: flex-start;
+  /* text-align: center; */
+  column-gap: 3rem;
+  align-items: center;
+  /* row-gap: 9rem !important; */
+  margin-bottom: 1rem;
+}
+
+.input-box input{
+  /* margin-top: 1rem; */
+  padding: 5px;
+}
+
+.result-container{
+  display: flex;
+  justify-content: center;
+  column-gap: 1.5rem;
+}
+
+.outterbox1, .outterbox2{
+  color: var(--color--label);
+}
