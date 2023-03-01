@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="../calculatorCssfiles/style.css">
 <html>
   <head>
     <meta charset="UTF-8">
@@ -8,15 +8,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="result.css">
+    <link rel="stylesheet" type="text/css" href="../calculatorCssfiles/style.css">
+    <link rel="stylesheet" type="text/css" href="../calculatorCssfiles/result.css">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-    <link rel="icon" href="Image/Favicon.png">
-    <link rel="stylesheet" href="theme.css">
+    <link rel="icon" href="../Image/Favicon.png">
+    <link rel="stylesheet" href="../calculatorCssfiles/theme.css">
     <title>SIP Calculator</title>
   </head>
   <body class="SIP"> 
-    <img src="Image/moon.png" id="icon">
+    <img src="../Image/moon.png" id="icon">
     <div class="calculator-name-header">
       <!-- Updated by @Shantanu-Meta   -->
       <span>SIP calculator</span>
@@ -35,7 +35,7 @@
             <div class="box"><span id="futureValue"></span></div>
         </div></p>
     </div>
-    <a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
 <script class="SIP">
   function calculateFutureValue() {
     let amountInvested = document.getElementById("amountInvested").value;
@@ -48,6 +48,6 @@
     document.getElementById("futureValue").innerHTML = futureValue.toFixed(2);
   }
 </script>
-<script src="theme.js"></script>
+<script src="../calculatorJsfiles/theme.js"></script>
   </body>
 </html>

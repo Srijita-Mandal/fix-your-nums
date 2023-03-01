@@ -759,7 +759,9 @@ function fun3() {
   document.querySelector("#bmiSet").addEventListener('click', function () {
     document.querySelector('#wei').value = "";
     document.querySelector('#hei').value = "";
+    document.getElementById('resultBMI').innerHTML = "";
     document.getElementById('resultBMImsg').innerHTML = "";
+    document.getElementById('bmiImg').innerHTML = "";
   });
 }
 
@@ -819,7 +821,7 @@ function fun9() {
 function fun10() {
   document.querySelector("#calc10").addEventListener('click', function () {
     document.querySelector('#inputdata').value = "";
-    document.getElementById('resultDataContainer').innerHTML = "";
+    document.getElementById('resultDataCalculator').innerHTML = "";
   });
 }
 
