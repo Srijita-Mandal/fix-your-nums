@@ -127,7 +127,7 @@ nav li:hover {
 }
 
 .logo {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-left: 10px;
   font-family: Ubuntu;
@@ -156,13 +156,16 @@ h3 {
   z-index: 200;
 }
 .hero-section .herocontainer h1 {
-  margin-top: 170px;
+  margin-top: 130px;
+  font-size: 8rem;
+  text-shadow: 2px 2px 10px #830885;
 }
 .hero-section .herocontainer h3 {
   font-weight: 300;
+  font-size: 3rem;
 }
 .paragraph {
-  font-size: x-large;
+  font-size:2rem;
   width: 70%;
   text-align: center;
   margin: auto;
