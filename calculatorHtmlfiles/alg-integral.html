@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algebraic Integration Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../calculatorCssfiles/style.css" />
+    <link rel="stylesheet" href="../calculatorCssfiles/theme.css">
+    <link rel="icon" href="../Image/Favicon.png">
+</head>
+<body>
+    <img src="../Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <!-- Updated by @Lucky Singh   -->
+        <span>Algebric Integration</span>
+      </div>
+    <form class="form-horizontal" id="age">
+        <label class="heading"> Algebraic Integration Calculator</label><br/><br/>
+        <p class="infoDeriv">An algebraic term is of form: <b>ax<sup>b</sup></b>, where a and b are real numbers.</p>
+        <p class="infoDeriv">This calculator will calculate its integration with respect to x.</p>
+        <label class="coefficient" for="coefficient">Enter the coefficient - value of a:</label><br/><br/>
+        <input type="number" name="coefficient" id="coefficient" step="any" value="1"><br/><br/><br/>
+        <label class="exponent" for="exponent">Enter the power of x - value of b:</label><br/><br/>
+        <input type="number" name="exponent" id="exponent" step="any" value="1"><br>
+        <button type="button" onclick="validateForm1()">Submit</button><br/><br/><br/>
+        <span id="inputExpression"></span>
+        <span id="resultIntegral"></span>
+    </form>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <script src="../calculatorJsfiles/script.js"></script>
+    <script src="../calculatorJsfiles/theme.js"></script>
+
+</body>
+</html>

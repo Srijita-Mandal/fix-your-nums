@@ -86,7 +86,7 @@ label {
   margin-top: 5px;
 }
 
-#cal {
+#cal,#bitcal {
   height: 25px;
   padding: 3px;
   border: none;
@@ -94,6 +94,7 @@ label {
   margin-top: 20px;
   font-size: 15px;
 }
+
 
 #resultCalculator {
   font-size: 30px;
@@ -285,11 +286,22 @@ thead {
   margin-right: 10px;
 }
 
+#d {
+  border: none;
+  padding: 10px;
+  height: 20px;
+  width: 100px;
+  font-size: 18px;
+  border-radius: 3px;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
 #resultEqn {
   font-size: 30px;
 }
 
-#num1 {
+#num1,#bitnum1 {
   border: none;
   padding: 10px;
   height: 20px;
@@ -299,7 +311,7 @@ thead {
   margin-left: 5px;
 }
 
-#num2, #angle-value {
+#num2, #angle-value ,#bitnum2{
   border: none;
   padding: 10px;
   height: 20px;
@@ -398,4 +410,29 @@ thead {
 
 .checkbox-span{
   padding: 20px;
+}
+
+.input-box{
+  display: flex;
+  justify-content: flex-start;
+  /* text-align: center; */
+  column-gap: 3rem;
+  align-items: center;
+  /* row-gap: 9rem !important; */
+  margin-bottom: 1rem;
+}
+
+.input-box input{
+  /* margin-top: 1rem; */
+  padding: 5px;
+}
+
+.result-container{
+  display: flex;
+  justify-content: center;
+  column-gap: 1.5rem;
+}
+
+.outterbox1, .outterbox2{
+  color: var(--color--label);
 }

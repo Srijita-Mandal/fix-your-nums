@@ -101,8 +101,7 @@ const calculator = () => {
 
   switch (valOpe) {
     case "sum":
-      document.getElementById("resultCalculator").innerHTML = `${number1 + number2
-        }`;
+      document.getElementById("resultCalculator").innerHTML = `${number1 + number2}`;
       // console.log(number1+number2);
       break;
     case "subs":
@@ -360,6 +359,21 @@ const calculatePower = () => {
   ).innerHTML = `${base}^${index}=${resultPow}`;
 };
 
+const calculateNthRoot= () => {
+  const value = parseInt(document.getElementById("base").value);
+  const n = parseInt(document.getElementById("index").value);
+
+  const nthRoot = (x, n) => {
+    if(x < 0 && n%2 != 1) return NaN; // Not well defined
+    return (x < 0 ? -1 : 1) * Math.pow(Math.abs(x), 1/n);
+  }
+
+  let resultNthRoot = nthRoot(value, n);
+  document.getElementById(
+    "resultNthRoot"
+  ).innerHTML = `${n}&#8730;${value}=${resultNthRoot}`;
+};
+
 const calculateFact = () => {
   const fact = parseInt(document.getElementById("fact").value);
 
@@ -388,22 +402,58 @@ const calculateFact = () => {
 };
 
 const calculateLog = () => {
-  const log = parseInt(document.getElementById("log").value);
+  const checkbase=document.getElementById("base").value;
+  const checklog=document.getElementById("log").value;
+  var log = parseFloat(document.getElementById("log").value);
+  var base = parseFloat(document.getElementById("base").value);
+ 
+  document.getElementById("resultboxlog").style.display= "inline";
+ 
+  if(isNaN(checkbase)){
+    if(checkbase!="e"){
+    document.getElementById("resultLog").innerHTML = `Invalid Base`;
+    return;
+    }
+    else{
+      base=Math.E;
+    }
+  }
+  if(isNaN(checklog)){
+    if(checklog!="e"){
+    document.getElementById("resultLog").innerHTML = `Invalid Argument`;
+    return;
+    }
+    else{
+      log=Math.E;
+    }
+  }
+  
 
-  const logarithm = (x) => {
-    return Math.log(x);
+  
+  const logarithm = (x,b) => {
+    return (Math.log(x)/Math.log(b));
   };
   let rasultLog;
+ 
   if (log < 0) {
-    document.getElementById("resultLog").innerHTML = `Error!`;
-  } else if (log == 0) {
+    document.getElementById("resultLog").innerHTML = `Invalid Argument`;
+  }
+  else if(base<=0 || base==1){
+    document.getElementById("resultLog").innerHTML = `Invalid Base`;
+  } 
+  else if (log == 0 &&base<1) {
+    document.getElementById("resultLog").innerHTML = `∞`;
+  }
+  else if(log == 0 &&base>1){
     document.getElementById("resultLog").innerHTML = `-∞`;
-  } else {
-    rasultLog = logarithm(parseInt(log));
-    resultLogFinal = rasultLog.toFixed(2);
+  }
+  else {
+    rasultLog = logarithm(log,base);
+    resultLogFinal = rasultLog.toFixed(5);
+    
     document.getElementById(
       "resultLog"
-    ).innerHTML = `Logarithm= ${resultLogFinal}`;
+    ).innerHTML = `Log(base ${base})=${resultLogFinal}`
   }
 };
 
@@ -738,6 +788,8 @@ function calculateHcf() {
   document.getElementById('resultLCM').innerHTML = `LCM= ${lcm}`;
 
 }
+//reset for pnc
+
 
 function fun1() {
   document.querySelector("#ageSet").addEventListener('click', function () {
@@ -794,10 +846,11 @@ function fun6() {
 
 // reset for logarithm calculator
 function fun7() {
-  document.querySelector("#logSet").addEventListener('click', function () {
+  
     document.querySelector('#log').value = "";
     document.getElementById('resultLog').innerHTML = "";
-  });
+    document.querySelector('#base').value = "";
+    document.getElementById("resultboxlog").style.display= "none";
 }
 
 // reset for numtoword calculator
@@ -843,6 +896,7 @@ function fun12() {
   });
 }
 
+
 //reset for days calculator
 function daySet() {
   document.querySelector("#button1").addEventListener('click', function () {
@@ -882,15 +936,6 @@ function resetTrig() {
 
 }
 
-//reset pnc
-function pncSet() {
-  document.querySelector("#button1").addEventListener('click', function () {
-    document.querySelector('#num1').value = "";
-    document.querySelector('#num2').value = "";
-    document.getElementById('resultP').innerHTML = "";
-    document.getElementById('resultC').innerHTML = "";
-  });
-}
 
 function resultantConversion() {
   const input = document.getElementById("input").value;
@@ -990,7 +1035,24 @@ function calcAlgebraicDeriv() {
     document.getElementById("resultDeriv").innerHTML = `<p>Derivative calculated: <b>${finalCoefficient}x<sup>${finalExponent}</sup></b></p>`;
   }
 }
-
+function calcAlgebraicIntegral() {
+  const coefficient = parseFloat(document.getElementById("coefficient").value);
+  const exponent = parseFloat(document.getElementById("exponent").value);
+  var finalCoefficient = ((coefficient*1.0) / ((exponent+1)*1.0));
+  document.getElementById("inputExpression").innerHTML = `<p>Your entered expression: <b>${coefficient}x<sup>${exponent}</sup></b></p>`
+  if ( coefficient == 0) {
+    document.getElementById("resultIntegral").innerHTML = `<p>Integral  calculated: <b>0</b></p>`;
+  }
+  else if(exponent==-1){
+    
+    document.getElementById("resultIntegral").innerHTML = `<p>Integral calculated: <b>${coefficient}ln(x)</b></p>`;
+  }
+  
+  else {
+    var finalExponent = exponent + 1;
+    document.getElementById("resultIntegral").innerHTML = `<p>Integral calculated: <b>${finalCoefficient}x<sup>${finalExponent}</sup></b></p>`;
+  }
+}
 function validateForm() {
   var coefficient = document.getElementById("coefficient").value;
   var exponent = document.getElementById("exponent").value;
@@ -1002,8 +1064,24 @@ function validateForm() {
     calcAlgebraicDeriv();
   }
 }
+
+function validateForm1() {
+  var coefficient = document.getElementById("coefficient").value;
+  var exponent = document.getElementById("exponent").value;
+  if (coefficient == "" || exponent == "") {
+    alert("Both Coefficient and Exponent must be filled out.");
+    return false;
+  }
+  else {
+    calcAlgebraicIntegral();
+  }
+}
+
+
+
 function validateTrig() {
   var angleValue = document.getElementById('angle-value').value;
+
   if (angleValue == "") {
     alert("Enter the value of angle.")
     return false;
@@ -1141,4 +1219,5 @@ function convert(num) {
   return s;
 
 }
+
 
