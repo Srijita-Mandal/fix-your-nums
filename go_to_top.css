@@ -10,6 +10,7 @@
     justify-content: center;
     align-items: center;
     border: 1px solid gray;
+    z-index: 9999;
 }
 .gotop img{
     width: 60px;
