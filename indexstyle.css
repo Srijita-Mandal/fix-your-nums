@@ -35,7 +35,7 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(86, 86, 94);
+  background: #1d061a;
 }
 
 
@@ -810,4 +810,18 @@ footer .wave#wave4 {
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
+}
+
+/*deepbeatz (Rajdeep Chowdhury) contribution : issue #100*/
+.trynow-button{
+  transition: transform .2s;
+}
+.trynow-button:hover{
+  transform: scale(1.15);
+}
+.footer-links{
+  transition: transform .2s;
+}
+.footer-links:hover{
+  transform: scale(1.1);
 }
