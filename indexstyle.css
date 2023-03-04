@@ -38,6 +38,33 @@
   background: #1d061a;
 }
 
+
+.loader {
+
+  position: fixed;
+  z-index: 99999 !important;
+  background: #c8c4c1;
+
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.disappear {
+  animation: vanish 4s forwards;
+}
+
+@keyframes vanish {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 body {
   /* display: flex; */
   justify-content: center;

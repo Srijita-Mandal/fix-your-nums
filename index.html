@@ -4,6 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+      rel="stylesheet"
+    /> --> 
     <link rel="icon" href="./Image/Favicon.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="indexstyle.css" />
     <link rel="stylesheet" href="go_to_top.css">
@@ -11,6 +27,11 @@
     <title>Fix your nums</title>
   </head>
   <body>
+
+    <div id="preloader" class="loader">
+      <img src="Image/preloader.gif" alt="" />
+    </div>
+
     <!-- HEADER CONTAINS THE STICKY NAVBAR -->
     <button class="gotop">
         <img src="Image/upButton.png" alt="arrow up">
@@ -19,20 +40,18 @@
       <nav class="navbar">
         <a href="./index.html"><div class="logo">Fix Your Nums</div></a>
         <ul class="nav-menu">
-          <li class="nav-item"> 
-            
-            <a href="#hero" class="nav-link">  <i class="ri-home-line"></i> Home</a>
+          <li class="nav-item">
+            <a href="#hero" class="nav-link"> <i class="ri-home-line"></i> Home</a>
         </li>
-        <li class="nav-item"> 
-           
-            <a href="#calculators" class="nav-link"> <i class="ri-function-line"></i> Calculators</a>
+        <li class="nav-item">
+          <a href="#calculators" class="nav-link"> <i class="ri-function-line"></i> Calculators</a>
       </li>
       <li class="nav-item">
         <a href="#about" class="nav-link"> <i class="ri-sort-desc"></i>About</a>
-    </li>
-    <li class="nav-item">
-      <a href="testimonial.html" class="nav-link"> <i class="ri-user-3-line"></i>Testimonial</a>
-  </li>
+      </li>
+      <li class="nav-item">
+        <a href="testimonial.html" class="nav-link"> <i class="ri-user-3-line"></i>Testimonial</a>
+      </li>
         </ul>
         <div class="hamburger">
           <span class="bar"></span>
@@ -282,6 +301,7 @@
           <div class="trynow-button"><a href="alg-deriv.html">Try Now!</a></div>
         </div>
       </div>
+
       <div class="box">
         <span></span>
         <div class="content">
@@ -290,6 +310,7 @@
           <div class="trynow-button"><a href="alg-integral.html">Try Now!</a></div>
         </div>
       </div>
+
       <div class="box">
         <span></span>
         <div class="content">
@@ -313,6 +334,15 @@
           <h2>Num-to-word</h2>
           <p>Enter any  numbers and then get it convert into word quickly.</p>
           <div class="trynow-button"><a href="num-to-word.html">Try Now!</a></div>
+        </div>
+      </div>
+
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Nth Root Calculator</h2>
+          <p>Calculates the nth root of a number precisely</p>
+          <a href="nthRoot.html">Try Now!</a>
         </div>
       </div>
 
@@ -352,6 +382,15 @@
       <div class="box">
         <span></span>
         <div class="content">
+          <h2>Retirement Calculator</h2>
+          <p>Calculates the future value of retirement savings</p>
+          <div class="trynow-button"><a href="retirement.html">Try Now!</a></div>
+        </div>
+      </div>
+
+      <div class="box">
+        <span></span>
+        <div class="content">
           <h2>Speed Convertor</h2>
           <p>Converts speed from one unit to another</p>
           <div class="trynow-button"><a href="speed-calc.html">Try Now!</a></div>
@@ -373,7 +412,17 @@
           <div class="trynow-button"><a href="emi.html">Try Now!</a></div>
         </div>
       </div>
-          <div class="box">
+
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Interest Calculator</h2>
+          <p>To calculate the interest and the final amount</p>
+          <a href="Interest.html">Try Now!</a>
+        </div>
+      </div>
+
+      <div class="box">
         <span></span>
         <div class="content">
           <h2>Catalan Number Calculator</h2>
@@ -381,7 +430,14 @@
           <div class="trynow-button"><a href="catalan.html">Try Now!</a></div>
         </div>
       </div>
-
+ <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Complex Number Calculator</h2>
+          <p>Performs basic arithmetic on complex numbers.</p>
+          <a href="complexNumber.html">Try Now!</a>
+        </div>
+      </div>
       
     </div>
   </div>
@@ -477,4 +533,14 @@
       navMenu.classList.remove("active");
     }
   </script>
+
+  <!--------------Preloader Script---------------->
+  <script>
+    var loader = document.querySelector(".loader");
+    window.addEventListener("load", vanish);
+    function vanish() {
+      loader.classList.add("disappear");
+    }
+  </script>
+
 </html>
