@@ -15,19 +15,21 @@
     <link rel="icon" href="Image/Favicon.png">
     <title>Logarithm</title>
 </head>
-<body>
+<body style="overflow: hidden;">
     <img src="Image/moon.png" id="icon">
     <div class="calculator-name-header">
         <!-- Updated by @Shantanu-Meta   -->
         <span>Logarithm calculator</span>
       </div>
     <form class="form-horizontal" id="logarithm">
-        <label for="log">Please enter the number to get logarithm(base e)</label><br/><br/>
-        <input type="number" name="log" id="log"><br/><br/>
-        <button type="button" id="logSet" onclick="fun7()">reset</button>
+        <label for="log">Please enter the number to get the Logarithm to the given base</label><br/><br/>
+        <input type="text" name="log" id="log" placeholder="Argument">
+        <input type="text" name="base" id="base" placeholder="Base">
+        <br/><br/>
+        <button type="button" id="logSet" onclick="fun7()">Reset</button>
         <button type="button" onclick="calculateLog()">Submit</button><br/><br/><br/>
         <div class="outterbox">
-            <div class="box"><span id="resultLog"></span></div>
+            <div class="box" id="resultboxlog" style="display:none"><span id="resultLog"></span></div>
         </div>
         <!-- <span id="resultLog"></span> -->
     </form>
