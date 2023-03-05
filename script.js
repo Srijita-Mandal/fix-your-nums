@@ -788,6 +788,134 @@ function calculateHcf() {
   document.getElementById('resultLCM').innerHTML = `LCM= ${lcm}`;
 
 }
+// determinant calculator
+function setMatrix(){
+  deterSet();
+  const input= document.querySelector("#matrix");
+  const size=document.getElementById('order').value;
+  if(!(size>0 && size<11)){
+    document.getElementById("resultdet").innerHTML="Invalid Order";
+    document.querySelector("#resultboxdet").style.display= "inline";
+    return;
+  }
+
+for(var i=0;i<size;i++){
+  var rows=document.createElement('div');
+  input.appendChild(rows);
+  rows.className="rows";
+  
+  for(var j=0;j<size;j++){
+    var field=document.createElement("input");
+    field.type="number";
+    field.className="cells";
+    field.id=`deter${i}${j}`;      
+    var flex=document.createElement('div');
+    flex.className="flex";
+    
+    flex.style.display="inline";
+   
+    rows.appendChild(flex);
+    flex.appendChild(field);
+  }
+  
+}
+}
+
+function swapdet(arr , i1 , j1 , i2,j2)
+{
+var temp = arr[i1][j1];
+arr[i1][j1] = arr[i2][j2];
+arr[i2][j2] = temp;
+return arr;
+}
+
+// reset for determinant calculator
+function deterSet(){
+ 
+  var remover=document.getElementById("matrix");
+  while (remover.hasChildNodes()) {
+    remover.removeChild(remover.firstChild);
+  }
+  document.getElementById("resultdet").innerHTML=0;
+         document.querySelector("#resultboxdet").style.display= "none";
+      
+}
+// determinant solver
+function calculateDet(){
+  var n=document.getElementById('order').value;
+ var mat=[];
+ for(var i=0;i<n;i++){
+   mat[i]=[];
+   for(var j=0;j<n;j++){
+     if(document.getElementById(`deter${i}${j}`).value){
+     mat[i][j]=document.getElementById(`deter${i}${j}`).value;}
+     else mat[i][j]=0;
+   }
+ }
+// console.log(mat);
+ var num1, num2, det = 1, index,total = 1;
+  
+        
+ var temp = Array(n + 1).fill(0);
+  
+       
+         for (var i = 0; i < n; i++)
+         {
+             index = i; 
+  
+            
+             while (index < n && mat[index][i] == 0)
+             {
+                 index++;
+             }
+             if (index == n) 
+             {
+                
+                 continue;
+             }
+             if (index != i)
+             {
+                 for (var j = 0; j < n; j++)
+                 {
+                     swapdet(mat, index, j, i, j);
+                 }
+               
+                 det = parseInt((det * Math.pow(-1, index - i)));
+             }
+  
+           
+             for (var j = 0; j < n; j++)
+             {
+                 temp[j] = mat[i][j];
+             }
+  
+             
+             for (var j = i + 1; j < n; j++)
+             {
+                 num1 = temp[i]; 
+                 num2 = mat[j]
+                           [i]; 
+  
+                
+                 for (var k = 0; k < n; k++)
+                 {
+                   
+                     mat[j][k] = (num1 * mat[j][k]) - (num2 * temp[k]);
+                 }
+                 total = total * num1;
+             }
+         }
+  
+     
+         for (var i = 0; i < n; i++)
+         {
+             det = det * mat[i][i];
+         }
+         var ans=det/total;
+         document.getElementById("resultdet").innerHTML=ans;
+         document.querySelector("#resultboxdet").style.display= "block";
+ 
+ }
 //reset for pnc
 
 
