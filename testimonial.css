@@ -4,35 +4,37 @@
     margin: 0;
     padding:0;
     box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
+    font-family: poppins;
+    font-family: Ubuntu;
 }
 
 
 body{
     min-height: 100vh;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    background-color: #EFEFEF;
 }
 
 .slide-container{
     max-width: 1300px;
-    background-color: blueviolet;
+    background:linear-gradient(315deg, #1e470c, #00d0ff);
+    background: linear-gradient(315deg, #03a9f4, #ff0058);
     width:100%;
     padding: 25px 0;
     border-radius: .9rem;
+    margin-bottom: 80px;
 }
 
-.slide-container h3{
-    color:#fff;
+.heading_testimonial h3{
+    margin-top: 130px;
+    font-size: 8rem;
+    text-shadow: 2px 2px 10px #830885;
     text-align: center;
-    font-size: 1.5rem;
 }
 
-.slide-container h2{
-    color:orangered;
-    font-size: 1.2rem;
+.heading_testimonial h2{
+    color:white;
+    font-weight: 300;
+    font-size: 3rem;
     text-align: center;
 }
 
@@ -42,13 +44,14 @@ body{
     background-color: #fff;
      overflow: hidden;
     border-radius: 25px;
+    /* margin-top: -100px; */
 }
 
 .card{
     margin:2px 2px 2px 2px;
     border-radius: 27px;
     background-color: #fff;
-   border:2px solid red;
+   border:2px solid black;
 }
 
 .image-content,
@@ -59,7 +62,10 @@ body{
     align-items: center;
     padding: 10px 14px ;
 }
-
+.card-content h2{
+    letter-spacing: 2px;
+    font-weight: bold;
+}
 .card-image{
     position: relative;
     height: 150px;
@@ -102,7 +108,7 @@ body{
     top:0;
     height: 100%;
     width: 100%;
-    background-color:blue;
+    background: linear-gradient(315deg, #2b3427, #0a596a);
     border-radius: 25px 25px 25px 0;
 }
 
@@ -126,15 +132,16 @@ body{
     font-size: 16px;
     color:#fff;
     padding: 8px 16px;
-    background-color:orangered;
+    background: linear-gradient(315deg, #1e470c, #00d0ff);
     border-radius: 6px;
     margin: 14px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: transform .2s;
 }
 
 .button:hover{
     background-color: rgb(237, 23, 58);
+    transform: scale(1.15);
 }
 
 .swiper-navBtn{
@@ -143,7 +150,7 @@ body{
 }
 
 .swiper-navBtn:hover{
-    color:red;
+    color:black;
 }
 
 .swiper-navBtn::before,
@@ -160,12 +167,12 @@ body{
 }
 
 .swiper-pagination-bullet{
-    background-color: rgb(233, 114, 134);
+    background-color: black;
     opacity:1;
 }
 
 .swiper-pagination-bullet-active{
-    background-color: red;
+    background-color: black;
 }
 
 @media screen and (max-width:768px) {
@@ -178,4 +185,11 @@ body{
     }
     
 }
-
+.bubblescontainer1 {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+}
+  
+  
