@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,35 +12,98 @@
     <link rel="stylesheet" href="theme.css">
     <link rel="icon" href="Image/Favicon.png">
     <style>
-        #resultDeriv{
+        #resultDeriv {
             padding: 0 1rem;
         }
     </style>
 </head>
+
 <body>
     <img src="Image/moon.png" id="icon">
     <div class="calculator-name-header">
         <!-- Updated by @Shantanu-Meta   -->
         <span>Algebric Derivative</span>
-      </div>
+    </div>
     <form class="form-horizontal" id="age">
-        <label class="heading"> Algebraic Derivative Calculator</label><br/><br/>
-        <p class="infoDeriv">An algebraic term is of form: <b>ax<sup>b</sup></b>, where a and b are real numbers.</p>
-        <p class="infoDeriv">This calculator will calculate its derivative with respect to x.</p>
-        <label class="coefficient" for="coefficient">Enter the coefficient - value of a:</label><br/><br/>
-        <input type="number" name="coefficient" id="coefficient" step="any" value="1"><br/><br/><br/>
-        <label class="exponent" for="exponent">Enter the power of x - value of b:</label><br/><br/>
-        <input type="number" name="exponent" id="exponent" step="any" value="1"><br>
-        <button type="button" onclick="validateForm()">Submit</button><br/><br/><br/>
+        <label class="heading"> Algebraic Derivative Calculator</label><br /><br />
+        <p class="infoDeriv">This calculator will derivate the function f(x) with respect to x.</p>
+        <label class="func" for="func">Enter the function f(x) : </label><br /><br />
+        <input type="text" name="func" id="func_input" value="2x^3 + 3x^4 + 5x^2"><br /><br /><br />
+        <button type="button" onclick="validateForm()">Submit</button><br /><br /><br />
         <span id="inputExpression"></span>
         <div class="outterbox">
-            <div class="box"><span id="resultDeriv"></span></div>
+            <div class="box"><span id="resultDeriv" ></span></div>
         </div>
-        
+
     </form>
     <a href="./index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
     <script src="theme.js"></script>
 
 </body>
+<script>
+    function validateForm() {
+        var func = document.getElementById("func_input").value;
+        const result = getFunc(func)
+        document.getElementById("resultDeriv").innerHTML = `<p style="color: black">Derivative w.r.t x : <b>${result}</b></p>`;
+    }
+
+    function getFunc(func) {
+        let is = func.split(" ");
+
+        let functn = "", S = "";
+        for (functn of is) {
+            if (functn == "+") {
+                S += " + ";
+                continue;
+            }
+
+            if (functn == "-") {
+                S += " - ";
+                continue;
+            }
+            else
+                S += differentiation(functn);
+        }
+        return S;
+    }
+
+    function differentiation(functn) {
+        // Get the coefficient
+        let coeffStr = "", S = "";
+        let i;
+        for (i = 0; functn[i] != 'x'; i++)
+            coeffStr += (functn[i]);
+
+        let coeff
+            = parseInt(coeffStr);
+
+        // Loop to get the power 
+        let powStr = "";
+        for (i = i + 2; i != functn.length; i++)
+            powStr += (functn[i]);
+
+        let power
+            = parseInt(powStr);
+        let a = "";
+        let b = "";
+
+        // Converting the value
+        // to the string
+        let str1, str2;
+
+        //Finding Differentiation : (Main CODE)
+        coeff = coeff * power;
+        str1 = coeff;
+        a = str1;
+        power--;
+        str2 = power;
+        b = str2;
+        S += a + "x^" + b;
+
+        return S;
+    }
+
+</script>
+
 </html>
