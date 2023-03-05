@@ -259,6 +259,77 @@ h2{
     font-size: 24px;
   }
 }
+/*list css */
+.calc_lists{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 56px;
+  font-size: large;
+}
+.calc_lists ul {
+  counter-reset: index;  
+  padding: 0;
+  max-width: 300px;
+}
+
+/* List element */
+.calc_lists  li {
+  counter-increment: index; 
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  box-sizing: border-box;
+}
+
+
+/* Element counter */
+.calc_lists li::before {
+  content: counters(index, ".", decimal-leading-zero);
+  font-size: 1.5rem;
+  text-align: right;
+  font-weight: bold;
+  min-width: 50px;
+  padding-right: 12px;
+  font-variant-numeric: tabular-nums;
+  align-self: flex-start;
+  background-image: linear-gradient(to bottom, aquamarine, orangered);
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: larger;
+}
+
+
+/* Element separation */
+.calc_lists li + li {
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+
+
+
+.text_list{
+  margin-bottom: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* FOOTER SECTION STARTS BELOW */
 
