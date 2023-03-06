@@ -53,7 +53,7 @@
         const z = math.complex(real, img)
         const polar = z.toPolar();
 
-        result.innerHTML = `<p>Modulus of |(${real} + ${img}i)| = ${resultantMod}
+        result.innerHTML = `<p>Modulus of |(${real} + (${img})i)| = ${resultantMod}
             </p>`
         document.getElementById("resultDeriv2").innerHTML = `<p>Argument φ of (${z}) = ${polar.phi} rad</p>`
     }
