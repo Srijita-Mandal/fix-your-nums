@@ -170,7 +170,7 @@ label {
   font-size: 15px;
 }
 
-#log {
+#log,#order {
   border: none;
   padding: 10px;
   height: 20px;
@@ -178,6 +178,24 @@ label {
   font-size: 18px;
   border-radius: 3px;
   margin-top: 5px;
+}
+.cells{
+  border: none;
+  padding: 15px;
+  height: 35px;
+  width: 40px;
+  font-size: 18px;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+.rows{
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.flex{
+  display: flex;
+  gap: 1.5em;
 }
 
 #resultLog {
