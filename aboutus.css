@@ -71,7 +71,7 @@ nav li:hover {
 }
 body,
 html {
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
   font-weight: 300;
   line-height: 1.4;
   scroll-behavior: smooth;
@@ -83,7 +83,7 @@ body {
 }
 
 body {
-  font-family: poppins;
+  /* font-family: poppins; */
   margin: 0;
   color: white;
   background: #1d061a;
@@ -96,11 +96,11 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: poppins;
+  /* font-family: poppins; */
 }
 *, *:before, *:after {
   box-sizing: inherit;
-  font-family: poppins;
+  /* font-family: poppins; */
 }
 ::-webkit-scrollbar {
   width: 10px;
@@ -134,10 +134,12 @@ html {
   font-size: 62.5%;
 }
 .heading{
+  font-family: poppins;
   font-weight: 800;
   font-size: 48px;
 }
 .text{
+  font-family: poppins;
   font-size: 32px;
   position: relative;
   margin: auto;
