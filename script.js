@@ -932,6 +932,12 @@ function resetTrig() {
   document.getElementById('resultTrigContainer').innerHTML = "";
 
 }
+function resetSIP(){
+  document.getElementById("amountInvested").value = "";
+  document.getElementById("investmentPeriod").value = "";
+  document.getElementById("expectedRate").value = "";
+  document.getElementById('resultSIPContainer').innerHTML = "";
+}
 
 
 function resultantConversion() {
