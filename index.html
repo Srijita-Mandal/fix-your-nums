@@ -123,6 +123,13 @@
       </div>
     </div>
 
+
+     <!-- SEARCH-BAR -->
+
+    <div class="search-bar">
+      <input type="search" id="mySearch" placeholder="Search Your Calculator" onkeyup="searchCal()">
+    </div>
+
     <!-- MAIN CALCULATORS BELOW -->
 
     <div class="container" id="calculators">
@@ -591,6 +598,26 @@
 
     <script src="script.js"></script>
     <script src="go_to_top.js"></script>
+    <script>
+      const searchCal = () => {
+      let searchData= document.getElementById('mySearch').value.toLowerCase();
+      let mainBox= document.getElementsByClassName('box');
+
+    for(var i=0; i<mainBox.length; i++){
+      let temp= mainBox[i].getElementsByTagName('h2')[0];
+
+    if(temp){
+      let calValue= temp.textContent || temp.innerHTML;
+
+      if(calValue.toLowerCase().indexOf(searchData) > -1){
+        mainBox[i].style.display= "";
+      }else{
+        mainBox[i].style.display= "none";
+      }
+    }
+  }
+}
+    </script>
   </body>
   <script>
     const hamburger = document.querySelector(".hamburger");
