@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+    <link rel="icon" href="../assets/Image/Favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+   
+    <link rel="stylesheet" type="text/css" href="../css_files/caesardark.css">
+ <style>
+      body{
+    margin: 0;
+    
+    overflow: hidden;
+  }
+  h1{
+      text-align: center;
+  }
+  * {
+    font-family: 'Ubuntu', sans-serif;
+}
+  .container{
+    /* width: 100%; */
+    min-height: 40vh;
+    padding: 20px;
+    margin: 120px;
+   
+    
+    border-radius: 20px;
+  
+   
+  }
+  .para{
+      text-align: center;
+  }
+  .card{
+    
+    border: none;
+    margin: 70px;
+   
+    padding: 20px;
+    margin-top: 0px;
+  }
+  .speech{
+    padding: 20px 0;
+    color: black;
+    text-shadow: 0 0 2px gray;
+    margin: auto;
+    width: 100%;
+    max-width: 580px;
+    text-align: center;
+  }
+  #form{
+      font-size: 17px;
+      font-weight: bold;
+  }
+  
+  .calculator-name-header{
+    margin: 25px 35%;
+    padding: 10px;
+    border-radius: 0px 15px 0px 15px;
+    box-shadow: 0px 0px 16px 1px;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 50px
+  }
+    #home{
+  /* background-color: black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: #121916;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.2;
+    z-index: 999;
+}
+   .btn{
+  height: 35px;
+  margin: 20px;
+  margin-bottom: -10px;
+  width: 100px;
+  font-size: 15px;
+  border: none;
+  border-radius: 3px;
+  background-color: black;
+  color: white;
+}
+.btn:hover{
+    background-color: black;
+  color: white;
+  border: none;
+}
+        h1{
+            margin-top:50px;
+        }
+        .top{
+            text-align: center;
+        }
+        .main{
+            margin-top: 10px;
+        }
+        .row{
+            margin-top:5px;
+        }
+        .center{
+            text-align: center;
+        }
+
+        #footnote{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        hr{
+            display: block;            
+            border: 0.6px solid #666;
+        }
+    </style>
+</head>
+<body>
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="card">
+        <div class="calculator-name-header">
+           
+        <span>CGPA calculator</span>
+          </div>
+    <h3 class="top">
+        Enter the credits and the respective SGPA for that semester.
+    </h3>
+    <div style="text-align: center;">
+        If you haven't appeared for a semester <strong>leave it empty or fill 0.</strong> </div>
+    <div class="container main">
+     
+        <div class="row">
+            <div class="col-4">
+                <strong>1st Semester:</strong> 
+            </div>
+            <div class="col">
+                
+                <input class="form-control" type="text" id="credit1" placeholder="Credits">
+            </div>
+            <div class="col">   
+                <input class="form-control" type="text" id="sem1" placeholder="SGPA">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <strong>2nd Semester:</strong> 
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" id="credit2" placeholder="Credits">
+            </div>
+            <div class="col">   
+                <input class="form-control" type="text" id="sem2" placeholder="SGPA">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <strong>3rd Semester:</strong> 
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" id="credit3" placeholder="Credits">
+            </div>
+            <div class="col">   
+                <input class="form-control" type="text" id="sem3" placeholder="SGPA">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <strong>4th Semester:</strong> 
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" id="credit4" placeholder="Credits">
+            </div>
+            <div class="col">   
+                <input class="form-control" type="text" id="sem4" placeholder="SGPA">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <strong>5th Semester:</strong> 
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" id="credit5" placeholder="Credits">
+            </div>
+            <div class="col">   
+                <input class="form-control" type="text" id="sem5" placeholder="SGPA">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <strong>6th Semester:</strong> 
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" id="credit6" placeholder="Credits">
+            </div>
+            <div class="col">   
+                <input class="form-control" type="text" id="sem6" placeholder="SGPA">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <strong>7th Semester:</strong> 
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" id="credit7" placeholder="Credits">
+            </div>
+            <div class="col">   
+                <input class="form-control" type="text" id="sem7" placeholder="SGPA">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <strong>8th Semester:</strong> 
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" id="credit8" placeholder="Credits">
+            </div>
+            <div class="col">   
+                <input class="form-control" type="text" id="sem8" placeholder="SGPA">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 offset-2">
+            <div style="text-align: center; width: 140%; margin-top:10px">
+                <button class="btn " id="submit">Calculate</button>
+            </div>
+        </div>
+            <div class="col-4 offset-2">
+            <div style="text-align: center; width: 10%; margin-top:10px">
+                <button class="btn" id="submit1" name="submit1" onclick="fun11()">Reset</button>
+            </div>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-4 offset-2">
+                Total CGPA:
+                <input class="form-control" type="text" id="cgpa" readonly>
+            </div>
+            <div class="col-4">
+                Percentage:
+                <input class="form-control" type="text" id="percentage" readonly>
+            </div>
+        </div>
+    </div>    
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+     
+   
+    <script>
+        function fun11(){
+                document.querySelector("#submit1").addEventListener('click',function(){
+                    document.querySelector('#credit1').value="";
+                    document.querySelector('#credit2').value="";
+                    document.querySelector('#credit3').value="";
+                    document.querySelector('#credit4').value="";
+                    document.querySelector('#credit5').value="";
+                    document.querySelector('#credit6').value="";
+                    document.querySelector('#credit7').value="";
+                    document.querySelector('#credit8').value="";
+                    document.querySelector('#sem1').value="";
+                    document.querySelector('#sem2').value="";
+                    document.querySelector('#sem3').value="";
+                    document.querySelector('#sem4').value="";
+                    document.querySelector('#sem5').value="";
+                    document.querySelector('#sem6').value="";
+                    document.querySelector('#sem7').value="";
+                    document.querySelector('#sem8').value="";
+                    $('#percentage').val(" ");
+                    $('#cgpa').val(" ");
+
+                 
+             });
+          }
+        function setValue(ar){
+    for(i=0;i<ar.length;i++){
+        $('#credit'+String(i+1)).val(ar[i])
+        console.log('#credit'+String(i+1))
+    }
+}
+
+$('#cse2017').on('click',function(e){
+    var ar = [18, 19, 17, 20, 19, 17, 12]
+    setValue(ar)    
+})
+
+
+$("#submit").on('click',function(e){
+    const credit1 = parseInt($('#credit1').val())
+    const credit2 = parseInt($('#credit2').val())
+    const credit3 = parseInt($('#credit3').val())
+    const credit4 = parseInt($('#credit4').val())
+    const credit5 = parseInt($('#credit5').val())
+    const credit6 = parseInt($('#credit6').val())
+    const credit7 = parseInt($('#credit7').val())
+    const credit8 = parseInt($('#credit8').val())
+
+    const sem1 = parseFloat($('#sem1').val())
+    const sem2 = parseFloat($('#sem2').val())
+    const sem3 = parseFloat($('#sem3').val())
+    const sem4 = parseFloat($('#sem4').val())
+    const sem5 = parseFloat($('#sem5').val())
+    const sem6 = parseFloat($('#sem6').val())
+    const sem7 = parseFloat($('#sem7').val())
+    const sem8 = parseFloat($('#sem8').val())
+
+
+    console.log(credit1, credit2,credit8);
+    var totalCredits = 0;
+    var totalGPA = 0;
+    if (credit1!==0 && !isNaN(credit1)){
+        if (sem1!==0 && !isNaN(sem1)){
+            totalCredits += credit1
+            totalGPA += sem1*credit1
+        }    
+    }
+    if (credit2!==0 && !isNaN(credit2)){
+        if (sem2!==0 && !isNaN(sem2)){
+            totalCredits += credit2
+            totalGPA += sem2*credit2
+        }
+    }
+    if (credit3!==0 && !isNaN(credit3)){
+        if (sem3!==0 && !isNaN(sem3)){
+            totalCredits += credit3
+            totalGPA += sem3*credit3
+        }    
+    }
+    if (credit4!==0 && !isNaN(credit4)){
+        if (sem4!==0 && !isNaN(sem4)){
+            totalCredits += credit4
+            totalGPA += sem4*credit4
+        }    
+    }
+    if (credit5!==0 && !isNaN(credit5)){
+        if (sem5!==0 && !isNaN(sem5)){
+            totalCredits += credit5
+            totalGPA += sem5*credit5
+        }    
+    }
+    if (credit6!==0 && !isNaN(credit6)){
+        if (sem6!==0 && !isNaN(sem6)){
+            totalCredits += credit6
+            totalGPA += sem6*credit6
+        }    
+    }
+    if (credit7!==0 && !isNaN(credit7)){
+        if (sem7!==0 && !isNaN(sem7)){
+            totalCredits += credit7
+            totalGPA += sem7*credit7
+        }    
+    }
+    if (credit8!==0 && !isNaN(credit8)){
+        if (sem8!==0 && !isNaN(sem8)){
+            totalCredits += credit8
+            totalGPA += sem8*credit8
+        }    
+    }
+
+    var CGPA = totalGPA/totalCredits
+    CGPA = CGPA * 100;
+    CGPA = Math.floor(CGPA)
+    CGPA = CGPA/100
+    console.log(CGPA,totalGPA,totalCredits);
+    $('#cgpa').val(CGPA)
+    var percentage = CGPA*10+5;
+    if (percentage>100){
+        percentage=100;
+    }
+    $('#percentage').val(percentage);
+})
+    </script>
+    <script src="../js_files/theme.js"></script>
+</body>
+</html>
