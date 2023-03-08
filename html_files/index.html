@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+      rel="stylesheet"
+    /> --> 
+    <link rel="icon" href="../assets/Image/Favicon.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../css_files/indexstyle.css" />
+    <link rel="stylesheet" href="../css_files/go_to_top.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Fix your nums</title>
+  </head>
+  <body>
+
+    <!-- <div id="preloader" class="loader">
+      <img src="Image/preloader.gif" alt="" />
+    </div> -->
+
+    <!-- HEADER CONTAINS THE STICKY NAVBAR -->
+    <button class="gotop">
+        <img src="../assets/Image/upButton.png" alt="arrow up">
+    </button>
+    <header>
+      <nav class="navbar">
+        <a href="../html_files/index.html"><div class="logo">Fix Your Nums</div></a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#hero" class="nav-link"> <i class="ri-home-line"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#calculators" class="nav-link"> <i class="ri-function-line"></i> Calculators</a>
+      </li>
+      <li class="nav-item">
+        <a href="../html_files/aboutus.html" class="nav-link"> <i class="ri-sort-desc"></i>About</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a href="aboutus.html" class="nav-link">About</a>
+    </li> -->
+    <li>
+        <a href="../html_files/testimonial.html" class="nav-link"> <i class="ri-user-3-line"></i>Testimonial</a>
+      </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+      </div>
+      </nav>
+    </header>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="herocontainer">
+        <h1>Fix Your Nums</h1>
+        <h3>Every calculation, done right on the spot!</h3>
+        <p class="paragraph">
+          'Fix your nums' is an online solution to your computational needs be
+          it converting units to one another, currency converter, caesar cipher
+          and basic arithmetic calculations. So go ahead and try now!
+        </p>
+      </div>
+    </section>
+
+    <!-- BUBBLES EFFECT CONTAINER BELOW -->
+
+    <div class="bubblescontainer">
+      <div class="bubbles">
+        <span style="--i: 11"></span>
+        <span style="--i: 12"></span>
+        <span style="--i: 24"></span>
+        <span style="--i: 14"></span>
+        <span style="--i: 10"></span>
+        <span style="--i: 23"></span>
+        <span style="--i: 18"></span>
+        <span style="--i: 16"></span>
+        <span style="--i: 19"></span>
+        <span style="--i: 21"></span>
+        <span style="--i: 22"></span>
+        <span style="--i: 25"></span>
+        <span style="--i: 18"></span>
+        <span style="--i: 21"></span>
+        <span style="--i: 15"></span>
+        <span style="--i: 13"></span>
+        <span style="--i: 26"></span>
+        <span style="--i: 17"></span>
+        <span style="--i: 13"></span>
+        <span style="--i: 20"></span>
+        <span style="--i: 11"></span>
+        <span style="--i: 12"></span>
+        <span style="--i: 24"></span>
+        <span style="--i: 14"></span>
+        <span style="--i: 10"></span>
+        <span style="--i: 23"></span>
+        <span style="--i: 18"></span>
+        <span style="--i: 16"></span>
+        <span style="--i: 19"></span>
+        <span style="--i: 21"></span>
+        <span style="--i: 22"></span>
+        <span style="--i: 25"></span>
+        <span style="--i: 18"></span>
+        <span style="--i: 21"></span>
+        <span style="--i: 15"></span>
+        <span style="--i: 13"></span>
+        <span style="--i: 26"></span>
+        <span style="--i: 17"></span>
+        <span style="--i: 13"></span>
+        <span style="--i: 20"></span>
+      </div>
+    </div>
+
+
+     <!-- SEARCH-BAR -->
+
+    <div class="search-bar">
+      <input type="search" id="mySearch" placeholder="Search Your Calculator" onkeyup="searchCal()">
+    </div>
+
+    <!-- MAIN CALCULATORS BELOW -->
+
+    <div class="container" id="calculators">
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Simple One</h2>
+          <p>
+            Basic DMAS operations on two numbers. As well as modulo operation.
+          </p>
+          <div class="trynow-button"><a href="../html_files/calculator.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Exponentiation</h2>
+          <p>
+            Enter the base and index or exponent and then get the desired
+            results.
+          </p>
+          <div class="trynow-button"><a href="../html_files/power.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Factorial</h2>
+          <p>Enter any natural numbers and then get its factorial quickly.</p>
+          <div class="trynow-button"><a href="../html_files/factorial.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Logarithm</h2>
+          <p>Enter any number and then get its natural logarithmic value.</p>
+          <div class="trynow-button"><a href="../html_files/logarithm.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Base Conversions</h2>
+          <p>
+            Supports all types to base conversions, namely Decimal, Binary, Octal & Hexadecimal.
+          </p>
+          <div class="trynow-button"><a href="../html_files/base.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Temperature</h2>
+          <p>Convert the temperatures across Fahrenheit and Celcius scales.</p>
+          <div class="trynow-button"><a href="../html_files/temperature.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Age Calculator</h2>
+          <p>
+            Pick a date from the calendar or enter manually to get your age.
+          </p>
+          <div class="trynow-button"><a href="../html_files/age.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>BMI Calculator</h2>
+          <p>Enter your height and weight to get your BMI Index.</p>
+          <div class="trynow-button"><a href="../html_files/bmi.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Quadratic Equation</h2>
+          <p>A basic quadratic equation solver.</p>
+          <div class="trynow-button"><a href="../html_files/equation.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Cubic Equation Roots Calculator</h2>
+          <p>Calculates the roots of a cubic equation</p>
+          <div class="trynow-button"><a href="../html_files/cubicEquationRoots.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Length Calculator</h2>
+          <p>Converts lengths across various units like miles, inch, etc.</p>
+          <div class="trynow-button"><a href="../html_files/length.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Volume Calculator</h2>
+          <p>Converts volumes across various units like gallons, cubic_inches, etc.</p>
+          <div class="trynow-button"><a href="../html_files/volume_calculator.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Complex Mod/Arg Calculator</h2>
+          <p>Find the Modulus & Argument of any Complex number</p>
+          <div class="trynow-button"><a href="../html_files/complexArgMod.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Energy Converter</h2>
+          <p>Converts energy across various units like thermal calories, food-calories, joules, kilojoules, etc.</p>
+          <div class="trynow-button"><a href="../html_files//energy_calc.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Standard Deviation Calculator</h2>
+          <p>Calculated the standard deviation of given set of sample/population</p>
+          <div class="trynow-button"><a href="../html_files/standardDev.html">Try Now!</a></div></div>
+     
+      </div>
+        <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Power Converter</h2>
+          <p>Converts power across various units like Watts, KiloWatts, Horsepowers etc.</p>
+          <div class="trynow-button"><a href="../html_files/powerCalc.html">Try Now!</a></div></div>
+      </div>
+
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Pressure Converter</h2>
+          <p>Converts pressure across various units like Atmospheres, bars, pounds per square inches etc.</p>
+          <div class="trynow-button"><a href="../html_files/pressureCalc.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Time Converter</h2>
+          <p>Converts time across various units like hours, seconds, minutes, days, weeks, etc.</p>
+          <div class="trynow-button"><a href="../html_files/timeCalc.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Bitwise Calculator</h2>
+          <p>Bitwise calculation done easily here.</p>
+          <div class="trynow-button"><a href="../html_files/bitwise.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Caesar-Cipher</h2>
+          <p>Encrypt your numbers here.</p>
+          <div class="trynow-button"><a href="../html_files/caesarcipher.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Currency Converter</h2>
+          <p>Convert between currencies present around the world.</p>
+          <div class="trynow-button"><a href="../html_files/currencyConverter.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Days Months Calculator</h2>
+          <p>Number of days between two given dates.</p>
+          <div class="trynow-button"><a href="../html_files/Days-Calculator.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>HCF LCM</h2>
+          <p>Calculates the HCF and LCM of two numbers.</p>
+          <div class="trynow-button"><a href="../html_files/hcflcm.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Mean-Median-Mode Calculator</h2>
+          <p>Calculates the Mean ,Median, Mode of a given Sample</p>
+          <div class="trynow-button"><a href="../html_files/MMM-calculator.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Roman-Int Converter</h2>
+          <p>Convert your number between Roman-Integer.</p>
+          <div class="trynow-button"><a href="../html_files/romanint.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>SIP Calculator</h2>
+          <p>A very simplified SIP calculator to check return value.</p>
+          <div class="trynow-button"><a href="../html_files/sip.html">Try Now!</a></div>
+        </div>
+      </div>
+        <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Binomial Coefficient</h2>
+          <p>Calculates the binomial coefficient.</p>
+          <div class="trynow-button"><a href="../html_files/binomialCoefficient.html">Try Now!</a></div>
+        </div>
+      </div>
+   
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Algebraic Derivative</h2>
+          <p>Calculates the algebraic derivative of an algebraic term.</p>
+          <div class="trynow-button"><a href="../html_files/alg-deriv.html">Try Now!</a></div>
+        </div>
+      </div>
+
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Algebraic Integration</h2>
+          <p>Calculates the algebraic integration of an algebraic term.</p>
+          <div class="trynow-button"><a href="../html_files/alg-integral.html">Try Now!</a></div>
+        </div>
+      </div>
+
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Data Converter</h2>
+          <p>Interconverts B, KB, MB, GB, TB into each other.</p>
+          <div class="trynow-button"><a href="../html_files/data-calc.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Average Calculator</h2>
+          <p>Calculate the average  of all the elements.</p>
+          <div class="trynow-button"><a href="../html_files/average-calci.html">Try Now!</a></div>
+        </div>
+      </div>
+
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Weight Converter</h2>
+          <p>Interconverts kg, ton, pound, gram into each other.</p>
+          <div class="trynow-button"><a href="../html_files/weight-calc.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Num-to-word</h2>
+          <p>Enter any  numbers and then get it convert into word quickly.</p>
+          <div class="trynow-button"><a href="../html_files/num-to-word.html">Try Now!</a></div>
+        </div>
+      </div>
+
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Nth Root Calculator</h2>
+          <p>Calculates the nth root of a number precisely</p>
+          <a href="../html_files/nthRoot.html">Try Now!</a>
+        </div>
+      </div>
+
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Trigonometric Calculator</h2>
+          <p>Calculate trigonometric function values for a given angle.</p>
+          <div class="trynow-button"><a href="../html_files/trig-calc.html">Try Now!</a></div>
+        </div>
+      </div>
+
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Permutation and Combination Calculator</h2>
+          <p>Calculate Permutation and Combination for given numbers.</p>
+          <div class="trynow-button"><a href="../html_files/pnc.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Sleep Calculator</h2>
+          <p>Calculates appropriate sleep schedule</p>
+          <div class="trynow-button"><a href="../html_files/sleep.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Nth Root Calculator</h2>
+          <p>Calculates the nth root of a number precisely</p>
+          <div class="trynow-button"><a href="../html_files/nthRoot.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Retirement Calculator</h2>
+          <p>Calculates the future value of retirement savings</p>
+          <div class="trynow-button"><a href="../html_files/retirement.html">Try Now!</a></div>
+        </div>
+      </div>
+
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Speed Convertor</h2>
+          <p>Converts speed from one unit to another</p>
+          <div class="trynow-button"><a href="../html_files/speed-calc.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Fractional Simplifier</h2>
+          <p>Converts fraction into its simplest form</p>
+          <a href="../html_files/Fraction-Simplifier.html">Try Now!</a>
+        </div>
+      </div>
+      <div class="box">
+       <span></span>
+        <div class="content">
+          <h2>Sales Tax Calculator</h2>
+          <p>Calculates the Sales Tax</p>
+          <div class="trynow-button"><a href="../html_files/sales-tax.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>EMI Calculator</h2>
+          <p>To calculate Equated Monthly Installment.</p>
+          <div class="trynow-button"><a href="../html_files/emi.html">Try Now!</a></div>
+        </div>
+      </div>
+
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Interest Calculator</h2>
+          <p>To calculate the interest and the final amount</p>
+          <a href="../html_files/Interest.html">Try Now!</a>
+        </div>
+      </div>
+
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Catalan Number Calculator</h2>
+          <p>Calculates n<sup>th</sup> Catalan Number</p>
+          <div class="trynow-button"><a href="../html_files/catalan.html">Try Now!</a></div>
+        </div>
+      </div>
+ <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Complex Number Calculator</h2>
+          <p>Performs basic arithmetic on complex numbers.</p>
+          <a href="../html_files/complexNumber.html">Try Now!</a>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Profit and Loss Calculator</h2>
+          <p>Calculate profit and Loss of product or service</p>
+          <a href="../html_files/profitloss.html">Try Now!</a>
+        </div>
+      </div>
+       <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Divisor Calculator</h2>
+          <p>Calculate divisors of a number, number of divisors and their sum.</p>
+          <a href="../html_files/divisor.html">Try Now!</a>
+          </div>
+        </div>
+          
+
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Determinant Calculator</h2>
+          <p>Calculates the determinant of any square Matrix</p>
+          <a href="../html_files/determinant.html">Try Now!</a>
+                </div>
+      </div>
+      
+    </div>
+  </div>
+
+    <!-- FOOTER SECTION BELOW -->
+
+    <div class="footer" id="about">
+      <footer>
+        <div class="waves">
+          <div class="wave" id="wave1"></div>
+          <div class="wave" id="wave2"></div>
+          <div class="wave" id="wave3"></div>
+          <div class="wave" id="wave4"></div>
+        </div>
+        <ul class="social-icon">
+          <li>
+            <a href="https://jwoc.tech/" target="_blank"
+              ><ion-icon name="logo-web-component"></ion-icon
+            ></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/TeamJWOC" target="_blank"
+              ><ion-icon name="logo-twitter"></ion-icon
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/jwoc/" target="_blank"
+              ><ion-icon name="logo-linkedin"></ion-icon
+            ></a>
+          </li>
+          <li>
+            <a href="https://github.com/jwoc-jgec" target="_blank"
+              ><ion-icon name="logo-github"></ion-icon
+            ></a>
+          </li>
+          <li>
+            <a href="mailto:contact.jwoc@gmail.com" target="_blank"
+              ><ion-icon name="mail-outline"></ion-icon
+            ></a>
+          </li>
+        </ul>
+        <ul class="menu">
+          <li class="footer-links"><a href="#hero">Home</a></li>
+          <li class="footer-links"><a href="#calculators">Calculators</a></li>
+          <li class="footer-links"><a href="https://jwoc.tech/">JWoC</a></li>
+        </ul>
+        <p>Copyright © JWOC 2023 All Rights Reserved</p>
+        <p>
+          Created by
+          <a href="https://github.com/Srijita-Mandal" target="_blank">Srijita Mandal</a> and
+          <a
+            href="https://github.com/Srijita-Mandal/fix-your-nums/graphs/contributors" target="_blank"
+            >Team</a
+          >
+        </p>
+      </footer>
+    </div>
+
+
+    <div class="scrollToTopContainer">
+      <button id="scrollToButton" class="HideElement scrollToTopButton" title="Click to scroll top">
+        <div class="top"><img src="../assets/Image/Chevron.svg" alt="Scroll-To-Top" /></div>
+      </button>
+    </div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="../js_files/script.js"></script>
+    <script src="../js_files/go_to_top.js"></script>
+    <script>
+      const searchCal = () => {
+      let searchData= document.getElementById('mySearch').value.toLowerCase();
+      let mainBox= document.getElementsByClassName('box');
+
+    for(var i=0; i<mainBox.length; i++){
+      let temp= mainBox[i].getElementsByTagName('h2')[0];
+
+    if(temp){
+      let calValue= temp.textContent || temp.innerHTML;
+
+      if(calValue.toLowerCase().indexOf(searchData) > -1){
+        mainBox[i].style.display= "";
+      }else{
+        mainBox[i].style.display= "none";
+      }
+    }
+  }
+}
+    </script>
+  </body>
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", mobileMenu);
+    function mobileMenu() {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    }
+    const navLink = document.querySelectorAll(".nav-link");
+
+    navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+    function closeMenu() {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    }
+  </script>
+
+  <!--------------Preloader Script---------------->
+  <!-- <script>
+    var loader = document.querySelector(".loader");
+    window.addEventListener("load", vanish);
+    function vanish() {
+      loader.classList.add("disappear");
+    }
+  </script> -->
+
+</html>
