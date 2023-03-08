@@ -277,6 +277,24 @@ h3 {
   }
 }
 
+.search-bar{
+  display: flex;
+  justify-content: center;
+}
+
+#mySearch{
+  height: 6rem;
+  width: 60rem;
+  border-radius: 40px;
+  padding: 1rem;
+  padding-left: 2rem;
+  font-size: 2rem;
+  background-color: transparent;
+  outline: none;
+  border: 2px solid white;
+  color: white;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -741,6 +759,11 @@ footer .wave#wave4 {
 
     padding-bottom: 10px;
   }
+
+    #mySearch{
+    height: 6rem;
+    width: 50rem;
+  }
 }
 
 @media (max-width: 500px) {
@@ -750,8 +773,13 @@ footer .wave#wave4 {
 
   .herocontainer {
     border: 1px transparent;
-
     padding-bottom: 10px;
+  }
+
+    #mySearch{
+    height: 5rem;
+    width: 30rem;
+    font-size: 1.6rem;
   }
 }
 

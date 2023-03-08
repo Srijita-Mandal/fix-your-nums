@@ -47,11 +47,12 @@
           <a href="#calculators" class="nav-link"> <i class="ri-function-line"></i> Calculators</a>
       </li>
       <li class="nav-item">
-        <a href="#about" class="nav-link"> <i class="ri-sort-desc"></i>About</a>
+        <a href="aboutus.html" class="nav-link"> <i class="ri-sort-desc"></i>About</a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a href="aboutus.html" class="nav-link">About</a>
-    </li>
+    </li> -->
+    <li>
         <a href="testimonial.html" class="nav-link"> <i class="ri-user-3-line"></i>Testimonial</a>
       </li>
         </ul>
@@ -120,6 +121,13 @@
         <span style="--i: 13"></span>
         <span style="--i: 20"></span>
       </div>
+    </div>
+
+
+     <!-- SEARCH-BAR -->
+
+    <div class="search-bar">
+      <input type="search" id="mySearch" placeholder="Search Your Calculator" onkeyup="searchCal()">
     </div>
 
     <!-- MAIN CALCULATORS BELOW -->
@@ -251,9 +259,16 @@
         <div class="content">
           <h2>Standard Deviation Calculator</h2>
           <p>Calculated the standard deviation of given set of sample/population</p>
-          <div class="trynow-button"><a href="standardDev.html">Try Now!</a></div>
-        </div>
+          <div class="trynow-button"><a href="standardDev.html">Try Now!</a></div></div>
       </div>
+        <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Power Converter</h2>
+          <p>Converts power across various units like Watts, KiloWatts, Horsepowers etc.</p>
+          <div class="trynow-button"><a href="powerCalc.html">Try Now!</a></div></div>
+      </div
+
       <div class="box">
         <span></span>
         <div class="content">
@@ -305,6 +320,14 @@
       <div class="box">
         <span></span>
         <div class="content">
+          <h2>Mean-Median-Mode Calculator</h2>
+          <p>Calculates the Mean ,Median, Mode of a given Sample</p>
+          <div class="trynow-button"><a href="MMM-calculator.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
           <h2>Roman-Int Converter</h2>
           <p>Convert your number between Roman-Integer.</p>
           <div class="trynow-button"><a href="romanint.html">Try Now!</a></div>
@@ -351,6 +374,14 @@
           <h2>Data Converter</h2>
           <p>Interconverts B, KB, MB, GB, TB into each other.</p>
           <div class="trynow-button"><a href="data-calc.html">Try Now!</a></div>
+        </div>
+      </div>
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Average Calculator</h2>
+          <p>Calculate the average  of all the elements.</p>
+          <div class="trynow-button"><a href="average-calci.html">Try Now!</a></div>
         </div>
       </div>
 
@@ -494,7 +525,17 @@
           <h2>Divisor Calculator</h2>
           <p>Calculate divisors of a number, number of divisors and their sum.</p>
           <a href="divisor.html">Try Now!</a>
+          </div>
         </div>
+          
+
+      <div class="box">
+        <span></span>
+        <div class="content">
+          <h2>Determinant Calculator</h2>
+          <p>Calculates the determinant of any square Matrix</p>
+          <a href="determinant.html">Try Now!</a>
+                </div>
       </div>
       
     </div>
@@ -572,6 +613,26 @@
 
     <script src="script.js"></script>
     <script src="go_to_top.js"></script>
+    <script>
+      const searchCal = () => {
+      let searchData= document.getElementById('mySearch').value.toLowerCase();
+      let mainBox= document.getElementsByClassName('box');
+
+    for(var i=0; i<mainBox.length; i++){
+      let temp= mainBox[i].getElementsByTagName('h2')[0];
+
+    if(temp){
+      let calValue= temp.textContent || temp.innerHTML;
+
+      if(calValue.toLowerCase().indexOf(searchData) > -1){
+        mainBox[i].style.display= "";
+      }else{
+        mainBox[i].style.display= "none";
+      }
+    }
+  }
+}
+    </script>
   </body>
   <script>
     const hamburger = document.querySelector(".hamburger");
