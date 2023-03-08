@@ -1022,6 +1022,16 @@ function fun12() {
   });
 }
 
+//reset for retirement calculator
+function fun13() {
+  document.querySelector("#calc").addEventListener('click', function () {
+    document.querySelector('#amountInvested').value = "";
+    document.querySelector('#investmentPeriod').value = "";
+    document.querySelector('#expectedRate').value = "";
+    document.getElementById('futureValue').innerHTML = "";
+  });
+}
+
 //reset for days calculator
 function daySet() {
   document.querySelector("#button1").addEventListener('click', function () {
