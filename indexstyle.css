@@ -444,10 +444,173 @@ h3 {
   background: linear-gradient(315deg, #1e470c, #00d0ff);
 }
 
-.container .box:nth-child(n + 18)::before,
+/* .container .box:nth-child(n + 18)::before,
 .container .box:nth-child(n + 18)::after {
   background: linear-gradient(315deg, #4dff03, #18abcc);
+} */
+.container .box:nth-child(19)::before,
+.container .box:nth-child(19)::after {
+  background: linear-gradient(315deg, #ffbc00, #ff0058);
 }
+
+.container .box:nth-child(20)::before,
+.container .box:nth-child(20)::after {
+  background: linear-gradient(315deg, #03a9f4, #ff0058);
+}
+
+.container .box:nth-child(21)::before,
+.container .box:nth-child(21)::after {
+  background: linear-gradient(315deg, #4dff03, #00d0ff);
+}
+
+.container .box:nth-child(22)::before,
+.container .box:nth-child(22)::after {
+  background: linear-gradient(315deg, #2b3427, #0a596a);
+}
+
+.container .box:nth-child(23)::before,
+.container .box:nth-child(23)::after {
+  background: linear-gradient(315deg, #3a3f38, #6abd1b);
+}
+
+.container .box:nth-child(24)::before,
+.container .box:nth-child(24)::after {
+  background: linear-gradient(315deg, #1e470c, #00d0ff);
+}
+
+.container .box:nth-child(25)::before,
+.container .box:nth-child(25)::after {
+  background: linear-gradient(315deg, #ffbc00, #ff0058);
+}
+
+.container .box:nth-child(26)::before,
+.container .box:nth-child(26)::after {
+  background: linear-gradient(315deg, #03a9f4, #ff0058);
+}
+
+.container .box:nth-child(27)::before,
+.container .box:nth-child(27)::after {
+  background: linear-gradient(315deg, #4dff03, #00d0ff);
+}
+
+.container .box:nth-child(28)::before,
+.container .box:nth-child(28)::after {
+  background: linear-gradient(315deg, #2b3427, #0a596a);
+}
+
+.container .box:nth-child(29)::before,
+.container .box:nth-child(29)::after {
+  background: linear-gradient(315deg, #3a3f38, #6abd1b);
+}
+
+.container .box:nth-child(30)::before,
+.container .box:nth-child(30)::after {
+  background: linear-gradient(315deg, #1e470c, #00d0ff);
+}
+
+.container .box:nth-child(31)::before,
+.container .box:nth-child(31)::after {
+  background: linear-gradient(315deg, #1e470c, #00d0ff);
+}
+
+.container .box:nth-child(32)::before,
+.container .box:nth-child(32)::after {
+  background: linear-gradient(315deg, #ffbc00, #ff0058);
+}
+
+.container .box:nth-child(33)::before,
+.container .box:nth-child(33)::after {
+  background: linear-gradient(315deg, #03a9f4, #ff0058);
+}
+
+.container .box:nth-child(34)::before,
+.container .box:nth-child(34)::after {
+  background: linear-gradient(315deg, #4dff03, #00d0ff);
+}
+
+.container .box:nth-child(35)::before,
+.container .box:nth-child(35)::after {
+  background: linear-gradient(315deg, #2b3427, #0a596a);
+}
+
+.container .box:nth-child(36)::before,
+.container .box:nth-child(36)::after {
+  background: linear-gradient(315deg, #3a3f38, #6abd1b);
+}
+
+.container .box:nth-child(37)::before,
+.container .box:nth-child(37)::after {
+  background: linear-gradient(315deg, #1e470c, #00d0ff);
+}
+.container .box:nth-child(38)::before,
+.container .box:nth-child(38)::after {
+  background: linear-gradient(315deg, #ffbc00, #ff0058);
+}
+
+.container .box:nth-child(39)::before,
+.container .box:nth-child(39)::after {
+  background: linear-gradient(315deg, #03a9f4, #ff0058);
+}
+
+.container .box:nth-child(40)::before,
+.container .box:nth-child(40)::after {
+  background: linear-gradient(315deg, #4dff03, #00d0ff);
+}
+
+.container .box:nth-child(41)::before,
+.container .box:nth-child(41)::after {
+  background: linear-gradient(315deg, #2b3427, #0a596a);
+}
+
+.container .box:nth-child(42)::before,
+.container .box:nth-child(42)::after {
+  background: linear-gradient(315deg, #3a3f38, #6abd1b);
+}
+
+.container .box:nth-child(43)::before,
+.container .box:nth-child(43)::after {
+  background: linear-gradient(315deg, #1e470c, #00d0ff);
+}
+
+.container .box:nth-child(44)::before,
+.container .box:nth-child(44)::after {
+  background: linear-gradient(315deg, #ffbc00, #ff0058);
+}
+
+.container .box:nth-child(45)::before,
+.container .box:nth-child(45)::after {
+  background: linear-gradient(315deg, #03a9f4, #ff0058);
+}
+
+.container .box:nth-child(46)::before,
+.container .box:nth-child(46)::after {
+  background: linear-gradient(315deg, #4dff03, #00d0ff);
+}
+
+.container .box:nth-child(47)::before,
+.container .box:nth-child(47)::after {
+  background: linear-gradient(315deg, #2b3427, #0a596a);
+}
+
+.container .box:nth-child(48)::before,
+.container .box:nth-child(48)::after {
+  background: linear-gradient(315deg, #3a3f38, #6abd1b);
+}
+
+.container .box:nth-child(49)::before,
+.container .box:nth-child(49)::after {
+  background: linear-gradient(315deg, #1e470c, #00d0ff);
+}
+
+.container .box:nth-child(50)::before,
+.container .box:nth-child(50)::after {
+  background: linear-gradient(315deg, #1e470c, #00d0ff);
+}
+.container .box:nth-child(n + 50)::before,
+.container .box:nth-child(n + 50)::after {
+  background: linear-gradient(315deg, #1e470c, #00d0ff);
+}
+
 
 .container .box span {
   display: block;
