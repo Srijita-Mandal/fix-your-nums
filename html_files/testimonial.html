@@ -11,13 +11,17 @@
     <link rel="stylesheet" href="../css_files/testimonial.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="icon" href="../assets/Image/Favicon.png">
-
+    <link rel="stylesheet" href="../css_files/go_to_top.css">  </head>
+ 
 </head>
 
 <body>
     <!-- <div id="preloader" class="loader">
         <img src="Image/preloader.gif" alt="" />
       </div> -->
+      <button class="gotop">
+        <img src="../assets/Image/upButton.png" alt="arrow up">
+    </button>
     <header>
         <nav class="navbar">
           <a href="../index.html"><div class="logo">Fix Your Nums</div></a>
@@ -256,6 +260,7 @@
 
 
 
+
             </div>
         </div>
 
@@ -315,6 +320,12 @@
         </footer>
       </div>
     
+    <div class="scrollToTopContainer">
+      <button id="scrollToButton" class="HideElement scrollToTopButton" title="Click to scroll top">
+        <div class="top"><img src="./assets/Image/Chevron.svg" alt="Scroll-To-Top" /></div>
+      </button>
+    </div>
+
 </body>
 
 <script src="../js_files/swiper-bundle.min.js"></script>
@@ -344,5 +355,5 @@
       loader.classList.add("disappear");
     }
   </script>
-
+ <script src="../js_files/go_to_top.js"></script>
 </html>

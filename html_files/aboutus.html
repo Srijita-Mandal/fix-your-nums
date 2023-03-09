@@ -9,12 +9,15 @@
     <link rel="stylesheet" href="../js_files/go_to_top.js">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
 
+    <link rel="stylesheet" href="../css_files/go_to_top.css">  </head>
+   <title>About Us</title>
 
   <body>
     <!-- HEADER CONTAINS THE STICKY NAVBAR -->
-
+    <button class="gotop">
+      <img src="../assets/Image/upButton.png" alt="arrow up">
+  </button>
     <header>
       <nav class="navbar">
         <a href="../index.html"><div class="logo">Fix Your Nums</div></a>
@@ -222,16 +225,14 @@
       </footer>
     </div>
 
+       
     <div class="scrollToTopContainer">
-      <button
-        id="scrollToButton"
-        class="HideElement scrollToTopButton"
-        title="Click to scroll top"
-      >
-        <img src="../assets/Image/Chevron.svg" alt="Scroll-To-Top" />
+      <button id="scrollToButton" class="HideElement scrollToTopButton" title="Click to scroll top">
+        <div class="top"><img src="./assets/Image/Chevron.svg" alt="Scroll-To-Top" /></div>
       </button>
     </div>
 
+    <script src="../js_files/go_to_top.js"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
