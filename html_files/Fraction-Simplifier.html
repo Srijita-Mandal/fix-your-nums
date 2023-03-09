@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraction Simplifier Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+    <link rel="stylesheet" href="../css_files/theme.css">
+    <link rel="icon" href="../assets/Image/Favicon.png">
+</head>
+<body>
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <!-- Updated by @Lucky Singh   -->
+        <span>Fractional Simplifier</span>
+      </div>
+    <form class="form-horizontal" id="age">
+        <label class="heading">Fraction Simplifier Calculator</label><br/><br/>
+        <p class="infoDeriv">An algebraic term is of form: <b>a/b</b>, where a and b are real numbers.</p>
+        <p class="infoDeriv">This calculator will calculate its simplest form.</p>
+        <label class="numerator" for="numerator">Enter the value of a:</label><br/><br/>
+        <input type="number" name="numerator" id="numerator" step="any" value="1"><br/><br/><br/>
+        <label class="exponent" for="denominator">Enter the value of b:</label><br/><br/>
+        <input type="number" name="denominator" id="denominator" step="any" value="1"><br>
+        <button type="button" id="submit">Submit</button><br/><br/><br/>
+        <span id="inputExpression"></span>
+        <span id="resultIntegral"></span>
+    </form>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <script src="../js_files/Fraction-simplifier.js"></script>
+    <script src="../js_files/theme.js"></script>
+
+</body>
+</html>

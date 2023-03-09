@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="stylesheet" href="../css_files/theme.css" />
+    <title>Change Number System</title>
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+  </head>
+  <body style="overflow: hidden;">
+    <img src="../assets/Image/moon.png" id="icon" />
+    <div class="calculator-name-header">
+      <!-- Updated by @Shantanu-Meta   -->
+      <span>Base Converter</span>
+    </div>
+    <form id="numCh">
+      <label for="numChange"
+        >Please enter the number you'd like to convert</label
+      ><br /><br />
+      <input type="text" name="numChange" id="numChange" />
+      <select name="numSys" id="numSys">
+        <option value="bin-dec">Binary to Decimal</option> 
+        <option value="bin-oct">Binary to Octal</option> 
+        <option value="bin-hex">Binary to Hexadecimal</option> 
+        <option value="dec-bin">Decimal to Binary</option>
+        <option value="dec-oct">Decimal to Octal</option> 
+        <option value="dec-hex">Decimal to Hexadecimal</option> 
+        <option value="oct-bin">Octal to Binary</option> 
+        <option value="oct-dec">Octal to Decimal</option> 
+        <option value="oct-hex">Octal to Hexadecimal</option> 
+        <option value="hex-bin">Hexadecimal to Binary</option> 
+        <option value="hex-dec">Hexadecimal to Decimal</option> 
+        <option value="hex-oct">Hexadecimal to Octal</option>  
+        </select
+      ><br />
+      <button type="button" id="bindecSet" onclick="fun2()">reset</button>
+      <button type="button" onclick="changeNumber(),Func()">Submit</button
+      ><br /><br /><br />
+      <div class="outterbox">
+        <div class="box"><span id="resultNumChange"></span></div>
+    </div>
+      <span id="resultNumChange"></span>
+    </form>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+
+    <script src="../js_files/script.js"></script>
+    <script src="../js_files/theme.js"></script>
+  </body>
+</html>

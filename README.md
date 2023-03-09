@@ -1,6 +1,6 @@
 <h1 align="center">Fix-Your-Nums</h1>
 <div align="center">
-<img src="Fix Your Nums logo.png" width="150px" height="150px">
+<img src="./assets/Fix Your Nums logo.png" width="150px" height="150px">
 </div>
 <h3> 🧮 <a href="https://github.com/Srijita-Mandal/fix-your-nums">Fix-Your-Nums</a> is a multiple-in-one calculator with some mathematical and conversion features for multipurpose uses.</h3>
 <!-- <h3> 🌐 Visit: <a href="srijita-mandal.github.io/fix-your-nums/">Fix-your-nums</a> </h3> -->

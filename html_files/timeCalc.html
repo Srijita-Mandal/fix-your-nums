@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <title>Time Converter</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        flex-direction: column;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+      .top-txt {
+        margin-bottom: 15px;
+      }
+      .container {
+        box-shadow: 0 0 4px 1px rgb(179, 169, 169);
+        width: 675px;
+        height: 375px;
+        border-radius: 10px;
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        flex-direction: column;
+        background-color: #ffb4a3;
+      }
+      .container p {
+        color: rgb(20, 94, 82);
+        margin: 10px;
+        font-size: 20px;
+        font-weight: bolder;
+      }
+      .inputContainer {
+        margin: 5px;
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+      }
+      .inputContainer label {
+        font-size: larger;
+      }
+      .inputContainer input {
+        border: none;
+        outline: none;
+        box-shadow: 0.1px 1px 2px 1px rgb(145, 140, 140);
+        padding: 4px;
+        font-size: large;
+        border-radius: 2px;
+      }
+      .calculator-name-header {
+        text-align: center;
+        padding: 10px;
+        border-radius: 0px 15px 0px 15px;
+        box-shadow: 0px 0px 16px 1px;
+        font-size: 30px;
+        margin: 25px 30%;
+      }
+    </style>
+    <link rel="stylesheet" href="../css_files/theme.css" />
+  </head>
+  <body bgcolor="#ffeeb7">
+    <img src="../assets/Image/moon.png" id="icon" />
+    <div class="calculator-name-header">
+      <span>Time calculator</span>
+    </div>
+    <div class="container" style="height: 400px !important">
+      <p class="top-txt">
+        Enter value in any of the fields to convert between time measurements:
+      </p>
+      <div class="inputContainer">
+        <label for="Microseconds">Microseconds</label
+        ><input
+          type="number"
+          name=""
+          id="Microseconds"
+          oninput="convertToOthers('Microseconds',this.value)"
+        />
+      </div>
+      <div class="inputContainer">
+        <label for="Milliseconds">Milliseconds</label
+        ><input
+          type="number"
+          name=""
+          id="Milliseconds"
+          oninput="convertToOthers('Milliseconds',this.value)"
+        />
+      </div>
+      <div class="inputContainer">
+        <label for="seconds">seconds</label
+        ><input
+          type="number"
+          name=""
+          id="seconds"
+          oninput="convertToOthers('seconds',this.value)"
+        />
+      </div>
+      <div class="inputContainer">
+        <label for="hours">hours</label
+        ><input
+          type="number"
+          name=""
+          id="hours"
+          oninput="convertToOthers('hours',this.value)"
+        />
+      </div>
+      <div class="inputContainer">
+        <label for="minutes">minutes</label
+        ><input
+          type="number"
+          name=""
+          id="minutes"
+          oninput="convertToOthers('minutes',this.value)"
+        />
+      </div>
+      <div class="inputContainer">
+        <label for="years">years</label
+        ><input
+          type="number"
+          name=""
+          id="years"
+          oninput="convertToOthers('years',this.value)"
+        />
+      </div>
+      <div class="inputContainer">
+        <label for="week">week</label
+        ><input
+          type="number"
+          name=""
+          id="week"
+          oninput="convertToOthers('week',this.value)"
+        />
+      </div>
+      <div class="inputContainer">
+        <label for="days">days</label
+        ><input
+          type="number"
+          name=""
+          id="days"
+          oninput="convertToOthers('days',this.value)"
+        />
+      </div>
+      <div class="button">
+        <button
+          style="
+            height: 30px;
+            width: 100px;
+            font-size: large;
+            margin-top: 10px;
+            background-color: black;
+            color: aliceblue;
+          "
+        >
+          reset
+        </button>
+      </div>
+    </div>
+    <a href="../index.html"
+      ><i id="home" class="fa fa-home" aria-hidden="true"></i
+    ></a>
+    <script>
+      document.querySelector("button").addEventListener("click", function () {
+        document.getElementById("Microseconds").value = "";
+        document.getElementById("Milliseconds").value = "";
+        document.getElementById("seconds").value = "";
+        document.getElementById("hours").value = "";
+        document.getElementById("minutes").value = "";
+        document.getElementById("years").value = "";
+        document.getElementById("week").value = "";
+        document.getElementById("days").value = "";
+      });
+      let Microseconds = document.getElementById("Microseconds");
+      let Milliseconds = document.getElementById("Milliseconds");
+      let seconds = document.getElementById("seconds");
+      let hours = document.getElementById("hours");
+      let minutes = document.getElementById("minutes");
+      let years = document.getElementById("years");
+      let week = document.getElementById("week");
+      let days = document.getElementById("days");
+
+      function MicrosecondsToOther(val) {
+        Milliseconds.value = val * 0.001;
+        seconds.value = val * 0.000001;
+        hours.value = val * 0.000000000277778;
+        minutes.value = val * 0.000000016666667;
+        years.value = val * 0.00000000000032;
+        week.value = val * 0.000000000001653;
+        days.value = val * 0.000000000011574;
+      }
+      function milliSecondsToOther(val) {
+        Microseconds.value = val * 1000;
+        seconds.value = val * 0.000001 * 1000;
+        hours.value = val * 0.000000000277778* 1000;
+        minutes.value = val * 0.000000016666667* 1000;
+        years.value = val * 0.00000000000032* 1000;
+        week.value = val * 0.000000000001653* 1000;
+        days.value = val * 0.000000011574074;
+      }
+      function secondsToOther(val) {
+        Milliseconds.value = val * 0.001* 1000000;
+        Microseconds.value = val * 1000000;
+        hours.value = val * 0.000000000277778* 1000000;
+        minutes.value = val * 0.000000016666667* 1000000;
+        years.value = val * 0.00000000000032* 1000000;
+        week.value = val * 0.000000000001653* 1000000;
+        days.value = val * 0.000012;
+      }
+      function hoursToOther(val) {
+        Milliseconds.value = val * 0.001* 1000000* 3600;
+        Microseconds.value = val * 1000000* 3600;
+        seconds.value = val * 3600;
+        minutes.value = val * 60;
+        years.value = val * 0.000114;
+        week.value = val * 0.005952;
+        days.value = val * 0.041667;
+      }
+      function minutesToOther(val) {
+        Microseconds.value = val * 60000000;
+        Milliseconds.value = val * 60000;
+        hours.value = val * 0.016667;
+        years.value = val * 0.000002;
+        week.value = val * 0.000099;
+        seconds.value = val * 60;
+        days.value = val * 0.000694;
+      }
+      function yearsToOther(val) {
+        Microseconds.value = val * 31557600000000;
+        Milliseconds.value = val * 31557600000;
+        hours.value = val * 8766;
+        minutes.value = val * 525960;
+        week.value = val * 52.18;
+        seconds.value = val * 31557600;
+        days.value = val * 365.25;
+      }
+      function weekToOther(val) {
+        Microseconds.value = val * 1209600000000;
+        Milliseconds.value = val * 1209600000;
+        seconds.value = val * 1209600;
+        minutes.value = val * 10080;
+        hours.value = val * 168;
+        years.value = val * 0.02;
+        days.value = val * 0.000012;
+      }
+      function daysToOther(val) {
+        Microseconds.value = val * 86400000000;
+        Milliseconds.value = val * 86400000;
+        seconds.value = val * 86400;
+        minutes.value = val * 1440;
+        hours.value = val * 24;
+        years.value = val * 0.002738;
+        week.value = val * 0.142857;
+      }
+      // *********************//
+
+      function convertToOthers(convertFrom, value) {
+        switch (convertFrom) {
+          case "Microseconds":
+            MicrosecondsToOther(parseFloat(value));
+            break;
+          case "Milliseconds":
+            milliSecondsToOther(parseFloat(value));
+            break;
+          case "seconds":
+            secondsToOther(parseFloat(value));
+            break;
+          case "minutes":
+            minutesToOther(parseFloat(value));
+            break;
+          case "week":
+            weekToOther(parseFloat(value));
+            break;
+          case "years":
+            yearsToOther(parseFloat(value));
+            break;
+          case "hours":
+            hoursToOther(parseFloat(value));
+            break;
+          case "days":
+            daysToOther(parseFloat(value));
+            break;  
+        }
+      }
+    </script>
+    <script src="../js_files/theme.js"></script>
+  </body>
+</html>

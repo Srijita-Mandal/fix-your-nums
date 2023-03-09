@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+
+    <title>Age Calculator</title>
+  </head>
+  <style class="text/css">
+    body {
+      width: 100vw;
+      height: 100vh;
+      background-color: #ffeeb7;
+      display: grid;
+      place-items: center;
+      font-family: "Ubuntu";
+      overflow: hidden;
+    }
+
+    #resultAge {
+      font-size: 20px;
+      /* font-family: "Ubuntu", Times, serif; */
+    }
+
+    #DOB {
+      padding: 7px;
+      height: 20px;
+      width: 150px;
+      font-size: 15px;
+    }
+    button {
+      /* font-family: "Ubuntu", Times, serif; */
+      background-color: black;
+      font-size: 14px;
+      color: white;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    form {
+      background-color: #ffb4a3;
+      padding: 80px;
+      width: 54%;
+      height: 35%;
+      margin: 100px auto;
+      text-align: center;
+      place-items: center;
+      box-shadow: 0 10px 6px -6px #777;
+    }
+
+    label {
+      font-size: 25px;
+      font-weight: 500;
+    }
+    .calculator-name-header {
+      /* font-family: "Ubuntu"; */
+      margin-top: 30px;
+      padding: 2px 10px 10px 10px;
+      border-radius: 0px 15px 0px 15px;
+      box-shadow: 0px 0px 16px 1px;
+      font-size: 30px;
+    }
+    .btns{
+      display: flex;
+      /* flex-direction: column; */
+      justify-content: center;
+      margin: 3rem;
+    }
+  </style>
+  <link rel="stylesheet" href="../css_files/theme.css" />
+  <body>
+    <img src="../assets/Image/moon.png" id="icon" />
+    <div class="calculator-name-header">
+      <!-- Updated by @Shantanu-Meta   -->
+      <span>Age calculator</span>
+    </div>
+    <form class="form-horizontal" id="age">
+      <label for="DOB">Please enter your Date of Birth</label><br /><br />
+      <input type="date" name="BOD" id="DOB" />
+      <div class="btns">
+        <span id="message" style="color: red;"> </span> <br /><br />
+        <button type="button" id="ageSet" onclick="fun1()">reset</button>
+        <span id="message" style="color: rgb(255, 0, 0);"> </span> <br /><br />
+        <button type="button" onclick="ageCalculator()">Submit</button><br /><br /><br />
+      </div>
+      <div class="outterbox">
+        <div class="box"><span id="resultAge"></span></div>
+    </div>
+      <!-- <span id="resultAge"></span> -->
+    </form>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+
+    <script src="../js_files/script.js"></script>
+    <script src="../js_files/theme.js"></script>
+  </body>
+</html>

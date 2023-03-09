@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <title>Days Calculator</title>
+    <link rel="icon" href="../assets/Image/Favicon.png">
+
+<style class="text/css">
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #ffeeb7;
+    display: grid;
+    place-items: center;
+    font-family: Ubuntu;
+    overflow: hidden;
+
+}
+
+#resultAge{
+    font-size: 20px;
+    /* font-family: 'Times New Roman', Times, serif; */
+    justify-content: center;
+    text-align: center;
+}
+
+#starting-date{
+    
+    height: 20px;
+    width: 150px;
+    font-size: 7px;
+}
+#ending-date{
+    
+    height: 20px;
+    width: 150px;
+    font-size: 7px;
+}
+button{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: black;
+    font-size: 14px;
+    color:white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+form{
+    background-color: #ffb4a3;
+    padding: 60px;
+    width: 54%;
+    height: 50%;
+    margin: 100px auto;
+    text-align: center;
+    place-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 6px -6px #777;
+}
+
+label{
+    font-size: 20px;
+    font-weight: 500;
+    padding: 20px;
+}
+.heading{
+    font-size: 24px;
+    font-weight: bold;
+} 
+.calculator-name-header{
+    margin-top: 50px;
+    padding: 10px;
+    border-radius: 0px 15px 0px 15px;
+    box-shadow: 0px 0px 16px 1px;
+    font-size: 30px;
+
+}
+
+</style>
+<link rel="stylesheet" href="../css_files/theme.css">
+    </head>
+    <body>
+        <img src="../assets/Image/moon.png" id="icon">
+        <div class="calculator-name-header">
+            <!-- Updated by @Shantanu-Meta   -->
+            <span>Days calculator</span>
+          </div>
+        <form class="form-horizontal" id="age">
+            <label class="heading"> Duration Calculator</label><br/><br/>
+            <label class="starting-date" for="starting-Date">Enter the Starting-Date</label><br/><br/>
+            <input type="date" name="Starting-Date" id="starting-Date"><br/><br/><br/>
+            <label for="ending-Date">Enter the Ending-Date</label><br/><br/>
+            <input type="date" name="ending-Date" id="ending-Date">
+            <span id = "message" style="color:rgb(255, 0, 0)"> </span> <br><br>
+            <button id="button1" onclick="daySet()">Reset</button>
+            <button type="button" onclick="DaysCalculator()">Submit</button><br/><br/><br/>
+            <div class="outterbox">
+                <div class="box"><span id="resultAge"></span></div>
+            </div>
+            <!-- <span id="resultAge"></span> -->
+        </form>
+        <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+        <script src="../js_files/script.js"></script>
+        <script type="text/javascript">
+            document.getElementById("age").addEventListener("submit",(e)=>{
+                e.preventDefault()
+                DaysCalculator()
+            })
+            document.body.addEventListener("keyup",(e)=>{
+                    if(e.keyCode==13){
+                        DaysCalculator()
+                    }
+                })
+        </script>
+        <script src="../js_files/theme.js"></script>
+    </body>
+    </html>
+</html>

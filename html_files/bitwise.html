@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css_files/theme.css" />
+    <title>Bitwise Calculator</title>
+    <!-- <style type="text/css">
+      * {
+        padding: 0;
+        margin: 0; 
+        
+      }
+
+      body {
+        
+        font-family: "Ubuntu", sans-serif;
+      }
+      #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+      }
+      #card-container {
+        display: flex;
+        width: 400px;
+        height: fit-content;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 5px;
+        border: 1px solid lightgray;
+        margin-top: 12px;
+        
+      }
+      #button {
+        margin-top: 12px;
+        font-size: 15px;
+        
+        height: 30px;
+        width: 100%;
+        cursor: pointer;
+      }
+      #p {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        font-weight: 500;
+      }
+      #p #result{
+        background-color: rgb(250, 248, 248);
+      }
+      input {
+        height: 30px;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+      .calculator-name-header {
+        margin: 25px 40%;
+        margin-top: 50px;
+        padding: 10px;
+        border-radius: 0px 15px 0px 15px;
+        box-shadow: 0px 0px 16px 1px;
+        font-size: 30px;
+        text-align: center;
+      }
+    </style> -->
+    <script type="text/javascript">
+      function resetBit() {
+       
+            document.querySelector("#bitnum1").value = "";
+            document.querySelector("#bitnum2").value = "";
+            document.querySelector("#resultbitbox").style.display= "none";
+            document.querySelector("#bitnum2").style.display= "inline";
+            document.getElementById("bitcal").value="nothing"
+          
+      }
+
+ 
+      function dosomething(){
+        const operation = document.getElementById("bitcal");
+  const valOpe = operation.value;
+  switch (valOpe) {
+    case "and":
+    
+      // console.log(number1+number2);
+      
+    case "or":
+     
+      case "xor":
+      
+        case "nand":
+         
+    case "nor":
+    
+      
+      
+      case "xnor":
+      document.querySelector("#bitnum2").style.display= "inline";
+      document.querySelector("#bitnum2").placeholder= "Second Number";
+      break;
+      case "not": document.querySelector("#bitnum2").style.display= "none";
+      break;
+      case "sright":
+      document.querySelector("#bitnum2").style.display= "inline";
+      document.querySelector("#bitnum2").placeholder= "Bits to shift";
+      break;
+      case "sleft":
+      document.querySelector("#bitnum2").style.display= "inline";
+      document.querySelector("#bitnum2").placeholder= "Bits to shift";
+      break;
+    default:
+      return;
+  }
+
+      }
+      const bitCalculator = () => {
+  // console.log("clicked");
+  const operation = document.getElementById("bitcal");
+  const valOpe = operation.value;
+
+  // console.log(valOpe);
+
+  const number1 = parseInt(document.getElementById("bitnum1").value);
+  const number2 = parseInt(document.getElementById("bitnum2").value);
+
+  // console.log(number1);
+  // console.log(number2);
+  document.querySelector("#resultbitbox").style.display= "block";
+  switch (valOpe) {
+    case "and":
+      document.getElementById("resultbitCalculator").innerHTML = `${number1 & number2 }`;
+      // console.log(number1+number2);
+      break;
+    case "or":
+      document.getElementById("resultbitCalculator").innerHTML = `${number1 | number2 }`;
+      break;
+    case "not":
+      document.getElementById("resultbitCalculator").innerHTML = `${~number1  }`;
+      
+      break;
+    case "xor":
+    document.getElementById("resultbitCalculator").innerHTML = `${number1 ^ number2  }`;
+      break;
+    case "nand":
+    document.getElementById("resultbitCalculator").innerHTML = `${~(number1 & number2 )}`;
+      break;
+      case "nor":
+      document.getElementById("resultbitCalculator").innerHTML = `${~(number1 | number2)}`;
+      break;
+      case "xnor":
+      document.getElementById("resultbitCalculator").innerHTML = `${~(number1 ^ number2 )}`;
+      break;
+      case "sright":
+      document.getElementById("resultbitCalculator").innerHTML = `${(number1<<number2 )}`;
+      break;
+      case "sleft":
+      document.getElementById("resultbitCalculator").innerHTML = `${(number1>>number2 )}`;
+      break;
+    default:
+      return;
+  }
+};
+    
+    </script>
+  </head>
+  <body style="overflow: hidden;">
+    <img src="../assets/Image/moon.png" id="icon" />
+    <div class="calculator-name-header">
+      <!-- Updated by @Shantanu-Meta   -->
+      <span>Bitwise calculator</span>
+     
+    </div>
+    <!-- <div id="container">
+      <div id="card-container">
+        <p id="p">
+          Enter 1st number :(decimal number)<input id="first" type="number" />
+        </p>
+
+        <p id="p">
+          Enter 2nd number :(decimal number)<input id="second" type="number" />
+        </p>
+
+        <button id="button" onclick="and()">AND</button>
+        <button id="button" onclick="or()">OR</button>
+        <button id="button" onclick="not()">NOT</button>
+        <button id="button" onclick="nand()">NAND</button>
+        <button id="button" onclick="nor()">NOR</button>
+        <button id="button" onclick="xor()">XOR</button>
+        <button id="button" onclick="xnor()">XNOR</button>
+        
+        <p id="p">Result : <input id="result" disabled="" /></p>
+        <button
+          id="bitSet"
+          style="margin-top: 5px; padding-top: 3px; padding-bottom: 3px;"
+          onclick="resetBit()"
+        >
+          reset
+        </button>
+      </div>
+    </div> -->
+    <form id="bitcalc" class="form-horizontal">
+      <label for="bitcal">Please enter the operation you'd like to do</label><br/>
+      <select name="bitcal" id="bitcal" onchange="dosomething()">
+        <option disabled selected value="nothing">Choose any operation</option>
+          <option value="and">AND</option>
+          <option value="or">OR</option>
+          <option value="not">NOT</option>
+          <option value="xor">XOR</option>
+          <option value="nand">NAND</option>
+          <option value="nor">NOR</option>
+          <option value="xnor">XNOR</option>
+          <option value="sright">Shift Right</option>
+          <option value="sleft">Shift Left</option>
+      </select><br/><br/>
+       
+      <input type="number" name="num1" id="bitnum1" placeholder="First Number">
+      
+      <input type="number" name="num2" id="bitnum2" placeholder="Second Number">
+      <br/><br/>
+      <button type="button" onclick="resetBit()" id="bitcalc1">Reset</button>
+      <button type="button" onclick="bitCalculator()">Submit</button><br><br><br>
+
+      <div class="outterbox">
+          <div class="box" id="resultbitbox"style="display: none"><span id="resultbitCalculator" ></span></div>
+      </div>
+
+  </form>
+  <script src="../js_files/script.js"></script>
+  <script type="text/javascript">
+    document.getElementById("bitcalc").addEventListener("submit",(e)=>{
+        e.preventDefault()
+        bitCalculator()
+    })
+    document.body.addEventListener("keyup",(e)=>{
+            if(e.keyCode==13){
+                bitCalculator()
+            }
+        })
+</script>
+  <script src="../js_files/theme.js"></script>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+  </body>
+</html>

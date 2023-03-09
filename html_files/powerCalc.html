@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <title>Power Converter</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        flex-direction: column;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+      .top-txt {
+        margin-bottom: 15px;
+      }
+      .container {
+        box-shadow: 0 0 4px 1px rgb(179, 169, 169);
+        width: 675px;
+        height: 375px;
+        border-radius: 10px;
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        flex-direction: column;
+        background-color: #ffb4a3;
+      }
+      .container p {
+        color: rgb(20, 94, 82);
+        margin: 10px;
+        font-size: 20px;
+        font-weight: bolder;
+      }
+      .inputContainer {
+        margin: 5px;
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+      }
+      .inputContainer label {
+        font-size: larger;
+      }
+      .inputContainer input {
+        border: none;
+        outline: none;
+        box-shadow: 0.1px 1px 2px 1px rgb(145, 140, 140);
+        padding: 4px;
+        font-size: large;
+        border-radius: 2px;
+      }
+      .calculator-name-header {
+        text-align: center;
+        padding: 10px;
+        border-radius: 0px 15px 0px 15px;
+        box-shadow: 0px 0px 16px 1px;
+        font-size: 30px;
+        margin: 25px 30%;
+      }
+    </style>
+    <link rel="stylesheet" href="../css_files/theme.css" />
+  </head>
+  <body bgcolor="#ffeeb7">
+    <img src="../assets/Image/moon.png" id="icon" />
+    <div class="calculator-name-header">
+      <span>Power calculator</span>
+    </div>
+    <div class="container" style="height: 325px !important">
+      <p class="top-txt">
+        Enter value in any of the fields to convert between Power measurements:
+      </p>
+      <div class="inputContainer">
+        <label for="Watts">Watts</label
+        ><input
+          type="number"
+          name=""
+          id="Watts"
+          oninput="convertToOthers('Watts',this.value)"
+        />
+      </div>
+      <div class="inputContainer">
+        <label for="KiloWatts">KiloWatts</label
+        ><input
+          type="number"
+          name=""
+          id="KiloWatts"
+          oninput="convertToOthers('KiloWatts',this.value)"
+        />
+      </div>
+      <div class="inputContainer">
+        <label for="Horsepowers">Horsepowers</label
+        ><input
+          type="number"
+          name=""
+          id="Horsepowers"
+          oninput="convertToOthers('Horsepowers',this.value)"
+        />
+      </div>
+      <div class="inputContainer">
+        <label for="fpm">Foot pounds / minutes</label
+        ><input
+          type="number"
+          name=""
+          id="fpm"
+          oninput="convertToOthers('fpm',this.value)"
+        />
+      </div>
+      <div class="inputContainer">
+        <label for="bm">BTUs / minute</label
+        ><input
+          type="number"
+          name=""
+          id="bm"
+          oninput="convertToOthers('bm',this.value)"
+        />
+      </div>
+      <div class="button">
+        <button
+          style="
+            height: 30px;
+            width: 100px;
+            font-size: large;
+            margin-top: 10px;
+            background-color: black;
+            color: aliceblue;
+          "
+        >
+          reset
+        </button>
+      </div>
+    </div>
+    <a href="../index.html"
+      ><i id="home" class="fa fa-home" aria-hidden="true"></i
+    ></a>
+    <script>
+      document.querySelector("button").addEventListener("click", function () {
+        document.getElementById("Watts").value = "";
+        document.getElementById("KiloWatts").value = "";
+        document.getElementById("Horsepowers").value = "";
+        document.getElementById("fpm").value = "";
+        document.getElementById("bm").value = "";
+      });
+      let Watts = document.getElementById("Watts");
+      let KiloWatts = document.getElementById("KiloWatts");
+      let Horsepowers = document.getElementById("Horsepowers");
+      let fpm = document.getElementById("fpm");
+      let bm = document.getElementById("bm");
+
+      function WattsToOther(val) {
+        KiloWatts.value = val / 1000;
+        Horsepowers.value = val * 0.001341;
+        fpm.value = val * 44.25373;
+        bm.value = val * 0.056869;
+      }
+      function KiloWattsToOther(val) {
+        Watts.value = val * 1000;
+        Horsepowers.value = val * 1.341022;
+        fpm.value = val * 44253.73;
+        bm.value = val * 56.86902;
+      }
+      function HorsepowersToOther(val) {
+        Watts.value = val * 745.6999;
+        KiloWatts.value = val * 0.7457;
+        fpm.value = val * 33000;
+        bm.value = val * 42.40722;
+      }
+      function fpmToOther(val) {
+        Watts.value = val * 0.022597;
+        Horsepowers.value = val * 0.00003;
+        KiloWatts.value = val * 0.000023;
+        bm.value = val * 0.001285;
+      }
+      function bmToOther(val) {
+        Watts.value = val * 17.58427;
+        KiloWatts.value = val * 0.017584;
+        fpm.value = val * 778.1694;
+        Horsepowers.value = val * 0.023581;
+      }
+
+      // *********************//
+
+      function convertToOthers(convertFrom, value) {
+        switch (convertFrom) {
+          case "Watts":
+            WattsToOther(parseFloat(value));
+            break;
+          case "KiloWatts":
+            KiloWattsToOther(parseFloat(value));
+            break;
+          case "Horsepowers":
+            HorsepowersToOther(parseFloat(value));
+            break;
+          case "bm":
+            bmToOther(parseFloat(value));
+            break;
+          case "fpm":
+            fpmToOther(parseFloat(value));
+            break;
+        }
+      }
+    </script>
+    <script src="../js_files/theme.js"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trigonometric Calculator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="stylesheet" href="../css_files/theme.css">
+    <link rel="icon" href="../assets/Image/Favicon.png">
+</head>
+
+<body style="overflow: hidden;">
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <span>Trigonometric Calculator</span>
+    </div>
+    <form id="trigcalc" class="form-horizontal">
+        <label for="trig-calc">Please check the operation you'd like to do</label><br><br>
+        <span class="checkbox-span">
+            <input type="radio" id="sin" value="sin" name="trigoFunc">
+            <label for="sin">sin</label>
+        </span>
+        <span class="checkbox-span">
+            <input type="radio" id="cos" value="cos" name="trigoFunc">
+            <label for="cos">cos</label>
+            <span>
+                <span class="checkbox-span">
+                    <input type="radio" id="tan" value="tan" name="trigoFunc">
+                    <label for="tan">tan</label>
+                </span>
+                <span class="checkbox-span">
+                    <input type="radio" id="cosec" value="cosec" name="trigoFunc">
+                    <label for="cosec">cosec</label>
+                </span>
+                <span class="checkbox-span">
+                    <input type="radio" id="sec" value="sec" name="trigoFunc">
+                    <label for="sec">sec</label>
+                </span>
+                <span class="checkbox-span">
+                    <input type="radio" id="cot" value="cot" name="trigoFunc">
+                    <label for="cot">cot</label>
+                </span>
+                <br>
+                <br><br>
+                <select name="angle-type" id="angle-type">
+                    <option value="degree" id="degree">Degree</option>
+                    <option value="radian" id="radian">Radian</option>
+                </select>
+                <input type="number" name="angle" id="angle-value" placeholder="Angle Value"><br><br>
+                <button type="button" onclick="resetTrig()" id="calc1">reset</button>
+                <button type="button" onclick="validateTrig()">Submit</button>
+                <span id="resultTrigContainer"></span>
+    </form>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <script src="../js_files/script.js"></script>
+    <script src="../js_files/theme.js"></script>
+    <script>
+        let sinBtnDefault = document.getElementById("sin");
+        sinBtnDefault.checked = true;
+     </script>
+  
+</body>
+
+</html>
