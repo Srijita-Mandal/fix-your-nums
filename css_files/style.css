@@ -50,7 +50,7 @@ label {
   font-size: 15px;
 }
 
-[type="button"] {
+[type="button"], .reset {
   height: 35px;
   margin: 20px;
   margin-bottom: -10px;
