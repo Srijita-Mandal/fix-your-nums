@@ -174,17 +174,6 @@ body{
 .swiper-pagination-bullet-active{
     background-color: black;
 }
-
-@media screen and (max-width:768px) {
-    .swiper-navBtn{
-        display: none;
-    }
-
-    .slide-content{
-        margin:0 10px;
-    }
-    
-}
 .bubblescontainer1 {
     position: relative;
     width: 100%;
@@ -192,4 +181,23 @@ body{
     overflow: hidden;
 }
   
-  
+
+@media screen and (max-width:1336px) {
+
+    .slide-content{
+        margin:0px 35px;
+    }
+    .card-content p{
+        font-size: 90%;
+    }
+    .swiper{
+        width: 85%;
+    }
+    .card{
+        width: 80%;
+    }
+    .button{
+        font-size: 80%;
+    }
+    
+}
