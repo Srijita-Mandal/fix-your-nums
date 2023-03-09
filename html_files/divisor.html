@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+  <link rel="stylesheet" type="text/css" href="../css_files/divisorDark.css">
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="../assets/Image/Favicon.png">
+  <title> Divisors Calculator</title>
+  <style>
+   
+
+   * {
+  font-family: "Ubuntu", sans-serif;
+}
+body {
+    text-align: center;
+    background-color: var(--color--body);
+    
+}
+
+
+.calculator-name-header{
+                text-align: center;
+                padding: 10px;
+                border-radius: 0px 15px 0px 15px;
+                box-shadow: 0px 0px 16px 1px;
+                font-size: 30px;
+                margin: 25px 30%;
+               
+      }
+.form {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  width: 80%;
+  padding-bottom: 3vw;
+  padding-top: 70px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: var(--color--form);
+}
+
+#input {
+    font-size: 100%;
+    padding: 1%;
+    margin: 2%;
+    margin-top: -1%;
+    border: 3px solid #0d0b79;
+    font-family: 'Sofia', sans-serif;
+}
+#icon{
+	width: 30px;
+	cursor: pointer;
+	margin: 10px;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+}
+#input:focus {
+    border: 4px solid #c00909;
+}
+
+/* Modifying buttons */
+
+
+.btn {
+    height: 35px;
+  margin: 20px;
+  margin-bottom: -10px;
+  width: 120px;
+  font-size: 15px;
+  border: none;
+  border-radius: 3px;
+}
+
+.theader{
+    padding: 10px;
+}
+
+.output {
+    position: relative;
+    font-size: 200%;
+    text-align: left;
+    border-radius: 5px;
+    background-color: rgba(253, 251, 251, 0.801);
+    margin-top: 2%;
+   padding: 10px;
+}
+.enter{
+    font-size: 30px;
+}
+
+  </style>
+  
+ 
+</head>
+
+
+<body>
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <span>Divisors Calculator </span>
+        </div>
+  <div class="form">
+    <span class="enter"><strong> Enter number:</strong> </span>
+    <input type="number" id="input" min="-10000000" max="10000000" placeholder="Number" /><br>
+    <div class="btns">
+      <button class="btn" id="calc" onclick="calc()">Calculate</button>
+      <button class="btn" id="clear" onclick="reset()">Reset</button>
+    </div>
+    <div class="outterbox">
+    <table class="output">
+      <tr>
+        <td class="theader"><strong>Number of Divisors</strong></td>
+        <td id="dNb">.....</td>
+      </tr>
+      <tr>
+        <td class="theader"><strong>Divisors</strong></td>
+        <td id="d">.....</td>
+      </tr>
+      <tr>
+        <td class="theader"><strong>Sum of Divisors</strong></td>
+        <td id="dSum">.....</td>
+      </tr>
+    </table>
+</div>
+  </div>
+  <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+   
+</body>
+<script>
+    function calc() {
+    if (document.getElementById("input").value != "") {
+        var n = document.getElementById("input").value;
+        var res = [];
+        if (n < 0) {
+            n *= -1;
+        }
+        // loop until n/i only to avoid repition so in each iteration we push i and n/i
+        for (var i = 1; i <= (n / i); i++) {
+            if (n % i == 0) {
+                res.push(i);
+                if ((i * i) != n)
+                    res.push(n / i);; // to remove any duplicates
+            }
+        }
+        // Sorting result array
+        res.sort(function (a, b) {
+            return a - b
+        }); 
+
+        document.getElementById('dNb').innerHTML = res.length;
+        document.getElementById('d').innerHTML = res;
+        document.getElementById('dSum').innerHTML = res.reduce((a, b) => a + b, 0); // Calculating Divisors Sum
+    } else {
+        alert("Please input a number before clicking on calculate button");
+    }
+}
+
+function reset() {
+    document.getElementById("input").value = "";
+    document.getElementById('dNb').innerHTML = ".....";
+    document.getElementById('d').innerHTML = ".....";
+    document.getElementById('dSum').innerHTML = ".....";
+}
+</script>
+<script src="../js_files/theme.js"></script>
+</html>

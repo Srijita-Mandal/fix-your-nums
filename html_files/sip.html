@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIP Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../css_files/style.css">
+  <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+  <link rel="stylesheet" href="../css_files/theme.css">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/Image/Favicon.png">
+</head>
+
+<body style="overflow: hidden;" class="SIP">
+  <img src="../assets/Image/moon.png" id="icon">
+  <div class="calculator-name-header">
+    <!-- Updated by @Shantanu-Meta   -->
+    <span>SIP calculator</span>
+  </div>
+  <form id="calcsip" class="form-horizontal">
+    <span class="checkbox-span">
+      <label for="amountInvested">Amount Invested:</label>
+      <input type="number" id="amountInvested"><br><br>
+    </span>
+    <span>
+      <label for="investmentPeriod">Investment Time Frame (in years):</label>
+      <input type="number" id="investmentPeriod"><br><br>
+    </span>
+    <span>
+      <label for="expectedRate">Expected Rate of Return (per annum):</label>
+      <input type="number" id="expectedRate"><br><br>
+    </span>
+    <button type="button" onclick="resetSIP()" id="calc1">reset</button>
+    <button type="button" onclick="calculateFutureValue()">Calculate</button><br><br>
+    <span id="resultSIPContainer">
+      <label for="expectedRate">Future Value</label><br>
+      <div class="outterbox">
+        <div class="box"><span id="futureValue"></span></div>
+      </div>
+    </span>
+    </div>
+  </form>
+  <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+  <script src="../js_files/script.js"></script>
+  <script src="../js_files/theme.js"></script>
+  <script class="SIP">
+    function calculateFutureValue() {
+      let amountInvested = document.getElementById("amountInvested").value;
+      let investmentPeriod = document.getElementById("investmentPeriod").value;
+      let expectedRate = document.getElementById("expectedRate").value;
+      let periodicRate = expectedRate / 12 / 100;
+      let totalNumberOfPayments = investmentPeriod * 12;
+      let futureValue = amountInvested * ((Math.pow((1 + periodicRate), totalNumberOfPayments) - 1) / periodicRate) * (1 + periodicRate);
+
+      document.getElementById("futureValue").innerHTML = futureValue.toFixed(2);
+    }
+  </script>
+</body>
+
+</html>

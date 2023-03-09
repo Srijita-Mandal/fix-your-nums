@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/catalanDark.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../assets/Image/Favicon.png">
+    <title>Catalan Number Calculator</title>
+    <style>
+     
+#home{
+  /* background-color: black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: #121916;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.2;
+    z-index: 999;
+}
+.container{
+    text-align: center;
+    max-width: 800px;
+    height: 570px;
+    margin: 0 auto;
+  
+    margin-top: 50px;
+}
+
+.container p{
+    font-size: 16px;
+    max-width: 600px;
+    margin:30px auto;
+    line-height: 2;
+}
+
+.input-container{
+    padding:30px;
+    
+    width:fit-content;
+    margin:40px auto 0px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.input-container input{
+    height:36px;
+    padding:1px;
+    font-size:16px;
+}
+
+.submit{
+    margin:12px 0px;
+    font-size:16px;
+    font-weight: 500;
+    padding:10px 20px;
+    
+    text-transform: uppercase;
+    border: 0;
+   
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.result{
+    width: fit-content;
+    margin: 0 auto;
+    font-weight:600;
+    font-size:24px;
+    
+    padding:10px 20px;
+    flex-direction:row;
+    display:none;
+}
+#answer{
+  color: #000;
+}
+.calculator-name-header{
+                text-align: center;
+                padding: 10px;
+                border-radius: 0px 15px 0px 15px;
+                box-shadow: 0px 0px 16px 1px;
+                font-size: 30px;
+                margin: 25px 30%;
+               
+      }
+.result.show{
+    display:flex;
+}
+    </style>
+  </head>
+  <body>
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <span>Catalan Number Calculator</span>
+      </div>
+    <div class="container">
+    
+      <p>
+        The Catalan numbers are a sequence of positive integers that appear 
+        in many counting problems in combinatorics.
+        They count certain types of lattice paths, permutations, binary trees
+        and many other combinatorial objects.
+      </p>
+      <form class="form-container">
+        <div class="input-container">
+          <div class="values">
+            <label name="val">The n <sup>th </sup>Catalan Number :</label>
+            <input type="number" class="num" name="num" placeholder="n" min="1" />
+          </div>
+        </div>
+        <button type="submit" class="submit"  id="btn" name="btn">Calculate</button>
+        </form>
+        <button type="button" class="submit" onclick="fun11()" id="btn1" name="btn1">Reset</button>
+     
+      <h3 class="root">Answer is:</h3>
+      <div class="outterbox">
+        <div class="box"><span class="answer" id="answer"></span></div>
+    </div>
+    </div>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <script>
+      const form = document.querySelector(".form-container")
+const submitBtn = document.querySelector(".submit")
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let n = parseInt(document.querySelector(".num").value);
+  const result = document.querySelector(".result");
+  const answer =document.querySelector("#answer");
+  if(n==1){
+  answer.innerHTML = `The ${n}st Catalan Number is ${catalanNum(n)}`;
+  }
+  if(n==2){
+  answer.innerHTML = `The ${n}nd Catalan Number is ${catalanNum(n)}`;
+  }
+  if(n==3){
+  answer.innerHTML = `The ${n}rd Catalan Number is ${catalanNum(n)}`;
+  }
+  if(n==4){
+  answer.innerHTML = `The ${n}th Catalan Number is ${catalanNum(n)}`;
+  }
+  result.classList.add("show");
+});
+
+// Calculates the catalan number using Dynamic Programming
+var catalanNum = (n) => {
+  if(n < 2) return n;
+  let dp = Array(n+1).fill(0);
+  dp[0] = 1;
+  dp[1] = 1;
+  for(let i = 2; i <= n; i++){
+      for(let j = 1; j <= i; j++){
+          dp[i] = dp[i] + (dp[i - j] * dp[j - 1]);
+      }
+  }
+  return dp[n];
+};
+
+function fun11(){
+                document.querySelector("#btn1").addEventListener('click',function(){
+                    document.querySelector('.num').value="";
+                    
+                    document.getElementById('answer').innerHTML= "";
+                    
+             });
+          }
+  </script>
+    <script src="../js_files/theme.js"></script>
+  </body>
+</html>

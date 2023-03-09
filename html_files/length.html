@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <title>Length Converter</title>
+    <style type="text/css">
+        *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.top-txt{
+    margin-bottom: 15px;
+}
+.container{
+    box-shadow: 0 0 4px 1px rgb(179, 169, 169);
+    width: 675px;
+    height: 375px;
+    border-radius: 10px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;  
+    flex-direction: column;  
+    background-color: #ffb4a3;
+}
+.container p{
+    color: rgb(20, 94, 82);
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+   
+}
+.inputContainer{
+    margin:5px;
+    display: flex;
+    justify-content: space-between;
+    width:80%;
+}
+.inputContainer label{
+    font-size: larger;
+}
+.inputContainer input{
+    border:none;
+    outline: none;
+    box-shadow: 0.1px 1px 2px 1px rgb(145, 140, 140);
+    padding:4px;
+    font-size: large;
+    border-radius: 2px;
+   
+} 
+.calculator-name-header{
+                text-align: center;
+                padding: 10px;
+                border-radius: 0px 15px 0px 15px;
+                box-shadow: 0px 0px 16px 1px;
+                font-size: 30px;
+                margin: 25px 30%;
+      }
+    </style>
+    <link rel="stylesheet" href="../css_files/theme.css">
+</head>
+<body bgcolor="#ffeeb7">
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <!-- Updated by @Shantanu-Meta   -->
+        <span>Length calculator</span>
+      </div>
+    <div class="container">
+        
+        <p class="top-txt">Enter value in any of the fields to convert between Length measurements:</p>
+        <div class="inputContainer">
+            <label for="feet">Feet</label><input type="number" name="" id="feet"  oninput="convertToOthers('feet',this.value)">
+        </div>
+        <div class="inputContainer">
+            <label for="meter">Meters</label><input type="number" name="" id="meter" oninput="convertToOthers('meter',this.value)">
+        </div>
+        <div class="inputContainer">
+            <label for="inches">Inches</label><input type="number" name="" id="inches" oninput="convertToOthers('inch',this.value)">
+        </div>
+        <div class="inputContainer">
+            <label for="cm">Centimeters</label><input type="number" name="" id="cm" oninput="convertToOthers('cm',this.value)">
+        </div>
+        <div class="inputContainer">
+            <label for="yards">Yards</label><input type="number" name="" id="yards" oninput="convertToOthers('yard',this.value)">
+        </div>
+        <div class="inputContainer">
+            <label for="km">Kilometers</label><input type="number" name="" id="km" oninput="convertToOthers('km',this.value)">
+        </div>
+        <div class="inputContainer">
+            <label for="miles">Miles</label><input type="number" name="" id="miles" oninput="convertToOthers('mile',this.value)">
+        </div>
+        <div class="button">
+            <button style="height: 30px; width: 100px; font-size: large; margin-top: 10px; background-color: black; color: aliceblue;">reset</button>
+        </div>
+    </div>        
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+   <script >
+
+            document.querySelector("button").addEventListener('click',function(){
+                document.getElementById("feet").value="";
+                document.getElementById("meter").value="";
+                document.getElementById("inches").value="";
+                document.getElementById("cm").value="";
+                document.getElementById("yards").value="";
+                document.getElementById("km").value="";
+                document.getElementById("miles").value="";
+            });
+let feet    =document.getElementById("feet");
+            let meter   =document.getElementById("meter");
+            let inch    =document.getElementById("inches");
+            let cm      =document.getElementById("cm");
+            let yard    =document.getElementById("yards");
+            let km      =document.getElementById("km");
+            let mile    =document.getElementById("miles");
+
+            function feetToOther(val){
+                meter.value =  val/3.2808; 
+                inch.value =  val*12;   
+                cm.value    =  val/0.032808; 
+                yard.value  =  val*0.33333;  
+                km.value    =  val/3280.8; 
+                mile.value  =  val*0.00018939;       
+            }
+            function meterToOther(val){
+                feet.value = val*3.2808;
+                inch.value = val*39.370;  
+                cm.value   = val/0.01;
+                yard.value = val*1.0936; 
+                km.value   = val/1000;
+                mile.value = val*0.00062137;
+            }
+            function inchesToOther(val){
+                feet.value = val*0.083333;
+                meter.value = val/39.370;  
+                cm.value = val/0.39370;
+                yard.value = val*0.027778; 
+                km.value = val/39370;
+                mile.value = val*0.000015783;
+            }
+            function cmToOther(val){
+                feet.value = val*0.032808;
+                meter.value = val/100;  
+                inch.value = val*0.39370;
+                yard.value = val*0.010936; 
+                km.value = val/100000 ;
+                mile.value = val*0.0000062137;
+            }
+            function yardsToOther(val){
+                feet.value = val*3;
+                inch.value = val*36;  
+                cm.value = val/0.010936;
+                meter.value = val/1.0936; 
+                km.value = val/1093.6;
+                mile.value = val*0.00056818;
+            }
+            function kmToOther(val){
+                feet.value = val*3280.8;
+                inch.value = val*39370;  
+                cm.value = val*100000;
+                yard.value = val*1093.6; 
+                meter.value = val*1000;
+                mile.value = val*0.62137;
+            }
+            function milesToOther(val){
+                feet.value = val*5280;
+                inch.value = val*63360;  
+                cm.value = val/0.0000062137;
+                yard.value = val*1760; 
+                km.value = val/0.62137;
+                meter.value = val/0.00062137;
+
+            }
+            // *********************//
+
+
+
+            function convertToOthers(convertFrom,value){    
+                switch(convertFrom){
+                    case "feet" : feetToOther (parseFloat(value)); break;
+                    case "meter": meterToOther(parseFloat(value)); break;
+                    case "inch" : inchesToOther(parseFloat(value)); break;
+                    case "cm"   : cmToOther(parseFloat(value)); break;
+                    case "yard" : yardsToOther (parseFloat(value)); break;
+                    case "km"   : kmToOther (parseFloat(value)); break;
+                    case "mile" : milesToOther(parseFloat(value)); break;
+                }
+            }
+       
+   </script>
+   <script src="../js_files/theme.js"></script>
+</body>
+</html>

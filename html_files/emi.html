@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="stylesheet" href="../css_files/theme.css" />
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <title>Emi Calculator</title>
+</head>
+<body style="overflow: hidden;">
+    <img src="../assets/Image/moon.png" id="icon">
+
+    <div class="calculator-name-header">
+         <span>EMI calculator</span>
+       </div>
+     <form id="calc" class="form-horizontal">
+          
+         <label class="input-box">Principle Amount<input type="number" name="num1" id="amount" placeholder="Principle Amount"></label>
+         <label class="input-box">Time in Months<input type="number" name="num2" id="time" placeholder="No. of Months"></label>
+         <label class="input-box">Annual Rate of Interest<input type="number" name="num3" id="rate" placeholder="Rate of Interest"></label><br/><br/>
+         <button type="button" onclick="reset()" id="reset">reset</button>
+         <button type="button" id='submit'>Submit</button><br><br><br>
+ 
+         <div class="result-container">
+         <div class="outterbox1">EMI
+             <div class="box"><span id="resultCalculator1"></span></div>
+         </div>
+
+         <div class="outterbox2">Final Amount
+            <div class="box"><span id="resultCalculator2"></span></div>
+        </div>
+    </div>
+
+     </form>
+     <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+     <script src="../js_files/theme.js"></script>
+     <script src="../js_files/emi.js"></script>
+</body>
+</html>

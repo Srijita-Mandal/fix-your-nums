@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Data Converter</title>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css">
+	<link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="stylesheet" href="../css_files/theme.css">
+    <link rel="icon" href="../assets/Image/Favicon.png">
+</head>
+<body style="overflow: hidden;">
+	<img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <span>Data Converter</span>
+      </div>
+	  <form id="datacalc" class="form-horizontal">
+		<label for="input" >Input:</label>
+		<input type="number" id="inputdata" name="input"><br>
+		<label for="from">From:</label>
+		<select id="from" name="from">
+			<option value="B">B</option>
+			<option value="KB">KB</option>
+			<option value="MB">MB</option>
+			<option value="GB">GB</option>
+			<option value="TB">TB</option>
+		</select><br>
+		<label for="to">To:</label>
+		<select id="to" name="to">
+			<option value="B">B</option>
+			<option value="KB">KB</option>
+			<option value="MB">MB</option>
+			<option value="GB">GB</option>
+			<option value="TB">TB</option>
+		</select><br>
+		<!-- <input type="submit" value="Convert"> -->
+		<button type="button" onclick="fun10()" id="calc10">Reset</button>
+        <button type="button" onclick="data_convertor()">Convert</button><br/><br/><br/>
+		<div class="outterbox">
+            <div class="box"><span id="resultDataCalculator"></span></div>
+        </div>
+        <!-- <span id="resultDataCalculator"></span> -->
+	</form>
+	<a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+	<script src="../js_files/script.js"></script>
+	<script type="text/javascript">
+		document.getElementById("datacalc").addEventListener("submit",(e)=>{
+			e.preventDefault();
+			data_convertor();
+		document.addEventListener("keyup",(e)=>{
+            if(e.key=='Enter'){
+                data_convertor()
+            }
+        })
+	});
+
+</script>
+<script src="../js_files/theme.js"></script>
+</body>
+</html>

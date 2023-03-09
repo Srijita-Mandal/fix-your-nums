@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css_files/theme.css">
+    <link rel="icon" href="../assets/Image/Favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/theme.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <title>Binomial Coefficient</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+          }
+          * {
+              font-family: 'Ubuntu', sans-serif;
+          }
+          .main {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+          .inp {
+            margin: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            border: none;
+          }
+          #n, #k{
+          border-radius: 8px;
+            border: none;
+            height: 40px;
+            padding: 10px;
+            margin: 0px 17px;
+          }
+          #n:hover, #k:hover {
+            box-shadow: 0px 2px 4px #ffeeb7;
+          }
+          input::placeholder {
+            color: rgb(141, 140, 140);
+          }
+          btn1{
+            display: flex;
+            justify-content: center;
+          }
+
+          .btn {
+            padding: 10px;
+            margin-right: 15px;
+            width: 100px;
+            border-radius: 5px;
+            background-color: black;
+            color: #fefefc;
+            border: none;
+            margin-bottom: 20px;
+          }
+          .result {
+            font-size: larger;
+          }
+          .father {
+            display: flex;
+            justify-content: center;         
+          }
+          .img{
+            width: 200px;
+            object-fit: contain;
+            margin: 10px;
+          }
+    </style>
+</head>
+
+<body>
+  <img src="../assets/Image/moon.png" id="icon">
+  <div class="calculator-name-header"><span>Binomial Coefficient Calculator</span> </div>
+    <div class="father">
+      <div class="main">
+          
+            <img src="https://www.pythonpool.com/wp-content/uploads/2021/08/20210806_123250_0000.png" class ="img" alt="image">
+            <div class="inp">
+                <input type="number" autocomplete="off" id="n" name="n" placeholder="enter the value for n" />
+                <input type="number" autocomplete="off" name="k" id="k" placeholder="enter the value for k" />
+
+            </div>
+            <div class="btn1">
+                <button type="submit" id="binomial" onclick="fun10()" class="btn">Reset</button>
+                <button type="submit" id="submit" onclick="binomialCoeff()" class="btn" style="margin-right: 0;">Calculate</button>
+
+            </div>
+            <h3 class="root">Answer is:</h3><br>
+            <div class="outterbox">
+              <div class="box"><span class="result" id="result"></span></div>
+          </div>
+            <!-- <div class="result">
+                <span class="result" id="result"></span>
+            </div> -->
+           
+        </div>
+    </div>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <script src="../js_files/theme.js"></script>
+</body>
+
+<script type="text/javascript">
+  function binomialCoeff() {
+let k = Number(document.getElementById("k").value);
+let n = Number(document.getElementById("n").value);
+let C = Array(n + 1)
+.fill(0)
+.map((x) => Array(k + 1).fill(0));
+let i, j;
+
+for (i = 0; i <= n; i++) {
+for (j = 0; j <= min(i, k); j++) {
+  if (j == 0 || j == i) C[i][j] = 1;
+  else C[i][j] = C[i - 1][j - 1] + C[i - 1][j];
+}
+}
+let answer = C[n][k];
+document.getElementById("result").innerHTML = answer;
+if (answer == 0) {
+document.getElementById("result").innerHTML =
+  "value of k should be less than n";
+}
+}
+document.getElementById("answer").addEventListener("submit",(e)=>{
+      e.preventDefault()
+      binomialCoeff()
+  })
+  document.body.addEventListener("keyup",(e)=>{
+          if(e.keyCode==13){
+              binomialCoeff()
+          }
+      })
+function min(a, b) {
+return a < b ? a : b;
+}
+function fun10(){
+document.querySelector("#binomial").addEventListener('click',function(){
+document.querySelector('#n').value="";
+document.getElementById('k').value="";
+document.getElementById('result').innerHTML= "";
+});
+}
+</script>
+
+</html>

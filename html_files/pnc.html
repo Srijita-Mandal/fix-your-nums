@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="stylesheet" href="../css_files/theme.css">
+    <link rel="icon" href="../assets/Image/Favicon.png">
+    <title>pnc</title>
+</head>
+
+<body style="overflow: hidden;">
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <span>Permutaion & Combination</span>
+    </div>
+    <form class="form-horizontal" id="calc">
+        
+        <label for="num1">Please enter the first number:</label>
+        <input type="number" name="num1" id="num1" placeholder="First number" required><br /><br />
+        <label for="num2">Please enter the Second number</label>
+        <input type="number" name="num2" id="num2" placeholder="Second number" required><br /><br />
+        <p id="err" style="color:red">
+            <!-- *First Number should be greater than Second Number -->
+        </p>
+        <button type="button" id="pncSet" onclick="reSet()">Reset</button>
+        <button type="submit" onclick="PnC_calculator()"
+            style="height: 35px; width: 100px; font-size: medium; background-color: black; color: aliceblue; border-radius: 5%;">Submit</button><br /><br /><br />
+        
+        <div class="outterbox">
+            <div class="box"><span id="resultP"></span></div>
+        </div>
+        <br /><br />
+        <div class="outterbox">
+            <div class="box"><span id="resultC"></span></div>
+        </div>
+
+    </form>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+
+    <!-- <script src="script.js"></script> -->
+    <script>
+        const PnC_calculator = () => {
+            const firstNum = parseInt(document.getElementById('num1').value);
+            const secondNum = parseInt(document.getElementById('num2').value);
+            //error show
+            if (firstNum < secondNum) {
+                document.getElementById("err").innerText = `*First Number should be greater than or equal to Second Number`;
+                document.getElementById('resultP').innerHTML = ``;
+                document.getElementById('resultC').innerHTML = ``;
+            } //error show
+            else {
+                document.getElementById("err").innerText = ``;
+                function factorial(n) {
+                    let answer = 1;
+                    if (n == 0 || n == 1) {
+                        return answer;
+                    }
+                    else if (n > 1) {
+                        for (var i = n; i >= 1; i--) {
+                            answer = answer * i;
+                        }
+                        return answer;
+                    }
+                }
+                function permuation(num1, num2) {
+                    let a = factorial(num1);
+                    let b = factorial(num1 - num2);
+                    let result = a / b;
+
+                    return result;
+                }
+                function combination(num1, num2) {
+                    let a = factorial(num1);
+                    let b = factorial(num1 - num2);
+                    let c = factorial(num2);
+                    let result = a / (b * c);
+
+                    return result;
+                }
+                let P_result = permuation(firstNum, secondNum);
+                let C_result = combination(firstNum, secondNum);
+
+                document.getElementById('resultP').innerHTML = `Permutaion = ${P_result}`;
+                document.getElementById('resultC').innerHTML = `Combination = ${C_result}`;
+                
+            }
+            
+        }
+        // enchancement reset button start
+        function reSet() {
+            document.getElementById("err").innerText = ``;
+            document.getElementById('num1').value = "";
+            document.getElementById('num2').value = "";
+            document.getElementById('resultP').innerText = "";
+            document.getElementById('resultC').innerText = ""; 
+        }
+        // enchancement reset button end
+    </script>
+
+    <script type="text/javascript">
+        document.getElementById("calc").addEventListener("submit", (e) => {
+            e.preventDefault()
+            PnC_calculator()
+        })
+        document.body.addEventListener("keyup", (e) => {
+            if (e.key == 'Enter') {
+                PnC_calculator()
+            }
+        })
+    </script>
+    <script src="../js_files/theme.js"></script>
+    <script src="../js_files/script.js"></script>
+</body>
+
+</html>

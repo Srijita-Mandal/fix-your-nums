@@ -1,0 +1,57 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.M.M Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+    <link rel="stylesheet" href="../css_files/theme.css">
+    <link rel="icon" href="../assets/Image/Favicon.png">
+</head>
+<body>
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <!-- Updated by @Lucky Singh   -->
+        <span>Mean Median Mode Calculator</span>
+      </div>
+    <form class="form-horizontal" id="age">
+        <label class="heading">Mean Median Mode Calculator</label><br/><br/>
+        
+        <p class="infoDeriv">This calculator will calculate the Mean , Median and Mode of a given sample.</p>
+        <label class="numerator" for="numerator">Enter the size of array:</label>
+        <input type="text" placeholder="Enter size" id="size"   step="any" ><br/><br/><br/>
+        <label class="exponent" for="denominator">Enter the Elements:</label>
+    
+        <button type="button" id ="add">ADD</button>
+        <br/><br/>
+        
+        <button type="button" id="submit">Submit</button><br/><br/><br/>
+        <span id="inputarray"></span><br>
+        
+        <div class="result-container">
+            <div class="outterbox1">Mean
+                <div class="box"> <span id="result1"></span></div>
+            </div>
+   
+            <div class="outterbox2"> Median
+               <div class="box"> <span id="result2"></span></div>
+           </div>
+           <div class="outterbox2"> Mode
+            <div class="box"> <span id="result3"></span></div>
+        </div>
+       </div>
+       <br/>
+        <button type="reset" onclick="document.location.reload()" style="background-color: black;color: white;">Reset</button>
+        
+    </form>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <script src="../js_files/MMM-calculator.js"></script>
+    
+    <script src="../js_files/theme.js"></script>
+
+</body>
+</html>

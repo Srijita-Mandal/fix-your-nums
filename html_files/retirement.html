@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../css_files/style.css">
+  <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+  <link rel="stylesheet" href="../css_files/theme.css">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/Image/Favicon.png">
+  <title>Retirement Calculator</title>
+
+</head>
+
+<body style="overflow: hidden;" class="SIP">
+  <img src="../assets/Image/moon.png" id="icon">
+  <div class="calculator-name-header">
+    <span>Retirement Calculator</span>
+  </div>
+  <form id="calc" class="form-horizontal">
+    <label for="amountInvested">Initial Investment (in rupees):</label>
+    <input style="font-size: 22px; margin-bottom: 8px;" type="number" id="amountInvested">
+    <br />
+    <label for="investmentPeriod">Investment Time Period (in years):</label>
+    <input style="font-size: 22px; margin-bottom: 8px;" type="number" id="investmentPeriod">
+    <br />
+    <label for="expectedRate">Expected Rate of Intrest(per annum):</label>
+    <input style="font-size: 22px; margin-bottom: 8px;" type="number" id="expectedRate">
+    <br />
+    <button type="button" onclick="fun13()" id="calc12">Reset</button>
+    <button type="button" onclick="retirementCalculator()">Calculate</button>
+    <p>Future Value:
+    <div class="outterbox">
+      <div class="box"><span id="futureValue"></span></div>
+    </div>
+    </p>
+
+  </form>
+
+  <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+  <script src="../js_files/script.js"></script>
+  <script src="../js_files/theme.js"></script>
+  <script>
+    function retirementCalculator() {
+      let amountInvested = parseFloat(document.getElementById("amountInvested").value);
+      let investmentPeriod = parseFloat(document.getElementById("investmentPeriod").value);
+      let expectedRate = parseFloat(document.getElementById("expectedRate").value);
+      console.log(amountInvested, investmentPeriod, expectedRate)
+      let futureValue = Math.pow((amountInvested * (1 + expectedRate)), investmentPeriod);
+
+      document.getElementById("futureValue").innerHTML = futureValue;
+    }
+
+  </script>
+</body>
+
+</html>

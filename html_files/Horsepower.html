@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="Image/Favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css_files/theme.css" />
+    <title>Horsepower Calculator</title>
+    <script type="text/javascript">
+        function reset() {
+         
+              document.querySelector("#num1").value = "";
+              document.querySelector("#num2").value = "";
+            
+              document.querySelector("#resultbox").style.display= "none";
+              document.querySelector("#num2").style.display= "inline";
+              document.getElementById("cal").value="nothing"
+            
+        }
+  
+   
+        function dosomething(){
+            document.querySelector("#num1").title= "Vehicle weight in pounds";
+          const operation = document.getElementById("cal");
+    const valOpe = operation.value;
+    switch (valOpe) {
+      
+      
+        
+            
+        case "Trap-speed Method":
+     
+        document.querySelector("#num2").placeholder= "Speed on Finish";
+        document.querySelector("#num2").title= "Speed on Finish at the end of 1/4th mile (mile per hour)";
+        
+        break;
+        
+        case "Elapsed time method":
+        
+        document.querySelector("#num2").placeholder= "Quarter Mile Time";
+        document.querySelector("#num2").title= "Time Taken to complete 1/4 mile in seconds ";
+        break;
+      default:
+        return;
+    }
+  
+        }
+        const horsePower = () => {
+  
+  const operation = document.getElementById("cal");
+  const valOpe = operation.value;
+
+  
+
+  const number1 = parseInt(document.getElementById("num1").value);
+  const number2 = parseInt(document.getElementById("num2").value);
+
+  
+  const number3 = number1*Math.pow((number2*1.0)/(234*1.0),3);
+  const number4= (number1*1.0)/((Math.pow((number2*1.0)/(5.825),3))*1.0);
+  document.querySelector("#resultbox").style.display= "block";
+  switch (valOpe) {
+    case "Trap-speed Method":
+      document.getElementById("resultCalculator").innerHTML = number3;
+      
+      break;
+    case "Elapsed time Method":
+      document.getElementById("resultCalculator").innerHTML = number4;
+      break;
+   
+    default:
+      return;
+  }
+};
+    
+    </script>
+  </head>
+  <body style="overflow-x: hidden;">
+    <img src="../assets/Image/moon.png" id="icon" />
+    <div class="calculator-name-header">
+      
+      <span>Horsepower calculator</span>
+     
+    </div>
+    <form id="calc" class="form-horizontal">
+        <label for="cal">Please enter the method you'd like to follow</label><br/>
+        <select name="cal" id="cal" onchange="dosomething()">
+          <option disabled selected value="nothing">Choose any method</option>
+            <option value="Trap-speed Method">Trap-speed Method</option>
+            <option value="Elapsed time Method">Elapsed time Method</option>
+          
+        </select><br/><br/>
+         
+        <input type="number" name="num1" id="num1" placeholder="Vehicle Weight">
+        
+        <input type="number" name="num2" id="num2" placeholder="Quarter Mile Time">
+        <br/><br/>
+        <button type="button" onclick="document.location.reload()" id="calc1">Reset</button>
+        <button type="button" onclick="horsePower()">Submit</button><br><br><br>
+  
+        <div class="outterbox">
+            <div class="box" id="resultbox"style="display: none"><span id="resultCalculator" ></span></div>
+        </div>
+  
+    </form>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <script src="../js_files/script.js"></script>
+    <script src="../js_files/theme.js"></script>
+    <script type="text/javascript">
+      document.getElementById("calc").addEventListener("submit",(e)=>{
+          e.preventDefault()
+          horsePower()
+      })
+      document.body.addEventListener("keyup",(e)=>{
+              if(e.keyCode==13){
+                  horsePower()
+              }
+          })
+  </script>
+    </body>
+  </html>
+  
