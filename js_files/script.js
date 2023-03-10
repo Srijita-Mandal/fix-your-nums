@@ -359,13 +359,13 @@ const calculatePower = () => {
   ).innerHTML = `${base}^${index}=${resultPow}`;
 };
 
-const calculateNthRoot= () => {
+const calculateNthRoot = () => {
   const value = parseInt(document.getElementById("base").value);
   const n = parseInt(document.getElementById("index").value);
 
   const nthRoot = (x, n) => {
-    if(x < 0 && n%2 != 1) return NaN; // Not well defined
-    return (x < 0 ? -1 : 1) * Math.pow(Math.abs(x), 1/n);
+    if (x < 0 && n % 2 != 1) return NaN; // Not well defined
+    return (x < 0 ? -1 : 1) * Math.pow(Math.abs(x), 1 / n);
   }
 
   let resultNthRoot = nthRoot(value, n);
@@ -402,55 +402,55 @@ const calculateFact = () => {
 };
 
 const calculateLog = () => {
-  const checkbase=document.getElementById("base").value;
-  const checklog=document.getElementById("log").value;
+  const checkbase = document.getElementById("base").value;
+  const checklog = document.getElementById("log").value;
   var log = parseFloat(document.getElementById("log").value);
   var base = parseFloat(document.getElementById("base").value);
- 
-  document.getElementById("resultboxlog").style.display= "inline";
- 
-  if(isNaN(checkbase)){
-    if(checkbase!="e"){
-    document.getElementById("resultLog").innerHTML = `Invalid Base`;
-    return;
-    }
-    else{
-      base=Math.E;
-    }
-  }
-  if(isNaN(checklog)){
-    if(checklog!="e"){
-    document.getElementById("resultLog").innerHTML = `Invalid Argument`;
-    return;
-    }
-    else{
-      log=Math.E;
-    }
-  }
-  
 
-  
-  const logarithm = (x,b) => {
-    return (Math.log(x)/Math.log(b));
+  document.getElementById("resultboxlog").style.display = "inline";
+
+  if (isNaN(checkbase)) {
+    if (checkbase != "e") {
+      document.getElementById("resultLog").innerHTML = `Invalid Base`;
+      return;
+    }
+    else {
+      base = Math.E;
+    }
+  }
+  if (isNaN(checklog)) {
+    if (checklog != "e") {
+      document.getElementById("resultLog").innerHTML = `Invalid Argument`;
+      return;
+    }
+    else {
+      log = Math.E;
+    }
+  }
+
+
+
+  const logarithm = (x, b) => {
+    return (Math.log(x) / Math.log(b));
   };
   let rasultLog;
- 
+
   if (log < 0) {
     document.getElementById("resultLog").innerHTML = `Invalid Argument`;
   }
-  else if(base<=0 || base==1){
+  else if (base <= 0 || base == 1) {
     document.getElementById("resultLog").innerHTML = `Invalid Base`;
-  } 
-  else if (log == 0 &&base<1) {
+  }
+  else if (log == 0 && base < 1) {
     document.getElementById("resultLog").innerHTML = `∞`;
   }
-  else if(log == 0 &&base>1){
+  else if (log == 0 && base > 1) {
     document.getElementById("resultLog").innerHTML = `-∞`;
   }
   else {
-    rasultLog = logarithm(log,base);
+    rasultLog = logarithm(log, base);
     resultLogFinal = rasultLog.toFixed(5);
-    
+
     document.getElementById(
       "resultLog"
     ).innerHTML = `Log(base ${base})=${resultLogFinal}`
@@ -694,10 +694,10 @@ const solutionEqu = () => {
 };
 
 // currencyConverter : Subrat Kumar
-const dropList = document.querySelectorAll("form select"),
-  fromCurrency = document.querySelector(".from select"),
-  toCurrency = document.querySelector(".to select"),
-  getButton = document.querySelector("form button");
+const dropList = document.querySelectorAll("form select");
+fromCurrency = document.querySelector(".from select");
+toCurrency = document.querySelector(".to select");
+getButton = document.querySelector("form button");
 
 for (let i = 0; i < dropList.length; i++) {
   for (let currency_code in country_list) {
@@ -737,8 +737,8 @@ getButton.addEventListener("click", (e) => {
   getExchangeRate();
 });
 
-const exchangeIcon = document.querySelector("form .icon");
-exchangeIcon.addEventListener("click", () => {
+const exchangeIcon = document.querySelector("form. icon");
+exchangeIcon.addEventListener('click', () => {
   let tempCode = fromCurrency.value;
   fromCurrency.value = toCurrency.value;
   toCurrency.value = tempCode;
@@ -789,133 +789,124 @@ function calculateHcf() {
 
 }
 // determinant calculator
-function setMatrix(){
+function setMatrix() {
   deterSet();
-  const input= document.querySelector("#matrix");
-  const size=document.getElementById('order').value;
-  if(!(size>0 && size<11)){
-    document.getElementById("resultdet").innerHTML="Invalid Order";
-    document.querySelector("#resultboxdet").style.display= "inline";
+  const input = document.querySelector("#matrix");
+  const size = document.getElementById('order').value;
+  if (!(size > 0 && size < 11)) {
+    document.getElementById("resultdet").innerHTML = "Invalid Order";
+    document.querySelector("#resultboxdet").style.display = "inline";
     return;
   }
 
-for(var i=0;i<size;i++){
-  var rows=document.createElement('div');
-  input.appendChild(rows);
-  rows.className="rows";
-  
-  for(var j=0;j<size;j++){
-    var field=document.createElement("input");
-    field.type="number";
-    field.className="cells";
-    field.id=`deter${i}${j}`;      
-    var flex=document.createElement('div');
-    flex.className="flex";
-    
-    flex.style.display="inline";
-   
-    rows.appendChild(flex);
-    flex.appendChild(field);
+  for (var i = 0; i < size; i++) {
+    var rows = document.createElement('div');
+    input.appendChild(rows);
+    rows.className = "rows";
+
+    for (var j = 0; j < size; j++) {
+      var field = document.createElement("input");
+      field.type = "number";
+      field.className = "cells";
+      field.id = `deter${i}${j}`;
+      var flex = document.createElement('div');
+      flex.className = "flex";
+
+      flex.style.display = "inline";
+
+      rows.appendChild(flex);
+      flex.appendChild(field);
+    }
+
   }
-  
-}
 }
 
-function swapdet(arr , i1 , j1 , i2,j2)
-{
-var temp = arr[i1][j1];
-arr[i1][j1] = arr[i2][j2];
-arr[i2][j2] = temp;
-return arr;
+function swapdet(arr, i1, j1, i2, j2) {
+  var temp = arr[i1][j1];
+  arr[i1][j1] = arr[i2][j2];
+  arr[i2][j2] = temp;
+  return arr;
 }
 
 // reset for determinant calculator
-function deterSet(){
- 
-  var remover=document.getElementById("matrix");
+function deterSet() {
+
+  var remover = document.getElementById("matrix");
   while (remover.hasChildNodes()) {
     remover.removeChild(remover.firstChild);
   }
-  document.getElementById("resultdet").innerHTML=0;
-         document.querySelector("#resultboxdet").style.display= "none";
-      
+  document.getElementById("resultdet").innerHTML = 0;
+  document.querySelector("#resultboxdet").style.display = "none";
+
 }
 // determinant solver
-function calculateDet(){
-  var n=document.getElementById('order').value;
- var mat=[];
- for(var i=0;i<n;i++){
-   mat[i]=[];
-   for(var j=0;j<n;j++){
-     if(document.getElementById(`deter${i}${j}`).value){
-     mat[i][j]=document.getElementById(`deter${i}${j}`).value;}
-     else mat[i][j]=0;
-   }
- }
-// console.log(mat);
- var num1, num2, det = 1, index,total = 1;
-  
-        
- var temp = Array(n + 1).fill(0);
-  
-       
-         for (var i = 0; i < n; i++)
-         {
-             index = i; 
-  
-            
-             while (index < n && mat[index][i] == 0)
-             {
-                 index++;
-             }
-             if (index == n) 
-             {
-                
-                 continue;
-             }
-             if (index != i)
-             {
-                 for (var j = 0; j < n; j++)
-                 {
-                     swapdet(mat, index, j, i, j);
-                 }
-               
-                 det = parseInt((det * Math.pow(-1, index - i)));
-             }
-  
-           
-             for (var j = 0; j < n; j++)
-             {
-                 temp[j] = mat[i][j];
-             }
-  
-             
-             for (var j = i + 1; j < n; j++)
-             {
-                 num1 = temp[i]; 
-                 num2 = mat[j]
-                           [i]; 
-  
-                
-                 for (var k = 0; k < n; k++)
-                 {
-                   
-                     mat[j][k] = (num1 * mat[j][k]) - (num2 * temp[k]);
-                 }
-                 total = total * num1;
-             }
-         }
-  
-     
-         for (var i = 0; i < n; i++)
-         {
-             det = det * mat[i][i];
-         }
-         var ans=det/total;
-         document.getElementById("resultdet").innerHTML=ans;
-         document.querySelector("#resultboxdet").style.display= "block";
- 
- }
+function calculateDet() {
+  var n = document.getElementById('order').value;
+  var mat = [];
+  for (var i = 0; i < n; i++) {
+    mat[i] = [];
+    for (var j = 0; j < n; j++) {
+      if (document.getElementById(`deter${i}${j}`).value) {
+        mat[i][j] = document.getElementById(`deter${i}${j}`).value;
+      }
+      else mat[i][j] = 0;
+    }
+  }
+  // console.log(mat);
+  var num1, num2, det = 1, index, total = 1;
+
+
+  var temp = Array(n + 1).fill(0);
+
+
+  for (var i = 0; i < n; i++) {
+    index = i;
+
+
+    while (index < n && mat[index][i] == 0) {
+      index++;
+    }
+    if (index == n) {
+
+      continue;
+    }
+    if (index != i) {
+      for (var j = 0; j < n; j++) {
+        swapdet(mat, index, j, i, j);
+      }
+
+      det = parseInt((det * Math.pow(-1, index - i)));
+    }
+
+
+    for (var j = 0; j < n; j++) {
+      temp[j] = mat[i][j];
+    }
+
+
+    for (var j = i + 1; j < n; j++) {
+      num1 = temp[i];
+      num2 = mat[j]
+      [i];
+
+
+      for (var k = 0; k < n; k++) {
+
+        mat[j][k] = (num1 * mat[j][k]) - (num2 * temp[k]);
+      }
+      total = total * num1;
+    }
+  }
+
+
+  for (var i = 0; i < n; i++) {
+    det = det * mat[i][i];
+  }
+  var ans = det / total;
+  document.getElementById("resultdet").innerHTML = ans;
+  document.querySelector("#resultboxdet").style.display = "block";
+
+}
 //reset for pnc
 
 
@@ -972,11 +963,11 @@ function fun6() {
 
 // reset for logarithm calculator
 function fun7() {
-  
-    document.querySelector('#log').value = "";
-    document.getElementById('resultLog').innerHTML = "";
-    document.querySelector('#base').value = "";
-    document.getElementById("resultboxlog").style.display= "none";
+
+  document.querySelector('#log').value = "";
+  document.getElementById('resultLog').innerHTML = "";
+  document.querySelector('#base').value = "";
+  document.getElementById("resultboxlog").style.display = "none";
 }
 
 // reset for numtoword calculator
@@ -1057,6 +1048,8 @@ function romanSet() {
   document.getElementById("output").innerHTML = "";
 }
 
+
+
 //reset trigcalc
 function resetTrig() {
 
@@ -1070,7 +1063,7 @@ function resetTrig() {
   document.getElementById('resultTrigContainer').innerHTML = "";
 
 }
-function resetSIP(){
+function resetSIP() {
   document.getElementById("amountInvested").value = "";
   document.getElementById("investmentPeriod").value = "";
   document.getElementById("expectedRate").value = "";
@@ -1162,16 +1155,16 @@ function intToRoman(num) {
 function calcAlgebraicIntegral() {
   const coefficient = parseFloat(document.getElementById("coefficient").value);
   const exponent = parseFloat(document.getElementById("exponent").value);
-  var finalCoefficient = ((coefficient*1.0) / ((exponent+1)*1.0));
+  var finalCoefficient = ((coefficient * 1.0) / ((exponent + 1) * 1.0));
   document.getElementById("inputExpression").innerHTML = `<p>Your entered expression: <b>${coefficient}x<sup>${exponent}</sup></b></p>`
-  if ( coefficient == 0) {
+  if (coefficient == 0) {
     document.getElementById("resultIntegral").innerHTML = `<p>Integral  calculated: <b>0</b></p>`;
   }
-  else if(exponent==-1){
-    
+  else if (exponent == -1) {
+
     document.getElementById("resultIntegral").innerHTML = `<p>Integral calculated: <b>${coefficient}ln(x)</b></p>`;
   }
-  
+
   else {
     var finalExponent = exponent + 1;
     document.getElementById("resultIntegral").innerHTML = `<p>Integral calculated: <b>${finalCoefficient}x<sup>${finalExponent}</sup></b></p>`;
