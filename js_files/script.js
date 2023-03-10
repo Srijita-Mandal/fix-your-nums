@@ -87,6 +87,10 @@ const calculateTemp = () => {
 }
 
 const calculator = () => {
+
+  if (document.getElementById("num1").value == "" || document.getElementById("num2").value == "") {
+    return;
+  }
   // console.log("clicked");
   const operation = document.getElementById("cal");
   const valOpe = operation.value;
