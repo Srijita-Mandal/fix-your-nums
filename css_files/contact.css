@@ -32,7 +32,10 @@ input[type=text],input[type=number], select, textarea {
   }
 
   .row{
+    display: flex;
+    flex-direction: row;
     padding: 100px;
+    overflow-x: hidden !important;
   }
 
   textarea{
@@ -44,18 +47,11 @@ input[type=text],input[type=number], select, textarea {
     margin-top: 5%;
   }
   
-  .container {
-    margin-top: 0%;
-    border-radius: 10px;
-    background-color: #f2f2f2;
-    padding: 10px;
-    margin-bottom: 50px;
-  }
-  
   .column {
     float: left;
     width: 50%;
     padding: 20px;
+    overflow: hidden;
   }
 
   .column h3{
