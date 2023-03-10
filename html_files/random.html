@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../assets/Image/Favicon.png">
+    <link rel="stylesheet" type="text/css" href="../css_files/caesardark.css">
+    <title>random number generator</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#home{
+  /* background-color: black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: #121916;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.2;
+    z-index: 999;
+}
+  body{
+    font-family: 'Ubuntu', sans-serif;
+ 
+  }
+  #container{
+      height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #box{
+      width: 300px;
+      height: 400px;
+      background-color: var(--color--pannel);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    color: black;
+    box-shadow: 0px 1.2rem 3rem 0.5rem rgba(0,0,0,0.2);  }
+  .input{
+    
+    width: 250px;
+    height: 40px;
+    background:white; 
+    padding: 10px;
+    margin-bottom: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+ .input input{
+     background: none;
+    outline: none;
+    border: none;
+    margin-left: 10px;
+  }
+   label{
+    font-size: 25px;
+    color:rgb(38, 38, 41);
+  }
+
+  #btn input{
+    height: 35px;
+  margin: 20px;
+  margin-bottom: -10px;
+  width: 100px;
+  font-size: 15px;
+  border: none;
+  border-radius: 3px;
+  background-color: black;
+  color: white;
+  }
+  #output{
+    width:200px;
+    height: 50px;
+    
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+  }
+  .calculator-name-header{
+    margin: 25px 35%;
+    padding: 10px;
+    border-radius: 0px 15px 0px 15px;
+    box-shadow: 0px 0px 16px 1px;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 50px
+  }
+  .btn{
+  height: 35px;
+  margin: 20px;
+  margin-bottom: -10px;
+  width: 100px;
+  font-size: 15px;
+  border: none;
+  border-radius: 3px;
+  background-color: black;
+  color: white;
+}
+p{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+</style>
+<body>
+
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="card">
+        <div class="calculator-name-header">
+           
+        <span>Random Number Generator</span>
+          </div>
+    <div id="container">
+        <div id="box">
+          <p>Enter lower limit:</p>
+            <div class="input"><input type="number" min="0" placeholder="min" id='min'></div>
+            <p>Enter upper limit:</p>
+            <div class="input"><input type="number" max="100" placeholder="max" id="max"></div>
+            <div id="btn"><input type="button" value="Generate"></div>
+            <button class="btn" id="submit1" name="submit1" onclick="fun11()">Reset</button>
+            <div class="outterbox">
+            <div id="output">=0</div>
+            </div>
+        </div>
+    </div>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+   
+</body>
+<script>
+    let generate = document.getElementById('btn');
+generate.addEventListener('click', () => {
+    let min = document.getElementById('min').value;
+    let max = document.getElementById('max').value;
+    let random_num= Math.floor(Math.random()*(max-min) + +min);
+    document.getElementById('output').innerHTML = ` =  ${random_num}`;
+})    
+function fun11(){
+                document.querySelector("#submit1").addEventListener('click',function(){
+                    document.querySelector('#min').value="";
+                    document.querySelector('#max').value="";
+                    document.getElementById('output').innerHTML= "";
+                   
+
+                 
+             });
+          }
+</script>
+<script src="../js_files/theme.js"></script>
+</html>
