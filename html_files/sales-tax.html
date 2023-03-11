@@ -31,7 +31,7 @@
             <label for="tax">Enter Your Tax Value (%) : </label> <input style="font-size: 22px;" type="number" id="tax"
                 name="tax">
         </div>
-        <button type="button" onclick="resetSalesTax()">reset</button>
+        <button type="button" onclick="resetSalesTax()">Reset</button>
         <button type="button" onclick="salesTax()">Submit</button><br><br><br>
 
         <div class="outterbox">
@@ -51,6 +51,7 @@
         function resetSalesTax() {
             document.getElementById('subtotal').value = "";
             document.getElementById('tax').value = "";
+            document.getElementById('result').innerHTML = "";
         }
     </script>
     <script src="../js_files/theme.js"></script>
