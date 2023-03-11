@@ -930,6 +930,8 @@ function fun3() {
   document.querySelector("#bmiSet").addEventListener('click', function () {
     document.querySelector('#wei').value = "";
     document.querySelector('#hei').value = "";
+    document.getElementById('bmiImg').innerHTML = "";
+    document.getElementById('resultBMI').innerHTML = "";
     document.getElementById('resultBMImsg').innerHTML = "";
   });
 }
