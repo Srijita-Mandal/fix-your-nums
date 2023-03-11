@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <title>Area Units Converter</title>
+    
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        flex-direction: column;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+      .top-txt {
+        margin-bottom: 15px;
+      }
+      .container {
+        box-shadow: 0 0 4px 1px rgb(179, 169, 169);
+        width: 675px;
+        height: 375px;
+        border-radius: 10px;
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        flex-direction: column;
+        background-color: #ffb4a3;
+      }
+      .container p {
+        color: rgb(20, 94, 82);
+        margin: 10px;
+        font-size: 20px;
+        font-weight: bolder;
+      }
+      .inputContainer {
+        margin: 5px;
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+      }
+      .inputContainer label {
+        font-size: larger;
+      }
+      .inputContainer input {
+        border: none;
+        outline: none;
+        box-shadow: 0.1px 1px 2px 1px rgb(145, 140, 140);
+        padding: 4px;
+        font-size: large;
+        border-radius: 2px;
+      }
+      .calculator-name-header {
+        text-align: center;
+        padding: 10px;
+        border-radius: 0px 15px 0px 15px;
+        box-shadow: 0px 0px 16px 1px;
+        font-size: 30px;
+        margin: 25px 30%;
+      }
+    </style>
+    <link rel="stylesheet" href="../css_files/theme.css" />
+  </head>
+  <body bgcolor="#ffeeb7">
+    <img src="../assets/Image/moon.png" id="icon" />
+    <div class="calculator-name-header">
+      <span>Density Units Converter</span>
+    </div>
+    <div class="container" style="height: 400px !important">
+      <p class="top-txt">
+        Enter value in any of the fields to convert between density measurements:
+      </p>
+      <div class="inputContainer">
+        <label for="kgcm">kg per cubic meter</label
+        ><input
+          type="number"
+          name=""
+          id="kgcm"
+          oninput="convertToOthers('kgcm',this.value)"
+        />
+      </div>
+      <div class="inputContainer">
+        <label for="gpl">gram per liter</label
+        ><input
+          type="number"
+          name=""
+          id="gpl"
+          oninput="convertToOthers('gpl',this.value)"
+        />
+      </div>
+      <div class="inputContainer">
+        <label for="gpml">gram per milliliter</label
+        ><input
+          type="number"
+          name=""
+          id="gpml"
+          oninput="convertToOthers('gpml',this.value)"
+        />
+      </div>
+      <div class="inputContainer">
+        <label for="kgpl">kg per liter</label
+        ><input
+          type="number"
+          name=""
+          id="kgpl"
+          oninput="convertToOthers('kgpl',this.value)"
+        />
+      </div>
+      <div class="inputContainer">
+        <label for="opg">oz per gal</label
+        ><input
+          type="number"
+          name=""
+          id="opg"
+          oninput="convertToOthers('opg',this.value)"
+        />
+      </div>
+      
+      <div class="button">
+        <button
+          style="
+            height: 30px;
+            width: 100px;
+            font-size: large;
+            margin-top: 10px;
+            background-color: black;
+            color: aliceblue;
+          "
+        >
+          reset
+        </button>
+      </div>
+    </div>
+    <a href="../index.html"
+      ><i id="home" class="fa fa-home" aria-hidden="true"></i
+    ></a>
+    <script>
+
+        document.querySelector("button").addEventListener('click',function(){
+                        document.getElementById("gpl").value="";
+                        document.getElementById("gpml").value="";
+                        document.getElementById("opg").value="";
+                        document.getElementById("kgcm").value="";
+                        document.getElementById("kgpl").value="";
+                    });
+                    let gpl   =document.getElementById("gpl");
+                    let gpml   =document.getElementById("gpml");
+                    let opg   =document.getElementById("opg");
+                    let kgcm      =document.getElementById("kgcm");
+                    let kgpl= document.getElementById("kgpl");
+        
+                    function gplToOther(val){
+                        gpml.value =  val*0.001; 
+                        opg.value=val*0.1603586;
+                        kgcm.value=val;  
+                        kgpl.value=val*0.001;    
+                    }
+                    function kgcmToOther(val){
+                        gpml.value =  val*0.001; 
+                        opg.value=val*0.1335264;
+                        // kgcm.value=val; 
+                        gpl.value=val;
+                        kgpl.value=val*0.001;
+                    }
+                    function gpmlToOther(val){
+                        // gpml.value =  val*0.001; 
+                        opg.value=val*133.5264;
+                        kgcm.value=val*0.001; 
+                        gpl.value=val*1000;
+                        kgpl.value=val;
+                    }
+                    function opgToOther(val){
+                        gpml.value =  val*0.00623; 
+                        // opg.value=val*133.5264;
+                        kgcm.value=val*6.23; 
+                        gpl.value=val*6.23;
+                        kgpl.value=val*0.00623;
+                    }
+                    function kgplToOther(val){
+                        opg.value=val*133.5264;
+                        kgcm.value=val*0.001; 
+                        gpl.value=val*1000;
+                        kgpl.value=val;
+                    }
+                    
+                    
+                    
+                    
+                    
+                    // *********************//
+        
+        
+        
+                    function convertToOthers(convertFrom,value){    
+                        switch(convertFrom){
+                            case "kgcm" : kgcmToOther (parseFloat(value)); break;
+                            case "gpl": gplToOther(parseFloat(value)); break;
+                            case "gpml" : gpmlToOther(parseFloat(value)); break;
+                            case "opg"   : opgToOther(parseFloat(value)); break;
+                            case "kgpl"   : kgplToOther(parseFloat(value)); break;
+                        }
+                    }
+               
+            </script>
+    <script src="../js_files/theme.js"></script>
+  </body>
+</html>
