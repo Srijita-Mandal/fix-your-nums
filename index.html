@@ -729,23 +729,23 @@
     <script src="./js_files/go_to_top.js"></script>
     <script>
       const searchCal = () => {
-      let searchData= document.getElementById('mySearch').value.toLowerCase();
-      let mainBox= document.getElementsByClassName('box');
+        let searchData= document.getElementById('mySearch').value.toLowerCase();
+        let mainBox= document.getElementsByClassName('box');
 
-    for(var i=0; i<mainBox.length; i++){
-      let temp= mainBox[i].getElementsByTagName('h2')[0];
-
-    if(temp){
-      let calValue= temp.textContent || temp.innerHTML;
-
-      if(calValue.toLowerCase().indexOf(searchData) > -1){
-        mainBox[i].style.display= "";
-      }else{
-        mainBox[i].style.display= "none";
+        for(var i=0; i<mainBox.length; i++){
+          let temp= mainBox[i].getElementsByTagName('h2')[0];
+          let temp1=mainBox[i].getElementsByTagName('p')[0];
+          if(temp || temp1){
+            let calValue= temp.textContent || temp.innerHTML;
+            let calValue1=temp1.textContent || temp1.innerHTML;
+            if(calValue.toLowerCase().indexOf(searchData) > -1 || calValue1.toLowerCase().indexOf(searchData) > -1 ){
+              mainBox[i].style.display= "";
+            }else{
+              mainBox[i].style.display= "none";
+            }
+          }
+        }
       }
-    }
-  }
-}
     </script>
   </body>
   <script>
