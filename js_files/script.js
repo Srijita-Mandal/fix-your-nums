@@ -87,6 +87,10 @@ const calculateTemp = () => {
 }
 
 const calculator = () => {
+
+  if (document.getElementById("num1").value == "" || document.getElementById("num2").value == "") {
+    return;
+  }
   // console.log("clicked");
   const operation = document.getElementById("cal");
   const valOpe = operation.value;
@@ -930,6 +934,8 @@ function fun3() {
   document.querySelector("#bmiSet").addEventListener('click', function () {
     document.querySelector('#wei').value = "";
     document.querySelector('#hei').value = "";
+    document.getElementById('bmiImg').innerHTML = "";
+    document.getElementById('resultBMI').innerHTML = "";
     document.getElementById('resultBMImsg').innerHTML = "";
   });
 }
