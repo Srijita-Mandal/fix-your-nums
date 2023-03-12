@@ -442,22 +442,6 @@ margin-top: 5px;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* FOOTER SECTION STARTS BELOW */
 
 .footer-about {
@@ -531,6 +515,18 @@ footer .menu li a:hover {
   background: linear-gradient(315deg, #0d40ae, #ff0058)!important;
 }
 /* ==================footer end========================== */
+
+
+
+
+
+
+
+
+
+
+
+
 /* Sticky ScrollToTop Button */
 .scrollToTopContainer {
   position: fixed;
