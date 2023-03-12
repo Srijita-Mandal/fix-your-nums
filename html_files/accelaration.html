@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+   </link>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/caesardark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+	<title>Acceleration Calculator</title>
+</head>
+<style>
+    body {
+        text-align: center;
+        margin-bottom: 3em;
+    }
+.container{
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 580px;
+    margin-left: 530px;
+}
+    .calculator-name-header{
+    margin: 35px 35%;
+    padding: 10px;
+    border-radius: 0px 15px 0px 15px;
+    box-shadow: 0px 0px 16px 1px;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 50px
+  }
+    #home{
+  /* background-color: black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: #121916;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.2;
+    z-index: 999;
+}
+.btn-acceleration{
+            height: 35px;
+  margin: 20px;
+  margin-bottom: 40px;
+  width: 100px;
+  font-size: 15px;
+  border: none;
+  border-radius: 3px;
+  background-color: black;
+  color: white;
+        }
+
+        button:hover {
+          cursor: pointer;
+        }
+p{
+    font-size: large;
+}
+input,select{
+    width: 200px;
+    height: 30px;
+  
+}
+.main-btn{
+    height: 35px;
+  margin: 20px;
+  margin-bottom: 40px;
+  width: 100px;
+  font-size: 15px;
+  border: none;
+  border-radius: 3px;
+  background-color: black;
+  color: white;
+}
+</style>
+
+<body>
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+      <span>Acceleration Calculator</span>
+   </div>
+    <div class="container">
+
+
+            <!-- <h1>Physics Calculations</h1> -->
+
+ <!--Calculates Acceleration-->
+ <div class="calc-acceleration" id="calc-acceleration">
+  
+    <p>Select a System of Measurement:</p>
+    <div class="custom-select">
+      <select name="acceleration-measurement" id="acceleration-measurement">
+        <option value="mi-min2" class="styled-option">mi/min&sup2</option>
+        <option value="mi-hr2" class="styled-option">mi/hr&sup2</option>
+        <option value="cm-sec2" class="styled-option">cm/sec&sup2</option>
+        <option value="m-sec2" class="styled-option">m/sec&sup2</option>
+        <option value="m-min2" class="styled-option">m/min&sup2</option>
+        <option value="km-min2" class="styled-option">km/min&sup2</option>
+        <option value="km-hr2">km/hr&sup2</option>
+      </select>
+    </div>
+    <p>Initial Velocity:</p>
+    <input type="number" class="initial-v" ></input>
+    <br>
+    
+    <p>Final Velocity:</p>
+    <input type="number" class="final-v"></input>
+   
+    <p>Time:</p>
+    <input type="number" class="acceleration-time"></input>
+    <br>
+
+    <button class="btn-acceleration">Calculate</button>
+    <button type="button" class="main-btn" id="reset-btn" onClick="fun10()">Reset</button>
+    
+    <br>
+    <div class="outterbox">
+        <div class="box"><span class="acceleration-result results" id="result"></span></div>
+    </div>
+  
+  </div>
+    </div>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <script src="../js_files/theme.js"></script>
+</body>
+<script>
+  //Calculates Acceleration
+  document.getElementsByClassName('btn-acceleration')[0].addEventListener('click', () => {
+    let initialV = document.getElementsByClassName('initial-v')[0].value;
+    let finalV = document.getElementsByClassName('final-v')[0].value;
+    let accelerationTime = document.getElementsByClassName('acceleration-time')[0].value;
+    if (isNaN(initialV)) {
+      alert('Enter a valid number into the Initial Velocity input.');
+    } else if (isNaN(finalV)) {
+      alert('Enter a valid number into the Final Velocity input.');
+    } else if (isNaN(accelerationTime)) {
+      alert('Enter a valid number into the Time input.');
+    } else {
+      let accelerationMeasurementSelect = document.getElementById('acceleration-measurement');
+      let accelerationMeasurementSystem = accelerationMeasurementSelect.selectedIndex;
+      let totalV = finalV - initialV;
+      let accelerationResult = totalV / accelerationTime;
+      document.getElementsByClassName('acceleration-result')[0].innerHTML = 'Acceleration: ' + accelerationResult + " " + accelerationMeasurementSelect.options[accelerationMeasurementSystem].text;
+    }
+  });
+   
+  function fun10(){
+            document.querySelector("#reset-btn").addEventListener('click',function(){
+                document.getElementsByClassName('initial-v')[0].value="";
+                document.getElementsByClassName('final-v')[0].value="";
+                document.getElementsByClassName('acceleration-time')[0].value="";
+           
+            document.getElementsByClassName('acceleration-result')[0].innerHTML = "";
+        });
+        }
+</script>
+
+</html>
