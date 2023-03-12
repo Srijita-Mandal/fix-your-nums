@@ -1050,6 +1050,16 @@ function hcfSet() {
     document.getElementById('resultLCM').innerHTML = "";
   });
 }
+// reset for perimeter calculator 
+function perireset() {
+  document.querySelector("#calc1").addEventListener('click', function () {
+    document.querySelector('#num1').value = "";
+    document.querySelector('#num2').value = "";
+    document.querySelector('#num3').value = "";
+    document.querySelector('#num4').value = "";
+    document.getElementById('resultCalculator').innerHTML = "";
+  });
+}
 
 //reset roman
 function romanSet() {
