@@ -11,41 +11,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css_files/style.css">
     <link rel="stylesheet" type="text/css" href="../css_files/result.css">
-    <link rel="stylesheet" href="../css_files/style.css">
     <link rel="stylesheet" href="../css_files/theme.css">
     <link rel="icon" href="../assets/Image/Favicon.png">
-    <title>Profit and Loss Calculator</title>
+    <title>Prime-Factor</title>
 </head>
 <body style="overflow: hidden;">
     <img src="../assets/Image/moon.png" id="icon">
     <div class="calculator-name-header">
-        <span>Profit/Loss calculator</span>
+        <!-- Updated by @Shantanu-Meta   -->
+        <span>Prime Factors calculator</span>
       </div>
-    <form class="form-horizontal" id="PLCalc">
-        <label for="PL"> Enter the selling price and cost price </label><br/><br/>
-        <input type="number" name="sp" id="sp" placeholder="Selling Price">
-        <input type="number" name="cp" id="cp" placeholder="Cost Price">
-        <br/><br/>
-        <button type="button" id="PLSet" onclick="resetPL()">Reset</button>
-
-        <button type="button" onclick="calculatePL()">Submit</button><br/><br/><br/>
+    <form class="form-horizontal" id="factorial">
+        <label for="fact">Please enter the number to get its distinct Prime Factors</label><br/><br/>
+        <input type="number" name="fact" id="fact"><br/><br/>
+        <button type="button"  id="factSet" onclick="document.location.reload()">reset</button>
+        <button type="button" id="submit">Submit</button><br/><br/><br/>
         <div class="outterbox">
-            <div class="box" id="resultboxPL" style="display:none"><span id="resultPL"></span></div>
+            <div class="box"><span id="resultFact"></spanspan></div>
         </div>
+        <!-- <span id="resultFact"></span> -->
     </form>
     <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
 
-    <script src="../js_files/main.js"></script>
-    <script type="text/javascript">
-        document.getElementById("PLCalc").addEventListener("submit",(e)=>{
-            e.preventDefault()
-            calculatePL()
-        })
-        document.body.addEventListener("keyup",(e)=>{
-                if(e.keyCode==13){
-                    calculatePL()
-                }
-            })
-    </script>
+
+    <script src="../js_files/Prime-factors.js"></script>
+ 
+    <script src="../js_files/theme.js"></script>
 </body>
 </html>

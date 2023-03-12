@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="../css_files/caesardark.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="icon" href="../assets/Image/Favicon.png" />
+  <title>Matrix Calculator</title>
+ <style>
+    body {
+
+             font-family: 'Ubuntu', sans-serif;
+	margin: 0;
+	margin-bottom: 50px;
+	color: var(--color--label);
+	background-size: cover;
+	overflow: hidden;
+	line-height: 30px;
+}
+.container{
+    width: 800px;
+}
+.container input[type=number] {
+	width: 60px;
+	
+	border: none;
+	padding: 5px;
+	
+	height: 30px;
+	margin-top: 5px;
+}
+
+button {
+    height: 35px;
+  margin: 20px;
+  margin-bottom: 40px;
+  width: 100px;
+  font-size: 15px;
+  border: none;
+  border-radius: 3px;
+  background-color: black;
+  color: white;
+}
+
+
+
+
+p {
+	display: inline-block;
+}
+.result {
+	line-height: 5px;
+}
+.block {
+	padding: 15px;
+	background-color: rgba(255, 255, 255, 0.3);
+	width: 55px;
+	height: 30px;
+	margin: 10px 10px 0px 0px;
+	color: #fff;
+}
+
+.calculator-name-header{
+    margin: 25px 35%;
+    padding: 10px;
+    border-radius: 0px 15px 0px 15px;
+    box-shadow: 0px 0px 16px 1px;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 50px
+  }
+    #home{
+  /* background-color: black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: #121916;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.2;
+    z-index: 999;
+}
+
+ </style>
+</head>
+<body>
+
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+      <span>Matrix Adjoint Calculator</span>
+   </div>
+  <center>
+   
+    <div class="container">
+      <p>ENTER THE MATRIX  </p>
+      <br>
+      <input id="num11" type="number" name="" placeholder="0" >
+      <input id="num12" type="number" name="" placeholder="0" >
+      <input id="num13" type="number" name="" placeholder="0" >
+      <br>
+      <input id="num21" type="number" name="" placeholder="0" >
+      <input id="num22"type="number" name="" placeholder="0" >
+      <input id="num23" type="number" name="" placeholder="0" >
+      <br>
+      <input id="num31" type="number" name="" placeholder="0" >
+      <input id="num32" type="number" name="" placeholder="0" >
+      <input id="num33" type="number" name="" placeholder="0" >
+      <br>
+      <button id = "bts">Calculate</button>
+      <button type="button" class="main-btn" id="reset-btn" onClick="fun10()">Reset</button>
+      
+        <div class="result">
+        <br>
+        <h3>Result </h3>
+        <div id="det"></div>
+   
+        <br>
+        <br>
+        <br>
+        <div id="adj"></div>
+        <br>
+        <p class="block" id="a1"></p>
+        <p class="block" id="a2"></p>
+        <p class="block" id="a3"></p>
+        <br>
+        <p class="block" id="a4"></p>
+        <p class="block" id="a5"></p>
+        <p class="block" id="a6"></p>
+        <br>
+        <p class="block" id="a7"></p>
+        <p class="block" id="a8"></p>
+        <p class="block" id="a9"></p>
+     
+        <br>
+        <br>
+      
+    </div>
+  </center>
+
+  <script>
+    document.getElementById("bts").addEventListener( 'click' , function(){
+
+    
+var a = document.getElementById('num11').value;
+var b = document.getElementById('num12').value;
+var c = document.getElementById('num13').value;
+var d = document.getElementById('num21').value;
+var e = document.getElementById('num22').value;
+var f = document.getElementById('num23').value;
+var g = document.getElementById('num31').value;
+var h = document.getElementById('num32').value;
+var i = document.getElementById('num33').value;
+
+
+console.log("In function");
+console.log("Working Fine");
+
+
+//adjoint
+var a11=(e*i)-(h*f);
+var a12=(d*i)-(g*f);
+var a13=(d*h)-(g*e);
+var a21=(b*i)-(h*c);
+var a22=(a*i)-(g*c);
+var a23=(a*h)-(g*b);
+var a31=(b*f)-(e*c);
+var a32=(a*f)-(d*c);
+var a33=(a*e)-(d*b);
+
+
+document.getElementById("adj").textContent =  "Adjoint : ";
+document.getElementById("a1").textContent =  a11 ;
+document.getElementById("a2").textContent =  a12 ;
+document.getElementById("a3").textContent =  a13 ;
+document.getElementById("a4").textContent =  a21 ;
+document.getElementById("a5").textContent =  a22 ;
+document.getElementById("a6").textContent =  a23 ;
+document.getElementById("a7").textContent =  a31 ;
+document.getElementById("a8").textContent =  a32 ;
+document.getElementById("a9").textContent =  a33 ;
+
+}
+);
+function fun10(){
+            document.querySelector("#reset-btn").addEventListener('click',function(){
+            document.querySelector('#num11').value="";
+            document.querySelector('#num12').value="";
+            document.querySelector('#num13').value="";
+            document.querySelector('#num21').value="";
+            document.querySelector('#num22').value="";
+            document.querySelector('#num23').value="";
+            document.querySelector('#num31').value="";
+            document.querySelector('#num32').value="";
+            document.querySelector('#num33').value="";
+            
+          
+            document.getElementById("adj").textContent =  " ";
+            document.getElementById("a1").textContent =  " " ;
+            document.getElementById("a2").textContent =  " " ;
+            document.getElementById("a3").textContent =  " " ;
+            document.getElementById("a4").textContent =  " " ;
+            document.getElementById("a5").textContent =  " " ;
+            document.getElementById("a6").textContent =  " " ;
+            document.getElementById("a7").textContent =  " " ;
+            document.getElementById("a8").textContent =  " " ;
+            document.getElementById("a9").textContent =  " " ;
+        });
+        }
+  </script>
+  <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+  <script src="../js_files/theme.js"></script>
+</body>
+</html>

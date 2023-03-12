@@ -87,6 +87,10 @@ const calculateTemp = () => {
 }
 
 const calculator = () => {
+
+  if (document.getElementById("num1").value == "" || document.getElementById("num2").value == "") {
+    return;
+  }
   // console.log("clicked");
   const operation = document.getElementById("cal");
   const valOpe = operation.value;
@@ -737,15 +741,18 @@ getButton.addEventListener("click", (e) => {
   getExchangeRate();
 });
 
-const exchangeIcon = document.querySelector("form. icon");
-exchangeIcon.addEventListener('click', () => {
-  let tempCode = fromCurrency.value;
-  fromCurrency.value = toCurrency.value;
-  toCurrency.value = tempCode;
-  loadFlag(fromCurrency);
-  loadFlag(toCurrency);
-  getExchangeRate();
-});
+const exchangeIcon = document.querySelector("form icon");
+if(exchangeIcon){
+  exchangeIcon.addEventListener("click", () => {
+    let tempCode = fromCurrency.value;
+    fromCurrency.value = toCurrency.value;
+    toCurrency.value = tempCode;
+    loadFlag(fromCurrency);
+    loadFlag(toCurrency);
+    getExchangeRate();
+  });
+}
+
 
 function getExchangeRate() {
   const amount = document.querySelector("form input");
@@ -930,6 +937,8 @@ function fun3() {
   document.querySelector("#bmiSet").addEventListener('click', function () {
     document.querySelector('#wei').value = "";
     document.querySelector('#hei').value = "";
+    document.getElementById('bmiImg').innerHTML = "";
+    document.getElementById('resultBMI').innerHTML = "";
     document.getElementById('resultBMImsg').innerHTML = "";
   });
 }
