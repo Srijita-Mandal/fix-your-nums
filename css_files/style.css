@@ -111,6 +111,21 @@ label {
   font-size: 30px;
 }
 
+#bill {
+  border: none;
+  padding: 10px;
+  height: 15px;
+  width: 150px;
+  font-size: 18px;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+#resultTipContainer{
+  font-size: 30px;
+
+}
+
 #resultDataCalculator {
   font-size: 30px;
 }
