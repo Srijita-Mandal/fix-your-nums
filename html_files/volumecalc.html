@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css" />
+    <link rel="stylesheet" href="../css_files/theme.css" />
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <title>Volume Calculator</title>
+  </head>
+  <body style="overflow: hidden">
+    <img src="../assets/Image/moon.png" id="icon" />
+    <div class="calculator-name-header">
+      <!-- updated by @Shantanu-Meta -->
+      <span>Volume calculator</span>
+    </div>
+    <form id="calc" class="form-horizontal">
+      <label for="cal">Please enter the polygon type : </label><br />
+      <select name="cal" id="cal">
+        <option value="Cube">Cube</option>
+        <option value="Cuboid">Cuboid</option>
+        <option value="Sphere">Sphere</option>
+        <option value="Cylinder">Cylinder</option>
+        <option value="Cone">Cone</option></select
+      ><br /><br />
+
+      <input type="number" name="num1" id="num1" placeholder="side" />
+
+      <input type="number" name="num2" id="num2" placeholder="side" />
+      <input
+        type="number"
+        name="num3"
+        id="num3"
+        placeholder="side"
+      /><br /><br />
+      <button type="button" onclick="fun4()" id="calc1">reset</button>
+      <button type="button" onclick="VolumeCalculator()">Submit</button
+      ><br /><br /><br />
+
+      <div class="outterbox">
+        <div class="box"><span id="resultCalculator"></span></div>
+      </div>
+    </form>
+    <a href="../index.html"
+      ><i id="home" class="fa fa-home" aria-hidden="true"></i
+    ></a>
+
+    <script src="../js_files/script.js"></script>
+    <script type="text/javascript">
+      const VolumeCalculator = () => {
+        // console.log("clicked");
+        const operation = document.getElementById("cal");
+        const valOpe = operation.value;
+
+        // console.log(valOpe);
+
+        const number1 = parseInt(document.getElementById("num1").value);
+        const number2 = parseInt(document.getElementById("num2").value);
+        const number3 = parseInt(document.getElementById("num3").value);
+
+        // console.log(number1);
+        // console.log(number2);
+
+        switch (valOpe) {
+          case "Cube":
+            document.getElementById(
+              "resultCalculator"
+            ).innerHTML = `Side * Side * Side = ${number1 * number2 * number3}`;
+            break;
+          case "Cuboid":
+            document.getElementById(
+              "resultCalculator"
+            ).innerHTML = `Length * Breadth * Height = ${number1 * number2 * number3}`;
+            break;
+          case "Cylinder":
+            document.getElementById(
+              "resultCalculator"
+            ).innerHTML = `&pi; * r * r * h = ${3.14 * number1 * number2 * number3}`;
+            break;
+          case "Cone":
+            document.getElementById(
+              "resultCalculator"
+            ).innerHTML = `1/3 * &pi; * r * r * h = ${1/3 * 3.14 * number1 * number2 * number3}`;
+            break;
+          case "Sphere":
+            document.getElementById(
+              "resultCalculator"
+            ).innerHTML = `4/3 * &pi; * r * r * r = ${
+              (4 / 3) * 3.14 * number1 * number2 * number3
+            }`;
+            break;
+          default:
+            return;
+        }
+      };
+
+      document.getElementById("calc").addEventListener("submit", (e) => {
+        e.preventDefault();
+        VolumeCalculator();
+      });
+      document.body.addEventListener("keyup", (e) => {
+        if (e.keyCode == 13) {
+          VolumeCalculator();
+        }
+      });
+    </script>
+    <script src="../js_files/theme.js"></script>
+  </body>
+</html>

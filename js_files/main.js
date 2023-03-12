@@ -38,12 +38,13 @@ function calculatePL() {
 }
 
 
-function reset() {
+function resetPL() {
   document.querySelector("#cp").value = "";
-  document.getElementById("resultPL").innerHTML = "";
   document.querySelector("#sp").value = "";
+  document.getElementById("resultPL").innerHTML = "";
   document.getElementById("resultboxPL").style.display = "none";
 }
+
 
 var icon = document.getElementById("icon");
 icon.onclick = function () {

@@ -115,8 +115,16 @@
           oninput="convertToOthers('degree',this.value)"
         />
       </div>
-      
-      
+      <div class="inputContainer">
+        <label for="gradians">Gradians</label
+        ><input
+          type="number"
+          name=""
+          id="gradians"
+          oninput="convertToOthers('gradians',this.value)"
+        />
+      </div>
+
       <div class="button">
         <button
           style="
@@ -126,7 +134,7 @@
             margin-top: 50px;
             background-color: black;
             color: aliceblue;
-            border-radius:20px;
+            border-radius: 20px;
           "
         >
           reset
@@ -140,31 +148,49 @@
       document.querySelector("button").addEventListener("click", function () {
         document.getElementById("radian").value = "";
         document.getElementById("degree").value = "";
-        
       });
       let radian = document.getElementById("radian");
       let degree = document.getElementById("degree");
-      
+      let gradians = document.getElementById("gradians");
+
       function radianToDegree(val) {
-        degree.value = (val *57.29578);
-        
+        degree.value = val * 57.29578;
       }
       function degreeToRadian(val) {
-        radian.value = (val * 0.01745329);
-        
+        radian.value = val * 0.01745329;
       }
-      
-      
+
+      function degreeToGradians(val) {
+        gradians.value = val * 1.111111;
+      }
+
+      function radianToGradians(val) {
+        gradians.value = val * 63.66198;
+      }
+
+      function gradiansToDegree(val) {
+        degree.value = val * 0.9;
+      }
+
+      function gradiansToRadian(val) {
+        radian.value = val * 0.015708;
+      }
 
       function convertToOthers(convertFrom, value) {
         switch (convertFrom) {
           case "radian":
             radianToDegree(parseFloat(value));
+            radianToGradians(parseFloat(value));
             break;
           case "degree":
             degreeToRadian(parseFloat(value));
+            degreeToGradians(parseFloat(value));
             break;
-        } 
+          case "gradians":
+            gradiansToRadian(parseFloat(value));
+            gradiansToDegree(parseFloat(value));
+            break;
+        }
       }
     </script>
     <script src="../js_files/theme.js"></script>

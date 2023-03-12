@@ -50,7 +50,7 @@ label {
   font-size: 15px;
 }
 
-[type="button"] {
+[type="button"], .reset {
   height: 35px;
   margin: 20px;
   margin-bottom: -10px;
@@ -103,6 +103,17 @@ label {
   border-radius: 3px;
   margin-top: 5px;
   
+}
+
+#num3 {
+  border: none;
+  padding: 9px;
+  height: 25px;
+  width: 200px;
+  font-size: 18px;
+  border-radius: 3px;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 #cal,#bitcal {
