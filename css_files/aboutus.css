@@ -475,19 +475,18 @@ h2{
 
 /* FOOTER SECTION STARTS BELOW */
 
-.footer {
+.footer-about {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  min-height: 45vh;
-  background: #1d061a;
+  background: linear-gradient(315deg, #0d40ae, #ff0058);
   /* change color and min height here to observe difference between footer and calculator last row */
 }
 
 footer {
   position: relative;
   width: 100%;
-  background: #3586ff;
+  background: linear-gradient(315deg, #0d40ae, #ff0058)!important;
   min-height: 100px;
   padding: 20px 50px;
   display: flex;
@@ -503,6 +502,7 @@ footer .menu {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  padding: 10px 10px
 }
 
 footer .social-icon li,
@@ -519,13 +519,13 @@ footer .social-icon li a {
 }
 
 footer .social-icon li a:hover {
-  transform: translateY(-10px);
+  color:orangered;
 }
 
 footer .menu li a {
   font-size: 1.2em;
   color: #fff;
-  margin: 0 10px;
+  margin: 5px 10px;
   display: inline-block;
   text-decoration: none;
   opacity: 0.75;
@@ -535,81 +535,23 @@ footer .menu li a:hover {
   opacity: 1;
 }
 
-footer p {
-  color: #fff;
-  text-align: center;
-  margin-top: 15px;
-  margin-bottom: 10px;
-  font-size: 1.1em;
-  display: inline-block;
+
+.foot-down{
+  display:flex;
+  flex-wrap:wrap;
+  padding:2rem;
+  width:100%;
+  justify-content:center;
+  font-size: 1.3em;
+  background: linear-gradient(315deg, #0d40ae, #ff0058)!important;
 }
-
-.footer .wave {
-  position: absolute;
-  top: -100px;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: url(wave.png);
-  background-size: 1000px 100px;
-}
-
-footer .wave#wave1 {
-  z-index: 1000;
-  opacity: 1;
-  bottom: 0;
-  animation: animateWave 4s linear infinite;
-}
-
-footer .wave#wave2 {
-  z-index: 999;
-  opacity: 0.5;
-  bottom: 10px;
-  animation: animateWave_02 4s linear infinite;
-}
-
-footer .wave#wave3 {
-  z-index: 1000;
-  opacity: 0.2;
-  bottom: 15px;
-  animation: animateWave 3s linear infinite;
-}
-
-footer .wave#wave4 {
-  z-index: 999;
-  opacity: 0.7;
-  bottom: 20px;
-  animation: animateWave_02 3s linear infinite;
-}
-
-@keyframes animateWave {
-  0% {
-    background-position-x: 1000px;
-  }
-
-  100% {
-    background-position-x: 0px;
-  }
-}
-
-@keyframes animateWave_02 {
-  0% {
-    background-position-x: 0px;
-  }
-
-  100% {
-    background-position-x: 1000px;
-  }
-}
-
-
+/* ==================footer end========================== */
 /* Sticky ScrollToTop Button */
 .scrollToTopContainer {
   position: fixed;
   bottom: 0;
   right: 0;
   margin: 0 2rem 2rem 0;
-
   height: fit-content;
   width: fit-content;
   z-index: 100000;
