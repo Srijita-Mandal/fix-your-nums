@@ -1,284 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="../assets/Image/Favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
-    <link rel="stylesheet" type="text/css" href="../css_files/result.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:wght@300;400&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
-      rel="stylesheet"
-    />
-    <title>Energy Converter</title>
-    <style type="text/css">
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
 
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        flex-direction: column;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-          sans-serif;
-      }
-      .top-txt {
-        margin-bottom: 15px;
-      }
-      .container {
-        box-shadow: 0 0 4px 1px rgb(179, 169, 169);
-        width: 675px;
-        height: 375px;
-        border-radius: 10px;
-        display: flex;
-        /* justify-content: center; */
-        align-items: center;
-        flex-direction: column;
-        background-color: #ffb4a3;
-      }
-      .container p {
-        color: rgb(20, 94, 82);
-        margin: 10px;
-        font-size: 20px;
-        font-weight: bolder;
-      }
-      .inputContainer {
-        margin: 5px;
-        display: flex;
-        justify-content: space-between;
-        width: 80%;
-      }
-      .inputContainer label {
-        font-size: larger;
-      }
-      .inputContainer input {
-        border: none;
-        outline: none;
-        box-shadow: 0.1px 1px 2px 1px rgb(145, 140, 140);
-        padding: 4px;
-        font-size: large;
-        border-radius: 2px;
-      }
-      .calculator-name-header {
-        text-align: center;
-        padding: 10px;
-        border-radius: 0px 15px 0px 15px;
-        box-shadow: 0px 0px 16px 1px;
-        font-size: 30px;
-        margin: 25px 30%;
-      }
-    </style>
-    <link rel="stylesheet" href="../css_files/theme.css" />
-  </head>
-  <body bgcolor="#ffeeb7">
-    <img src="../assets/Image/moon.png" id="icon" />
-    <div class="calculator-name-header">
-      <span>Energy Converter</span>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../assets/Image/Favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+  <link rel="stylesheet" type="text/css" href="../css_files/result.css" />
+  <!-- <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:wght@300;400&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" /> -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    }
+
+    .top-txt {
+      margin-bottom: 15px;
+    }
+
+    .container {
+      box-shadow: 0 0 4px 1px rgb(179, 169, 169);
+      width: 675px;
+      height: 375px;
+      border-radius: 10px;
+      display: flex;
+      /* justify-content: center; */
+      align-items: center;
+      flex-direction: column;
+      background-color: #ffb4a3;
+    }
+
+    .container p {
+      color: rgb(20, 94, 82);
+      margin: 10px;
+      font-size: 20px;
+      font-weight: bolder;
+    }
+
+    .inputContainer {
+      margin: 5px;
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+    }
+
+    .inputContainer label {
+      font-size: larger;
+    }
+
+    .inputContainer input {
+      border: none;
+      outline: none;
+      box-shadow: 0.1px 1px 2px 1px rgb(145, 140, 140);
+      padding: 4px;
+      font-size: large;
+      border-radius: 2px;
+    }
+
+    .calculator-name-header {
+      text-align: center;
+      padding: 10px;
+      border-radius: 0px 15px 0px 15px;
+      box-shadow: 0px 0px 16px 1px;
+      font-size: 30px;
+      margin: 25px 30%;
+    }
+  </style>
+  <link rel="stylesheet" href="../css_files/caesardark.css">
+  <title>Energy Converter</title>
+</head>
+
+<body>
+  <img src="../assets/Image/moon.png" id="icon">
+  <div class="calculator-name-header">
+    <span>Energy Converter</span>
+  </div>
+  <form class="form-horizontal" id="form">
+    <h3 class="para">
+      Enter value in any of the fields to convert between Energy measurements:
+    </h3><br>
+    <div class="inputContainer">
+      <label for="ElectronVolts">Electron Volts</label><input type="number" name="" id="ElectronVolts"
+        oninput="convertToOthers('ElectronVolts',this.value)" />
     </div>
-    <div class="container" style="height: 400px !important">
-      <p class="top-txt">
-        Enter value in any of the fields to convert between Energy measurements:
-      </p>
-      <div class="inputContainer">
-        <label for="ElectronVolts">Electron Volts</label
-        ><input
-          type="number"
-          name=""
-          id="ElectronVolts"
-          oninput="convertToOthers('ElectronVolts',this.value)"
-        />
-      </div>
-      <div class="inputContainer">
-        <label for="Joules">Joules</label
-        ><input
-          type="number"
-          name=""
-          id="Joules"
-          oninput="convertToOthers('Joules',this.value)"
-        />
-      </div>
-      <div class="inputContainer">
-        <label for="Kilojoules">Kilojoules</label
-        ><input
-          type="number"
-          name=""
-          id="Kilojoules"
-          oninput="convertToOthers('Kilojoules',this.value)"
-        />
-      </div>
-      <div class="inputContainer">
-        <label for="thermal_calories">Thermal Calories</label
-        ><input
-          type="number"
-          name=""
-          id="thermal_calories"
-          oninput="convertToOthers('thermal_calories',this.value)"
-        />
-      </div>
-      <div class="inputContainer">
-        <label for="Food_Calories">Food Calories</label
-        ><input
-          type="number"
-          name=""
-          id="Food_Calories"
-          oninput="convertToOthers('Food_Calories',this.value)"
-        />
-      </div>
-      <div class="inputContainer">
-        <label for="Foot-pounds">Foot pounds</label
-        ><input
-          type="number"
-          name=""
-          id="Foot-pounds"
-          oninput="convertToOthers('Foot-pounds',this.value)"
-        />
-      </div>
-      <div class="inputContainer">
-        <label for="british">British Thermal Units</label
-        ><input
-          type="number"
-          name=""
-          id="british"
-          oninput="convertToOthers('british',this.value)"
-        />
-      </div>
-      <div class="button">
-        <button
-          style="
+    <div class="inputContainer">
+      <label for="Joules">Joules</label><input type="number" name="" id="Joules"
+        oninput="convertToOthers('Joules',this.value)" />
+    </div>
+    <div class="inputContainer">
+      <label for="Kilojoules">Kilojoules</label><input type="number" name="" id="Kilojoules"
+        oninput="convertToOthers('Kilojoules',this.value)" />
+    </div>
+    <div class="inputContainer">
+      <label for="thermal_calories">Thermal Calories</label><input type="number" name="" id="thermal_calories"
+        oninput="convertToOthers('thermal_calories',this.value)" />
+    </div>
+    <div class="inputContainer">
+      <label for="Food_Calories">Food Calories</label><input type="number" name="" id="Food_Calories"
+        oninput="convertToOthers('Food_Calories',this.value)" />
+    </div>
+    <div class="inputContainer">
+      <label for="Foot-pounds">Foot pounds</label><input type="number" name="" id="Foot-pounds"
+        oninput="convertToOthers('Foot-pounds',this.value)" />
+    </div>
+    <div class="inputContainer">
+      <label for="british">British Thermal Units</label><input type="number" name="" id="british"
+        oninput="convertToOthers('british',this.value)" />
+    </div>
+    <div class="button"><button style="
             height: 30px;
             width: 100px;
             font-size: large;
             margin-top: 10px;
             background-color: black;
-            color: aliceblue;
-          "
-        >
-          reset
-        </button>
-      </div>
+            color: aliceblue;">Reset</button>
     </div>
-    <a href="../index.html"
-      ><i id="home" class="fa fa-home" aria-hidden="true"></i
-    ></a>
-    <script>
-      document.querySelector("button").addEventListener("click", function () {
-        document.getElementById("ElectronVolts").value = "";
-        document.getElementById("Joules").value = "";
-        document.getElementById("Kilojoules").value = "";
-        document.getElementById("thermal_calories").value = "";
-        document.getElementById("Food_Calories").value = "";
-        document.getElementById("Foot-pounds").value = "";
-        document.getElementById("british").value = "";
-      });
-      let ElectronVolts = document.getElementById("ElectronVolts");
-      let Joules = document.getElementById("Joules");
-      let Kilojoules = document.getElementById("Kilojoules");
-      let thermal_calories = document.getElementById("thermal_calories");
-      let Food_Calories = document.getElementById("Food_Calories");
-      let Foot_pounds = document.getElementById("Foot-pounds");
-      let british = document.getElementById("british");
+  </form>
+  <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+  <script>
+    document.querySelector("button").addEventListener("click", function () {
+      document.getElementById("ElectronVolts").value = "";
+      document.getElementById("Joules").value = "";
+      document.getElementById("Kilojoules").value = "";
+      document.getElementById("thermal_calories").value = "";
+      document.getElementById("Food_Calories").value = "";
+      document.getElementById("Foot-pounds").value = "";
+      document.getElementById("british").value = "";
+    });
+    let ElectronVolts = document.getElementById("ElectronVolts");
+    let Joules = document.getElementById("Joules");
+    let Kilojoules = document.getElementById("Kilojoules");
+    let thermal_calories = document.getElementById("thermal_calories");
+    let Food_Calories = document.getElementById("Food_Calories");
+    let Foot_pounds = document.getElementById("Foot-pounds");
+    let british = document.getElementById("british");
 
-      function ElectronVoltsToOther(val) {
-        Joules.value = (val / 10 ** 19) * 1.6;
-        Kilojoules.value = (val / 10 ** 22) * 1.6;
-        Foot_pounds.value = (val / 10 ** 19) * 1.18;
-        thermal_calories.value = val * 3.829/ 10**20;
-        Food_Calories.value = val * 3.829/ 10**23;
-        british.value = val * 1.5/10**22;
-      }
-      function JoulesToOther(val) {
-        ElectronVolts.value = val * 6.24 * 10**18;
-        Kilojoules.value = val * 0.001;
-        Foot_pounds.value = val * 0.737;
-        thermal_calories.value = val * 0.239006;
-        Food_Calories.value = val * 0.000239;
-        british.value = val * 0.000948;
-      }
-      function KilojoulesToOther(val) {
-        ElectronVolts.value = val * 6.24 * 10**18 * 1000;
-        Joules.value = val * 1000;
-        Foot_pounds.value = val * 0.737* 1000;
-        thermal_calories.value = val * 0.239006* 1000;
-        Food_Calories.value = val * 0.000239* 1000;
-        british.value = val * 0.000948* 1000;
-      }
-      function FootPoundsToOther(val) {
-        ElectronVolts.value = val * 8.46 * 10**18;
-        Kilojoules.value = val * 0.001356;
-        Joules.value = val * 1.355818;
-        thermal_calories.value = val * 0.324048;
-        Food_Calories.value = val * 0.000324;
-        british.value = val * 0.001285;
-      }
-      function thermal_caloriesToOther(val) {
-        ElectronVolts.value = val * 2.611 * 10**19;
-        Joules.value = val * 4.184;
-        Foot_pounds.value = val * 3.08596;
-        Food_Calories.value = val * 0.001;
-        british.value = val * 0.003966;
-        Kilojoules.value = val * 0.004184;
-      }
-      function FoodCaloriesToOther(val) {
-        ElectronVolts.value = val * 2.611 * 10**22;
-        Joules.value = val * 4184;
-        Foot_pounds.value = val * 3085.96;
-        thermal_calories.value = val * 1000;
-        british.value = val * 3.965666;
-        Kilojoules.value = val * 4.184;
-      }
-      function britishToOther(val) {
-        ElectronVolts.value = val * 6.58 * 10**21;
-        Joules.value = val * 1055.056;
-        Kilojoules.value = val * 1.055056;
-        thermal_calories.value = val * 252.1644;
-        Foot_pounds.value = val * 778.1694;
-        Food_Calories.value = val * 0.252164;
-      }
-      // *********************//
+    function ElectronVoltsToOther(val) {
+      Joules.value = (val / 10 ** 19) * 1.6;
+      Kilojoules.value = (val / 10 ** 22) * 1.6;
+      Foot_pounds.value = (val / 10 ** 19) * 1.18;
+      thermal_calories.value = val * 3.829 / 10 ** 20;
+      Food_Calories.value = val * 3.829 / 10 ** 23;
+      british.value = val * 1.5 / 10 ** 22;
+    }
+    function JoulesToOther(val) {
+      ElectronVolts.value = val * 6.24 * 10 ** 18;
+      Kilojoules.value = val * 0.001;
+      Foot_pounds.value = val * 0.737;
+      thermal_calories.value = val * 0.239006;
+      Food_Calories.value = val * 0.000239;
+      british.value = val * 0.000948;
+    }
+    function KilojoulesToOther(val) {
+      ElectronVolts.value = val * 6.24 * 10 ** 18 * 1000;
+      Joules.value = val * 1000;
+      Foot_pounds.value = val * 0.737 * 1000;
+      thermal_calories.value = val * 0.239006 * 1000;
+      Food_Calories.value = val * 0.000239 * 1000;
+      british.value = val * 0.000948 * 1000;
+    }
+    function FootPoundsToOther(val) {
+      ElectronVolts.value = val * 8.46 * 10 ** 18;
+      Kilojoules.value = val * 0.001356;
+      Joules.value = val * 1.355818;
+      thermal_calories.value = val * 0.324048;
+      Food_Calories.value = val * 0.000324;
+      british.value = val * 0.001285;
+    }
+    function thermal_caloriesToOther(val) {
+      ElectronVolts.value = val * 2.611 * 10 ** 19;
+      Joules.value = val * 4.184;
+      Foot_pounds.value = val * 3.08596;
+      Food_Calories.value = val * 0.001;
+      british.value = val * 0.003966;
+      Kilojoules.value = val * 0.004184;
+    }
+    function FoodCaloriesToOther(val) {
+      ElectronVolts.value = val * 2.611 * 10 ** 22;
+      Joules.value = val * 4184;
+      Foot_pounds.value = val * 3085.96;
+      thermal_calories.value = val * 1000;
+      british.value = val * 3.965666;
+      Kilojoules.value = val * 4.184;
+    }
+    function britishToOther(val) {
+      ElectronVolts.value = val * 6.58 * 10 ** 21;
+      Joules.value = val * 1055.056;
+      Kilojoules.value = val * 1.055056;
+      thermal_calories.value = val * 252.1644;
+      Foot_pounds.value = val * 778.1694;
+      Food_Calories.value = val * 0.252164;
+    }
+    // *********************//
 
-      function convertToOthers(convertFrom, value) {
-        switch (convertFrom) {
-          case "ElectronVolts":
-            ElectronVoltsToOther(parseFloat(value));
-            break;
-          case "Joules":
-            JoulesToOther(parseFloat(value));
-            break;
-          case "Kilojoules":
-            KilojoulesToOther(parseFloat(value));
-            break;
-          case "thermal_calories":
-            thermal_caloriesToOther(parseFloat(value));
-            break;
-          case "british":
-            britishToOther(parseFloat(value));
-            break;
-          case "Food_Calories":
-            FoodCaloriesToOther(parseFloat(value));
-            break;
-          case "Foot-pounds":
-            FootPoundsToOther(parseFloat(value));
-            break;
-        }
+    function convertToOthers(convertFrom, value) {
+      switch (convertFrom) {
+        case "ElectronVolts":
+          ElectronVoltsToOther(parseFloat(value));
+          break;
+        case "Joules":
+          JoulesToOther(parseFloat(value));
+          break;
+        case "Kilojoules":
+          KilojoulesToOther(parseFloat(value));
+          break;
+        case "thermal_calories":
+          thermal_caloriesToOther(parseFloat(value));
+          break;
+        case "british":
+          britishToOther(parseFloat(value));
+          break;
+        case "Food_Calories":
+          FoodCaloriesToOther(parseFloat(value));
+          break;
+        case "Foot-pounds":
+          FootPoundsToOther(parseFloat(value));
+          break;
       }
-    </script>
-    <script src="../js_files/theme.js"></script>
-  </body>
+    }
+  </script>
+  <script src="../js_files/theme.js"></script>
+</body>
+
 </html>

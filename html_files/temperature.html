@@ -23,7 +23,7 @@
       </div>
     <form id="tempCalc">
         <label for="temp">Please enter the temperature you'd like to convert</label><br/><br/>
-        <input type="number" name="temp" id="temp">
+        <input type="number" name="temp" id="temp" placeholder="Enter Temperature">
         <select name="temp_diff" id="temp_diff">
             <!-- <option value="cel">°Celsius</option>
             <option value="fah">°Fahrenheit</option> -->
@@ -34,9 +34,9 @@
             <option value="fah_kel">Fahrenheit to Kelvin</option>
             <option value="kel_fah">Kelvin to Fahrenheit</option>
         </select><br/>
-        <button type="button" id="tempSet" onclick="fun9()">reset</button>
-        <button type="button" onclick="calculateTemp()">Submit</button><br/><br/><br/>
-        <div class="outterbox">
+        <button type="button" id="tempSet" onclick="fun9()" style="cursor: pointer;">reset</button>
+        <button type="button" onclick="calculateTemp()" style="cursor: pointer;">Submit</button><br/><br/><br/>
+        <div class="outterbox"> 
             <div class="box"><span id="resultContainer"></span></div>
         </div>
         
