@@ -108,7 +108,29 @@
         <span style="--i: 20"></span>
       </div>
     </div>
-
+ <div class="containerf"> 
+		<h1>Frequently Asked Questions</h1> 
+		<div class="question-container"> 
+			<div class="question">Q: What is this website all about?</div> 
+			<div class="answer">A: Fix your nums is an online solution to your computational needs be it converting units to one another, currency converter, caesar cipher and basic arithmetic calculations.
+            </div> 
+			<hr>
+            <div class="question">Q:Are these calculators accurate?</div> 
+			<div class="answer">A: Yes, indeed our calculators are reliable as well as accurate .Our testimonials also say so..</div> 
+			<hr>
+            <div class="question">Q: Do I need any special software to use it?</div> 
+			<div class="answer">A: No, the only requirement is any web browser.</div> 
+            <hr>
+            <div class="question">Q: Is there anything I need to keep in mind when performing a calculation?</div> 
+			<div class="answer">A:  Yes. Remember that calculations are performed in accordance with a specific "calculation priority sequence". </div> 
+            <hr>
+            <div class="question">Q: Why should I prefer Fix your nums over any other website?</div> 
+			<div class="answer">A: Fix your nums is a one stop solution for every mathematical computations making it preferable over other websites.</div> 
+            <hr>
+            <div class="question">Q: What if my requirement calculator is not there?</div> 
+			<div class="answer">A: Write us a message or mail us at contact.jwoc@gmail.com</div> 
+		</div> 
+	</div> 
     <div class="row" id="box">
         <div class="column" id="compimg">
           <h3>We would love to hear from you!</h3>
@@ -282,6 +304,21 @@
     }
   }
 </script>
+<script> 
+    const questions = document.querySelectorAll(".question"); 
+
+    questions.forEach((question) => { 
+        question.addEventListener("click", () => { 
+            question.classList.toggle("active"); 
+            const answer = question.nextElementSibling; 
+            if (answer.style.display === "block") { 
+                answer.style.display = "none"; 
+            } else { 
+                answer.style.display = "block"; 
+            } 
+        }); 
+    }); 
+</script> 
 </body>
 
 </html>
