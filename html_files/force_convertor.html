@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <title>Force Units Converter</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        flex-direction: column;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+      .top-txt {
+        margin-bottom: 15px;
+      }
+      .container {
+        box-shadow: 0 0 4px 1px rgb(179, 169, 169);
+        width: 675px;
+        height: 375px;
+        border-radius: 10px;
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        flex-direction: column;
+        background-color: #ffb4a3;
+      }
+      .container p {
+        color: rgb(20, 94, 82);
+        margin: 10px;
+        font-size: 20px;
+        font-weight: bolder;
+      }
+      .inputContainer {
+        margin: 5px;
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+      }
+      .inputContainer label {
+        font-size: larger;
+      }
+      .inputContainer input {
+        border: none;
+        outline: none;
+        box-shadow: 0.1px 1px 2px 1px rgb(145, 140, 140);
+        padding: 4px;
+        font-size: large;
+        border-radius: 2px;
+      }
+      .calculator-name-header {
+        text-align: center;
+        padding: 10px;
+        border-radius: 0px 15px 0px 15px;
+        box-shadow: 0px 0px 16px 1px;
+        font-size: 30px;
+        margin: 25px 30%;
+      }
+    </style>
+    <link rel="stylesheet" href="../css_files/theme.css" />
+  </head>
+  <body bgcolor="#ffeeb7">
+    <img src="../assets/Image/moon.png" id="icon" />
+    <div class="calculator-name-header">
+      <span>Force Units Converter</span>
+    </div>
+    <div class="container" style="height: 400px !important">
+      <p class="top-txt">
+        Enter value in any of the fields to convert between Force measurements:
+      </p>
+      <div class="inputContainer">
+        <label for="Newton">Newton</label
+        ><input
+          type="number"
+          name=""
+          id="Newton"
+          oninput="convertToOthers('Newton',this.value)"
+        />
+      </div>
+      <div class="inputContainer">
+        <label for="Dyne">Dyne</label
+        ><input
+          type="number"
+          name=""
+          id="Dyne"
+          oninput="convertToOthers('Dyne',this.value)"
+        />
+      </div>
+      <div class="inputContainer">
+        <label for="GramForce">Gram Force</label
+        ><input
+          type="number"
+          name=""
+          id="GramForce"
+          oninput="convertToOthers('GramForce',this.value)"
+        />
+      </div>
+      <div class="inputContainer">
+        <label for="Poundal">Poundal</label
+        ><input
+          type="number"
+          name=""
+          id="Poundal"
+          oninput="convertToOthers('Poundal',this.value)"
+        />
+      </div>
+      <div class="inputContainer">
+        <label for="PoundForce">Pound Force</label
+        ><input
+          type="number"
+          name=""
+          id="PoundForce"
+          oninput="convertToOthers('PoundForce',this.value)"
+        />
+      </div>
+      <div class="inputContainer">
+        <label for="KilogramForce">Kilogram Force</label
+        ><input
+          type="number"
+          name=""
+          id="KilogramForce"
+          oninput="convertToOthers('KilogramForce',this.value)"
+        />
+        </div>
+      <div class="button">
+        <button
+          style="
+            height: 30px;
+            width: 100px;
+            font-size: large;
+            margin-top: 10px;
+            background-color: black;
+            color: aliceblue;
+          "
+        >
+          reset
+        </button>
+      </div>
+    </div>
+    <a href="../index.html"
+      ><i id="home" class="fa fa-home" aria-hidden="true"></i
+    ></a>
+    <script>
+      document.querySelector("button").addEventListener("click", function () {
+        document.getElementById("Newton").value = "";
+        document.getElementById("Dyne").value = "";
+        document.getElementById("GramForce").value = "";
+        document.getElementById("Poundal").value = "";
+        document.getElementById("PoundForce").value = "";
+        document.getElementById("KilogramForce").value = "";
+      });
+      let Newton = document.getElementById("Newton");
+      let Dyne = document.getElementById("Dyne");
+      let GramForce = document.getElementById("GramForce");
+      let Poundal = document.getElementById("Poundal");
+      let PoundForce = document.getElementById("PoundForce");
+      let KilogramForce = document.getElementById("KilogramForce");
+
+      function NewtonToOther(val) {
+        Dyne.value = val * 100000;
+        GramForce.value = val / (9.8 * 0.001);
+        Poundal.value = val * 7.23;
+        PoundForce.value = val * 0.224;
+        KilogramForce.value = val * 0.101;
+      }
+      function DyneToOther(val) {
+        Newton.value = val/ 100000;
+        GramForce.value = val * (1.01 / 1000000)/1000;
+        Poundal.value = val * 7.23 / 100000;
+        PoundForce.value = val * 2.24/1000000;
+        KilogramForce.value = val * 1.01 / 1000000;
+      }
+      function GramForceToOther(val) {
+        Newton.value = val * 0.0196/2;
+        Dyne.value = val * 1961.33/2;
+        Poundal.value = val * 0.141/2;
+        PoundForce.value = val * 0.0044/2;
+        KilogramForce.value = val * 0.002/2;
+      }
+      function poundalToOther(val) {
+        Newton.value = val * 0.2765/2;
+        GramForce.value = val * 28.196/2;
+        Dyne.value = val * 27650.99/2;
+        PoundForce.value = val * 0.0621/2;
+        KilogramForce.value = val * 0.028196/2;
+      }
+      function PoundForceToOther(val) {
+        Newton.value = val * 8.8964/2;
+        Dyne.value = val * 889644.32305/2;
+        Poundal.value = val * 64.34809/2;
+        KilogramForce.value = val * 0.9071/2;
+        GramForce.value = val * 907.18474/2;
+      }
+      function KilogramForceToOther(val) {
+        Newton.value = val * 19.6133/2;
+        Dyne.value = val * 1961330/2;
+        Poundal.value = val * 141.863/2;
+        PoundForce.value = val * 4.4092/2;
+        GramForce.value = val * 2000/2;
+      }
+      // *********************//
+
+      function convertToOthers(convertFrom, value) {
+        switch (convertFrom) {
+          case "Newton":
+            NewtonToOther(parseFloat(value));
+            break;
+          case "Dyne":
+            DyneToOther(parseFloat(value));
+            break;
+          case "GramForce":
+            GramForceToOther(parseFloat(value));
+            break;
+          case "PoundForce":
+            PoundForceToOther(parseFloat(value));
+            break;
+          case "KilogramForce":
+            KilogramForceToOther(parseFloat(value));
+            break;
+          case "Poundal":
+            poundalToOther(parseFloat(value));
+            break;
+        }
+      }
+    </script>
+    <script src="../js_files/theme.js"></script>
+  </body>
+</html>
