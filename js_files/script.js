@@ -741,15 +741,18 @@ getButton.addEventListener("click", (e) => {
   getExchangeRate();
 });
 
-const exchangeIcon = document.querySelector("form. icon");
-exchangeIcon.addEventListener('click', () => {
-  let tempCode = fromCurrency.value;
-  fromCurrency.value = toCurrency.value;
-  toCurrency.value = tempCode;
-  loadFlag(fromCurrency);
-  loadFlag(toCurrency);
-  getExchangeRate();
-});
+const exchangeIcon = document.querySelector("form icon");
+if(exchangeIcon){
+  exchangeIcon.addEventListener("click", () => {
+    let tempCode = fromCurrency.value;
+    fromCurrency.value = toCurrency.value;
+    toCurrency.value = tempCode;
+    loadFlag(fromCurrency);
+    loadFlag(toCurrency);
+    getExchangeRate();
+  });
+}
+
 
 function getExchangeRate() {
   const amount = document.querySelector("form input");
