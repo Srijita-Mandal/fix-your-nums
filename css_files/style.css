@@ -7,8 +7,8 @@
 body {
   width: 100vw;
   height: 100vh;
-  background-color: #ffeeb7;
   display: grid;
+  background-color: #ffb4a3;
   place-items: center;
   /* overflow: hidden; */
   overflow-x: hidden;
@@ -302,7 +302,7 @@ label {
 table,
 td {
   border: 1px solid black;
-  background-color: #ffd6cd;
+  background-color: #5f1455;
 }
 
 thead {
