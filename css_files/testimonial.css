@@ -201,3 +201,77 @@ body{
     }
     
 }
+
+/* FOOTER SECTION STARTS BELOW */
+
+.footer-about {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: linear-gradient(315deg, #0d40ae, #ff0058);
+    /* change color and min height here to observe difference between footer and calculator last row */
+  }
+  
+  footer {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(315deg, #0d40ae, #ff0058)!important;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  footer .social-icon,
+  footer .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 10px
+  }
+  
+  footer .social-icon li,
+  footer .menu li {
+    list-style: none;
+  }
+  
+  footer .social-icon li a {
+    font-size: 2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+  }
+  
+  footer .social-icon li a:hover {
+    color:orangered;
+  }
+  
+  footer .menu li a {
+    font-size: 1.2em;
+    color: #fff;
+    margin: 5px 10px;
+    display: inline-block;
+    text-decoration: none;
+    opacity: 0.75;
+  }
+  
+  footer .menu li a:hover {
+    opacity: 1;
+  }
+  
+  
+  .foot-down{
+    display:flex;
+    flex-wrap:wrap;
+    padding:2rem;
+    width:100%;
+    justify-content:center;
+    font-size: 1.3em;
+    background: linear-gradient(315deg, #0d40ae, #ff0058)!important;
+  }
+  /* ==================footer end========================== */
