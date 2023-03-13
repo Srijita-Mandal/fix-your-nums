@@ -143,6 +143,7 @@ nav li {
   border-bottom: 0.4rem transparent solid;
   transition: 0.3s ease-in-out;
   margin-right: 10px;
+  margin-top: 20px;
 }
 nav li a i {
   margin-right: 3px;

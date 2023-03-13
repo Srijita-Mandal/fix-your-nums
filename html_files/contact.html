@@ -16,6 +16,7 @@
   <link rel="stylesheet" type="text/css" href="../css_files/indexstyle.css" />
   <link rel="stylesheet" href="../css_files/go_to_top.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css_files/translate.css">
 </head>
 
 <body>
@@ -43,6 +44,22 @@
       </li>
       <li>
         <a href="../html_files/contact.html" class="nav-link"> <i class="ri-contacts-book-line"></i>Contact</a>
+      </li>
+      <li>
+        <div id="google_translate_element"></div>
+        <script src="js_files/translate.js"></script>
+ 
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            );
+        }
+    </script>
+ 
+    <script type="text/javascript" src= "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
       </li>
         </ul>
         <div class="hamburger">
@@ -108,7 +125,29 @@
         <span style="--i: 20"></span>
       </div>
     </div>
-
+ <div class="containerf"> 
+		<h1>Frequently Asked Questions</h1> 
+		<div class="question-container"> 
+			<div class="question">Q: What is this website all about?</div> 
+			<div class="answer">A: Fix your nums is an online solution to your computational needs be it converting units to one another, currency converter, caesar cipher and basic arithmetic calculations.
+            </div> 
+			<hr>
+            <div class="question">Q:Are these calculators accurate?</div> 
+			<div class="answer">A: Yes, indeed our calculators are reliable as well as accurate .Our testimonials also say so..</div> 
+			<hr>
+            <div class="question">Q: Do I need any special software to use it?</div> 
+			<div class="answer">A: No, the only requirement is any web browser.</div> 
+            <hr>
+            <div class="question">Q: Is there anything I need to keep in mind when performing a calculation?</div> 
+			<div class="answer">A:  Yes. Remember that calculations are performed in accordance with a specific "calculation priority sequence". </div> 
+            <hr>
+            <div class="question">Q: Why should I prefer Fix your nums over any other website?</div> 
+			<div class="answer">A: Fix your nums is a one stop solution for every mathematical computations making it preferable over other websites.</div> 
+            <hr>
+            <div class="question">Q: What if my requirement calculator is not there?</div> 
+			<div class="answer">A: Write us a message or mail us at contact.jwoc@gmail.com</div> 
+		</div> 
+	</div> 
     <div class="row" id="box">
         <div class="column" id="compimg">
           <h3>We would love to hear from you!</h3>
@@ -117,16 +156,16 @@
         </div>
         <div class="column">
           <div id="error"></div>
-          <form name="myForm">
+          <form name="myForm" action="https://formsubmit.co/lomuvuhi@mailgolem.com" method="POST">
             <label for="fname">Full Name</label>
-            <input type="text" id="fname" name="fname" placeholder="Enter your name" oninput="checkname();" required>
+            <input type="text" id="fname" name="Name" placeholder="Enter your name" oninput="checkname();" required>
             <label for="email">Email</label>
-            <input type="text" id="email" name="email" placeholder="Enter your email" oninput="checkemail();" required>
+            <input type="text" id="email" name="Email" placeholder="Enter your email" oninput="checkemail();" required>
             <label for="contact">Mobile Number</label>
-            <input type="number" id="contact" name="contact" placeholder="Enter your number" oninput="checkcontact();"
+            <input type="number" id="contact" name="Contact" placeholder="Enter your number" oninput="checkcontact();"
               required>
             <label for="subject">Message</label>
-            <textarea id="subject" name="subject" placeholder="Write your message"></textarea>
+            <textarea id="subject" name="Message" placeholder="Write your message"></textarea>
             <div id="button">
 
               <input type="submit" value="Submit" id="submitdetails">
@@ -282,6 +321,21 @@
     }
   }
 </script>
+<script> 
+    const questions = document.querySelectorAll(".question"); 
+
+    questions.forEach((question) => { 
+        question.addEventListener("click", () => { 
+            question.classList.toggle("active"); 
+            const answer = question.nextElementSibling; 
+            if (answer.style.display === "block") { 
+                answer.style.display = "none"; 
+            } else { 
+                answer.style.display = "block"; 
+            } 
+        }); 
+    }); 
+</script> 
 </body>
 
 </html>
