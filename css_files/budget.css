@@ -1,0 +1,654 @@
+/***** Global css starts here *****/
+
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color:#ffeeb7;
+    --secondary-color: #ffb4a3;
+    --color--label: black;
+    --color--revert:white;
+}
+.dark-mode{
+    --primary-color:#1d061a;
+    --secondary-color: rgb(51, 46, 46);
+    --color--label: white;
+    --color--revert:black;
+}
+html {
+    font-size: 62.5%;
+    font-family: sans-serif;
+}
+
+/***** Global css ends here *****/
+
+/***** main css starts here *****/
+#icon{
+	width: 30px;
+	cursor: pointer;
+	margin: 10px;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+}
+body {
+    background: var(--primary-color);
+    min-height: 100vh;
+    padding: 5em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color--label);
+}
+.calculator-name-header {
+    background-color: var(--secondary-color);
+    color: var(--color--label);
+    margin: 15px 35%;
+    padding: 10px;
+    border-radius: 0px 15px 0px 15px;
+    box-shadow: 0px 0px 16px 1px;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 50px
+}
+#home{
+    /* background-color: black; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      position: fixed;
+      right: 2rem;
+      bottom: 2rem;
+      border-radius: 15px;
+      color: #ffffff;
+      background-color: #121916;
+      height: 3.8rem;
+      width: 3.5rem;
+      font-size: 4.5;
+      z-index: 999;
+  }
+.container {
+    padding: 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgb(0, 0, 0, 0.3);
+    color: var(--color--label);
+}
+
+/***** main css ends here *****/
+
+/***** css for balance starts here *****/
+
+.balance {
+    background: var(--secondary-color);
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    box-shadow: 0px 1px 2px rgb(0, 0, 0, 0.3);
+    color: var(--color--label);
+}
+
+.totalBal {
+    color: var(--color--label);
+    font-size: 1.2rem;
+    margin: 0.5em 0em;
+}
+
+.totalBalVal {
+    color: var(--color--label);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+.results {
+    background: var(--primary-color);
+    width: 100%;
+    padding: 1em;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color--label);
+}
+
+.up, .down {
+    font-size: 1rem;
+    font-weight: 900;
+    color: greenyellow;
+    margin-bottom: -0.1em;
+    margin-right: -0.2em;
+}
+
+.down {
+    color: orangered;
+}
+
+.resultType {
+    margin-bottom: 0.5em;
+}
+
+
+.incomeValue, .expenseValue {
+    color: var(--color--label);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/***** css for balance ends here *****/
+
+/***** css for progress starts here *****/
+
+progress {
+    border-radius: 5px;
+    width: 100%;
+    height: 1em;
+    margin-top: 1em;
+}
+
+progress::-webkit-progress-bar {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+progress::-webkit-progress-value {
+    background: var(--secondary-color);
+    border-radius: 5px;
+}
+
+/***** css for progress ends here *****/
+
+/***** css for buttons starts here *****/
+
+.addButtons {
+    margin-top: 0.1em;
+    margin-bottom: 1em;
+}
+
+.addIncome,
+.addExpense,
+.addProduct,
+.addAmmount,
+.updateProduct,
+.updateAmmount {
+    background: var(--primary-color);
+    color: var(--color--label);
+    outline: none;
+    border: none;
+    padding: 0.5em;
+    border-radius: 5px;
+    width: 100%;
+    font-weight: 700;
+    margin-top: 0.5em;
+    cursor: pointer;
+}
+
+.addProduct,
+.addAmmount,
+.updateProduct,
+.updateAmmount {
+    margin-top: 0;
+}
+
+.addExpense,
+.addProduct,
+.updateProduct {
+    background: var(--secondary-color);
+   
+}
+
+/***** css for buttons ends here *****/
+
+/***** css for user interface starts here *****/
+
+.productInterface,
+.ammountInterface {
+    padding: 1em;
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 0px 2px 4px rgb(0, 0, 0, 0.3);
+}
+
+.close {
+    color: #AAAAAA;
+    float: right;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--color--label);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.productName,
+.productType,
+.productCost,
+.incomeSource,
+.incomeType,
+.incomeAmmount {
+    width: 100%;
+    margin-bottom: 1em;
+    padding: 1em;
+    font-size: 1rem;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid gainsboro;
+    color: var(--color--label);
+}
+
+.hide {
+    display: none;
+}
+
+/***** css for user interface ends here *****/
+
+/***** css for delete interface starts here *****/
+
+.deleteInterface {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5em;
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 0px 2px 4px rgb(0, 0, 0, 0.3);
+    display: none;
+}
+
+.warningIcon {
+    font-size: 2rem;
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.2em;
+    border-radius: 5px;
+    margin-bottom: 0.5em;
+}
+
+.warningHeading {
+    font-size: 2rem;
+}
+
+.warningMessage {
+    text-align: center;
+    margin: 0.5em 0em;
+}
+
+.deleteActions {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 0.5em 0em;
+}
+
+.deleteNow,
+.cancelNow {
+    outline: none;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    width: 45%;
+    cursor: pointer;
+}
+
+.deleteNow {
+    background: var(--secondary-color);
+}
+
+/***** css for delete interface ends here *****/
+
+/***** css for single transaction starts here *****/
+
+.trans {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    margin-top: 2em;
+    box-shadow: 0px 1px 2px rgb(0, 0, 0, 0.3);
+    border-radius: 5px;
+    
+    
+}
+
+.iconDetails {
+    display: flex;
+}
+
+.transIcon {
+    font-size: 1.6rem;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.3em;
+    border-radius: 5px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+  
+}
+
+.itemDetails {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5em;
+   
+}
+
+.itemName,
+.itemPrice {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    color: black;
+}
+
+.itemType,
+.itemTime {
+    font-size: 0.8rem;
+    color: black;
+}
+
+.itemName,
+.itemType {
+    text-transform: capitalize;
+   
+}
+
+.itemTime {
+    text-align: right;
+   
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5em;
+}
+
+.edit,
+.delete {
+    background: var(--primary-color);
+    color: var(--color--label);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-top: 0.5em;
+    width: 45%;
+    cursor: pointer;
+}
+
+.delete {
+    background: var(--secondary-color);
+}
+
+.editTitle,
+.deleteTitle {
+    font-size: 1rem;
+    
+    margin-left: 0.4em;
+    margin-bottom: -0.1em;
+  
+}
+
+.noTasks {
+    font-size: 1.3rem;
+}
+
+/***** css for single transaction ends here *****/
+
+/***** css for pop up warning starts here *****/
+
+.snackBar {
+    visibility: hidden;
+    min-width: 25em;
+    margin-left: -12em;
+    background: var(--secondary-color);
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 5px;
+    padding: 1em;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 1em;
+}
+
+.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 1em;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 1em;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+/***** css for pop up warning ends here *****/
+
+/***** css for medium to large screens ends here *****/
+
+@media only screen and (min-width: 400px) {
+    .container {
+        padding: 2em;
+        max-width: 700px;
+    }
+
+    .balance {
+        padding: 2em;
+    }
+
+    .totalBal {
+        font-size: 2rem;
+    }
+
+    .totalBalVal {
+        font-size: 5rem;
+    }
+
+    .results {
+        padding: 2em;
+    }
+
+    .up, .down {
+        font-size: 2rem;
+        margin-left: 0;
+    }
+
+    .resultTitle {
+        font-size: 1.8rem;
+    }
+
+    .incomeValue,
+    .expenseValue {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    progress {
+        margin-top: 1.5em;
+    }
+
+    .addButtons {
+        margin-top: 1.5em;
+        margin-bottom: 2em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .addIncome,
+    .addExpense {
+        width: 49%;
+        margin-top: 0;
+        padding: 1em;
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+
+    .addIncome {
+        margin-left: 0.1em;
+    }
+
+    .productInterface,
+    .ammountInterface {
+        padding: 2em;
+    }
+
+    .close {
+        font-size: 3rem;
+        margin-bottom: 0.5em;
+    }
+
+    .productName,
+    .productType,
+    .productCost,
+    .incomeSource,
+    .incomeType,
+    .incomeAmmount {
+        padding: 1em;
+        font-size: 1.6rem;
+    }
+
+    .addProduct,
+    .addAmmount,
+    .updateProduct,
+    .updateAmmount {
+        padding: 1em;
+        font-size: 1.6rem;
+    }
+
+    .deleteInterface {
+        padding: 1em;
+    }
+
+    .warningIcon {
+        font-size: 3rem;
+        padding: 0.3rem;
+    }
+
+    .warningHeading {
+        font-size: 3rem;
+    }
+
+    .warningMessage {
+        font-size: 1.6rem;
+        margin: 1em 0em;
+    }
+
+    .deleteNow,
+    .cancelNow {
+        font-size: 2rem;
+        padding: 0.8rem;
+    }
+
+    .trans {
+        padding: 1em;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2em;
+    }
+
+    .item {
+        margin-bottom: 0;
+        width: 65%;
+        justify-content: space-between;
+    }
+
+    .transIcon {
+        font-size: 3rem;
+        margin-right: 0.1em;
+        margin-top: -0.2em;
+    }
+
+    .itemName {
+        font-size: 1.4rem;
+    }
+
+    .itemType {
+        font-size: 1.2rem;
+    }
+
+    .itemPrice {
+        font-size: 1.4rem;
+    }
+
+    .itemTime {
+        font-size: 1.2rem;
+    }
+
+    .actions {
+        width: 30%;
+        margin-bottom: 2.5em;
+    }
+
+    .edit,
+    .delete {
+        padding: 1em;
+    }
+
+    .actionIcon {
+        font-size: 1.4rem;
+    }
+
+    .editTitle,
+    .deleteTitle {
+        display: none;
+    }
+
+    .noTasks {
+        font-size: 1.6rem;
+    }
+
+    .snackBar {
+        font-size: 1.6rem;
+    }
+}
+
+/***** css for medium to large screens ends here *****/    
+
+
