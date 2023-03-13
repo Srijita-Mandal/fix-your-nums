@@ -1,0 +1,79 @@
+<!-- Cryptocurrency convereter -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Crypto Converter</title>
+    <link rel="stylesheet" href="../css_files/ccstyle.css">
+    <link rel="stylesheet" href="../css_files/ctheme.css">
+    <link rel="stylesheet" href="../css_files/result.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="icon" href="../assets/Image/Favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+  </head>
+  <body>
+    <img src="../assets/Image/moon.png" id="icon" />
+    <div class="wrapper form" style="margin-top: 7rem;">
+      <div class="calculator-name-header">
+        <!-- Updated by @Shantanu-Meta   -->
+        <span>Crypto Converter</span>
+      </div>
+      <form action="#">
+        <div class="amount">
+          <p>Enter Amount</p>
+          <input type="text" id="value" >
+        </div>
+        <div class="drop-list">
+          <div class="from">
+            <p>From</p>
+            <div class="select-box">
+              <select><span class="crypto"></span>
+                <option value="BTC">BTC</option>
+                <option value="ETH">ETH</option>
+                <option value="ETH2">ETH2</option>
+                <option value="USDT">USDT</option>
+                <option value="BNB">BNB</option>
+                <option value="MATIC">MATIC</option>
+                <option value="DOGE">DOGE</option>
+              </select>
+            </div>
+          </div>
+          <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+          <div class="to">
+            <p>To</p>
+            <div class="select-box">
+              <p><span class="usdchanged"></span>USD</p>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="outterbox">
+          <div class="box"><span id="exchange" class="exchange-rate">Converting...</span></div>
+      </div>
+      <br>
+        <!-- <div class="exchange-rate">Converting...</div> -->
+        <button id="button" >Convert</button>
+        <button style="margin-top: 3px;" id="button2" onclick="currSet()">Reset</button>
+      </form>
+    </div>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+
+    <script>
+      function currSet(){
+        document.querySelector("#button2").addEventListener('click',function(){
+        document.querySelector("#value").value="1";
+        document.querySelector('.exchange-rate').innerHTML="1 BTC = 20630.03 USD";
+      });
+      }
+      
+    </script>
+    <script src="../js_files/cryptolist.js"></script>
+    <!--<script src="../js_files/script.js"></script>-->
+    <script src="../js_files/cctheme.js"></script>
+
+  </body>
+</html>
