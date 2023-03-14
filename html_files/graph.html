@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Line Graph</title>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<style>
+     *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+     }
+		canvas {
+			display: block;
+			margin: auto;
+		}
+    body{
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.top-txt{
+    margin-bottom: 15px;
+}
+.container{
+    box-shadow: 0 0 4px 1px rgb(179, 169, 169);
+    width: 675px;
+    height: 375px;
+    border-radius: 10px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;  
+    flex-direction: column;  
+    background-color: #ffb4a3;
+}
+.container p{
+    color: rgb(20, 94, 82);
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+   
+}
+.inputContainer{
+    margin:5px;
+    display: flex;
+    justify-content: space-between;
+    width:80%;
+}
+.inputContainer label{
+    font-size: larger;
+}
+.inputContainer input{
+    border:none;
+    outline: none;
+    box-shadow: 0.1px 1px 2px 1px rgb(145, 140, 140);
+    padding:4px;
+    font-size: large;
+    border-radius: 2px;
+   
+} 
+.calculator-name-header{
+                text-align: center;
+                padding: 10px;
+                border-radius: 0px 15px 0px 15px;
+                box-shadow: 0px 0px 16px 1px;
+                font-size: 30px;
+                margin: 25px 30%;
+      }
+    
+	</style>
+  <link rel="stylesheet" href="../css_files/theme.css">
+</head>
+<body bgcolor="#ffeeb7">
+  <img src="../assets/Image/moon.png" id="icon">
+  <div class="calculator-name-header">
+      <!-- Updated by @Shantanu-Meta   -->
+      <span>Line Graph calculator</span>
+    </div>
+  <div class="container">
+      
+      <p class="top-txt">Enter value in any of the fields to convert between Length measurements:</p>
+      <div class="inputContainer">
+          <label for="x_values">Enter X Values (separated by comma):</label><input type="text" name="" id="x_values"  >
+      </div>
+      <div class="inputContainer">
+          <label for="y_values">Enter Y Values (separated by comma):</label><input type="text" name="" id="y_values">
+      </div>
+      <button onclick="drawGraph()" style="height: 30px; width: 200px; font-size: large; margin-top: 10px; background-color: black; color: aliceblue;"> Plot Graph</button><br><br>
+	    <canvas id="myChart"></canvas>
+      
+  </div>        
+	<script>
+		function drawGraph() {
+			var x_values = document.getElementById("x_values").value.split(",");
+			var y_values = document.getElementById("y_values").value.split(",");
+			var data = {
+				labels: x_values,
+				datasets: [{
+					label: 'Line Graph',
+					data: y_values,
+					fill: false,
+					borderColor: 'rgb(83, 52, 58)',
+					lineTension: 0.1
+				}]
+			};
+			var options = {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero:true
+						}
+					}]
+				}
+			};
+			var ctx = document.getElementById('myChart').getContext('2d');
+			var myChart = new Chart(ctx, {
+				type: 'line',
+				data: data,
+				options: options
+			});
+		}
+	</script>
+</body>
+</html>
