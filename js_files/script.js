@@ -1346,4 +1346,157 @@ function convert(num) {
 
 }
 
+// ------------ rank of a matrix ----------//
+
+// Get elements from the DOM
+const form = document.getElementById('matrixForm');
+const matrixInput = document.getElementById('matrixInput');
+const rankResult = document.getElementById('rankResult');
+const resetBtn = document.getElementById('resetBtn');
+const message = document.getElementById('message');
+
+// Create a function to reset the matrix
+// function resetMatrix() {
+//   form.reset();
+//   rankResult.textContent = '';
+//   message.textContent = '';
+//   matrixInput.innerHTML = `
+//     <div class="matrix-row">
+//       <span class="matrix-index">1</span>
+//       <input type="text" class="matrix-element" id="row-1-col-1" name="row-1-col-1" />
+//       <input type="text" class="matrix-element" id="row-1-col-2" name="row-1-col-2" />
+//       <input type="text" class="matrix-element" id="row-1-col-3" name="row-1-col-3" />
+//     </div>
+//     <div class="matrix-row">
+//       <span class="matrix-index">2</span>
+//       <input type="text" class="matrix-element" id="row-2-col-1" name="row-2-col-1" />
+//       <input type="text" class="matrix-element" id="row-2-col-2" name="row-2-col-2" />
+//       <input type="text" class="matrix-element" id="row-2-col-3" name="row-2-col-3" />
+//     </div>
+//     <div class="matrix-row">
+//       <span class="matrix-index">3</span>
+//       <input type="text" class="matrix-element" id="row-3-col-1" name="row-3-col-1" />
+//       <input type="text" class="matrix-element" id="row-3-col-2" name="row-3-col-2" />
+//       <input type="text" class="matrix-element" id="row-3-col-3" name="row-3-col-3" />
+//     </div>
+//   `;
+// }
+function resetMatrix() {
+  const rows = parseInt(document.getElementById("rows").value);
+  const cols = parseInt(document.getElementById("cols").value);
+
+  const form = document.getElementById("matrixForm");
+  form.reset();
+  rankResult.textContent = '';
+  message.textContent = '';
+
+  let matrixHTML = '';
+  for (let i = 1; i <= rows; i++) {
+    matrixHTML += `<div class="matrix-row">`;
+    for (let j = 1; j <= cols; j++) {
+      matrixHTML += `
+        <input type="text" class="matrix-element" id="row-${i}-col-${j}" name="row-${i}-col-${j}" />
+      `;
+    }
+    matrixHTML += `</div>`;
+  }
+
+  matrixInput.innerHTML = matrixHTML;
+}
+
+function swapRows(matrix, i, j) {
+  let temp = matrix[i];
+  matrix[i] = matrix[j];
+  matrix[j] = temp;
+}
+ // generate matrix
+function generateMatrix() {
+  // Get the user input for rows and columns
+  const rows = parseInt(document.getElementById("rows").value);
+  const cols = parseInt(document.getElementById("cols").value);
+
+  // Get the element where the matrix will be displayed
+  const matrixInput = document.getElementById("matrixInput");
+
+  // Generate the HTML code for the matrix based on the user's input
+  let matrixHTML = "";
+  for (let i = 1; i <= rows; i++) {
+    matrixHTML += `<div class="matrix-row">`;
+    for (let j = 1; j <= cols; j++) {
+      matrixHTML += `
+        <input type="text" class="matrix-element" id="row-${i}-col-${j}" name="row-${i}-col-${j}" />
+      `;
+    }
+    matrixHTML += `</div>`;
+  }
+
+  // Set the HTML code for the matrix
+  matrixInput.innerHTML = matrixHTML;
+}
+
+// Create a function to calculate the rank of the matrix
+function calculateRank() {
+  // Get the number of rows and columns
+  const rows = parseInt(document.getElementById('rows').value);
+  const cols = parseInt(document.getElementById('cols').value);
+
+  // Create a matrix to hold the input values
+  const matrix = [];
+
+  // Loop through the rows and columns to get the input values
+  for (let i = 1; i <= rows; i++) {
+    const row = [];
+    for (let j = 1; j <= cols; j++) {
+      const input = document.getElementById(`row-${i}-col-${j}`);
+      row.push(parseFloat(input.value) || 0);
+    }
+    matrix.push(row);
+  }
+
+  // Check if the matrix is valid (i.e. all rows have the same length)
+  const isValid = matrix.every(row => row.length === cols);
+  if (!isValid) {
+    message.textContent = 'Error: Matrix is not valid.';
+    return;
+  }
+
+  // Calculate the rank of the matrix using gaussian elimination
+  let rank = 0;
+  let lead = 0;
+  for (let r = 0; r < rows && lead < cols; r++) {
+    let i = r;
+    while (matrix[i][lead] === 0) {
+      i++;
+      if (i === rows) {
+        i = r;
+        lead++;
+        if (lead === cols) {
+          break;
+        }
+      }
+    }
+    if (lead === cols) {
+      break;
+    }
+    swapRows(matrix, i, r);
+    const pivot = matrix[r][lead];
+    for (let j = lead; j < cols; j++) {
+      matrix[r][j] /= pivot;
+    }
+    for (let k = 0; k < rows; k++) {
+      if (k === r) {
+        continue;
+      }
+      const factor = matrix[k][lead];
+      for (let j = lead; j < cols; j++) {
+        matrix[k][j] -= factor * matrix[r][j];
+      }
+    }
+    rank++;
+    lead++;
+  }
+  const rankResult = document.getElementById('rankResult');
+  rankResult.innerText = `Rank : ${rank}`;
+}
+
 
