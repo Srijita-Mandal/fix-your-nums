@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="Image/Favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css_files/theme.css" />
+    <title>Heat Calculator</title>
+   
+    <script type="text/javascript">
+   
+  
+   
+        function dosomething(){
+            
+          const operation = document.getElementById("cal");
+    const valOpe = operation.value;
+    
+        if(valOpe=="Mass-temp Method") {
+        document.querySelector("#num1").placeholder="Mass";
+        document.querySelector("#num2").placeholder= "Specific-Heat";
+        
+        document.querySelector("#num3").placeholder="Temp diff";
+        
+        }
+        
+        else {
+        document.querySelector("#num1").placeholder= "Voltage";
+        document.querySelector("#num2").placeholder= "Current";
+        document.querySelector("#num3").placeholder= "time";
+        }
+    
+  
+        }
+        const Sum=()=>{
+    console.log("hi");
+    const operation = document.getElementById("cal");
+    const valOpe = operation.value;
+    
+    let a= parseFloat(document.getElementById("num1").value);
+    let d= parseFloat(document.getElementById("num2").value);
+    let n= parseFloat(document.getElementById("num3").value);
+    if(valOpe=="AP Series"){
+        console.log("Helo");
+        let sum2= a*d*n;
+        document.getElementById("resultCalculator").innerHTML=sum2;
+    }
+    else{
+        let r=d;
+        let sum1= a*d*n;
+        document.getElementById("resultCalculator").innerHTML=sum1;
+    }
+}
+    
+    </script>
+
+  </head>
+  <body style="overflow-x: hidden;">
+    <img src="../assets/Image/moon.png" id="icon" />
+    <div class="calculator-name-header">
+      
+      <span> Heat calculator</span>
+     
+    </div>
+    <form id="calc" class="form-horizontal">
+        <label for="cal">Please enter the Method You want to follow</label><br/>
+        <select name="cal" id="cal" onchange="dosomething()">
+          <option disabled selected value="nothing">Choose the Method</option>
+            <option value="Mass-temp Method">Mass-Temp Method</option>
+            <option value="Voltage-time Method">Voltage-time Method</option>
+          
+        </select><br/><br/>
+         
+        <input type="number" name="num1" id="num1" placeholder="Mass">
+        
+        <input type="number" name="num2" id="num2" placeholder="Specific-Heat">
+        <input type="number" name="num3" id="num3" placeholder="Temp diff">
+        <br/><br/>
+        <button type="button" onclick="document.location.reload()" id="calc1">Reset</button>
+        <button type="button" onclick="Sum()">Submit</button><br><br><br>
+  
+        <div class="outterbox">
+            <div class="box" id="resultbox"><span id="resultCalculator" ></span></div>
+        </div>
+  
+    </form>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    
+    <script src="../js_files/theme.js"></script>
+    <script src="../js_files/script.js"></script>
+    <script type="text/javascript">
+        document.getElementById("calc").addEventListener("submit",(e)=>{
+            e.preventDefault()
+            Sum()
+        })
+        document.body.addEventListener("keyup",(e)=>{
+                if(e.keyCode==13){
+                    Sum()
+                }
+            })
+    </script>
+   
+    </body>
+    
+    
+  </html>
+  
