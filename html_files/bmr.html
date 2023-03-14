@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" type="text/css" href="../css_files/bmr.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <title>BMR Calculator</title>
+  </head>
+  <body style="overflow:hidden;">
+    <div class="content">
+    <div class="bmr-calculator">
+      <h2>BMR CALCULATOR</h2>
+        <div class="controls">
+        <form>
+          <h3>Age (10 - 100)</h3>
+          <input type="text" id="age" />
+
+          <div class="gender">
+            <h3>Gender</h3>
+            <input type="radio" id="male" value="male" name="gender" />
+            <label for="male">Male</label>
+            <input type="radio" id="female" value="female" name="gender" />
+            <label for="female">Female</label>
+          </div>
+
+          <div class="height">
+            <h3>Height</h3>
+            <input type="text" id="height" />
+            <div class="unit">cm</div>
+          </div>
+
+          <div class="weight">
+            <h3>Weight</h3>
+            <input type="text" id="weight" />
+            <div class="unit">kg</div>
+          </div>
+        </form>
+      </div>
+
+      <div class="result">
+        <button class="calculate-btn">Calculate</button>
+        <div class="result-message">
+          <span class="calories">0</span> Calories/day
+        </div>
+        <div class="error-message">
+          <p>Please enter all the details correctly.</p>
+        </div>
+      </div>
+    </div>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <script src="../js_files/bmr.js"></script>
+    <script src="../js_files/theme.js"></script>
+    </div>
+  </body>
+</html>
