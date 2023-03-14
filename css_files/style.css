@@ -9,6 +9,7 @@ body {
   height: 100vh;
   background-color: #ffeeb7;
   display: grid;
+  
   place-items: center;
   /* overflow: hidden; */
   overflow-x: hidden;
