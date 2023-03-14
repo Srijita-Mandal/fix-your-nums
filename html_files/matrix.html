@@ -10,9 +10,8 @@
   <link rel="icon" href="../assets/Image/Favicon.png" />
   <title>Matrix Calculator</title>
  <style>
-    body {
-
-             font-family: 'Ubuntu', sans-serif;
+  body {
+  font-family: 'Ubuntu', sans-serif;
 	margin: 0;
 	margin-bottom: 50px;
 	color: var(--color--label);
@@ -21,8 +20,18 @@
 	line-height: 30px;
 }
 .container{
-    width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  margin-bottom: 4rem !important;
 }
+
+.inner-container{
+  text-align: center;
+  margin-top: 2rem;
+}
+
 .container input[type=number] {
 	width: 60px;
 	
@@ -33,8 +42,16 @@
 	margin-top: 5px;
 }
 
+.matrix-set{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%
+}
+
 button {
-    height: 35px;
+  height: 35px;
   margin: 20px;
   margin-bottom: 40px;
   width: 100px;
@@ -45,14 +62,12 @@ button {
   color: white;
 }
 
-
-
-
 p {
 	display: inline-block;
 }
 .result {
 	line-height: 5px;
+  text-align: center;
 }
 .block {
 	padding: 15px;
@@ -64,8 +79,8 @@ p {
 }
 
 .calculator-name-header{
-    margin: 25px 35%;
-    padding: 10px;
+    padding: 12px;
+    margin-top: 3rem;
     border-radius: 0px 15px 0px 15px;
     box-shadow: 0px 0px 16px 1px;
     font-size: 30px;
@@ -90,17 +105,37 @@ p {
     z-index: 999;
 }
 
+@media (max-width: 650px){
+  .container{
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .inner-container{
+    margin-top: 0 !important;
+  }
+
+  .calculator-name-header{
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+
+}
+
  </style>
 </head>
 <body>
 
     <img src="../assets/Image/moon.png" id="icon">
+
+    <section class="matrix-set">
     <div class="calculator-name-header">
       <span>Matrix Adjoint Calculator</span>
    </div>
-  <center>
+
+   <div class="container">
    
-    <div class="container">
+    <div class="inner-container">
       <p>ENTER THE MATRIX  </p>
       <br>
       <input id="num11" type="number" name="" placeholder="0" >
@@ -117,6 +152,8 @@ p {
       <br>
       <button id = "bts">Calculate</button>
       <button type="button" class="main-btn" id="reset-btn" onClick="fun10()">Reset</button>
+
+      </div>
       
         <div class="result">
         <br>
@@ -144,7 +181,9 @@ p {
         <br>
       
     </div>
-  </center>
+    </div>
+
+  </section>
 
   <script>
     document.getElementById("bts").addEventListener( 'click' , function(){

@@ -15,26 +15,30 @@
 </head>
 <style>
     body {
-        text-align: center;
-        margin-bottom: 3em;
+        /* margin-bottom: 3em; */
+    }
+
+    .kinetic-set{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .container {
-        width: 450px;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 480px;
-        margin-left: 530px;
+        padding: 3rem 6rem;
+        text-align: center;
     }
 
     .calculator-name-header {
-        margin: 35px 35%;
-        padding: 10px;
+        margin-top: 4rem;
+        padding: 14px;
         border-radius: 0px 15px 0px 15px;
         box-shadow: 0px 0px 16px 1px;
-        font-size: 30px;
-        text-align: center;
+        font-size: 28px;
         margin-bottom: 50px
     }
 
@@ -57,10 +61,7 @@
     }
 
     .btn-kinetic-energy {
-        height: 35px;
-        margin: 20px;
-        margin-bottom: 40px;
-        width: 100px;
+        padding: 0.7rem 2rem;
         font-size: 15px;
         border: none;
         border-radius: 3px;
@@ -84,20 +85,40 @@
     }
 
     .main-btn {
-        height: 35px;
-        margin: 20px;
-        margin-bottom: 40px;
-        width: 100px;
+        padding: 0.7rem 2rem;
         font-size: 15px;
         border: none;
         border-radius: 3px;
         background-color: black;
         color: white;
+        margin-left: 10px;
     }
+
+    .outterbox{
+        margin-top: 2.5rem;
+    }
+
+    @media(max-width: 550px){
+        .main-btn {
+            margin-left: 0;
+        }
+
+        .container {
+            padding: 2rem 4rem;
+        }
+
+        .calculator-name-header{
+            font-size: 1.2rem;
+            padding: 12px;
+        }
+    }
+
 </style>
 
 <body>
     <img src="../assets/Image/moon.png" id="icon">
+
+    <section class="kinetic-set">
     <div class="calculator-name-header">
         <span>Kinetic Energy Calculator</span>
     </div>
@@ -129,6 +150,8 @@
           </div>
 
     </div>
+
+</section>
     <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
     <script src="../js_files/theme.js"></script>
 </body>
