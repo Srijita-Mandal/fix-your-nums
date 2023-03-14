@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heron's Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="stylesheet" href="../css_files/theme.css">
+    <link rel="icon" href="../assets/Image/Favicon.png">
+    <style>
+        #resultDeriv {
+            padding: 0 1rem;
+        }
+
+        input {
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            border-color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <!-- Updated by @Shantanu-Meta   -->
+        <span>Heron's Calculator</span>
+    </div>
+    <form class="form-horizontal" id="age">
+        <label class="heading"> Find Area of Triangle using Heron's Formula</label><br /><br />
+        <p class="infoDeriv">This calculator will find the Area of the triangle upon entering its three sides.</p>
+        <label class="func" for="side1">Side A : </label><br /><br />
+        <input type="number" name="func" id="side1" placeholder="Enter side A" value="23"><br /><br /><br />
+        <label class="func" for="side2">Side B : </label><br /><br />
+        <input type="number" value="12" name="func" id="side2" placeholder="Enter side B"><br /><br /><br />
+        <label class="func" for="side3">Side C : </label><br /><br />
+        <input type="number" name="func" value="34" id="side3" placeholder="Enter Side C"><br /><br /><br />
+        <button type="button" style="cursor: pointer;" onclick="validateForm()">Submit</button><br /><br /><br />
+        <button class="reset" type="reset" style="cursor: pointer;">Reset</button><br /><br /><br />
+        <span id="inputExpression"></span>
+        <div class="outterbox">
+            <div class="box"><span id="resultDeriv"></span></div>
+        </div>
+    </form>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <!-- <script src="script.js"></script> -->
+    <script src="../js_files/theme.js"></script>
+
+</body>
+<script>
+    function validateForm() {
+        var side1 = Number(document.getElementById("side1").value);
+        var side2 = Number(document.getElementById("side2").value);
+        var side3 = Number(document.getElementById("side3").value);
+
+        let s = (side1 + side2 + side3) / 2
+        console.log(s)
+        let Area = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3))
+        console.log(Area)
+        if (isNaN(Area)) {
+            alert("Sum of Smallest Two Sides must be greater than the Largest Side")
+        }
+        else {
+            Area = Math.round(Area * 100) / 100
+
+            document.getElementById("resultDeriv").innerHTML = `<p style="color: black">The Area of the Triangle : <b>${Area} (unit)<sup>2</sup></b></p>`;
+        }
+    }
+
+
+
+</script>
+
+</html>
