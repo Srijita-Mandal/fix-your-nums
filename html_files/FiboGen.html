@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css_files/FiboGen.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="stylesheet" href="../css_files/style.css">
+    <link rel="stylesheet" href="../css_files/theme.css">
+    <link rel="icon" href="../assets/Image/Favicon.png">
+    <title>Fibonacci Series Generator calculator</title>
+</head>
+<body style="overflow: hidden;">
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <span>Fibonacci Series Generator calculator</span>
+      </div>
+    <form class="form-horizontal" id="FibCalc">
+       <label for="number">Enter the number of terms:</label>
+       <input type="number" id="number" name="number" min="1"><br>
+        <button type="button" id="FiboSet" onclick="resetFibo()">Reset</button>
+
+        <button type="button" onclick="calculateFibo()">Submit</button><br/><br/><br/>
+        <div class="outterbox">
+            <div class="box" id="resultboxFibo" style="display:none"><span id="resultFibo"></span></div>
+        </div>
+    </form>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+
+    <script src="../js_files/FiboGen.js"></script>
+    <script type="text/javascript">
+        document.getElementById("FiboCalc").addEventListener("submit",(e)=>{
+            e.preventDefault()
+            calculateFibo()
+        })
+        document.body.addEventListener("keyup",(e)=>{
+                if(e.keyCode==13){
+                    calculateFibo()
+                }
+            })
+    </script>
+</body>
+</html>
+
+

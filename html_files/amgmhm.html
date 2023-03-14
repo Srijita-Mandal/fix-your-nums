@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="stylesheet" href="../css_files/theme.css">
+    <link rel="icon" href="../assets/Image/Favicon.png">
+    <title>Mean Converting calculator</title>
+
+</head>
+<body>
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+       <!-- updated by @Tania Banerjee -->
+        <span>Mean converting calculator</span>
+      </div>
+    <form id="calc" class="form-horizontal">
+        <label for="cal">Please enter two numbers and select your operation:</label><br/>
+        <select name="cal" id="cal">
+            <option value="am">Arithmetic Mean</option>
+            <option value="gm">Geometric Mean</option>
+            <option value="hm">Harmonic Mean</option>
+        </select><br/><br/>
+         
+        <input type="number" name="num1" id="num1" placeholder="First Number">
+        
+        <input type="number" name="num2" id="num2" placeholder="Second Number" ><br/><br/>
+        <button type="button" onclick="fun4()" id="calc1" style="cursor: pointer;">reset</button>
+        <button type="button" onclick="meancalculator()" style="cursor: pointer;">Submit</button><br><br><br>
+
+        <div class="outterbox">
+            <div class="box"><span id="resultCalculator"></span></div>
+        </div>
+
+    </form>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+
+    <script src="../js_files/amgmhm.js"></script>
+    <script type="text/javascript">
+        
+    </script>
+    <script src="../js_files/theme.js"></script>
+</body>
+</html>

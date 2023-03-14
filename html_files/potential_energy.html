@@ -11,15 +11,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
         integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="icon" href="../assets/Image/Favicon.png" />
-    <title>Work Calculator</title>
+    <title>Potential Energy Calculator</title>
 </head>
 <style>
     body {
-        text-align: center;
+        /* text-align: center; */
         margin-bottom: 3em;
     }
 
-    .work-cal{
+    .potential-set{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -30,42 +30,17 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 40vw;
-        padding: 1rem 3rem 2.5rem;
+        padding: 3rem 6rem;
+        text-align: center;
     }
 
     .calculator-name-header {
-        margin-top: 3rem;
-        padding: 15px;
+        margin-top: 2.5rem;
+        padding: 14px;
         border-radius: 0px 15px 0px 15px;
         box-shadow: 0px 0px 16px 1px;
-        font-size: 30px;
-        text-align: center;
+        font-size: 28px;
         margin-bottom: 50px
-    }
-
-    @media (max-width: 600px){
-        .calculator-name-header {
-            font-size: 1.3rem;
-            padding: 12px;
-        }
-
-        .calc-work h2{
-        font-size: 1.5rem !important;
-        }
-
-        .btn-work {
-            margin-bottom: 1rem;
-        }
-
-        .main-btn {
-            margin-left: 0 !important;
-        }
-
-    }
-
-    .calc-work h2{
-        font-size: 2rem;
     }
 
     #home {
@@ -111,25 +86,40 @@
     }
 
     .main-btn {
-        margin-left: 1rem;
         padding: 0.7rem 2rem;
         font-size: 15px;
         border: none;
         border-radius: 3px;
         background-color: black;
         color: white;
+        margin-left: 1rem;
     }
 
-    .calc-work .outterbox{
-        margin-top: 2rem;
+    .outterbox{
+        margin-top: 2.5rem;
+    }
+
+    @media(max-width: 550px){
+        .main-btn {
+            margin-left: 5px;
+        }
+
+        .container {
+            padding: 2rem 3rem;
+        }
+
+        .calculator-name-header{
+            font-size: 1.2rem;
+            padding: 12px;
+        }
     }
 </style>
 
 <body>
-    <section class="work-cal">
     <img src="../assets/Image/moon.png" id="icon">
+    <section class="potential-set">
     <div class="calculator-name-header">
-        <span>Work Calculator</span>
+        <span>Potential Energy Calculator</span>
     </div>
     <div class="container">
 
@@ -137,13 +127,15 @@
         <!-- <h1>Physics Calculations</h1> -->
 
         <div class="calc-work" id="calc-work">
-            <h2>Calculate Work</h2>
-            <p>Force (in Newtons):</p>
-            <input type="number" class="force-for-work"></input>
+            <h2>Calculate Potential Energy</h2>
+            <p>Mass (in Kilograms):</p>
+            <input type="number" class="mass-for-energy"></input>
             <br>
             <br>
-            <p>Distance (in Meters):</p>
-            <input type="number" class="distance-for-work"></input>
+            <br>
+            <p>Height (in Meters):</p>
+            <input type="number" class="height-for-energy"></input>
+            <br>
             <br>
             <br>
             <button class="btn-work">Calculate</button>
@@ -153,8 +145,7 @@
             <div class="outterbox">
                 <div class="box"><span class="work-result results" id="result"></span></div>
             </div>
-            
-          </div>
+        </div>
 
     </div>
 
@@ -165,22 +156,22 @@
 <script>
     //Calculates pressure
     document.getElementsByClassName('btn-work')[0].addEventListener('click', () => {
-    let forceForWork = document.getElementsByClassName('force-for-work')[0].value;
-    let distanceForWork = document.getElementsByClassName('distance-for-work')[0].value;
-    if (isNaN(forceForWork)) {
-      alert('Enter a valid number into the Force input.');
+    let MassForWork = document.getElementsByClassName('mass-for-energy')[0].value;
+    let distanceForWork = document.getElementsByClassName('height-for-energy')[0].value;
+    if (isNaN(MassForWork)) {
+      alert('Enter a valid number into the Mass input.');
     } else if (isNaN(distanceForWork)) {
-      alert('Enter a valid number into the Distance input.');
+      alert('Enter a valid number into the Height input.');
     } else {
-      let workResult = distanceForWork * forceForWork;
-      document.getElementsByClassName('work-result')[0].innerHTML = 'Work: ' + workResult + " J" ;
+      let workResult = 9.8 * distanceForWork * MassForWork;
+      document.getElementsByClassName('work-result')[0].innerHTML = 'Potential energy: ' + workResult + " J" ;
     }
   });
 
     function fun10() {
         document.querySelector("#reset-btn").addEventListener('click', function () {
-            document.getElementsByClassName('force-for-work')[0].value= "";
-            document.getElementsByClassName('distance-for-work')[0].value = "";
+            document.getElementsByClassName('mass-for-energy')[0].value= "";
+            document.getElementsByClassName('height-for-energy')[0].value = "";
            
             document.getElementsByClassName('work-result')[0].innerHTML = "";
         });
