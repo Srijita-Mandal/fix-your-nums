@@ -275,11 +275,20 @@ h2{
 }
 
 .calc_lists .second-col {
-  counter-reset: index 24;  
+  counter-reset: index 25;  
   padding: 0;
   max-width: 300px;
 }
-
+.calc_lists .third-col {
+  counter-reset: index 50;  
+  padding: 0;
+  max-width: 300px;
+}
+.calc_lists .four-col {
+  counter-reset: index 75;  
+  padding: 0;
+  max-width: 300px;
+}
 /* List element */
 .calc_lists  li {
   counter-increment: index; 
