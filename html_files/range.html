@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="stylesheet" href="../css_files/theme.css">
+    <link rel="icon" href="../assets/Image/Favicon.png">
+    <style>
+        #resultDeriv {
+            padding: 0 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <!-- Updated by @Shantanu-Meta   -->
+        <span>Range Calculator</span>
+    </div>
+    <form class="form-horizontal" id="age">
+        <label class="heading"> Calculate Range</label><br /><br />
+        <p class="infoDeriv">This calculator will give the <b>Range</b> of the entered sample/population
+        </p>
+        <label class="func" for="func">Enter the sample : </label><br /><br />
+        <input type="text" name="func" id="func_input" placeholder="15, 11, 25, 23, 10, 27"><br /><br /><br />
+        <button type="button" style="cursor: pointer;" onclick="document.location.reload()" >Reset</button>
+        <button type="button" style="cursor: pointer;" onclick="validateForm()">Submit</button><br /><br /><br />
+        <span id="inputExpression"></span>
+        <div class="outterbox">
+            <div class="box"><span id="resultDeriv"></span></div>
+        </div>
+
+    </form>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <!-- <script src="script.js"></script> -->
+    <script src="../js_files/theme.js"></script>
+
+</body>
+<script>
+    function validateForm() {
+        var func = document.getElementById("func_input").value;
+        var numbersArray = func.split(",").map(Number);
+        arr = Object.values(numbersArray);
+        const result = range(arr)
+        document.getElementById("resultDeriv").innerHTML = `<p style="color: black">Range (α) : <b>${result}</b></p>`;
+    }
+
+
+    function range(arr) {
+    arr.sort();
+    return [arr[0], arr[arr.length - 1]];
+}
+
+</script>
+
+</html>
