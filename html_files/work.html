@@ -19,23 +19,53 @@
         margin-bottom: 3em;
     }
 
+    .work-cal{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     .container {
-        width: 450px;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 480px;
-        margin-left: 530px;
+        width: 40vw;
+        padding: 1rem 3rem 2.5rem;
     }
 
     .calculator-name-header {
-        margin: 35px 35%;
-        padding: 10px;
+        margin-top: 3rem;
+        padding: 15px;
         border-radius: 0px 15px 0px 15px;
         box-shadow: 0px 0px 16px 1px;
         font-size: 30px;
         text-align: center;
         margin-bottom: 50px
+    }
+
+    @media (max-width: 600px){
+        .calculator-name-header {
+            font-size: 1.3rem;
+            padding: 12px;
+        }
+
+        .calc-work h2{
+        font-size: 1.5rem !important;
+        }
+
+        .btn-work {
+            margin-bottom: 1rem;
+        }
+
+        .main-btn {
+            margin-left: 0 !important;
+        }
+
+    }
+
+    .calc-work h2{
+        font-size: 2rem;
     }
 
     #home {
@@ -57,10 +87,7 @@
     }
 
     .btn-work {
-        height: 35px;
-        margin: 20px;
-        margin-bottom: 40px;
-        width: 100px;
+        padding: 0.7rem 2rem;
         font-size: 15px;
         border: none;
         border-radius: 3px;
@@ -84,19 +111,22 @@
     }
 
     .main-btn {
-        height: 35px;
-        margin: 20px;
-        margin-bottom: 40px;
-        width: 100px;
+        margin-left: 1rem;
+        padding: 0.7rem 2rem;
         font-size: 15px;
         border: none;
         border-radius: 3px;
         background-color: black;
         color: white;
     }
+
+    .calc-work .outterbox{
+        margin-top: 2rem;
+    }
 </style>
 
 <body>
+    <section class="work-cal">
     <img src="../assets/Image/moon.png" id="icon">
     <div class="calculator-name-header">
         <span>Work Calculator</span>
@@ -112,10 +142,8 @@
             <input type="number" class="force-for-work"></input>
             <br>
             <br>
-            <br>
             <p>Distance (in Meters):</p>
             <input type="number" class="distance-for-work"></input>
-            <br>
             <br>
             <br>
             <button class="btn-work">Calculate</button>
@@ -129,6 +157,8 @@
           </div>
 
     </div>
+
+</section>
     <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
     <script src="../js_files/theme.js"></script>
 </body>
