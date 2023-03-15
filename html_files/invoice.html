@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/caesardark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+	
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Invoice Calculator</title>
+	</head>
+<style>
+	* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+#home {
+        /* background-color: black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        position: fixed;
+        right: 2rem;
+        bottom: 2rem;
+        border-radius: 15px;
+        color: #ffffff;
+        background-color: #121916;
+        height: 2.5rem;
+        width: 2.5rem;
+        font-size: 1.2;
+        z-index: 999;
+    }
+body {
+	
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.container {
+	width: 50%;
+	
+	margin: 0 auto;
+	padding: 1rem;
+	border-radius: 0.3rem;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+}
+.input-group {
+	padding: 1rem;
+	width: 100%;
+}
+.input-group label {
+	display: block;
+	color: var(--color--label);
+	font-size: 1.5rem;
+}
+.input-group input {
+	display: block;
+	width: 100%;
+	padding: 0.7rem 1rem;
+	margin-top: 0.5rem;
+	font-size: 1rem;
+	color: #424242;
+	outline: none;
+	border: 1px solid #ccc;
+	border-radius: 0.2rem;
+}
+.input-group input:focus {
+	border: 1px solid #228b22;
+}
+.btn-group {
+	width: 100%;
+	display: flex;
+}
+.input-group button {
+	display: block;
+	width: 80%;
+	padding: 1rem;
+	text-align: center;
+	color: #fff;
+	font-size: 1.2rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	border: none;
+	outline: none;
+	border-radius: 0.2rem;
+	cursor: pointer;
+	box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.2);
+	transition: all 0.1s;
+}
+.success {
+	background-color: black;
+        color: white;
+}
+.danger {
+	background-color: black;
+        color: white;
+}
+.input-group button:hover {
+	box-shadow: 0 3px 7px 3px rgba(0, 0, 0, 0.3);
+	font-size: 1.3rem;
+}
+.mtop {
+	margin-top: 2rem;
+}
+.spacer {
+	width: 2rem;
+}
+.result p {
+	color: var(--color--label);
+	font-size: 1.4rem;
+	text-align: center;
+	line-height: 1.3;
+}
+
+.calculator-name-header {
+        margin: 35px 35%;
+        padding: 10px;
+        border-radius: 0px 15px 0px 15px;
+        box-shadow: 0px 0px 16px 1px;
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 50px
+    }
+@media only screen and (max-width: 700px) {
+	.container {
+		width: 90%;
+	}
+}
+
+</style>
+<img src="../assets/Image/moon.png" id="icon">
+<div class="calculator-name-header">
+	<span>Invoice Calculator</span>
+</div>
+	<body>
+		
+		<div class="container">
+			<div class="input-group">
+				<label for="price-input" id="wlabel"
+					>Enter Product Price:</label
+				>
+				<input type="number" id="price-input" />
+			</div>
+
+			<div class="input-group">
+				<label for="quantity-input" id="hlabel"
+					>Qty (Quantity):</label
+				>
+				<input type="number" id="quantity-input" />
+			</div>
+
+			<div class="input-group">
+				<label for="vat-input" id="hlabel"
+					>VAT(%):</label
+				>
+				<input type="number" id="vat-input" />
+			</div>
+
+			<div class="input-group btn-group">
+				<button class="success" id="btn-success">Calculate</button>
+				<div class="spacer"></div>
+				<button class="danger" id="btn-reset">Reset</button>
+			</div>
+		</div>
+		<div class="container mtop result">
+			<p>
+				Your Total Cost is :
+				<span id="dynamic__cost">_________</span>
+			</p>
+			<p class="cost_texts" id="cost_text"></p>
+		</div>
+		<a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+		<script src="../js_files/theme.js"></script>
+		<script>
+			// inputs
+
+const priceInput = document.getElementById('price-input');
+const quantityIput = document.getElementById('quantity-input');
+const vatInput = document.getElementById('vat-input');
+
+// buttons
+
+const successButton = document.getElementById('btn-success');
+const resetButton = document.getElementById('btn-reset');
+
+// Results
+
+const finalCostInput = document.getElementById('dynamic__cost');
+const message = document.getElementById('cost_text')
+
+function calculateTotalCost() {
+
+    let price, qty, vat, subTotal, total;
+
+    price = Number(priceInput.value);
+    qty   = Number(quantityIput.value);
+    vat   = Number(vatInput.value);
+
+    subTotal = price * qty;
+
+    total = subTotal + (subTotal * vat) / 100;
+    
+    finalCostInput.textContent = total.toFixed(2)
+
+    let msg = showMessage(total);
+
+    message.textContent = msg
+
+}
+
+
+
+function showMessage(cost) {
+    if (cost < 100) {
+        return "Cost is Cheap";
+    } else if (cost >= 100 && cost < 500) {
+        return "Cost is medium";
+    }else if (cost >= 500 && cost < 1000) {
+        return "Cost is high";
+    } else if (cost >= 1000 && cost <= 5000) {
+        return "Cost is expensive";
+    } else {
+        return "cost is super expensive";
+    }
+}
+
+
+function reset() {
+    priceInput.value = ""
+    quantityIput.value = ""
+    vatInput.value = ""
+    finalCostInput.textContent = "_____________________"
+    message.textContent = ""
+}
+
+
+
+
+function handleEvent() {
+    if(Number(priceInput.value) && Number(quantityIput.value) && Number(vatInput.value)) {
+        calculateTotalCost()
+    } else {
+        alert('Give some valid inputs first and try again!');
+        reset()
+    }
+
+}
+
+
+successButton.addEventListener('click', handleEvent);
+resetButton.addEventListener('click', reset)
+		</script>
+	</body>
+	
+</html>

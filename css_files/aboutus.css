@@ -346,15 +346,7 @@ h2{
   align-items: center;
 } */
 
-#cardsset{
-  width: 90vw;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  grid-gap: 1rem;
-  grid-row-gap: 5rem;
-  margin: 0 auto;
-  margin-top: 8rem;
-}
+
 .card{
   position: relative;
   width: 250px;
