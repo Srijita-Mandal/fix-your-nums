@@ -1,0 +1,49 @@
+
+textarea {
+  outline-color: #efefef !important;
+  font-family: "Dosis", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  border: solid 1px #efefef;
+  border-radius: 10px;
+  padding: 10px;
+  resize: none;
+}
+/* container */
+.container {
+  background-color: #efefef;
+  width: fit-content;
+  margin: 20px auto;
+  margin-bottom: 0px;
+  padding: 20px;
+  border-radius: 10px;
+  /* box-shadow: rgb(0 0 0 / 20%) 0px 24px 50px -2px; */
+}
+.counter-container {
+  display: flex;
+  justify-content:center;
+  /* margin-top: 0px; */
+  /* size: 20px; */
+}
+
+
+.counter-container .counters {
+  display: flex;
+  flex-direction: column;
+  size: 4px;
+   color: black;
+   justify-content: space-between;
+   padding-top: 50px;
+   margin-left: 50x;
+   margin-right: 50px;
+   margin-bottom: 100px;
+   /* border: 2px solid red; */
+  align-items: center;
+  padding-top: 0px;
+}
+
+@media (max-width: 654px) {
+  .app-container {
+    flex-direction: column;
+  }
+}

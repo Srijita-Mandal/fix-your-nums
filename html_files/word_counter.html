@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css_files/word_counter.css" />
+    <title>Word Counter</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        flex-direction: column;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      } */
+      /* .top-txt {
+        margin-bottom: 15px;
+      } */
+      /* .container {
+        box-shadow: 0 0 4px 1px rgb(179, 169, 169);
+        width: 675px;
+        height: 375px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #ffb4a3;
+      } */
+      /* .container p {
+        color: rgb(20, 94, 82);
+        margin: 10px;
+        font-size: 20px;
+        font-weight: bolder;
+      } */
+      /* .inputContainer {
+        margin: 5px;
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+      } */
+      /* .inputContainer label {
+        font-size: larger;
+      } */
+      /* .inputContainer input {
+        border: none;
+        outline: none;
+        box-shadow: 0.1px 1px 2px 1px rgb(145, 140, 140);
+        padding: 4px;
+        font-size: large;
+        border-radius: 2px;
+      } */
+      /* .calculator-name-header {
+        text-align: center;
+        padding: 10px;
+        border-radius: 0px 15px 0px 15px;
+        box-shadow: 0px 0px 16px 1px;
+        font-size: 30px;
+        margin: 25px 30%;
+      } */
+    </style>
+    <link rel="stylesheet" href="../css_files/theme.css" />
+  </head>
+  <body bgcolor="#ffeeb7">
+    <img src="../assets/Image/moon.png" id="icon" />
+	
+    <div class="app-container">
+        <div>
+          <div class="container">
+            <div>
+              <textarea
+                name="text-field"
+                id="text-field"
+                cols="50"
+                rows="13"
+                maxlength="99999"
+                placeholder="Type Something..."
+              ></textarea>
+            </div>
+  
+            <div class="counter-container">
+              <div class="counters">
+                <h2>Words</h2>
+                <h4 id="words-counter">0</h4>
+              </div>
+              <div class="counters">
+                <h2>Space</h2>
+                <h4 id="space-counter">0</h4>
+              </div>
+              <div class="counters">
+                <h2 id="chars-txt">Chars</h2>
+                <h4 id="chars-counter">0</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+        
+
+
+            <script>
+const inputField = document.querySelector("#text-field");
+const wordsCounter = document.querySelector("#words-counter");
+const spaceCounter = document.querySelector("#space-counter");
+const charsCounter = document.querySelector("#chars-counter");
+const charsTxt = document.querySelector("#chars-txt");
+// functions
+inputField.addEventListener("input", function (e) {
+  const value = e.target.value;
+  //   words
+  const words = value.split(/\s+/).filter((item) => item.length);
+  wordsCounter.textContent = words.length;
+  //   chars
+  charsCounter.textContent = value.length;
+  console.log(value.length);
+  if (value.length == 99999) {
+    charsTxt.classList.add("animate__animated", "animate__headShake");
+    charsTxt.style.color = "#c7b412";
+  } else {
+    charsTxt.classList.remove("animate__animated", "animate__headShake");
+    charsTxt.style.color = "#000";
+  }
+  //   space
+  const whiteSpaces = value.split("").filter((item) => item == " ").length;
+  spaceCounter.textContent = whiteSpaces;
+});
+            </script>
+
+<script src="../js_files/theme.js"></script>
+   
+    <script src="../js_files/theme.js"></script>
+  </body>
+</html>
