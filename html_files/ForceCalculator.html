@@ -39,21 +39,22 @@
         <option value="MagneticForce">Magnetic Force</option></select
       ><br /><br />
 
-      <input type="number" name="num1" id="num1" placeholder="Mass" />
+      <input type="number" name="num1" id="num1" placeholder="Mass (kg)" style="width: fit-content; text-align: center;" />
 
       <input
         type="number"
         name="num2"
         id="num2"
-        placeholder="Acceleration"
+        placeholder="Acceleration (m/s²)"
+        style="width: fit-content; text-align: center;"
       />
 
       <input
         type="number"
         name="num3"
         id="num3"
-        placeholder="side"
-        style="display: none"
+        placeholder="Distance (m)"
+        style="display: none; width: fix-content; text-align: center;"
       /><br /><br />
       <button type="button" onclick="fun4()" id="calc1">reset</button>
       <button type="button" onclick="ForceCalculator()">Submit</button
@@ -80,25 +81,25 @@
           case "mass-acceleration-method":
             num2.style.display = "inline";
             num3.style.display = "none";
-            num1.placeholder = "Mass";
-            num2.placeholder = "Acceleration"
+            num1.placeholder = "Mass (kg)";
+            num2.placeholder = "Acceleration (m/s²)"
             num1.value = "";
             num2.value = "";
             break;
           case "momentum-time-method":
             num2.style.display = "inline";
             num3.style.display = "none";
-            num1.placeholder = "momentum";
-            num2.placeholder = "time";
+            num1.placeholder = "momentum (kgm/s)";
+            num2.placeholder = "time (t)";
             num1.value = "";
             num2.value = "";
             break;
           case "GravitationalForce":
             num2.style.display = "inline";
             num3.style.display = "inline";
-            num1.placeholder = "mass 1";
-            num2.placeholder = "mass 2";
-            num3.placeholder = "radius";
+            num1.placeholder = "mass 1 (kg)";
+            num2.placeholder = "mass 2 (kg)";
+            num3.placeholder = "radius (m)";
             num1.value = "";
             num2.value = "";
             num3.value = "";
@@ -106,9 +107,9 @@
           case "ElectricForce":
             num2.style.display = "inline";
             num3.style.display = "inline";
-            num1.placeholder = "Charge 1";
-            num2.placeholder = "Charge 2";
-            num3.placeholder = "Radius";
+            num1.placeholder = "Charge 1 (C)";
+            num2.placeholder = "Charge 2 (C)";
+            num3.placeholder = "Radius (m)";
             num1.value = "";
             num2.value = "";
             num3.value = "";
@@ -116,9 +117,9 @@
           case "MagneticForce":
             num2.style.display = "inline";
             num3.style.display = "inline";
-            num1.placeholder = "magnetic flux density";
-            num2.placeholder = "length";
-            num3.placeholder = "current";
+            num1.placeholder = "magnetic flux density (Wb)";
+            num2.placeholder = "length (m)";
+            num3.placeholder = "current (A)";
             num1.value = "";
             num2.value = "";
             num3.value = "";
