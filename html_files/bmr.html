@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="stylesheet" href="../css_files/theme.css" />
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <title>BMR Calculator</title>
+  </head>
+  <body style="overflow:hidden;">
+    <img src="../assets/Image/moon.png" id="icon" />
+    <div class="calculator-name-header">
+      <span>BMR CALCULATOR</span>
+    </div>
+    <form class="form-horizontal" id="BMR">
+      <label for="age">Age(10-130):</label>
+      <input type="number" name="age" id="age" placeholder="Age" /><br /><br />
+      <label for="gender">Gender:</label>
+      <input type="radio" id="male" value="male" name="gender" />
+      <label for="male">Male</label>
+      <input type="radio" id="female" value="female" name="gender" />
+      <label for="female">Female</label><br /><br />
+      <label for="weight">Weight(in kg):</label>
+      <input type="number" name="weight" id="weight" placeholder="Weight" /><br /><br />
+      <label for="height">Height (in cm):</label>
+      <input type="number" name="height" id="height" placeholder="Height" /><br /><br />
+      <button type="button" class="calculate-btn" id="calcResult" onclick="calculateBMR()">CALCULATE</button><br /><br /><br />
+      
+      <div class="outterbox">
+        <div class="box"><span id="resultBMR"></span></div>
+      </div>
+      <br/>
+    </form>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <script src="../js_files/script.js"></script>
+    <script src="../js_files/theme.js"></script>
+  </body>
+  </html>

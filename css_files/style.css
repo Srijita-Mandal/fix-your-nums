@@ -505,3 +505,100 @@ thead {
 .outterbox1, .outterbox2{
   color: var(--color--label);
 }
+
+#resultBMR {
+  font-size: 30px;
+  color: green;
+}
+
+#errormsg {
+  font-size: 20px;
+  color: red;
+}
+
+#age {
+  border: none;
+  padding: 10px;
+  height: 20px;
+  width: 150px;
+  font-size: 18px;
+  border-radius: 3px;
+  margin-left: 5px;
+  position: relative;
+}
+
+#male {
+  font-size: 18px;
+  margin-left: 30px;
+}
+#female {
+  font-size: 18px;
+  margin-left: 30px;
+}
+
+#weight {
+  border: none;
+  padding: 10px;
+  height: 20px;
+  width: 150px;
+  font-size: 18px;
+  border-radius: 3px;
+  margin-left: 5px;
+  position: relative;
+}
+
+#height {
+  border: none;
+  padding: 10px;
+  height: 20px;
+  width: 150px;
+  font-size: 18px;
+  border-radius: 3px;
+  margin-left: 5px;
+  position: relative;
+}
+
+#calculate-btn {
+  padding: 8px 24px;
+  margin: 16px 0;
+  font-size: 18px;
+  background: #110501;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+#reset {
+  padding: 8px 24px;
+  margin: 16px 0;
+  font-size: 18px;
+  font-weight: 100;
+  text-transform: uppercase;
+  background: #110501;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.bmr-calculator .result {
+  text-align: center;
+  color: #171616;
+  font-size: 18px;
+}
+
+.bmr-calculator .result .calories {
+  color: green;
+  font-size: 36px;
+  font-weight: 900;
+  margin-right: 8px;
+}
+
+.bmr-calculator .result .error-message {
+  color: red;
+  font-size: 15px;
+  display: none;
+}
+
+.bmr-calculator .result .error-message.active {
+  display: block;
+}

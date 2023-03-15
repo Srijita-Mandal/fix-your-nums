@@ -1089,7 +1089,6 @@ function resetSIP() {
   document.getElementById('resultSIPContainer').innerHTML = "";
 }
 
-
 function resultantConversion() {
   const input = document.getElementById("input").value;
 
@@ -1345,7 +1344,6 @@ function convert(num) {
   return s;
 
 }
-
 // ------------ rank of a matrix ----------//
 
 // Get elements from the DOM
@@ -1499,4 +1497,18 @@ function calculateRank() {
   rankResult.innerText = `Rank : ${rank}`;
 }
 
-
+//------calculate bmr------//
+const calculateBMR = () => {
+  const age = parseInt(document.getElementById("age").value);
+  const weight = parseInt(document.getElementById("weight").value);
+  const height = parseInt(document.getElementById("height").value);
+  const bmr = (weight, height, age, gender) => {
+    if (gender == "male") {
+      return 10 * weight + 6.25 * height - 5 * age + 5;
+    }
+    return 10 * weight + 6.25 * height - 5 * age - 161;
+  };
+    let genderValue = document.querySelector("input[name='gender']:checked").value;
+    let result = bmr(weight, height, age, genderValue);
+    document.getElementById("resultBMR").innerHTML = `${result.toLocaleString("en-US")} Calories/day`;
+}
