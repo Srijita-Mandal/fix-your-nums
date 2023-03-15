@@ -9,6 +9,7 @@ body {
   height: 100vh;
   background-color: #ffeeb7;
   display: grid;
+  
   place-items: center;
   /* overflow: hidden; */
   overflow-x: hidden;
@@ -292,6 +293,11 @@ label {
 #bmiImg {
   display: flex;
   justify-content: center;
+}
+
+#bsl{
+  width:300px;
+  height:35px;
 }
 
 table,

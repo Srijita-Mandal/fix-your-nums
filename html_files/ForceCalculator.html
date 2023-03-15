@@ -19,36 +19,44 @@
     <link rel="stylesheet" type="text/css" href="../css_files/result.css" />
     <link rel="stylesheet" href="../css_files/theme.css" />
     <link rel="icon" href="../assets/Image/Favicon.png" />
-    <title>Volume Calculator</title>
+    <title>Force Calculator</title>
   </head>
   <body style="overflow: hidden">
     <img src="../assets/Image/moon.png" id="icon" />
     <div class="calculator-name-header">
       <!-- updated by @Shantanu-Meta -->
-      <span>Volume calculator</span>
+      <span>Force calculator</span>
     </div>
     <form id="calc" class="form-horizontal">
-      <label for="cal">Please enter the polygon type : </label><br />
+      <label for="cal">Please enter the type of force you want : </label><br />
       <select name="cal" id="cal" onchange="track()">
-        <option value="Cube">Cube</option>
-        <option value="Cuboid">Cuboid</option>
-        <option value="Sphere">Sphere</option>
-        <option value="Cylinder">Cylinder</option>
-        <option value="Cone">Cone</option></select
+        <option value="mass-acceleration-method">
+          mass-acceleration-method
+        </option>
+        <option value="momentum-time-method">momentum-time-method</option>
+        <option value="ElectricForce">Electric Force</option>
+        <option value="GravitationalForce">Gravitational Force</option>
+        <option value="MagneticForce">Magnetic Force</option></select
       ><br /><br />
 
-      <input type="number" name="num1" id="num1" placeholder="side"/>
+      <input type="number" name="num1" id="num1" placeholder="Mass" />
 
-      <input type="number" name="num2" id="num2" placeholder="side" style="display: none;"/>
+      <input
+        type="number"
+        name="num2"
+        id="num2"
+        placeholder="Acceleration"
+      />
+
       <input
         type="number"
         name="num3"
         id="num3"
         placeholder="side"
-        style="display: none;"
+        style="display: none"
       /><br /><br />
-      <button type="button" style="cursor: pointer;" onclick="fun4()" id="calc1">reset</button>
-      <button type="button"  style="cursor: pointer;" onclick="VolumeCalculator()">Submit</button
+      <button type="button" onclick="fun4()" id="calc1">reset</button>
+      <button type="button" onclick="ForceCalculator()">Submit</button
       ><br /><br /><br />
 
       <div class="outterbox">
@@ -69,49 +77,56 @@
         const num2 = document.getElementById("num2");
         const num3 = document.getElementById("num3");
         switch (valOp) {
-          case "Cube":
-            num2.style.display = "none";
+          case "mass-acceleration-method":
+            num2.style.display = "inline";
             num3.style.display = "none";
-            num1.placeholder = "Side";
+            num1.placeholder = "Mass";
+            num2.placeholder = "Acceleration"
             num1.value = "";
+            num2.value = "";
             break;
-          case "Cuboid":
+          case "momentum-time-method":
+            num2.style.display = "inline";
+            num3.style.display = "none";
+            num1.placeholder = "momentum";
+            num2.placeholder = "time";
+            num1.value = "";
+            num2.value = "";
+            break;
+          case "GravitationalForce":
             num2.style.display = "inline";
             num3.style.display = "inline";
-            num1.placeholder = "length";
-            num2.placeholder = "breadth";
-            num3.placeholder = "height";
+            num1.placeholder = "mass 1";
+            num2.placeholder = "mass 2";
+            num3.placeholder = "radius";
             num1.value = "";
             num2.value = "";
             num3.value = "";
             break;
-          case "Sphere":
-            num2.style.display = "none";
-            num3.style.display = "none";
-            num1.placeholder = "Radius";
-            num1.value = "";
-            num2.value = "";
-            num3.value = "";
-            break;
-          case "Cone":
+          case "ElectricForce":
             num2.style.display = "inline";
-            num3.style.display = "none";
-            num1.placeholder = "height";
-            num2.placeholder = "radius";
+            num3.style.display = "inline";
+            num1.placeholder = "Charge 1";
+            num2.placeholder = "Charge 2";
+            num3.placeholder = "Radius";
             num1.value = "";
             num2.value = "";
+            num3.value = "";
             break;
-          case "Cylinder":
-            num2.style.display = "inline";  
-            num3.style.display = "none";
-            num1.placeholder = "Radius";
-            num2.placeholder = "Height";
-            num1.value = num2.value = num3.value = "";
-          break;  
+          case "MagneticForce":
+            num2.style.display = "inline";
+            num3.style.display = "inline";
+            num1.placeholder = "magnetic flux density";
+            num2.placeholder = "length";
+            num3.placeholder = "current";
+            num1.value = "";
+            num2.value = "";
+            num3.value = "";
+            break;
         }
       };
 
-      const VolumeCalculator = () => {
+      const ForceCalculator = () => {
         // console.log("clicked");
         const operation = document.getElementById("cal");
         const valOpe = operation.value;
@@ -122,36 +137,36 @@
         const number2 = parseInt(document.getElementById("num2").value);
         const number3 = parseInt(document.getElementById("num3").value);
 
-        // console.log(number1);
-        // console.log(number2);
+        console.log(number1);
+        console.log(number2);
 
         switch (valOpe) {
-          case "Cube":
+          case "mass-acceleration-method":
             document.getElementById(
               "resultCalculator"
-            ).innerHTML = `Side * Side * Side = ${number1 * number1 * number1}`;
+            ).innerHTML = `Force = ${number1 * number2} N`;
             break;
-          case "Cuboid":
+          case "momentum-time-method":
             document.getElementById(
               "resultCalculator"
-            ).innerHTML = `Length * Breadth * Height = ${number1 * number2 * number3}`;
+            ).innerHTML = `Force = ${number1 / number2} N`;
             break;
-          case "Cylinder":
+          case "GravitationalForce":
             document.getElementById(
               "resultCalculator"
-            ).innerHTML = `&pi; * r * r * h = ${3.14 * number1 * number1 * number2}`;
+            ).innerHTML = `Gravitational Force = ${(6.67 / Math.pow(10)) * number1 * number2 / (number3 * number3)} N`;
             break;
-          case "Cone":
+          case "MagneticForce":
             document.getElementById(
               "resultCalculator"
-            ).innerHTML = `1/3 * &pi; * r * r * h = ${1/3 * 3.14 * number2 * number2 * number1}`;
+            ).innerHTML = `Magnetic Force = ${number1 * number2 * number3} N`;
             break;
-          case "Sphere":
+          case "ElectricForce":
             document.getElementById(
               "resultCalculator"
-            ).innerHTML = `4/3 * &pi; * r * r * r = ${
-              (4 / 3) * 3.14 * number1 * number1 * number1
-            }`;
+            ).innerHTML = `Electric Force = ${
+              (8.9 * Math.pow(10,9)) * number1 * number2 / (number3 * number3)
+            } N`;
             break;
           default:
             return;
@@ -160,11 +175,11 @@
 
       document.getElementById("calc").addEventListener("submit", (e) => {
         e.preventDefault();
-        VolumeCalculator();
+        ForceCalculator();
       });
       document.body.addEventListener("keyup", (e) => {
         if (e.keyCode == 13) {
-          VolumeCalculator();
+          ForceCalculator();
         }
       });
     </script>

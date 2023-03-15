@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Progression Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="stylesheet" href="../css_files/theme.css">
+    <link rel="icon" href="../assets/Image/Favicon.png">
+    <style>
+        #resultDeriv {
+            padding: 0 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <!-- Updated by @Shantanu-Meta   -->
+        <span>Arithmetic Progression Generator</span>
+    </div>
+    <form class="form-horizontal" id="age">
+        <label class="heading"> Generates Arithmetic Progression</label><br /><br />
+        <p class="infoDeriv">This calculator will generate arithmetic Progression using starting number, common
+            difference and Nth term</p>
+        <label class="func" for="a">Enter the starting number (a) : </label><br /><br />
+        <input type="number" id="a" value="5"><br /><br /><br />
+        <label class="func" for="d">Enter the Common Difference (d) : </label><br /><br />
+        <input type="number" id="d" value="2"><br /><br /><br />
+        <label class="func" for="an">Enter the number of terms you want to generate (N) : </label><br /><br />
+        <input type="number" id="an" value="10"><br /><br /><br />
+        <button type="button" onclick="document.location.reload()">Reset</button>
+        <button type="button" onclick="validateForm()">Submit</button><br /><br /><br />
+        <span id="inputExpression"></span>
+        <div class="outterbox">
+            <div class="box"><span id="resultDeriv"></span></div>
+        </div>
+
+    </form>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <!-- <script src="script.js"></script> -->
+    <script src="../js_files/theme.js"></script>
+
+</body>
+<script>
+    function validateForm() {
+        var a = document.getElementById("a").value;
+        var d = document.getElementById("d").value;
+        var an = document.getElementById("an").value;
+
+        a = Number(a)
+        d = Number(d)
+        an = Number(an)
+
+        generateAPSeries(a, d, an);
+        function generateAPSeries(a, d, an) {
+            let series = "";
+
+            series += a;
+
+            for (let i = 1; i < an; i++) {
+                let term = a + i * d;
+                series += ", " + term;
+            }
+
+            document.getElementById("resultDeriv").innerHTML = `<p style="color: black">The Generated AP Series : <b>${series}</b></p>`;
+        }
+    }
+</script>
+
+</html>

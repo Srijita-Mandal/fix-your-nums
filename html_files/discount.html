@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/caesardark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <title>Discount Calculator</title>
+   <style>
+    *, *::before, *::after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial;
+    min-height: 100vh;
+   
+    display: grid;
+    place-items: center;
+}
+h1 {
+    text-align: center;
+    margin-top: 0;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    font-size: 1.25rem;
+    width: 100%;
+}
+input {
+    margin: 1em 0;
+    padding: 0.5em 0.75em;
+    width: 100%;
+    background:none;
+    border: none;
+    border-bottom: 3px solid #141E30;
+    font-size: 15px;
+    font-weight: bold;
+}
+input:focus {
+    outline: none;
+    background: none;
+}
+select {
+    margin: 1em 0;
+    width: 100%;
+    padding: 0.5em 0.75em;
+
+}
+button {
+    margin-top: 3rem;
+}
+.input-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card {
+    width: min(500px, 90%);
+    margin: 0 auto;
+   
+    padding: 1.5em 2em;
+}
+.calculate {
+    padding: 0.8em 0;
+    background-color: black;
+        color: white;
+    font-weight: 700;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+.calculate:hover {
+    opacity: 0.7;
+}
+.reset{
+    padding: 0.8em 0;
+    background-color: black;
+        color: white;
+    font-weight: 700;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+.calculator-name-header {
+        margin: 35px 35%;
+        padding: 10px;
+        border-radius: 0px 15px 0px 15px;
+        box-shadow: 0px 0px 16px 1px;
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 50px
+    }
+
+    #home {
+        /* background-color: black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        position: fixed;
+        right: 2rem;
+        bottom: 2rem;
+        border-radius: 15px;
+        color: #ffffff;
+        background-color: #121916;
+        height: 2.5rem;
+        width: 2.5rem;
+        font-size: 1.2;
+        z-index: 999;
+    }
+
+@media (max-width: 450px) {
+    .input-item {
+        flex-direction: column;
+    }
+}
+   </style>
+  
+</head>
+<body>
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <span> Discount Calculator</span>
+    </div>
+    <div class="card">
+       
+        <form action="#">
+            <div class="input-item">
+                <label for="amount"> Enter bill amount: </label>
+                <input type="text" id="amount">
+            </div>
+
+            <div class="input-item">
+                <label for="discount-percentage">Select discount %</label>
+                <select name="percentage" id="discount-percentage">
+                    <option value="0">0</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                </select>
+            </div>
+
+            <div class="input-item">
+                <label for="discount-amount"> Discount amount: </label>
+                <input type="text" id="discount-amount" disabled>
+            </div>
+            
+            <div class="input-item">
+                <label for="pay" aria-disabled="true"> Final Pay:</label>
+                <input type="text" id="pay" disabled>
+            </div> 
+
+            <button type="submit" class="calculate">Calculate</button>
+            <input type="reset" value="Reset" class="reset">
+        </form>
+    </div>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <script src="../js_files/theme.js"></script>
+</body>
+<script>
+    const calculate = document.querySelector('.calculate');
+const resetBtn = document.querySelector('.reset');
+
+calculate.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    let billAmt = document.getElementById('amount').value;
+    let percentage = document.getElementById('discount-percentage').value;
+    let discountAmt = document.getElementById('discount-amount');
+    let FinalPay = document.getElementById('pay');
+
+    discountAmt.value = billAmt * percentage / 100;
+    FinalPay.value = billAmt - discountAmt.value;
+});
+
+resetBtn.addEventListener('click', () => {
+    window.location.reload();
+});
+
+
+</script>
+</html>
