@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vector Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="stylesheet" href="../css_files/theme.css">
+    <link rel="icon" href="../assets/Image/Favicon.png">
+    <style>
+        #resultDeriv {
+            padding: 0 1rem;
+        }
+    input{
+        margin: 1rem;
+        padding: 3px;
+        border: 2px solid white;
+        border-radius: 1rem;
+        text-align: center;
+    }
+    button{
+        background-color: black;
+        padding: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        color: white;
+        border-radius: 0.3rem;
+    }
+    </style>
+</head>
+
+<body>
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <!-- Updated by @Shantanu-Meta   -->
+        <span>Vector Calculator</span>
+    </div>
+    <form class="form-horizontal" id="age">
+        <label class="heading"> Perform Vector Calculations on any vector quantities</label><br /><br />
+        <p class="infoDeriv">This calculator will perform operations like <b>Addition, Subtraction, Dot & Cross
+                Products</b> between the vectors.
+        </p>
+        <label>Vector 1:</label><br>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <input type="number" id="x1" placeholder="x" value="12"><br>
+            <input type="number" id="y1" placeholder="y" value="23"><br>
+            <input type="number" id="z1" placeholder="z" value="34"><br><br>
+        </div>
+        <label>Vector 2:</label><br>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <input type="number" id="x2" placeholder="x" value="12"><br>
+            <input type="number" id="y2" placeholder="y" value="23"><br>
+            <input type="number" id="z2" placeholder="z" value="34"><br><br>
+        </div>
+            <label>Select operation:</label><br>
+            <div style="display: flex; align-items: center; justify-content: center;">
+
+                <input type="radio" name="operation" value="addition" checked> Addition<br>
+                <input type="radio" name="operation" value="subtraction"> Subtraction<br>
+                <input type="radio" name="operation" value="multiplication"> Multiplication<br>
+                <input type="radio" name="operation" value="crossproduct"> Cross Product<br>
+            </div>
+            <button type="reset" style="margin: 0.5rem;">Reset</button>
+                <button type="button" id="calculate" style="margin: 0.5rem;">Calculate</button>
+        <div class="outterbox">
+            <div class="box"><span id="resultDeriv"></span></div>
+        </div>
+
+    </form>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <!-- <script src="script.js"></script> -->
+    <script src="../js_files/theme.js"></script>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $('#calculate').click(function () {
+
+            // Get the values of the input fields
+
+            var x1 = parseFloat($('#x1').val());
+            var y1 = parseFloat($('#y1').val());
+            var z1 = parseFloat($('#z1').val());
+            var x2 = parseFloat($('#x2').val());
+            var y2 = parseFloat($('#y2').val());
+            var z2 = parseFloat($('#z2').val());
+
+            // Perform the vector operations
+
+            var result;
+            var operation = $('input[name="operation"]:checked').val();
+            if (operation == "addition") {
+                result = [x1 + x2, y1 + y2, z1 + z2];
+            } else if (operation == "subtraction") {
+                result = [x1 - x2, y1 - y2, z1 - z2];
+            } else if (operation == "multiplication") {
+                result = [x1 * x2, y1 * y2, z1 * z2];
+            } else if (operation == "crossproduct") {
+                result = [y1 * z2 - z1 * y2, z1 * x2 - x1 * z2, x1 * y2 - y1 * x2];
+            }
+
+            // Display the result
+            document.getElementById("resultDeriv").innerHTML = `<p style="color: black">Result : <b>[ ${result} ]</b></p>`;
+        });
+    });
+</script>
+
+</html>
