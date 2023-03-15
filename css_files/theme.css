@@ -129,7 +129,7 @@ form {
     background-color: var(--color--form);
     padding: 80px;
     width: 50%;
-    margin: 100px auto;
+    margin: 30px auto;
     text-align: center;
     place-items: center;
     box-shadow: 0 10px 6px -6px #777;
