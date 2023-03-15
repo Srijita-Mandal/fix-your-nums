@@ -97,8 +97,8 @@ const calculator = () => {
 
   // console.log(valOpe);
 
-  const number1 = parseInt(document.getElementById("num1").value);
-  const number2 = parseInt(document.getElementById("num2").value);
+  let number1 = parseInt(document.getElementById("num1").value);
+  let number2 = parseInt(document.getElementById("num2").value);
 
   // console.log(number1);
   // console.log(number2);
@@ -130,7 +130,14 @@ const calculator = () => {
     case "modu":
       if (number2 == 0) {
         document.getElementById("resultCalculator").innerHTML = `Error!`;
-      } else {
+      }
+      else if(number1<=0){
+          number1= number1*(-1);
+
+document.getElementById("resultCalculator").innerHTML = `${number2 - number1 % number2
+          }`;
+      }
+      else {
         document.getElementById("resultCalculator").innerHTML = `${number1 % number2
           }`;
       }
