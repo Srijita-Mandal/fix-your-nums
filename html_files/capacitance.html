@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="Image/Favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css_files/theme.css" />
+    <title>Capacitance Calculator</title>
+   
+    <script type="text/javascript">
+   
+  
+   
+        function dosomething(){
+            
+          const operation = document.getElementById("cal");
+    const valOpe = operation.value;
+    
+        if(valOpe=="capacitance") {
+            document.querySelector("#num3").style.opacity="0";
+        document.querySelector("#num1").placeholder="Area(m^2)";
+        document.querySelector("#num2").placeholder= "distance(m)";
+        
+      
+        
+        }
+        else if(valOpe=="Series"){
+            document.querySelector("#num3").style.opacity="1";
+            document.querySelector("#num1").placeholder="C1(uF)";
+        document.querySelector("#num2").placeholder= "C2(uF)";
+        document.querySelector("#num3").placeholder= "C3(uF)";
+        }
+        
+        else {
+            document.querySelector("#num3").style.opacity="1";
+        document.querySelector("#num1").placeholder= "C1(uF)";
+        document.querySelector("#num2").placeholder= "C2(uF)";
+        document.querySelector("#num3").placeholder= "C3(uF)";
+       
+        }
+    
+  
+        }
+        const Capacitance=()=>{
+    console.log("hi");
+    const operation = document.getElementById("cal");
+    const valOpe = operation.value;
+    
+    let a= parseFloat(document.getElementById("num1").value);
+    let d= parseFloat(document.getElementById("num2").value);
+  
+    if(valOpe=="capacitance"){
+        console.log("Helo");
+        let c= (8.85*a*1.0)/(d*1.0);
+        document.getElementById("resultCalculator").innerHTML=c+' pF';
+    }
+    else if(valOpe=="Series"){
+        let e= parseFloat(document.getElementById("num3").value);
+        let c1= (a*d*e*1.0)/((d*e+a*e+a*d)*1.0);
+        document.getElementById("resultCalculator").innerHTML=c1+' uF';
+    }
+    else{
+        let f= parseFloat(document.getElementById("num3").value);
+       let c2= a+d+f;
+        document.getElementById("resultCalculator").innerHTML=c2+' uF';
+    }
+}
+    
+    </script>
+
+  </head>
+  <body style="overflow-x: hidden;">
+    <img src="../assets/Image/moon.png" id="icon" />
+    <div class="calculator-name-header">
+      
+      <span>Capacitance calculator</span>
+     
+    </div>
+    <form id="calc" class="form-horizontal">
+        <label for="cal">Please Select the method</label><br/>
+        <select name="cal" id="cal" onchange="dosomething()">
+          <option disabled selected value="nothing">Choose the method</option>
+            <option value="capacitance">Capacitance</option>
+            <option value="Series">Series Combination capacitance</option>
+            <option value="parallel">Parallel Combination capacitance</option>
+          
+        </select><br/><br/>
+         
+        <input type="number" name="num1" id="num1" placeholder="None">
+        
+        <input type="number" name="num2" id="num2" placeholder="None">
+        <input type="number" name="num3" id="num3" placeholder="None">
+        
+        <br/><br/>
+        <button type="button" onclick="document.location.reload()" id="calc1">Reset</button>
+        <button type="button" onclick="Capacitance()">Submit</button><br><br><br>
+  
+        <div class="outterbox">
+            <div class="box" id="resultbox"><span id="resultCalculator" ></span></div>
+        </div>
+  
+    </form>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    
+    <script src="../js_files/theme.js"></script>
+    <script src="../js_files/script.js"></script>
+    <script type="text/javascript">
+        document.getElementById("calc").addEventListener("submit",(e)=>{
+            e.preventDefault()
+            Capacitance()
+        })
+        document.body.addEventListener("keyup",(e)=>{
+                if(e.keyCode==13){
+                    Capacitance()
+                }
+            })
+    </script>
+   
+    </body>
+    
+    
+  </html>
+  
