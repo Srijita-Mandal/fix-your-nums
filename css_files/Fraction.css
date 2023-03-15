@@ -1,0 +1,14 @@
+input{
+	padding: 10px 2px;;
+	border: 0;
+	outline: 0;
+	border-radius: 10px;
+    text-align: center;
+}
+input::placeholder{
+	font-size: large;
+    text-align: center;
+}
+select{
+padding: 10px;
+}
