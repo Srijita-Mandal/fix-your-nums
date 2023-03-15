@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="Image/Favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css_files/theme.css" />
+    <title>Sum of Series Calculator</title>
+   
+    <script type="text/javascript">
+   
+  
+   
+        function dosomething(){
+            
+          const operation = document.getElementById("cal");
+    const valOpe = operation.value;
+    
+        if(valOpe=="Convex") {
+        document.querySelector("#num1").placeholder="Magnification";
+        document.querySelector("#num2").placeholder= "Object distance";
+        
+       
+        
+        }
+        
+        else {
+        document.querySelector("#num1").placeholder= "Magnification";
+        document.querySelector("#num2").placeholder= "Object Distance";
+   
+        }
+    
+  
+        }
+        const Sum=()=>{
+    console.log("hi");
+    const operation = document.getElementById("cal");
+    const valOpe = operation.value;
+    
+    let m= parseFloat(document.getElementById("num1").value);
+    let u= parseFloat(document.getElementById("num2").value);
+   
+    if(valOpe=="Convex"){
+        console.log("Helo");
+        let v= -1*m*u;
+
+    let f= (v*u*1.0)/((v+u)*1.0);
+    f= (f*1.0)/(100*1.0);
+    let p= (1*1.0)/(f*1.0);
+        document.getElementById("resultCalculator").innerHTML=p+'D';
+    }
+    else{
+       
+        let v1= -1*m*u;
+          let f1= (v1*u*1.0)/((v1+u)*1.0);
+         f1= (f1*1.0)/(100*1.0); 
+         let p1= (1*1.0)/(f1*1.0);
+        document.getElementById("resultCalculator").innerHTML=p1+'D';
+    }
+}
+    
+    </script>
+
+  </head>
+  <body style="overflow-x: hidden;">
+    <img src="../assets/Image/moon.png" id="icon" />
+    <div class="calculator-name-header">
+      
+      <span>Power of Lens  calculator</span>
+     
+    </div>
+    <form id="calc" class="form-horizontal">
+        <label for="cal">Please enter the Type of Lens</label><br/>
+        <select name="cal" id="cal" onchange="dosomething()">
+          <option disabled selected value="nothing">Choose the Lens</option>
+            <option value="Convex">Convex Lens</option>
+            <option value="Concave">Concave Lens</option>
+          
+        </select><br/><br/>
+         
+        <input type="number" name="num1" id="num1" placeholder="None">
+        
+        <input type="number" name="num2" id="num2" placeholder="None">
+        
+        <br/><br/>
+        <button type="button" onclick="document.location.reload()" id="calc1">Reset</button>
+        <button type="button" onclick="Sum()">Submit</button><br><br><br>
+  
+        <div class="outterbox">
+            <div class="box" id="resultbox"><span id="resultCalculator" ></span></div>
+        </div>
+  
+    </form>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    
+    <script src="../js_files/theme.js"></script>
+    <script src="../js_files/script.js"></script>
+    <script type="text/javascript">
+        document.getElementById("calc").addEventListener("submit",(e)=>{
+            e.preventDefault()
+            Sum()
+        })
+        document.body.addEventListener("keyup",(e)=>{
+                if(e.keyCode==13){
+                    Sum()
+                }
+            })
+    </script>
+   
+    </body>
+    
+    
+  </html>
+  
