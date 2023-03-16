@@ -123,7 +123,7 @@
     
             <br>
             <div class="outterbox">
-                <div class="box"><span class="pressure-result results" id="result"></span></div>
+                <div class="box"><span class="torque-result results" id="result"></span></div>
             </div>
            
         </div>
@@ -138,12 +138,12 @@
     let distance = document.getElementsByClassName('distance')[0].value;
     let force = document.getElementsByClassName('force')[0].value;
     if (isNaN(distance)) {
-      alert('Enter a valid number into the Friction Force input.');
+      alert('Enter a valid number into the Distance input.');
     } else if (isNaN(force)) {
-      alert('Enter a valid number into the Price of Normal Force input.');
+      alert('Enter a valid number into the Force input.');
     } else {
       let torque = distance * force;
-      document.getElementsByClassName('pressure-result')[0].innerHTML = 'Torque: ' + torque + " N-m" ;
+      document.getElementsByClassName('torque-result')[0].innerHTML = 'Torque: ' + torque + " N-m" ;
     }
   });
 
@@ -152,7 +152,7 @@
             document.getElementsByClassName('friction')[0].value= "";
             document.getElementsByClassName('force')[0].value = "";
            
-            document.getElementsByClassName('pressure-result')[0].innerHTML = "";
+            document.getElementsByClassName('torque-result')[0].innerHTML = "";
         });
     }
 </script>
