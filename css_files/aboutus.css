@@ -289,6 +289,11 @@ h2{
   padding: 0;
   max-width: 300px;
 }
+.calc_lists .fifth-col {
+  counter-reset: index 100;  
+  padding: 0;
+  max-width: 300px;
+}
 /* List element */
 .calc_lists  li {
   counter-increment: index; 
