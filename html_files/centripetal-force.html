@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Centripetal-force Calculator </title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css_files/style.css">
+  <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+  <link rel="stylesheet" href="../css_files/theme.css">
+  <link rel="icon" href="../assets/Image/Favicon.png">
+  <title>Centripetal Force Calculator</title>
+</head>
+
+<body style="overflow: hidden;">
+  <img src="../assets/Image/moon.png" id="icon">
+  <div class="calculator-name-header">
+    <span>Centripetal Force Calculator</span>
+  </div>
+ 
+  <form class="form-horizontal" id="numToWord">
+
+    <label for="num">Mass(kg)</label>
+    <input type="number" name="num" id="num1">
+    <br/><br/>
+    <label for="num">Angular velocity(rad/sec)</label>
+    <input type="number" name="num" id="num2">
+    <br/><br/>
+    <label for="num">Radius(m)</label>
+    <input type="number" name="num" id="num3">
+    <br/><br/>
+
+    <button type="button" id="numToWordReset" onclick="window.location.reload()">reset</button>
+    <button type="button" id="submit">Calculate</button><br /><br /><br />
+    <div class="outterbox">
+      <div class="box"><span id="result"></span></div>
+    </div>
+  </form>
+  <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+
+  <script src="../js_files/script.js"></script>
+
+  <script src='../js_files/theme.js'></script>
+  <script src='../js_files/centripetal-force.js'></script>
+</body>
+
+</html>
