@@ -19,12 +19,12 @@
     <link rel="stylesheet" type="text/css" href="../css_files/result.css" />
     <link rel="stylesheet" href="../css_files/theme.css" />
     <link rel="icon" href="../assets/Image/Favicon.png" />
-    <title>Armstrong number Checker</title>
+    <title>Prime Number Checker</title>
   </head>
   <body style="overflow: hidden">
     <img src="../assets/Image/moon.png" id="icon" />
     <div class="calculator-name-header">
-      <span>Armstrong number Checker</span>
+      <span>Prime Number Checker</span>
     </div>
     <form id="calc" class="form-horizontal">
       <label for="cal">Please enter the number which you want to check : </label
@@ -34,7 +34,7 @@
       <input type="number" name="num1" id="num1" placeholder="Number" />
       <br /><br />
       <button type="button" onclick="fun4()" id="calc1">reset</button>
-      <button type="button" onclick="armstrongNumberCalculator()">Submit</button
+      <button type="button" onclick="primeNumberCalculator()">Submit</button
       ><br /><br /><br />
 
       <div class="outterbox">
@@ -47,50 +47,48 @@
 
     <script src="../js_files/script.js"></script>
     <script type="text/javascript">
-      const armstrongNumberCalculator = () => {
+      const primeNumberCalculator = () => {
         const number1 = parseInt(document.getElementById("num1").value);
 
         let temp = number1;
-        let newNumber = 0;
         let c = 0;
 
-        console.log(number1);
-
-        while (temp != 0) {
-          c++;
-          temp = parseInt(temp / 10, 10);
-          console.log(temp);
+        for(let i = 2; i < number1; i++) {
+            if(number1 % i == 0) {
+                c++;
+            }
         }
 
-        console.log(c);
+        let primeCheck = false;
 
-        temp = number1;
-
-        while (temp != 0) {
-          newNumber += Math.pow(temp % 10, c);
-          console.log(newNumber);
-          temp = parseInt(temp / 10, 10);
+        if(number1 == 2) {
+            primeCheck = true;
         }
-        console.log(newNumber);
+        if(c == 0) {
+            primeCheck = true;
+        }
+        if(number1 == 1) {
+            primeCheck = false;
+        }
 
-        if (newNumber == number1) {
+        if (primeCheck == true) {
           document.getElementById(
             "resultCalculator"
-          ).innerHTML = `Armstrong Number`;
+          ).innerHTML = `Prime Number`;
         } else {
           document.getElementById(
             "resultCalculator"
-          ).innerHTML = `Not an Armstrong Number`;
+          ).innerHTML = `Not an Prime Number`;
         }
       };
 
       document.getElementById("calc").addEventListener("submit", (e) => {
         e.preventDefault();
-        armstrongNumberCalculator();
+        primeNumberCalculator();
       });
       document.body.addEventListener("keyup", (e) => {
         if (e.keyCode == 13) {
-          armstrongNumberCalculator();
+          primeNumberCalculator();
         }
       });
     </script>
