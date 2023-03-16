@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../css_files/FDT.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css" />
+    <link rel="stylesheet" href="../css_files/style.css" />
+    <link rel="stylesheet" href="../css_files/theme.css" />
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <title>Frequency Distribution Table</title>
+  </head>
+  <body style="overflow: hidden">
+    <img src="../assets/Image/moon.png" id="icon" />
+    <div class="calculator-name-header">
+      <span>Frequency Distribution Table</span>
+    </div>
+    <form class="form-horizontal" id="FreqCalc">
+      	<!-- <h1>Frequency Distribution Table</h1> -->
+	<p>Enter a list of numbers separated by commas:</p>
+	<input type="text" id="numList">
+	<!-- <button onclick="createTable()">Create Table</button><br> -->
+      <button type="button" id="FreqSet" onclick="resetFreq()">Reset</button>
+
+      <button type="button" onclick="createFreqTable()">Submit</button
+      ><br /><br /><br />
+      <div class="outterbox">
+        <div class="box" id="resultboxFreq" style="display: none">
+          <span id="resultfreq"></span>
+        </div>
+      </div>
+    </form>
+    <a href="../index.html"
+      ><i id="home" class="fa fa-home" aria-hidden="true"></i
+    ></a>
+
+    <script src="../js_files/FDT.js"></script>
+    <script type="text/javascript">
+      document.getElementById("FracCalc").addEventListener("submit", (e) => {
+        e.preventDefault();
+        createFreqTable();
+      });
+      document.body.addEventListener("keyup", (e) => {
+        if (e.keyCode == 13) {
+          createFreqTable();
+        }
+      });
+    </script>
+  </body>
+</html>
