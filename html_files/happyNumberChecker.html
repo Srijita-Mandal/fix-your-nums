@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css" />
+    <link rel="stylesheet" href="../css_files/theme.css" />
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <title>Happy Number Checker</title>
+  </head>
+  <body style="overflow: hidden">
+    <img src="../assets/Image/moon.png" id="icon" />
+    <div class="calculator-name-header">
+      <span>Happy Number Checker</span>
+    </div>
+    <form id="calc" class="form-horizontal">
+      <label for="cal">Please enter the number which you want to check : </label
+      ><br />
+      <br /><br />
+
+      <input type="number" name="num1" id="num1" placeholder="Number 1" />
+      <br /><br />
+      <button type="button" onclick="fun4()" id="calc1">reset</button>
+      <button type="button" onclick="EvenNumberCalculator()">Submit</button
+      ><br /><br /><br />
+
+      <div class="outterbox">
+        <div class="box"><span id="resultCalculator"></span></div>
+      </div>
+    </form>
+    <a href="../index.html"
+      ><i id="home" class="fa fa-home" aria-hidden="true"></i
+    ></a>
+
+    <script src="../js_files/script.js"></script>
+    <script type="text/javascript">
+      function numSquareSum(n) {
+        var squareSum = 0;
+        while (n != 0) {
+          squareSum += (n % 10) * (n % 10);
+          n = parseInt(n / 10);
+        }
+        return squareSum;
+      }
+
+      //  method return true if n is Happy number
+      function isHappynumber(n) {
+        var slow, fast;
+
+        //  initialize slow and fast by n
+        slow = fast = n;
+        do {
+          //  move slow number
+          // by one iteration
+          slow = numSquareSum(slow);
+
+          //  move fast number
+          // by two iteration
+          fast = numSquareSum(numSquareSum(fast));
+        } while (slow != fast);
+
+        //  if both number meet at 1,
+        // then return true
+        return slow == 1;
+      }
+
+      const EvenNumberCalculator = () => {
+        var number1 = parseInt(document.getElementById("num1").value);
+
+        if (isHappynumber(number1) == true) {
+          document.getElementById(
+            "resultCalculator"
+          ).innerHTML = `Happy Number`;
+        } else {
+          document.getElementById(
+            "resultCalculator"
+          ).innerHTML = `Not an Happy Number`;
+        }
+      };
+
+      document.getElementById("calc").addEventListener("submit", (e) => {
+        e.preventDefault();
+        EvenNumberCalculator();
+      });
+      document.body.addEventListener("keyup", (e) => {
+        if (e.keyCode == 13) {
+          EvenNumberCalculator();
+        }
+      });
+    </script>
+    <script src="../js_files/theme.js"></script>
+  </body>
+</html>
