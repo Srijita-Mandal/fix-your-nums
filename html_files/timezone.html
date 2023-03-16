@@ -22,7 +22,10 @@
     <title>Time Zone Converter</title>
   </head>
   <body>
-    <h1>Time Zone Converter</h1>
+    <div class="calculator-name-header">
+        <span>Time Zone Converter</span>
+    </div>
+    <!-- <h1>Time Zone Converter</h1> -->
     <form>
       <label for="time">Enter a time:</label>
       <input type="time" id="time" name="time">
@@ -46,6 +49,7 @@
       </select>
       <br><br>
       <input type="submit" value="Convert" onclick="convertTime();">
+      <button type="button" id="timereset" onclick="fun9()" style="cursor: pointer;">reset</button>
     </form>
     <br>
     <p id="result"></p>
