@@ -693,6 +693,7 @@ margin-top: 10vh;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   gap: 2rem;
 }
+
 .counter-item {
   background: linear-gradient(315deg, #0d40ae, #ff0058);
   padding: 3rem 1.5rem;
@@ -700,9 +701,13 @@ margin-top: 10vh;
   border-radius: 1rem;
   transition: all 0.5s ease-in-out;
   transform: translateY(6rem);
-  height: 20vh;
+  height: auto;
   
-  
+}
+.counter-item p{
+  font-weight:500;
+  font-size:20px;
+  padding:5px;
 }
 
 
