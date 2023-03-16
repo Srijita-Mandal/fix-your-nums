@@ -46,29 +46,7 @@
     
   
         }
-        const Sum=()=>{
-    console.log("hi");
-    const operation = document.getElementById("cal");
-    const valOpe = operation.value;
-    
-    let a= parseFloat(document.getElementById("num1").value);
-    let d= parseFloat(document.getElementById("num2").value);
-    
-    if(valOpe=="ym"){
-        console.log("Helo");
-        let sum2= (a*1.0)/(d*1.0);
-        document.getElementById("resultCalculator").innerHTML=" Youngs Modulus of Elasticity is "+sum2;
-    }
-    else if(valOpe=="bm"){
-        let p= (a*1.0)/(d*1.0);
-        document.getElementById("resultCalculator").innerHTML="Bulk Modulus of Elasticity is "+p;
-    }
-    else{
-    
-        let sum1= (a*1.0)/(d*1.0);
-        document.getElementById("resultCalculator").innerHTML="Shear Modulus of Elasticity "+sum1;
-    }
-}
+
     
     </script>
 
@@ -81,11 +59,14 @@
      
     </div>
     <form id="calc" class="form-horizontal">
-        <label for="cal">Please enter the Type of Modulus of Elasticity you want find-</label><br/>
+        <label for="cal">Please enter the Type of Modulus of Elasticity you want to find-</label><br/>
         <select name="cal" id="cal" onchange="dosomething()">
           <option disabled selected value="nothing">Choose the Type</option>
+
             <option value="ym">Young's Modulus</option>
+
             <option value="sm">Shear Modulus</option>
+
             <option value="bm">Bulk Modulus</option>
           
         </select><br/><br/>
@@ -96,28 +77,19 @@
         
         <br/><br/>
         <button type="button" onclick="document.location.reload()" id="calc1">Reset</button>
-        <button type="button" onclick="Sum()">Submit</button><br><br><br>
+        <button type="button" id="submit">Submit</button><br><br><br>
   
         <div class="outterbox">
             <div class="box" id="resultbox"><span id="resultCalculator" ></span></div>
         </div>
   
     </form>
+
     <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
     
     <script src="../js_files/theme.js"></script>
     <script src="../js_files/script.js"></script>
-    <script type="text/javascript">
-        document.getElementById("calc").addEventListener("submit",(e)=>{
-            e.preventDefault()
-            Sum()
-        })
-        document.body.addEventListener("keyup",(e)=>{
-                if(e.keyCode==13){
-                    Sum()
-                }
-            })
-    </script>
+    <script src="../js_files/Modulus of elasticity.js"></script>
    
     </body>
     
