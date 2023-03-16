@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
         integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="icon" href="../assets/Image/Favicon.png" />
-    <title>Stress Calculator</title>
+    <title>Mass by Volume Percentage Calculator</title>
 </head>
 <style>
     body {
@@ -119,7 +119,7 @@
     <img src="../assets/Image/moon.png" id="icon">
     <section class="potential-set">
     <div class="calculator-name-header">
-        <span>Torque Calculator</span>
+        <span>Mass by Volume Percentage Calculator</span>
     </div>
     <div class="container">
 
@@ -127,14 +127,14 @@
         <!-- <h1>Physics Calculations</h1> -->
 
         <div class="calc-work" id="calc-work">
-            <h2>Calculate Torque</h2>
-            <p>Distance (in metres):</p>
-            <input type="number" class="distance"></input>
+            <h2>Calculate Mass by Volume Percentage</h2>
+            <p>Mass of solute(g):</p>
+            <input type="number" class="mass-for-energy"></input>
             <br>
             <br>
             <br>
-            <p>Force (in Newton):</p>
-            <input type="number" class="force"></input>
+            <p>Volume of solution(L):</p>
+            <input type="number" class="height-for-energy"></input>
             <br>
             <br>
             <br>
@@ -156,22 +156,22 @@
 <script>
     //Calculates pressure
     document.getElementsByClassName('btn-work')[0].addEventListener('click', () => {
-    let distance = document.getElementsByClassName('distance')[0].value;
-    let force = document.getElementsByClassName('force')[0].value;
-    if (isNaN(distance)) {
-      alert('Enter a valid number into the distance input.');
-    } else if (isNaN(force)) {
-      alert('Enter a valid number into the force input.');
+    let MassForWork = document.getElementsByClassName('mass-for-energy')[0].value;
+    let distanceForWork = document.getElementsByClassName('height-for-energy')[0].value;
+    if (isNaN(MassForWork)) {
+      alert('Enter a valid number into the Mass input.');
+    } else if (isNaN(distanceForWork)) {
+      alert('Enter a valid number into the Height input.');
     } else {
-      let workResult =  force * distance ;
-      document.getElementsByClassName('work-result')[0].innerHTML = 'Torque: ' + workResult + " N-m" ;
+      let workResult = 100* MassForWork/distanceForWork ;
+      document.getElementsByClassName('work-result')[0].innerHTML = 'Mass by Volume Percentage:' + workResult + " g/l" ;
     }
   });
 
     function fun10() {
         document.querySelector("#reset-btn").addEventListener('click', function () {
-            document.getElementsByClassName('distance')[0].value= "";
-            document.getElementsByClassName('force')[0].value = "";
+            document.getElementsByClassName('mass-for-energy')[0].value= "";
+            document.getElementsByClassName('height-for-energy')[0].value = "";
            
             document.getElementsByClassName('work-result')[0].innerHTML = "";
         });
