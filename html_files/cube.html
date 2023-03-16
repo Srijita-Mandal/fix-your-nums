@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="stylesheet" href="../css_files/theme.css">
+    <link rel="icon" href="../assets/Image/Favicon.png">
+    <title>Perfect Cube Checker</title>
+</head>
+
+<body style="overflow: hidden;">
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <span>Power calculator</span>
+        <!-- Updated by @pooranjoyb-->
+    </div>
+    <form class="form-horizontal" id="power">
+        <label for="base">Please enter the number :</label>
+        <input type="number" name="base" id="base" placeholder="Number here" value=""><br /><br />
+        <button type="button" id="powSet" onclick="fun12()">Reset</button>
+        <button type="button" onclick="getCube()">Submit</button><br /><br /><br />
+        <div class="outterbox">
+            <div class="box"><span id="resultPower"></span></div>
+        </div>
+    </form>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+
+    <script src="../js_files/script.js"></script>
+    <script>
+        function getCube() {
+            var num = Number(document.getElementById("base").value)
+
+            var cbrt = Math.cbrt(num)
+
+            if (Number.isInteger(cbrt)) {
+                document.getElementById("resultPower").innerHTML = `<p style="color: black"><b>${num} is a perfect cube and it's cube root is ${cbrt}</b></p>`;
+            }else{
+
+                document.getElementById("resultPower").innerHTML = `<p style="color: black"><b>${num} is not a perfect cube . It's cube root is ${cbrt.toFixed(2)}</b></p>`;
+            }
+                
+        }
+    </script>
+    <script src="../js_files/theme.js"></script>
+</body>
+
+</html>

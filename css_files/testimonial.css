@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: poppins;
     font-family: Ubuntu;
+    cursor: default;
 }
 
 
@@ -73,8 +74,11 @@ body{
     border-radius: 50%;
     background-color: #fff;
     padding: 3px;
+    transition: transform 0.2s ease;
 }
-
+.card-image:hover{
+    transform: scale(1.15);
+}
 .card-image .card-img{
     height:100%;
     width: 100%;
@@ -108,7 +112,7 @@ body{
     top:0;
     height: 100%;
     width: 100%;
-    background: linear-gradient(315deg, #2b3427, #0a596a);
+    background: linear-gradient(315deg, #03a9f4, #ff0058);
     border-radius: 25px 25px 25px 0;
 }
 
@@ -118,7 +122,7 @@ body{
     position: absolute;
     height: 40px;
     width: 40px;
-    background-color:blue;
+    background-color:rgb(255, 255, 255);
     bottom: -40px;
 }
 
@@ -132,11 +136,11 @@ body{
     font-size: 16px;
     color:#fff;
     padding: 8px 16px;
-    background: linear-gradient(315deg, #1e470c, #00d0ff);
+    background: linear-gradient(315deg, #03a9f4, #ff0058);
     border-radius: 6px;
     margin: 14px;
     cursor: pointer;
-    transition: transform .2s;
+    transition: transform .2s ease-in-out;
 }
 
 .button:hover{
