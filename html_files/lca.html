@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:wght@300;400&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
+  <title>Least Common Ancestor Finder</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input[type="text"] {
+      padding: 5px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    #lca {
+      margin-top: 20px;
+    }
+    #lca-result{
+        margin-top: 20px;
+        font-size: larger;
+        
+      
+    }
+    #tree-form h3{
+        padding-top: 0;
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+    #btn{
+        margin-top: 20px;
+    }
+  </style>
+  <link rel="stylesheet" href="../css_files/theme.css">
+</head>
+<body bgcolor="#ffeeb7">
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <span>Least Common Ancestor Finder</span>
+    </div>
+  
+
+  <form id="tree-form">
+      <h3>[1,2,3] input should be in this way: ["1", ["2", null, null], ["3", null, null]]</h3>
+      <div>
+        <label for="tree-input">Enter the tree as an array:</label>
+        <input type="text" id="tree-input" name="tree-input" required>
+      </div>
+      <div>
+        <label for="node1">Enter the first node:</label>
+        <input type="text" id="node1" name="node1" required>
+      </div>
+      <div>
+        <label for="node2">Enter the second node:</label>
+        <input type="text" id="node2" name="node2" required>
+      </div>
+    
+    <button type="submit" id="btn">Find LCA</button>
+    <div id="lca-result"></div>
+  </form>
+  <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+  <script>
+    const form = document.querySelector('#tree-form');
+    const lcaResultContainer = document.querySelector('#lca-result');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const tree = JSON.parse(document.querySelector('#tree-input').value);
+      const node1 = document.querySelector('#node1').value;
+      const node2 = document.querySelector('#node2').value;
+      const lca = findLCA(tree, node1, node2);
+      lcaResultContainer.innerHTML = `The LCA of ${node1} and ${node2} is ${lca}.`;
+    });
+
+    function findLCA(tree, node1, node2) {
+      const path1 = findPath(tree, node1);
+      const path2 = findPath(tree, node2);
+      if (!path1 || !path2) {
+        return 'Node(s) not found in tree.';
+      }
+      let i = 0;
+      while (path1[i] === path2[i]) {
+        i++;
+      }
+      return path1[i - 1];
+    }
+
+    function findPath(tree, node, path = []) {
+      if (!tree) {
+        return null;
+      }
+      path.push(tree[0]);
+      if (tree[0] === node) {
+        return path;
+      }
+      const leftPath = findPath(tree[1], node, [...path]);
+      const rightPath = findPath(tree[2], node, [...path]);
+      return leftPath || rightPath;
+    }
+  </script>
+   <script src="../js_files/theme.js"></script>
+</body>
+</html>
