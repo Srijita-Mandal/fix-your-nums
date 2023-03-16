@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css" />
+    <link rel="stylesheet" href="../css_files/theme.css" />
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <title>Time Zone Converter</title>
+  </head>
+  <body>
+    <div class="calculator-name-header">
+        <span>Time Zone Converter</span>
+    </div>
+    <!-- <h1>Time Zone Converter</h1> -->
+    <form>
+      <label for="time">Enter a time:</label>
+      <input type="time" id="time" name="time">
+      <br><br>
+      <label for="from">Convert from:</label>
+      <select id="from" name="from">
+        <option value="UTC-12:00">(UTC-12:00) International Date Line West</option>
+        <option value="UTC-11:00">(UTC-11:00) Coordinated Universal Time-11</option>
+        <option value="UTC-10:00">(UTC-10:00) Hawaii</option>
+        <option value="UTC-05:30">(UTC-05:30) India</option>
+        <!-- Add more time zones here -->
+      </select>
+      <br><br>
+      <label for="to">Convert to:</label>
+      <select id="to" name="to">
+        <option value="UTC-12:00">(UTC-12:00) International Date Line West</option>
+        <option value="UTC-11:00">(UTC-11:00) Coordinated Universal Time-11</option>
+        <option value="UTC-10:00">(UTC-10:00) Hawaii</option>
+        <option value="UTC+05:30">(UTC+05:30) India</option>
+        <!-- Add more time zones here -->
+      </select>
+      <br><br>
+      <input type="submit" value="Convert" onclick="convertTime();">
+      <button type="button" id="timereset" onclick="fun9()" style="cursor: pointer;">reset</button>
+    </form>
+    <br>
+    <p id="result"></p>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <img src="../assets/Image/moon.png" id="icon">
+
+    <script>
+      function convertTime() {
+        const time = document.getElementById("time").value;
+        const from = document.getElementById("from").value;
+        const to = document.getElementById("to").value;
+
+        const regex = /^UTC?[+-]\d{2}:\d{2}$/;
+        if (!regex.test(from) || !regex.test(to)) {
+          alert("Invalid time zone format");
+          return;
+        }
+
+        const date = new Date(`2000-01-01T${time}:00${from}`);
+        date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+        const result = date.toLocaleTimeString("en-US", { timeZone: `UTC${to}` });
+        document.getElementById("result").textContent = result;
+      }
+    </script>
+  </body>
+</html>
