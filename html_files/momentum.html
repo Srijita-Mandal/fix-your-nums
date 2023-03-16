@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    </link>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/caesardark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <title>Momentum Calculator</title>
+</head>
+<style>
+    body {
+        text-align: center;
+        margin-bottom: 3em;
+    }
+
+    .container {
+        width: 450px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 450px;
+        margin-left: 530px;
+    }
+
+    .calculator-name-header {
+        margin: 35px 35%;
+        padding: 10px;
+        border-radius: 0px 15px 0px 15px;
+        box-shadow: 0px 0px 16px 1px;
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 50px
+    }
+
+    #home {
+        /* background-color: black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        position: fixed;
+        right: 2rem;
+        bottom: 2rem;
+        border-radius: 15px;
+        color: #ffffff;
+        background-color: #121916;
+        height: 2.5rem;
+        width: 2.5rem;
+        font-size: 1.2;
+        z-index: 999;
+    }
+
+    .btn-pressure {
+        height: 35px;
+        margin: 20px;
+        margin-bottom: 40px;
+        width: 100px;
+        font-size: 15px;
+        border: none;
+        border-radius: 3px;
+        background-color: black;
+        color: white;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+
+    p {
+        font-size: large;
+    }
+
+    input,
+    select {
+        width: 200px;
+        height: 30px;
+
+    }
+
+    .main-btn {
+        height: 35px;
+        margin: 20px;
+        margin-bottom: 40px;
+        width: 100px;
+        font-size: 15px;
+        border: none;
+        border-radius: 3px;
+        background-color: black;
+        color: white;
+    }
+</style>
+
+<body>
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <span>Momentum Calculator</span>
+    </div>
+    <div class="container">
+
+
+        <!-- <h1>Physics Calculations</h1> -->
+
+        <div class="calc-pressure" id="calc-pressure">
+           
+            <p>Velocity (in m/s) </p>
+            <input type="number" class="velocity"></input>
+            <br>
+            <br>
+            <br>
+            <p>Mass (in kg.):</p>
+            <input type="number" class="mass"></input>
+            <br>
+            <br>
+            <br>
+            <button class="btn-pressure">Calculate</button>
+            <button type="button" class="main-btn" id="reset-btn" onClick="fun10()">Reset</button>
+    
+            <br>
+            <div class="outterbox">
+                <div class="box"><span class="pressure-result results" id="result"></span></div>
+            </div>
+           
+        </div>
+
+    </div>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <script src="../js_files/theme.js"></script>
+</body>
+<script>
+
+    document.getElementsByClassName('btn-pressure')[0].addEventListener('click', () => {
+    let v = document.getElementsByClassName('velocity')[0].value;
+    let m = document.getElementsByClassName('mass')[0].value;
+    if (isNaN(m)) {
+      alert('Enter a valid number into the Mass input.');
+    } else if (isNaN(v)) {
+      alert('Enter a valid number into the Velocity input.');
+    } else {
+      let pressureResult = m * v;
+      document.getElementsByClassName('pressure-result')[0].innerHTML = 'Momentum: ' + pressureResult + "Ns" ;
+    }
+  });
+
+    function fun10() {
+        document.querySelector("#reset-btn").addEventListener('click', function () {
+            document.getElementsByClassName('force-for-pressure')[0].value= "";
+            document.getElementsByClassName('area')[0].value = "";
+           
+            document.getElementsByClassName('pressure-result')[0].innerHTML = "";
+        });
+    }
+</script>
+
+</html>
