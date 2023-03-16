@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../css_files/caesardark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <title>Sparse - Compact Calculator </title>
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            margin: 0;
+            margin-bottom: 50px;
+            color: var(--color--label);
+            background-size: cover;
+            line-height: 30px;
+        }
+
+        .container {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+            margin-bottom: 4rem !important;
+        }
+
+        .inner-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .container input[type=number] {
+            width: 60px;
+
+            border: none;
+            padding: 5px;
+
+            height: 30px;
+            margin-top: 5px;
+        }
+
+        .matrix-set {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%
+        }
+
+        button {
+            height: 35px;
+            margin: 20px;
+            margin-bottom: 40px;
+            width: 100px;
+            font-size: 15px;
+            border: none;
+            border-radius: 3px;
+            background-color: black;
+            color: white;
+        }
+
+        p {
+            display: inline-block;
+        }
+
+        .result {
+            line-height: 5px;
+            text-align: center;
+        }
+
+        .block {
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.3);
+            width: 55px;
+            height: 30px;
+            margin: 10px 10px 0px 0px;
+            color: #fff;
+        }
+
+        .calculator-name-header {
+            padding: 12px;
+            margin-top: 3rem;
+            border-radius: 0px 15px 0px 15px;
+            box-shadow: 0px 0px 16px 1px;
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 50px
+        }
+
+        #home {
+            /* background-color: black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: fixed;
+            right: 2rem;
+            bottom: 2rem;
+            border-radius: 15px;
+            color: #ffffff;
+            background-color: #121916;
+            height: 2.5rem;
+            width: 2.5rem;
+            font-size: 1.2;
+            z-index: 999;
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .inner-container {
+                margin-top: 0 !important;
+            }
+
+            .calculator-name-header {
+                font-size: 1.2rem;
+                padding: 10px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="../assets/Image/moon.png" id="icon">
+
+    <section class="matrix-set">
+        <div class="calculator-name-header">
+            <span>Sparse - > Compact Calculator </span>
+        </div>
+
+        <div class="container">
+
+            <div class="inner-container">
+                <p>ENTER THE MATRIX </p>
+                <br>
+                <input id="num11" type="number" name="" value="0">
+                <input id="num12" type="number" name="" value="0">
+                <input id="num13" type="number" name="" value="0">
+                <br>
+                <input id="num21" type="number" name="" value="0">
+                <input id="num22" type="number" name="" value="0">
+                <input id="num23" type="number" name="" value="0">
+                <br>
+                <input id="num31" type="number" name="" value="0">
+                <input id="num32" type="number" name="" value="0">
+                <input id="num33" type="number" name="" value="0">
+                <br>
+
+            </div>
+
+            <div class="result" style="margin-left: 1rem; line-height: 1.4rem;">
+                <br>
+                <h3>Result in the form : </h3>
+                <h4>[Rows]<br>[Columns]<br>[Values]</h4>
+                <div id="det"></div>
+
+                <br>
+                <br>
+                <br>
+                <div class="outterbox">
+                    <div class="box"><span id="resultDeriv" style="line-height: 1.5rem;"></span></div>
+                </div>
+
+            </div>
+        </div>
+        <div>
+
+            <button id="bts">Calculate</button>
+            <button type="button" class="main-btn" onclick="document.location.reload()" id="reset-btn">Reset</button>
+
+        </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById("bts").addEventListener('click', function () {
+
+            var a = Number(document.getElementById('num11').value);
+            var b = Number(document.getElementById('num12').value);
+            var c = Number(document.getElementById('num13').value);
+            var d = Number(document.getElementById('num21').value);
+            var e = Number(document.getElementById('num22').value);
+            var f = Number(document.getElementById('num23').value);
+            var g = Number(document.getElementById('num31').value);
+            var h = Number(document.getElementById('num32').value);
+            var i = Number(document.getElementById('num33').value);
+
+            console.log(a, b, c, d, e, f, g, h, i)
+            // Assume 3x3 sparse matrix
+            let sparseMatrix =
+                [
+                    [a, b, c],
+                    [d, e, f],
+                    [g, g, i]
+                ];
+            let size = 0;
+            let compactMatrix = new Array(3);
+            for (var i = 0; i < 3; i++)
+                compactMatrix[i] = new Array(size);
+
+
+            // Making of new matrix
+            let k = 0;
+            for (let i = 0; i < 3; i++)
+                for (let j = 0; j < 3; j++)
+                    if (sparseMatrix[i][j] != 0) {
+                        compactMatrix[0][k] = i;
+                        compactMatrix[1][k] = j;
+                        compactMatrix[2][k] = sparseMatrix[i][j];
+                        k++;
+                    }
+
+            var arrText = []
+            for (var i = 0; i < compactMatrix.length; i++) {
+                arrText += " [ "
+                for (var j = 0; j < compactMatrix[i].length; j++) {
+                    arrText += compactMatrix[i][j] + '         ';
+                }
+                arrText += " ] <br>"
+                
+            }
+            document.getElementById("resultDeriv").innerHTML = `<p style="color: black"><b>${arrText}</b></p>`;
+        })
+    </script>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <script src="../js_files/theme.js"></script>
+</body>
+
+</html>
