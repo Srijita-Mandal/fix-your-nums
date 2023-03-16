@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css" />
+    <link rel="stylesheet" href="../css_files/theme.css" />
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <title>Lucky Number Checker</title>
+  </head>
+  <body style="overflow: hidden">
+    <img src="../assets/Image/moon.png" id="icon" />
+    <div class="calculator-name-header">
+      <span>Lucky Number Checker</span>
+    </div>
+    <form id="calc" class="form-horizontal">
+      <label for="cal">Please enter the number which you want to check : </label
+      ><br />
+      <br /><br />
+
+      <input type="number" name="num1" id="num1" placeholder="Number" />
+      <br /><br />
+      <button type="button" onclick="fun4()" id="calc1">reset</button>
+      <button type="button" onclick="EvenNumberCalculator()">Submit</button
+      ><br /><br /><br />
+
+      <div class="outterbox">
+        <div class="box"><span id="resultCalculator"></span></div>
+      </div>
+    </form>
+    <a href="../index.html"
+      ><i id="home" class="fa fa-home" aria-hidden="true"></i
+    ></a>
+
+    <script src="../js_files/script.js"></script>
+    <script type="text/javascript">
+        let counter = 2;
+
+      function isLucky(n) {
+        
+        if (counter > n) return 1;
+        if (n % counter == 0) return 0;
+        let next_position = n - Math.floor(n / counter);
+
+        counter++;
+        return isLucky(next_position);
+      }
+
+      const EvenNumberCalculator = () => {
+        const number1 = parseInt(document.getElementById("num1").value);
+        if (isLucky(number1)) {
+          document.getElementById(
+            "resultCalculator"
+          ).innerHTML = `Lucky Number`;
+        } else {
+          document.getElementById(
+            "resultCalculator"
+          ).innerHTML = `Not an Lucky Number`;
+        }
+      };
+
+      document.getElementById("calc").addEventListener("submit", (e) => {
+        e.preventDefault();
+        EvenNumberCalculator();
+      });
+      document.body.addEventListener("keyup", (e) => {
+        if (e.keyCode == 13) {
+          EvenNumberCalculator();
+        }
+      });
+    </script>
+    <script src="../js_files/theme.js"></script>
+  </body>
+</html>
