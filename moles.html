@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css">
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:wght@300;400&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
+    <title>Mole Calculator</title>
+    <style type="text/css">
+        input#new {
+            padding: 6px;
+            border-radius: 4px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        form {
+            width: 100% !important;
+        }
+
+        .top-txt {
+            margin-bottom: 15px;
+        }
+
+        .container {
+            box-shadow: 0 0 4px 1px rgb(179, 169, 169);
+            width: 675px;
+            height: 375px;
+            border-radius: 10px;
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            flex-direction: column;
+            background-color: #ffb4a3;
+        }
+
+        .container p {
+            color: rgb(20, 94, 82);
+            margin: 10px;
+            font-size: 20px;
+            font-weight: bolder;
+
+        }
+
+        .inputContainer {
+            margin: 5px;
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+        }
+
+        .inputContainer label {
+            font-size: larger;
+        }
+
+        .inputContainer input {
+            border: none;
+            outline: none;
+            box-shadow: 0.1px 1px 2px 1px rgb(145, 140, 140);
+            padding: 4px;
+            font-size: large;
+            border-radius: 2px;
+
+        }
+
+        .calculator-name-header {
+            text-align: center;
+            padding: 10px;
+            border-radius: 0px 15px 0px 15px;
+            box-shadow: 0px 0px 16px 1px;
+            font-size: 30px;
+            margin: 25px 30%;
+        }
+
+        #btn {
+            padding: 12px;
+            background-color: white;
+            border-radius: 4px;
+            margin-top: 10px;
+            width: 180px;
+
+
+        }
+
+        input {
+            padding: 6px;
+        }
+
+        #result {
+            padding: 6px;
+            margin-top: 10px;
+            margin-bottom: 0;
+            font-size: 28px;
+
+        }
+
+        .h3text {
+            font-size: 28px;
+            color: black;
+            margin-bottom: 32px;
+        }
+
+        .rad {
+            margin: 12px;
+        }
+    </style>
+    <link rel="stylesheet" href="../css_files/theme.css">
+</head>
+
+<body bgcolor="#ffeeb7">
+    <img src="../assets/Image/moon.png" id="icon">
+    <div class="calculator-name-header">
+        <!-- Updated by @Shantanu-Meta   -->
+        <span>Mole calculator</span>
+    </div>
+
+    <form id="resistance-form">
+        <!-- <h3 class="h3text"> Resistance Values (separated by commas):</h3> -->
+        <!-- <div>
+            <label>
+            <input class="rad" type="radio" name="connection" value="series" checked /> Series
+        </label>
+        <label>
+          <input  class="rad" type="radio" name="connection" value="parallel" /> Parallel
+        </label>
+        </div>-->
+       
+        <div>
+            <label for="w">Weight of given sample</label><input class="rad" type="number" name="w"
+                id="w">
+        </div>
+        <div>
+            <label for="molar">Molar mass</label><input class="rad" type="number" name="molar"
+                id="molar">
+        </div>
+        <!-- <div>
+            <label for="velocity">Terminal Velocity</label><input class="rad" type="number" name="velocity"
+                id="velocity">
+        </div>
+        <div>
+            <label for="radius">Radius of sphere</label><input class="rad" type="number" name="radius"
+                id="radius">
+        </div> -->
+
+
+        <!-- <label>
+          <input type="text" name="resistance" placeholder="e.g. 10, 20, 30" id="new" />
+        </label>
+        <label>
+            <input type="text" name="resistance" placeholder="e.g. 10, 20, 30" id="new" />
+          </label> -->
+        <input type="submit" value="Calculate" id="btn" />
+        <div id="result"></div>
+
+    </form>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <script>
+
+        const form = document.getElementById("resistance-form");
+        const result = document.getElementById("result");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+
+            //   const resistance = document.querySelector(
+            //     'input[name="resistance"]'
+            //   ).value;
+            const w= document.querySelector(
+                'input[name="w"]'
+            ).value;
+            const molar= document.querySelector(
+                'input[name="molar"]'
+            ).value;
+            
+
+
+
+            let moles = 0;
+            
+           moles=w/molar;
+            result.innerText = `Number of moles: ${moles}`;
+        });
+    </script>
+    <script src="../js_files/theme.js"></script>
+</body>
+
+</html>
