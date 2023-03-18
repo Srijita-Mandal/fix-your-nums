@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css_files/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css_files/result.css" />
+    <link rel="stylesheet" href="../css_files/theme.css" />
+    <link rel="icon" href="../assets/Image/Favicon.png" />
+    <title>Retirement Savings Calculator</title>
+  </head>
+  <body>
+    <div class="calculator-name-header">
+        <span>Retirement Savings Calculator</span>
+    </div>
+    <form>
+      <label for="current-age">Current Age:</label>
+      <input type="number" id="current-age" name="current-age" required />
+      <br><br>
+
+      <label for="retirement-age">Retirement Age:</label>
+      <input type="number" id="retirement-age" name="retirement-age" required />
+      <br><br>
+
+      <label for="annual-income">Annual Income:</label>
+      <input type="number" id="annual-income" name="annual-income" required />
+      <br><br>
+
+      <label for="savings-percentage">Savings Percentage:</label>
+      <input
+        type="number"
+        id="savings-percentage"
+        name="savings-percentage"
+        min="1"
+        max="100"
+        required
+      />
+      <br><br>
+      
+      <label for="current-savings">Current Savings:</label>
+      <input type="number" id="current-savings" name="current-savings" />
+      <br><br>
+
+      <button type="submit">Calculate</button>
+      <button type="button" id="timereset" onclick="fun9()" style="cursor: pointer;">reset</button>
+    </form>
+
+    <div id="result"></div>
+    <a href="../index.html"><i id="home" class="fa fa-home" aria-hidden="true"></i></a>
+    <img src="../assets/Image/moon.png" id="icon">
+
+    <script>
+      const form = document.querySelector("form");
+      const result = document.querySelector("#result");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const currentAge = parseInt(document.querySelector("#current-age").value);
+        const retirementAge = parseInt(document.querySelector("#retirement-age").value);
+        const annualIncome = parseInt(document.querySelector("#annual-income").value);
+        const savingsPercentage = parseInt(document.querySelector("#savings-percentage").value);
+        const currentSavings = parseInt(document.querySelector("#current-savings").value) || 0;
+        
+        const yearsToRetirement = retirementAge - currentAge;
+        const annualSavings = (annualIncome * savingsPercentage) / 100;
+        const totalSavings = currentSavings + (annualSavings * yearsToRetirement);
+
+        result.innerHTML = `You need to save $${totalSavings.toFixed(2)} by the time you retire.`;
+      });
+    </script>
+  </body>
+</html>
